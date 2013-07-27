@@ -12,10 +12,9 @@
 #include "cocos2d.h"
 #include <Box2D/Box2D.h>
 #include "Common.h"
+#include "BAContactListener.h"
 
 using namespace cocos2d;
-
-class BAContact;
 
 class SensorTypeContainer {
 public:

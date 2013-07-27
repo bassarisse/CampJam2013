@@ -14,7 +14,8 @@
 #include <algorithm>
 
 #include "Common.h"
-#include "GameObject.h"
+
+class GameObject;
 
 struct BAContact {
     b2Fixture *fixtureA;

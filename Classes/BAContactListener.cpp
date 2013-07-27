@@ -8,6 +8,8 @@
 
 #include "BAContactListener.h"
 
+#include "GameObject.h"
+
 BAContactListener::BAContactListener() : _contacts() {
 }
 

@@ -7,7 +7,6 @@
 //
 
 #include "GameObject.h"
-#include "BAContactListener.h"
 
 GameObject::GameObject() {
     
