@@ -18,6 +18,13 @@ using namespace cocos2d;
 
 #define kWalkForce 3.0f
 
+enum kDirection {
+    kDirectionUp = 0,
+    kDirectionDown,
+    kDirectionLeft,
+    kDirectionRight
+};
+
 enum MovingHorizontalState {
     MovingStateHorizontalStopped = 0,
     MovingStateLeft,

@@ -51,7 +51,9 @@ public:
     virtual bool init(b2World *world, Dictionary *properties);
     virtual void update(float dt);
     virtual void handleMovement();
+    virtual void handleMovement(float angle);
     
+    CC_SYNTHESIZE(kDirection, _lastDirection, LastDirection);
     CC_SYNTHESIZE(MovingHorizontalState, _movingHorizontalState, MovingHorizontalState);
     CC_SYNTHESIZE(MovingVerticalState, _movingVerticalState, MovingVerticalState);
     CC_SYNTHESIZE(GameObjectState, _state, State);

@@ -23,9 +23,10 @@ void Player::addFixtures() {
 
 bool Player::init(b2World *world, Dictionary *properties) {
     
-    _node = Sprite::createWithSpriteFrameName("right1.png");
+    _node = Sprite::createWithSpriteFrameName("down1.png");
     _life = 100.0f;
     _coffee = 100.0f;
+    _speedFactor = 0.0f;
 
     if (!GameObject::init(world, properties))
         return false;
@@ -43,6 +44,18 @@ void Player::update(float dt) {
 
 void Player::handleCollisions() {
     
-    
+	for(std::vector<GameObject*>::size_type i = 0; i <= _contacts.size(); i++)
+	{
+		GameObject* collisionObject = _contacts[i];
+		switch(collisionObject->getType()) {
+            case GameObjectTypeCoffee:
+                _speedFactor += 0.05f;
+                
+                break;
+            default:
+                break;
+		}
+		
+	}
     
 }
