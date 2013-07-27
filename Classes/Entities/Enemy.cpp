@@ -29,7 +29,7 @@ void Enemy::handleMovement() {
 
 	//float angle = atan2(playerPosition.y - manPosition.y, 
 	//					playerPosition.x - manPosition.x);
-
+	
 	if(angle == 0 || angle == 360)
 	{
 		this->setMovingHorizontalState(MovingStateRight);
@@ -63,10 +63,7 @@ void Enemy::handleMovement() {
 		this->setMovingHorizontalState(MovingStateRight);
 		this->setMovingVerticalState(MovingStateDown);
 	} 
-
-	CCLog("angle: %f rad, angle: %f deg", angle, angle * 180 / M_PI);
-	CCLog("directionHor: %d, directionVer: %d", this->getMovingHorizontalState(), this->getMovingVerticalState());
-
+	
 	GameObject::handleMovement(angle * 180 / M_PI); //degree conversion
 }
 

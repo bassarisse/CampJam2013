@@ -16,6 +16,6 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
     AppDelegate app;
     EGLView* eglView = EGLView::sharedOpenGLView();
     eglView->setViewName("CampJam2013");
-    eglView->setFrameSize(1024, 768);
+    eglView->setFrameSize(480, 320);
     return Application::sharedApplication()->run();
 }

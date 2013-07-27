@@ -36,9 +36,7 @@ bool Player::init(b2World *world, Dictionary *properties) {
 }
 
 void Player::update(float dt) {
-    
-    CCLog("_coffee: %f", _coffee);
-    CCLog("_life: %f", _life);
+  
     
     GameObject::update(dt);
     
@@ -81,7 +79,6 @@ void Player::update(float dt) {
 }
 
 float Player::getSpeed() {
-    CCLog("speed: %f", _speedFactor + _coffee * kCoffeePower);
     return _speedFactor + _coffee * kCoffeePower;
 }
 
