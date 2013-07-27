@@ -6,13 +6,12 @@
 //
 //
 
-#ifndef __CampJam__Enemy__
-#define __CampJam__Enemy__
+#ifndef __CampJam__Coffee__
+#define __CampJam__Coffee__
 
 #include "GameObject.h"
-#include "Player.h"
 
-class Enemy : public GameObject {
+class Coffee : public GameObject {
     
 private:
     
@@ -22,20 +21,14 @@ protected:
 	
 	virtual void handleCollisions();
 
-	Player* _playerReference;
+	Coffee* _playerReference;
 
 public:
     
-    virtual ~Enemy();
+    virtual ~Coffee();
     
-    virtual bool init(b2World *world, Dictionary *properties, Player* ref);
+    virtual bool init(b2World *world, Dictionary *properties);
     virtual void update(float dt);
-    
-	float _damageFactor;
-	float _coffee;
-
-	virtual void handleMovement();
-
 
 };
 

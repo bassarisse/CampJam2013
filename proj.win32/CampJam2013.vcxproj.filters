@@ -51,6 +51,9 @@
     <ClCompile Include="..\Classes\Entities\Player.cpp">
       <Filter>Classes\Entities</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Coffee.cpp">
+      <Filter>Classes\Entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -90,6 +93,9 @@
       <Filter>Classes\Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Entities\Player.h">
+      <Filter>Classes\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Coffee.h">
       <Filter>Classes\Entities</Filter>
     </ClInclude>
   </ItemGroup>
