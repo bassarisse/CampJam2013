@@ -61,7 +61,7 @@ void Man::handleCollisions() {
 		switch(collisionObject->getType()) {
 		case GameObjectTypeCoffee:
 			_speedFactor += 0.05f;
-			_coffee += 0.1f;
+			
 
 			break;
 		default:

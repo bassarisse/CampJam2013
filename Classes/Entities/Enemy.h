@@ -30,7 +30,10 @@ public:
     
     virtual bool init(b2World *world, Dictionary *properties, Player* ref);
     virtual void update(float dt);
- 
+    
+	float _damageFactor;
+	float _coffee;
+
 };
 
 #endif /* defined(__PlatformerTest__Player__) */
