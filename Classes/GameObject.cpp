@@ -48,6 +48,17 @@ void GameObject::addRectangularFixture(float width, float height) {
     
 }
 
+void GameObject::addRectangularFixture(float x, float y, float width, float height) {
+    
+    b2PolygonShape shape;
+    shape.SetAsBox(width / 2.0f * _node->getScale() / PTM_RATIO,
+                   height / 2.0f * _node->getScale() / PTM_RATIO,
+                   b2Vec2(x * _node->getScale() / PTM_RATIO, y * _node->getScale() / PTM_RATIO),
+                   0);
+    this->createFixture(&shape);
+    
+}
+
 void GameObject::createFixture(b2Shape *shape) {
     
     // some properties can be modified later by iterating on body's fixtures (e.g. fixture->SetFriction())
