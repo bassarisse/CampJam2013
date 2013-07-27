@@ -6,6 +6,10 @@
 //
 //
 
+#include "cocos2d.h"
+
+using namespace cocos2d;
+
 #ifndef PlatformerTest_Common_h
 #define PlatformerTest_Common_h
 
@@ -29,5 +33,17 @@ enum MovingVerticalState {
 enum GameObjectState {
     GameObjectStateStanding = 0
 };
+
+enum SensorType {
+    SensorTypeUnknown = 0
+};
+
+inline float floatValue(Object* o)
+{
+    String* string = dynamic_cast<String*>(o);
+    if (string)
+        return string->floatValue();
+    return 0.0f;
+}
 
 #endif

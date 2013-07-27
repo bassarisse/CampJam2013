@@ -15,12 +15,6 @@
   <object x="324" y="360">
    <polyline points="0,0 0,36 60,36 60,0 0,0"/>
   </object>
-  <object x="204" y="348">
-   <polyline points="0,0 -24,0 -24,-12 0,0"/>
-  </object>
-  <object x="156" y="336">
-   <polyline points="0,0 -36,-12 -36,0 0,0"/>
-  </object>
   <object x="24" y="24">
    <polyline points="0,0 0,384 96,384 96,372 132,372 132,384 528,384 528,0 0,0"/>
   </object>

@@ -14,6 +14,8 @@ private:
     
     bool _buttonLeftPressed;
     bool _buttonRightPressed;
+    bool _buttonUpPressed;
+    bool _buttonDownPressed;
     bool _buttonAPressed;
     
 public:
@@ -31,7 +33,8 @@ public:
     SpriteBatchNode *_mainBatchNode;
     TMXTiledMap *_tiledMap;
     
-    std::vector<MovingState> _movingStates;
+    std::vector<MovingHorizontalState> _movingHorizontalStates;
+    std::vector<MovingVerticalState> _movingVerticalStates;
     std::vector<GameObject *> _gameObjects;
     GameObject *_player;
     
@@ -45,6 +48,8 @@ public:
     
     virtual void buttonLeft(bool pressed);
     virtual void buttonRight(bool pressed);
+    virtual void buttonUp(bool pressed);
+    virtual void buttonDown(bool pressed);
     virtual void buttonA(bool pressed);
     
 };

@@ -26,8 +26,6 @@ class GameObject : public Object {
     
 protected:
     
-    float _jumpTime;
-    
     b2Body *_body;
     Node *_node;
     
@@ -37,8 +35,6 @@ protected:
     virtual void createFixture(b2Shape *shape);
     virtual void addFixtures();
     
-    virtual bool canJump();
-    virtual bool isHittingHead();
     
 public:
     
@@ -52,20 +48,11 @@ public:
     virtual void addBodyToWorld(b2World *world);
     virtual bool init(b2World *world, Dictionary *properties);
     virtual void update(float dt);
-    virtual void jump();
-    virtual void finishJump();
     
-    CC_SYNTHESIZE(MovingState, _movingState, MovingState);
+    CC_SYNTHESIZE(MovingHorizontalState, _movingHorizontalState, MovingHorizontalState);
+    CC_SYNTHESIZE(MovingVerticalState, _movingVerticalState, MovingVerticalState);
     CC_SYNTHESIZE(GameObjectState, _state, State);
     
 };
-
-inline float floatValue(Object* o)
-{
-    String* string = dynamic_cast<String*>(o);
-    if (string)
-        return string->floatValue();
-    return 0.0f;
-}
 
 #endif /* defined(__PlatformerTest__GameObject__) */

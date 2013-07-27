@@ -155,11 +155,12 @@ bool HelloWorld::init()
         
     }
     
-    _movingStates.push_back(MovingStateStopped);
+    _movingHorizontalStates.push_back(MovingStateHorizontalStopped);
+    _movingVerticalStates.push_back(MovingStateVerticalStopped);
     
     this->scheduleUpdate();
     
-    this->addChild(B2DebugDrawLayer::create(_world, PTM_RATIO), 9999);
+    //this->addChild(B2DebugDrawLayer::create(_world, PTM_RATIO), 9999);
     
     return true;
 }
@@ -168,7 +169,8 @@ void HelloWorld::update(float dt) {
     
     _world->Step(dt, 8, 3);
     
-    _player->setMovingState(_movingStates[_movingStates.size() - 1]);
+    _player->setMovingHorizontalState(_movingHorizontalStates[_movingHorizontalStates.size() - 1]);
+    _player->setMovingVerticalState(_movingVerticalStates[_movingVerticalStates.size() - 1]);
     _player->update(dt);
     
     Point playerPosition = _player->getNode()->getPosition();
@@ -197,16 +199,16 @@ void HelloWorld::buttonLeft(bool pressed) {
             return;
         _buttonLeftPressed = true;
         
-        _movingStates.push_back(MovingStateLeft);
+        _movingHorizontalStates.push_back(MovingStateLeft);
         
     } else {
         
         _buttonLeftPressed = false;
         
-        std::vector<MovingState>::iterator pos;
-        pos = std::find(_movingStates.begin(), _movingStates.end(), MovingStateLeft);
-        if (pos != _movingStates.end()) {
-            _movingStates.erase(pos);
+        std::vector<MovingHorizontalState>::iterator pos;
+        pos = std::find(_movingHorizontalStates.begin(), _movingHorizontalStates.end(), MovingStateLeft);
+        if (pos != _movingHorizontalStates.end()) {
+            _movingHorizontalStates.erase(pos);
         }
         
     }
@@ -221,16 +223,64 @@ void HelloWorld::buttonRight(bool pressed) {
             return;
         _buttonRightPressed = true;
         
-        _movingStates.push_back(MovingStateRight);
+        _movingHorizontalStates.push_back(MovingStateRight);
         
     } else {
         
         _buttonRightPressed = false;
         
-        std::vector<MovingState>::iterator pos;
-        pos = std::find(_movingStates.begin(), _movingStates.end(), MovingStateRight);
-        if (pos != _movingStates.end()) {
-            _movingStates.erase(pos);
+        std::vector<MovingHorizontalState>::iterator pos;
+        pos = std::find(_movingHorizontalStates.begin(), _movingHorizontalStates.end(), MovingStateRight);
+        if (pos != _movingHorizontalStates.end()) {
+            _movingHorizontalStates.erase(pos);
+        }
+        
+    }
+    
+}
+
+void HelloWorld::buttonUp(bool pressed) {
+    
+    if (pressed) {
+        
+        if (_buttonUpPressed)
+            return;
+        _buttonUpPressed = true;
+        
+        _movingVerticalStates.push_back(MovingStateUp);
+        
+    } else {
+        
+        _buttonUpPressed = false;
+        
+        std::vector<MovingVerticalState>::iterator pos;
+        pos = std::find(_movingVerticalStates.begin(), _movingVerticalStates.end(), MovingStateUp);
+        if (pos != _movingVerticalStates.end()) {
+            _movingVerticalStates.erase(pos);
+        }
+        
+    }
+    
+}
+
+void HelloWorld::buttonDown(bool pressed) {
+    
+    if (pressed) {
+        
+        if (_buttonDownPressed)
+            return;
+        _buttonDownPressed = true;
+        
+        _movingVerticalStates.push_back(MovingStateDown);
+        
+    } else {
+        
+        _buttonDownPressed = false;
+        
+        std::vector<MovingVerticalState>::iterator pos;
+        pos = std::find(_movingVerticalStates.begin(), _movingVerticalStates.end(), MovingStateDown);
+        if (pos != _movingVerticalStates.end()) {
+            _movingVerticalStates.erase(pos);
         }
         
     }
@@ -239,17 +289,6 @@ void HelloWorld::buttonRight(bool pressed) {
 
 void HelloWorld::buttonA(bool pressed) {
     
-    if (!pressed) {
-        _buttonAPressed = false;
-        
-        _player->finishJump();
-        return;
-    }
     
-    if (_buttonAPressed)
-        return;
-    _buttonAPressed = true;
-    
-    _player->jump();
     
 }

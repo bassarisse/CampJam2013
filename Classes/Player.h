@@ -15,9 +15,6 @@ class Player : public GameObject {
     
 private:
     
-    SensorTypeContainer *_headSensor;
-    SensorTypeContainer *_footSensor;
-    
 protected:
     
     virtual void addFixtures();
