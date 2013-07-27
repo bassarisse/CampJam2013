@@ -7,6 +7,8 @@
 .metadata
 bin/
 tmp/
+Debug.win32/
+Release.win32/
 *.tmp
 *.bak
 *.swp

@@ -2,7 +2,7 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "BaseLayer.h"
-#include "Box2D.h"
+#include "Box2D/Box2D.h"
 #include "BAContactListener.h"
 #include "GameObject.h"
 

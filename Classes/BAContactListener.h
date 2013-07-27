@@ -9,9 +9,9 @@
 #ifndef __PlatformerTest__BAContactListener__
 #define __PlatformerTest__BAContactListener__
 
-#import "Box2D.h"
-#import <vector>
-#import <algorithm>
+#include "Box2d/Box2d.h"
+#include <vector>
+#include <algorithm>
 
 struct BAContact {
     b2Fixture *fixtureA;

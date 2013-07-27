@@ -10,7 +10,7 @@
 #define __PlatformerTest__GameObject__
 
 #include "cocos2d.h"
-#include "Box2D.h"
+#include <Box2D/Box2D.h>
 #include "Common.h"
 
 using namespace cocos2d;
