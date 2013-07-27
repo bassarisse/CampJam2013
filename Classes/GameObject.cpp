@@ -70,6 +70,7 @@ void GameObject::createFixture(b2Shape *shape) {
     fixtureDef.friction = 0.0f;
     fixtureDef.restitution = 0.0f;
     fixtureDef.userData = this;
+    fixtureDef.isSensor = _isSensor;
     
     _body->CreateFixture(&fixtureDef);
     
@@ -97,6 +98,20 @@ float GameObject::getSpeed() {
 }
 
 void GameObject::handleCollisions() {
+    
+	for(std::vector<GameObject*>::size_type i = 0; i < _contacts.size(); i++)
+	{
+		GameObject* collisionObject = _contacts[i];
+		if(!collisionObject || collisionObject->getState() == GameObjectStateDead)
+			continue;
+		
+        this->handleCollision(collisionObject);
+		
+	}
+    
+}
+
+void GameObject::handleCollision(GameObject *gameObject) {
     
 }
 

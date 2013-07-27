@@ -19,7 +19,7 @@ protected:
     
     virtual void addFixtures();
     virtual float getSpeed();
-	virtual void handleCollisions();
+	virtual void handleCollision(GameObject *gameObject);
     
 public:
     

@@ -25,7 +25,6 @@ public:
     virtual ~Donut();
     
     virtual bool init(b2World *world, Dictionary *properties);
-    virtual void update(float dt);
 
 };
 

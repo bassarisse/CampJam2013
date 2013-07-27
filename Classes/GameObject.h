@@ -27,6 +27,7 @@ protected:
     
     b2Body *_body;
     Node *_node;
+    bool _isSensor;
     std::vector<GameObject *> _contacts;
     kDirection _lastDirection;
     kDirection _lastVerticalDirection;
@@ -45,6 +46,7 @@ protected:
     virtual void executeWalkAnimation();
     virtual void setIdleFrame();
 	virtual void handleCollisions();
+	virtual void handleCollision(GameObject *gameObject);
     
 public:
     

@@ -3,6 +3,8 @@
 #include "Entities/Player.h"
 #include "B2DebugDraw/B2DebugDrawLayer.h"
 #include "Entities/Man.h"
+#include "Entities/Woman.h"
+#include "Entities/Manager.h"
 #include "Entities/Coffee.h"
 #include "Entities/PeaBerry.h"
 #include "Entities/Water.h"
@@ -17,8 +19,8 @@ HelloWorld::~HelloWorld() {
     
     CC_SAFE_DELETE(_player);
     
-    for(std::vector<GameObject *>::size_type i = 0; i != _gameObjects.size(); i++) {
-        _gameObjects[i]->release();
+    for(std::vector<GameObject *>::size_type i = 0; i < _gameObjects.size(); i++) {
+        this->removeObject(_gameObjects[i]);
     }
     
 }
@@ -114,39 +116,56 @@ bool HelloWorld::init()
 		 */
 		else if(type->compare("Coffee") == 0) 
 		{
-			Coffee* newCoffeePowerup = new Coffee();
-			newCoffeePowerup->init(_world, objectProperties);
-			_mainBatchNode->addChild(newCoffeePowerup->getNode());
-			_gameObjects.push_back(newCoffeePowerup);
+			Coffee* newPowerup = new Coffee();
+			newPowerup->init(_world, objectProperties);
+			_mainBatchNode->addChild(newPowerup->getNode());
+			_gameObjects.push_back(newPowerup);
 
 		} else if(type->compare("Water") == 0) 
 		{
-			Water* newWaterPowerup = new Water();
-			newWaterPowerup->init(_world, objectProperties);
-			_mainBatchNode->addChild(newWaterPowerup->getNode());
-			_gameObjects.push_back(newWaterPowerup);
+			Water* newPowerup = new Water();
+			newPowerup->init(_world, objectProperties);
+			_mainBatchNode->addChild(newPowerup->getNode());
+			_gameObjects.push_back(newPowerup);
+            
 		} else if(type->compare("Donut") == 0) 
 		{
-			Donut* newDonutPowerup = new Donut();
-			newDonutPowerup->init(_world, objectProperties);
-			_mainBatchNode->addChild(newDonutPowerup->getNode());
-			_gameObjects.push_back(newDonutPowerup);
+			Donut* newPowerup = new Donut();
+			newPowerup->init(_world, objectProperties);
+			_mainBatchNode->addChild(newPowerup->getNode());
+			_gameObjects.push_back(newPowerup);
+            
 		} else if(type->compare("Peaberry") == 0) 
 		{
-			Peaberry* newPeaberryPowerup = new Peaberry();
-			newPeaberryPowerup->init(_world, objectProperties);
-			_mainBatchNode->addChild(newPeaberryPowerup->getNode());
-			_gameObjects.push_back(newPeaberryPowerup);
+			Peaberry* newPowerup = new Peaberry();
+			newPowerup->init(_world, objectProperties);
+			_mainBatchNode->addChild(newPowerup->getNode());
+			_gameObjects.push_back(newPowerup);
+            
 		} 
 		/* 
 		 * Enemies
 		 */
-		else if(type->compare("Man") == 0) 
+		else if(type->compare("Man") == 0)
 		{
-			Man *newMan = new Man();
-			newMan->init(_world, objectProperties, (Player*)_player);
-			_mainBatchNode->addChild(newMan->getNode());
-			_gameObjects.push_back(newMan);
+			Man *newEnemy = new Man();
+			newEnemy->init(_world, objectProperties, (Player*)_player);
+			_mainBatchNode->addChild(newEnemy->getNode());
+			_gameObjects.push_back(newEnemy);
+		}
+		else if(type->compare("Woman") == 0)
+		{
+			Woman *newEnemy = new Woman();
+			newEnemy->init(_world, objectProperties, (Player*)_player);
+			_mainBatchNode->addChild(newEnemy->getNode());
+			_gameObjects.push_back(newEnemy);
+		}
+		else if(type->compare("Manager") == 0)
+		{
+			Manager *newEnemy = new Manager();
+			newEnemy->init(_world, objectProperties, (Player*)_player);
+			_mainBatchNode->addChild(newEnemy->getNode());
+			_gameObjects.push_back(newEnemy);
 		}
         
     }
@@ -264,12 +283,12 @@ void HelloWorld::update(float dt) {
     if (_debugLayer)
         _debugLayer->setPosition(viewPoint);
 
-    for(std::vector<GameObject *>::size_type i = 0; i != _gameObjects.size(); i++) {
+    for(std::vector<GameObject *>::size_type i = 0; i < _gameObjects.size(); i++) {
         _gameObjects[i]->update(dt);
     }
     
 	//Add the dead objects to be removed in a separated array
-	for(std::vector<GameObject *>::size_type i = 0; i != _gameObjects.size(); i++) {
+	for(std::vector<GameObject *>::size_type i = 0; i < _gameObjects.size(); i++) {
         GameObject *gameObj = _gameObjects[i];
 		if(gameObj->getState() == GameObjectStateDead) {
             this->removeObject(gameObj);
@@ -288,14 +307,18 @@ void HelloWorld::update(float dt) {
 }
 
 void HelloWorld::removeObject(GameObject* deadObject) {
-	Node* deadNode = deadObject->getNode();
-	_world->DestroyBody(deadObject->getBody());
-
+    
 	std::vector<GameObject *>::iterator pos;
 	pos = std::find(_gameObjects.begin(), _gameObjects.end(), deadObject);
 	_gameObjects.erase(pos);
+    
+	Node* deadNode = deadObject->getNode();
+	_world->DestroyBody(deadObject->getBody());
+    
 	deadObject->release();
 	deadNode->removeFromParentAndCleanup(true);
+    deadObject = NULL;
+    
 }
 
 void HelloWorld::buttonLeft(bool pressed) {

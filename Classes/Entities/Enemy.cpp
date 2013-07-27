@@ -84,27 +84,24 @@ void Enemy::update(float dt) {
     
     this->executeWalkAnimation();
     
+	if(_drinkedCoffee >= kEnemyDeathCoffeeNumber && _state != GameObjectStateDead)
+        this->setState(GameObjectStateDead);
+    
 }
 
-void Enemy::handleCollisions()  {
+void Enemy::handleCollision(GameObject *gameObject)  {
     
-	for(std::vector<GameObject*>::size_type i = 0; i < _contacts.size(); i++)
-	{
-		GameObject* collisionObject = _contacts[i];
-		if(!collisionObject || collisionObject->getState() == GameObjectStateDead)
-			continue;
-		
-		switch(collisionObject->getType()) {
-            case GameObjectTypeCoffee:
-                _speedFactor += 2.2f;
-                _drinkedCoffee++;
-                collisionObject->setState(GameObjectStateDead);
-                
-                break;
-            default:
-                break;
-		}
-		
-	}
+    switch(gameObject->getType()) {
+            
+        case GameObjectTypeCoffee:
+            _speedFactor += 2.0f;
+            _drinkedCoffee++;
+            gameObject->setState(GameObjectStateDead);
+            
+            break;
+            
+        default:
+            break;
+    }
     
 }

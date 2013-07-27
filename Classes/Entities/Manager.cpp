@@ -1,11 +1,11 @@
-#include "Woman.h"
+#include "Manager.h"
 
-Woman::~Woman() {
+Manager::~Manager() {
 	
 }
 
 
-void Woman::addFixtures() {
+void Manager::addFixtures() {
     
     float width = _node->getContentSize().width * 0.32f;
     float height = _node->getContentSize().height * 0.2f;
@@ -14,21 +14,21 @@ void Woman::addFixtures() {
 
 }
 
-bool Woman::init(b2World *world, Dictionary *properties, Player *ref) {
+bool Manager::init(b2World *world, Dictionary *properties, Player *ref) {
 	
 	//FIXME
-	_node = Sprite::createWithSpriteFrameName("woman_down.png");
-    _spriteFrameName = "woman";
+	_node = Sprite::createWithSpriteFrameName("manager_down.png");
+    _spriteFrameName = "manager";
     
 	_damageFactor = 0.3f;
 	_speedFactor = 1.0f;
     
-	this->setType(GameObjectTypeWoman);
+	this->setType(GameObjectTypeManager);
 	
 	if (!Enemy::init(world, properties, ref))
         return false;
     
-	_speedFactor = -2.0f;
+	_speedFactor = -4.5f;
     
     return true;
 }

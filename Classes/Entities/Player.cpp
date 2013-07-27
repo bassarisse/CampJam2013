@@ -57,21 +57,21 @@ float Player::getSpeed() {
     return _speedFactor + _coffee * kCoffeePower;
 }
 
-void Player::handleCollisions() {
-
-	for(std::vector<GameObject*>::size_type i = 0; i < _contacts.size(); i++)
-	{
-		GameObject* collisionObject = _contacts[i];
-		switch(collisionObject->getType()) {
-            case GameObjectTypeCoffee:
-                _speedFactor += 0.05f;
-                
-                break;
-            default:
-                break;
-		}
-		
-	}
+void Player::handleCollision(GameObject *gameObject) {
+    
+    switch(gameObject->getType()) {
+            
+        case GameObjectTypeCoffee:
+            _coffee += kCoffeeLevelAdd;
+            if (_coffee > 100.0f)
+                _coffee = 100.0f;
+            gameObject->setState(GameObjectStateDead);
+            
+            break;
+            
+        default:
+            break;
+    }
     
 
 }

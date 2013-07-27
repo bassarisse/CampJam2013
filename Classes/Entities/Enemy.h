@@ -20,7 +20,7 @@ protected:
     
     virtual void addFixtures();
 	
-	virtual void handleCollisions();
+	virtual void handleCollision(GameObject *gameObject);
 
 	Player* _playerReference;
 
