@@ -17,9 +17,10 @@ void Man::addFixtures() {
 bool Man::init(b2World *world, Dictionary *properties, Player *ref) {
 	
 	//FIXME
-	_node = Sprite::createWithSpriteFrameName("man_down_right.png");
-
-	_damageFactor = 0.3f;
+	_node = Sprite::createWithSpriteFrameName("man_down.png");
+    _spriteFrameName = "man";
+    
+    _damageFactor = 0.3f;
 	_speedFactor = 1.0f;
 	_drinkedCoffee = 0;
 

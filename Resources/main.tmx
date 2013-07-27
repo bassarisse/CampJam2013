@@ -15,7 +15,7 @@
  </objectgroup>
  <objectgroup name="objects" width="100" height="100">
   <object type="Player" x="337" y="410" width="12" height="12"/>
-  <object type="Coffee" x="565" y="410" width="12" height="12"/>
+  <object type="Coffee" x="565" y="410" width="12" height="12" visible="0"/>
   <object type="Donut" x="493" y="398" width="12" height="12"/>
   <object type="Man" x="376" y="313" width="12" height="12"/>
   <object type="Man" x="453" y="293" width="12" height="12"/>
@@ -25,22 +25,22 @@
   <object type="Man" x="406" y="245" width="12" height="12"/>
   <object type="Man" x="364" y="268" width="12" height="12"/>
   <object type="Man" x="300" y="219" width="12" height="12"/>
-  <object type="Coffee" x="1014" y="366" width="12" height="12"/>
-  <object type="Coffee" x="810" y="294" width="12" height="12"/>
-  <object type="Coffee" x="798" y="642" width="12" height="12"/>
-  <object type="Coffee" x="222" y="762" width="12" height="12"/>
-  <object type="Coffee" x="438" y="822" width="12" height="12"/>
-  <object type="Coffee" x="162" y="582" width="12" height="12"/>
-  <object type="Coffee" x="150" y="390" width="12" height="12"/>
-  <object type="Coffee" x="138" y="150" width="12" height="12"/>
-  <object type="Coffee" x="366" y="534" width="12" height="12"/>
-  <object type="Coffee" x="594" y="666" width="12" height="12"/>
-  <object type="Coffee" x="726" y="534" width="12" height="12"/>
-  <object type="Coffee" x="762" y="762" width="12" height="12"/>
-  <object type="Coffee" x="1158" y="750" width="12" height="12"/>
-  <object type="Coffee" x="918" y="582" width="12" height="12"/>
-  <object type="Coffee" x="966" y="282" width="12" height="12"/>
-  <object type="Coffee" x="654" y="126" width="12" height="12"/>
-  <object type="Coffee" x="990" y="138" width="12" height="12"/>
+  <object type="Coffee" x="1014" y="366" width="12" height="12" visible="0"/>
+  <object type="Coffee" x="810" y="294" width="12" height="12" visible="0"/>
+  <object type="Coffee" x="798" y="642" width="12" height="12" visible="0"/>
+  <object type="Coffee" x="222" y="762" width="12" height="12" visible="0"/>
+  <object type="Coffee" x="438" y="822" width="12" height="12" visible="0"/>
+  <object type="Coffee" x="162" y="582" width="12" height="12" visible="0"/>
+  <object type="Coffee" x="150" y="390" width="12" height="12" visible="0"/>
+  <object type="Coffee" x="138" y="150" width="12" height="12" visible="0"/>
+  <object type="Coffee" x="366" y="534" width="12" height="12" visible="0"/>
+  <object type="Coffee" x="594" y="666" width="12" height="12" visible="0"/>
+  <object type="Coffee" x="726" y="534" width="12" height="12" visible="0"/>
+  <object type="Coffee" x="762" y="762" width="12" height="12" visible="0"/>
+  <object type="Coffee" x="1158" y="750" width="12" height="12" visible="0"/>
+  <object type="Coffee" x="918" y="582" width="12" height="12" visible="0"/>
+  <object type="Coffee" x="966" y="282" width="12" height="12" visible="0"/>
+  <object type="Coffee" x="654" y="126" width="12" height="12" visible="0"/>
+  <object type="Coffee" x="990" y="138" width="12" height="12" visible="0"/>
  </objectgroup>
 </map>

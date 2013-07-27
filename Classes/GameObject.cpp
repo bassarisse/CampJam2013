@@ -159,7 +159,7 @@ void GameObject::update(float dt) {
     int y = position.y * PTM_RATIO;
     
     _node->setPosition(x, y);
-    _node->getParent()->reorderChild(_node, - 10 - y);
+    _node->getParent()->reorderChild(_node, - 10 - y + (_node->getContentSize().height * _node->getScaleY()) / 2);
     //_node->setVertexZ(- 10 - y);
     
     this->handleMovement();
@@ -168,9 +168,8 @@ void GameObject::update(float dt) {
 		this->handleCollisions();
 		_contacts.clear();
 	}
-
-
-	
+    
+    ((Sprite *)_node)->setFlipX(_lastHorizontalDirection == kDirectionRight);
         
 }
 
@@ -217,6 +216,12 @@ void GameObject::handleMovement(float angle) {
     float x = (kWalkForce + this->getSpeed()) * cos(angle * M_PI / 180.0f);
     float y = (kWalkForce + this->getSpeed()) * sin(angle * M_PI / 180.0f);
     
+    if (_type == GameObjectTypeMan) {
+    CCLog("angle: %f", angle);
+    CCLog("x: %f", x);
+    CCLog("y: %f", y);
+    }
+    
     float desiredXVel = 0;
     float desiredYVel = 0;
     
@@ -257,8 +262,46 @@ bool GameObject::changeDirection(kDirection direction) {
     if (direction == kDirectionLeft || direction == kDirectionRight)
         _lastHorizontalDirection = direction;
     
-    if (_node->getActionByTag(kWalkActionTag))
+    if (_node->getActionByTag(kWalkActionTag)) {
         _node->stopActionByTag(kWalkActionTag);
+        this->setIdleFrame();
+    }
     
     return true;
+}
+
+void GameObject::executeWalkAnimation() {
+    
+    if (this->getState() == GameObjectStateWalking && !_node->getActionByTag(kWalkActionTag)) {
+        
+        SpriteFrameCache *spriteCache = SpriteFrameCache::sharedSpriteFrameCache();
+        
+        const char *frameNameVertical = getDirectionName(_lastVerticalDirection);
+        
+        Animation *anim = Animation::create();
+        anim->setDelayPerUnit(0.2f);
+        anim->setRestoreOriginalFrame(true);
+        
+        anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("%s_%s1.png", _spriteFrameName, frameNameVertical)->getCString()));
+        anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("%s_%s2.png", _spriteFrameName, frameNameVertical)->getCString()));
+        
+        Action *repeatAction = RepeatForever::create(Animate::create(anim));
+        repeatAction->setTag(kWalkActionTag);
+        
+        _node->stopAllActions();
+        _node->runAction(repeatAction);
+        
+    } else if (this->getState() == GameObjectStateStanding) {
+        
+        _node->stopAllActions();
+        this->setIdleFrame();
+        
+    }
+}
+
+void GameObject::setIdleFrame () {
+    
+    const char *frameNameVertical = getDirectionName(_lastVerticalDirection);
+    ((Sprite *)_node)->setDisplayFrame(SpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(String::createWithFormat("%s_%s.png", _spriteFrameName, frameNameVertical)->getCString()));
+    
 }
