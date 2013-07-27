@@ -16,6 +16,9 @@ using namespace cocos2d;
 #define PTM_RATIO 32.0f
 #define kGravity 0
 #define kWalkForce 3.0f
+#define kCoffeeThreshold 60.0f
+#define kCoffeeDamage 1.5f
+#define kCoffeePower 0.08f
 
 #define kWalkActionTag 500
 

@@ -22,6 +22,7 @@ private:
 protected:
     
     virtual void addFixtures();
+    virtual float getSpeed();
 	virtual void handleCollisions();
     
 public:

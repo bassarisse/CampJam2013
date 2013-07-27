@@ -81,6 +81,10 @@ void GameObject::createSensorFixture(b2Shape *shape, SensorTypeContainer *sensor
     
 }
 
+float GameObject::getSpeed() {
+    return _speedFactor;
+}
+
 void GameObject::handleCollisions() {
     
 }
@@ -134,7 +138,10 @@ void GameObject::update(float dt) {
     
     b2Vec2 position = _body->GetPosition();
     
-    _node->setPosition(position.x * PTM_RATIO, position.y * PTM_RATIO);
+    int x = position.x * PTM_RATIO;
+    
+    _node->setPosition(x, position.y * PTM_RATIO);
+    _node->setVertexZ(10 + x);
     
     this->handleMovement();
         
@@ -180,8 +187,8 @@ void GameObject::handleMovement(float angle) {
     
     this->setState(this->getMovingHorizontalState() == MovingStateHorizontalStopped && this->getMovingVerticalState() == MovingStateVerticalStopped ? GameObjectStateStanding : GameObjectStateWalking);
     
-    float x = (kWalkForce + _speedFactor) * cos(angle * M_PI / 180.0f);
-    float y = (kWalkForce + _speedFactor) * sin(angle * M_PI / 180.0f);
+    float x = (kWalkForce + this->getSpeed()) * cos(angle * M_PI / 180.0f);
+    float y = (kWalkForce + this->getSpeed()) * sin(angle * M_PI / 180.0f);
     
     float desiredXVel = 0;
     float desiredYVel = 0;
@@ -218,10 +225,8 @@ bool GameObject::changeDirection(kDirection direction) {
     
     _lastDirection = direction;
     
-    Action *walkAction = _node->getActionByTag(kWalkActionTag);
-    if (walkAction)
-        walkAction->stop();
+    if (_node->getActionByTag(kWalkActionTag))
+        _node->stopActionByTag(kWalkActionTag);
     
     return true;
 }
-

@@ -37,7 +37,19 @@ bool Player::init(b2World *world, Dictionary *properties) {
 
 void Player::update(float dt) {
     
+    CCLog("_coffee: %f", _coffee);
+    CCLog("_life: %f", _life);
+    
     GameObject::update(dt);
+    
+    float affectValue = dt * kCoffeeDamage;
+    
+    _coffee -= affectValue;
+    if (_coffee < 0) _coffee = 0;
+    
+    if (_coffee > kCoffeeThreshold) {
+        _life -= affectValue;
+    }
     
     if (this->getState() == GameObjectStateWalking && !_node->getActionByTag(kWalkActionTag)) {
         
@@ -47,7 +59,7 @@ void Player::update(float dt) {
         
         Animation *anim = Animation::create();
         anim->setDelayPerUnit(0.2f);
-        anim->setRestoreOriginalFrame(false);
+        anim->setRestoreOriginalFrame(true);
         
         anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("%s2.png", frameName)->getCString()));
         anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("%s1.png", frameName)->getCString()));
@@ -66,8 +78,11 @@ void Player::update(float dt) {
         
     }
     
-    
-    
+}
+
+float Player::getSpeed() {
+    CCLog("speed: %f", _speedFactor + _coffee * kCoffeePower);
+    return _speedFactor + _coffee * kCoffeePower;
 }
 
 void Player::handleCollisions() {

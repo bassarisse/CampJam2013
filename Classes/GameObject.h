@@ -37,6 +37,7 @@ protected:
     virtual void createFixture(b2Shape *shape);
     virtual void addFixtures();
     virtual void createSensorFixture(b2Shape *shape, SensorTypeContainer *sensorTypeContainer);
+    virtual float getSpeed();
 	virtual void handleCollisions();
     
 public:

@@ -15,7 +15,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // initialize director
     Director* pDirector = Director::sharedDirector();
     EGLView* pEGLView = EGLView::sharedOpenGLView();
-
+    
+    pDirector->setProjection(kDirectorProjection2D);
     pDirector->setOpenGLView(pEGLView);
 	
     // turn on display FPS
