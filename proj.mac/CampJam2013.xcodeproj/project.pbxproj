@@ -90,6 +90,9 @@
 		62E5AFBF17A3FB4E00BE18FE /* Coffee.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFBD17A3FB4E00BE18FE /* Coffee.cpp */; };
 		62E5AFC917A4280800BE18FE /* Characters.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62E5AFC717A4280800BE18FE /* Characters.plist */; };
 		62E5AFCA17A4280800BE18FE /* Characters.png in Resources */ = {isa = PBXBuildFile; fileRef = 62E5AFC817A4280800BE18FE /* Characters.png */; };
+		62E5AFD217A43FE000BE18FE /* Donut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFCC17A43FE000BE18FE /* Donut.cpp */; };
+		62E5AFD317A43FE000BE18FE /* PeaBerry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFCE17A43FE000BE18FE /* PeaBerry.cpp */; };
+		62E5AFD417A43FE000BE18FE /* Water.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFD017A43FE000BE18FE /* Water.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -264,6 +267,12 @@
 		62E5AFBE17A3FB4E00BE18FE /* Coffee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coffee.h; sourceTree = "<group>"; };
 		62E5AFC717A4280800BE18FE /* Characters.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Characters.plist; sourceTree = "<group>"; };
 		62E5AFC817A4280800BE18FE /* Characters.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Characters.png; sourceTree = "<group>"; };
+		62E5AFCC17A43FE000BE18FE /* Donut.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Donut.cpp; sourceTree = "<group>"; };
+		62E5AFCD17A43FE000BE18FE /* Donut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Donut.h; sourceTree = "<group>"; };
+		62E5AFCE17A43FE000BE18FE /* PeaBerry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PeaBerry.cpp; sourceTree = "<group>"; };
+		62E5AFCF17A43FE000BE18FE /* PeaBerry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeaBerry.h; sourceTree = "<group>"; };
+		62E5AFD017A43FE000BE18FE /* Water.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Water.cpp; sourceTree = "<group>"; };
+		62E5AFD117A43FE000BE18FE /* Water.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Water.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -599,6 +608,12 @@
 				622AA22D17A3AA8300EEE5EB /* Woman.h */,
 				62E5AFBD17A3FB4E00BE18FE /* Coffee.cpp */,
 				62E5AFBE17A3FB4E00BE18FE /* Coffee.h */,
+				62E5AFCC17A43FE000BE18FE /* Donut.cpp */,
+				62E5AFCD17A43FE000BE18FE /* Donut.h */,
+				62E5AFCE17A43FE000BE18FE /* PeaBerry.cpp */,
+				62E5AFCF17A43FE000BE18FE /* PeaBerry.h */,
+				62E5AFD017A43FE000BE18FE /* Water.cpp */,
+				62E5AFD117A43FE000BE18FE /* Water.h */,
 			);
 			name = Entities;
 			path = ../Classes/Entities;
@@ -768,6 +783,9 @@
 				622AA22B17A39EE700EEE5EB /* Player.cpp in Sources */,
 				622AA22E17A3AA8300EEE5EB /* Woman.cpp in Sources */,
 				62E5AFBF17A3FB4E00BE18FE /* Coffee.cpp in Sources */,
+				62E5AFD217A43FE000BE18FE /* Donut.cpp in Sources */,
+				62E5AFD317A43FE000BE18FE /* PeaBerry.cpp in Sources */,
+				62E5AFD417A43FE000BE18FE /* Water.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

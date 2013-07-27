@@ -51,10 +51,14 @@ void Player::update(float dt) {
     
     if (this->getState() == GameObjectStateWalking && !_node->getActionByTag(kWalkActionTag)) {
         
+        _node->runAction(FlipX::create(_lastHorizontalDirection == kDirectionLeft));
+        
         SpriteFrameCache *spriteCache = SpriteFrameCache::sharedSpriteFrameCache();
         
         const char *frameNameHorizontal = getDirectionName(_lastHorizontalDirection);
         const char *frameNameVertical = getDirectionName(_lastVerticalDirection);
+        
+        
         
         Animation *anim = Animation::create();
         anim->setDelayPerUnit(0.2f);
