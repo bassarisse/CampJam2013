@@ -13,7 +13,8 @@ void Water::addFixtures() {
 bool Water::init(b2World *world, Dictionary *properties) {
     
 	//FIXME
-    _node = Sprite::createWithSpriteFrameName("key.png");
+    _node = Sprite::createWithSpriteFrameName("man_down_right2.png");
+	_node->setScale(0.1f);
 	
 	this->setType(GameObjectTypeWater);
     if (!GameObject::init(world, properties))

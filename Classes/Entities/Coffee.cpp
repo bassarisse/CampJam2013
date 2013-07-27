@@ -12,7 +12,8 @@ void Coffee::addFixtures() {
 
 bool Coffee::init(b2World *world, Dictionary *properties) {
     //FIXME
-    _node = Sprite::createWithSpriteFrameName("key.png");
+    _node = Sprite::createWithSpriteFrameName("man_down_right2.png");
+	_node->setScale(0.2f);
 	
 	this->setType(GameObjectTypeCoffee);
 

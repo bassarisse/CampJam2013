@@ -220,7 +220,7 @@ bool HelloWorld::init()
     this->scheduleUpdate();
     
     //_debugLayer = B2DebugDrawLayer::create(_world, PTM_RATIO);
-    
+	_debugLayer = NULL;
     if (_debugLayer)
         this->addChild(_debugLayer, 9999);
     
