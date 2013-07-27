@@ -45,24 +45,24 @@ void Man::update(float dt) {
 }
 
 void Man::handleCollisions() {
-	for(std::vector<GameObject*>::size_type i = 0; i < _contacts.size(); i++) 
+	for(std::vector<GameObject*>::size_type i = 0; i < _contacts.size(); i++)
 	{
 		GameObject* collisionObject = _contacts[i];
 		if(!collisionObject)
 			continue;
 		
 		switch(collisionObject->getType()) {
-		case GameObjectTypeCoffee:
-			_speedFactor += 0.15f;
-			_drinkedCoffee++;
-			collisionObject->setState(GameObjectStateDead);
-
-			break;
-		default:
-			break;
+            case GameObjectTypeCoffee:
+                _speedFactor += 0.15f;
+                _drinkedCoffee++;
+                collisionObject->setState(GameObjectStateDead);
+                
+                break;
+            default:
+                break;
 		}
 		
-
+        
 		
 	}
 

@@ -163,13 +163,13 @@ void GameObject::update(float dt) {
     //_node->setVertexZ(- 10 - y);
     
     this->handleMovement();
-
+    
+    ((Sprite *)_node)->setFlipX(_lastHorizontalDirection == kDirectionRight);
+    
 	if(_contacts.size() > 0) {
 		this->handleCollisions();
 		_contacts.clear();
 	}
-    
-    ((Sprite *)_node)->setFlipX(_lastHorizontalDirection == kDirectionRight);
         
 }
 
@@ -215,12 +215,6 @@ void GameObject::handleMovement(float angle) {
     
     float x = (kWalkForce + this->getSpeed()) * cos(angle * M_PI / 180.0f);
     float y = (kWalkForce + this->getSpeed()) * sin(angle * M_PI / 180.0f);
-    
-    if (_type == GameObjectTypeMan) {
-    CCLog("angle: %f", angle);
-    CCLog("x: %f", x);
-    CCLog("y: %f", y);
-    }
     
     float desiredXVel = 0;
     float desiredYVel = 0;
