@@ -17,7 +17,6 @@ private:
     
     float _life;
     float _coffee;
-    float _speedFactor;
     
 protected:
     
