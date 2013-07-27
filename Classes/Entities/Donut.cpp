@@ -12,9 +12,7 @@ void Donut::addFixtures() {
 
 bool Donut::init(b2World *world, Dictionary *properties) {
     
-    //FIXME
-    _node = Sprite::createWithSpriteFrameName("man_down.png");
-	_node->setScale(0.3f);
+    _node = Sprite::createWithSpriteFrameName("donut.png");
     _isSensor = true;
 	
 	this->setType(GameObjectTypeDonut);

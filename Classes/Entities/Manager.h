@@ -10,6 +10,7 @@ private:
 protected:
 
 	virtual void addFixtures();
+    virtual void executeWalkAnimation();
 
 public:
 

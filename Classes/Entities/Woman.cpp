@@ -28,7 +28,7 @@ bool Woman::init(b2World *world, Dictionary *properties, Player *ref) {
 	if (!Enemy::init(world, properties, ref))
         return false;
     
-	_speedFactor = -2.0f;
+	_speedFactor = -2.4f;
     
     return true;
 }

@@ -153,6 +153,7 @@ void GameObject::addBodyToWorld(b2World *world) {
 bool GameObject::init(b2World *world, Dictionary *properties) {
     
     _speedFactor = 0.0f;
+    _shouldFlipSprite = true;
     _lastDirection = kDirectionDown;
     _lastVerticalDirection = kDirectionDown;
     _lastHorizontalDirection = kDirectionRight;
@@ -179,7 +180,8 @@ void GameObject::update(float dt) {
     
     this->handleMovement();
     
-    ((Sprite *)_node)->setFlipX(_lastHorizontalDirection == kDirectionRight);
+    if (_shouldFlipSprite)
+        ((Sprite *)_node)->setFlipX(_lastHorizontalDirection == kDirectionRight);
     
 	if (_contacts.size() > 0) {
 		this->handleCollisions();

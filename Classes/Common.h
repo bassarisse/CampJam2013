@@ -22,6 +22,8 @@ using namespace cocos2d;
 #define kCoffeeLevelAdd 10.0f
 #define kPeaBerrySpeedFactor 3.0f
 #define kPeaBerryTime 10.0f
+#define kWaterEffectAmout 20.0f
+#define kDonutEffectAmout 20.0f
 
 #define kEnemyDeathCoffeeNumber 3
 
@@ -76,7 +78,6 @@ inline float floatValue(Object* o)
         return string->floatValue();
     return 0.0f;
 }
-
 
 inline const char* getDirectionName(kDirection direction) {
     switch (direction) {

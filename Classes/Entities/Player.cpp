@@ -87,6 +87,22 @@ void Player::handleCollision(GameObject *gameObject) {
             
             break;
             
+        case GameObjectTypeWater:
+            _coffee -= kDonutEffectAmout;
+            if (_coffee < 0.0f)
+                _coffee = 0.0f;
+            gameObject->setState(GameObjectStateDead);
+            
+            break;
+            
+        case GameObjectTypeDonut:
+            _life += kDonutEffectAmout;
+            if (_life > 100.0f)
+                _life = 100.0f;
+            gameObject->setState(GameObjectStateDead);
+            
+            break;
+            
         default:
             break;
     }

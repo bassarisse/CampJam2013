@@ -12,9 +12,7 @@ void Peaberry::addFixtures() {
 
 bool Peaberry::init(b2World *world, Dictionary *properties) {
     
-    //FIXME
-	_node = Sprite::createWithSpriteFrameName("man_down.png");
-	_node->setScale(0.4f);
+	_node = Sprite::createWithSpriteFrameName("special_coffee.png");
     _isSensor = true;
     
 	this->setType(GameObjectTypePeaBerry);

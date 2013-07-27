@@ -28,6 +28,7 @@ protected:
     b2Body *_body;
     Node *_node;
     bool _isSensor;
+    bool _shouldFlipSprite;
     std::vector<GameObject *> _contacts;
     kDirection _lastDirection;
     kDirection _lastVerticalDirection;
