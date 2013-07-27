@@ -18,8 +18,9 @@ private:
 protected:
     
     virtual void addFixtures();
-    virtual void createSensorFixture(b2Shape *shape, SensorTypeContainer *sensorTypeContainer);
-    
+	
+	virtual void handleCollisions();
+
 public:
     
     virtual ~Enemy();
