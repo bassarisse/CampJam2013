@@ -34,6 +34,9 @@ public:
 	float _damageFactor;
 	float _coffee;
 
+	virtual void handleMovement();
+
+
 };
 
 #endif /* defined(__PlatformerTest__Player__) */

@@ -32,26 +32,6 @@ bool Man::init(b2World *world, Dictionary *properties, Player *ref) {
 
 void Man::update(float dt) {
 	Enemy::update(dt);
-	
-	b2Vec2 playerPosition = _playerReference->getPosition();
-	b2Vec2 manPosition = _body->GetPosition();
-	
-	if(playerPosition.x > manPosition.x) {
-		this->setMovingHorizontalState(MovingStateRight);
-	} else //if(playerPosition.x < manPosition.x) 
-	{
-		this->setMovingHorizontalState(MovingStateLeft);
-	}
-
-	if(playerPosition.y > manPosition.y) {
-		this->setMovingVerticalState(MovingStateUp);
-	} else 
-	{
-		this->setMovingVerticalState(MovingStateDown);
-	}
-
-
-
 }
 
 void Man::handleCollisions() {
