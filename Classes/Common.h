@@ -20,6 +20,8 @@ using namespace cocos2d;
 #define kCoffeeDamage 1.5f
 #define kCoffeePower 0.08f
 
+#define kEnemyDeathCoffeeNumber 3
+
 #define kWalkActionTag 500
 
 enum kDirection {
@@ -46,6 +48,7 @@ enum GameObjectState {
     GameObjectStateWalking,
     GameObjectStateTakingDamage,
     GameObjectStateAfterDamage,
+	GameObjectStateDead
 };
 
 enum GameObjectType {

@@ -104,6 +104,10 @@ Node* GameObject::getNode() {
     return _node;
 }
 
+b2Body* GameObject::getBody() {
+	return _body;
+}
+
 void GameObject::addContact(GameObject *contact) {
     _contacts.push_back(contact);
 }
@@ -155,6 +159,14 @@ void GameObject::update(float dt) {
     _node->setVertexZ(10 + x);
     
     this->handleMovement();
+
+	if(_contacts.size() > 0) {
+		this->handleCollisions();
+		_contacts.clear();
+	}
+
+
+	
         
 }
 

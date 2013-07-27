@@ -42,7 +42,7 @@ void BAContactListener::EndContact(b2Contact* contact) {
     std::vector<BAContact>::iterator pos;
     pos = std::find(_contacts.begin(), _contacts.end(), aContact);
     if (pos != _contacts.end()) {
-        
+        /*
         GameObject *gameObjectA = (GameObject *)aContact.fixtureA->GetUserData();
         GameObject *gameObjectB = (GameObject *)aContact.fixtureB->GetUserData();
         
@@ -51,7 +51,7 @@ void BAContactListener::EndContact(b2Contact* contact) {
         
         if (gameObjectB)
             gameObjectB->removeContact(gameObjectA);
-        
+        */
         _contacts.erase(pos);
     }
 }
