@@ -34,6 +34,7 @@ protected:
     virtual void setProperties(Dictionary *properties);
     virtual void addCircularFixture(float radius);
     virtual void addRectangularFixture(float width, float height);
+    virtual void addRectangularFixture(float x, float y, float width, float height);
     virtual void createFixture(b2Shape *shape);
     virtual void addFixtures();
     virtual void createSensorFixture(b2Shape *shape, SensorTypeContainer *sensorTypeContainer);
