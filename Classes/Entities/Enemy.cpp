@@ -24,3 +24,7 @@ void Enemy::update(float dt) {
     GameObject::update(dt);
     
 }
+
+void Enemy::handleCollisions()  {
+	//Override this shit!
+}

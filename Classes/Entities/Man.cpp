@@ -19,9 +19,10 @@ bool Man::init(b2World *world, Dictionary *properties) {
 	//FIXME
 	_node = Sprite::createWithSpriteFrameName("man.png");
 
-	damageFactor = 0.3;
-	speedFactor = 1.0;
+	damageFactor = 0.3f;
+	speedFactor = 1.0f;
 	
+	_type = GameObjectTypeMan;
 
 	if (!Enemy::init(world, properties))
         return false;
@@ -34,6 +35,20 @@ void Man::update(float dt) {
 }
 
 void Man::handleCollisions() {
-	
-	
+	for(std::vector<GameObject*>::size_type i = 0; i <= _contacts.size(); i++) 
+	{
+		GameObject* collisionObject = _contacts[i];
+		switch(collisionObject->getType()) {
+		case GameObjectTypeCoffee:
+			speedFactor += 0.05f;
+
+			break;
+		default:
+			break;
+		}
+		
+
+		
+	}
+
 }

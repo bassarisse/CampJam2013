@@ -11,7 +11,7 @@
       <UniqueIdentifier>{24e672e2-9562-4101-9a74-f382ab08b3b3}</UniqueIdentifier>
     </Filter>
     <Filter Include="Classes\Entities">
-      <UniqueIdentifier>{7badce3d-d919-4471-834a-603468480ffd}</UniqueIdentifier>
+      <UniqueIdentifier>{ccbaa11b-4c07-42a4-a465-1dd649cb09c9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -27,9 +27,6 @@
     <ClCompile Include="..\Classes\GameObject.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Player.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\BAContactListener.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
@@ -42,7 +39,16 @@
     <ClCompile Include="..\Classes\B2DebugDraw\GLES-Render.cpp">
       <Filter>Classes\B2DebugDraw</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy.cpp">
+    <ClCompile Include="..\Classes\Entities\Enemy.cpp">
+      <Filter>Classes\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Man.cpp">
+      <Filter>Classes\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Woman.cpp">
+      <Filter>Classes\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Player.cpp">
       <Filter>Classes\Entities</Filter>
     </ClCompile>
   </ItemGroup>
@@ -57,9 +63,6 @@
       <Filter>Classes</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GameObject.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Player.h">
       <Filter>Classes</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\BAContactListener.h">
@@ -77,7 +80,16 @@
     <ClInclude Include="..\Classes\B2DebugDraw\GLES-Render.h">
       <Filter>Classes\B2DebugDraw</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy.h">
+    <ClInclude Include="..\Classes\Entities\Enemy.h">
+      <Filter>Classes\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Man.h">
+      <Filter>Classes\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Woman.h">
+      <Filter>Classes\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Player.h">
       <Filter>Classes\Entities</Filter>
     </ClInclude>
   </ItemGroup>

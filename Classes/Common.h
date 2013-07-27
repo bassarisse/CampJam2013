@@ -41,7 +41,8 @@ enum GameObjectType {
     GameObjectTypeCoffee,
     GameObjectTypePeaBerry,
     GameObjectTypeDonut,
-    GameObjectTypeWater
+    GameObjectTypeWater,
+	GameObjectTypeMan
 };
 
 enum SensorType {

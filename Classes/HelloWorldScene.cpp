@@ -1,6 +1,6 @@
 #include "HelloWorldScene.h"
 
-#include "Player.h"
+#include "Entities/Player.h"
 #include "B2DebugDraw/B2DebugDrawLayer.h"
 
 USING_NS_CC;
