@@ -34,6 +34,14 @@ enum GameObjectState {
     GameObjectStateStanding = 0
 };
 
+enum GameObjectType {
+    GameObjectTypePlayer = 0,
+    GameObjectTypeCoffee,
+    GameObjectTypePeaBerry,
+    GameObjectTypeDonut,
+    GameObjectTypeWater
+};
+
 enum SensorType {
     SensorTypeUnknown = 0
 };

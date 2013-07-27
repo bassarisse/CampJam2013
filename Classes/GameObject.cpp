@@ -59,6 +59,7 @@ void GameObject::createFixture(b2Shape *shape) {
     fixtureDef.density = 1.0f;
     fixtureDef.friction = 0.0f;
     fixtureDef.restitution = 0.0f;
+    fixtureDef.userData = this;
     
     _body->CreateFixture(&fixtureDef);
     
@@ -68,8 +69,35 @@ void GameObject::addFixtures() {
     
 }
 
+void GameObject::createSensorFixture(b2Shape *shape, SensorTypeContainer *sensorTypeContainer) {
+    
+    //fixture definition
+    b2FixtureDef fixtureDef;
+    fixtureDef.shape = shape;
+    fixtureDef.density = 1;
+    fixtureDef.isSensor = true;
+    b2Fixture* footSensorFixture = _body->CreateFixture(&fixtureDef);
+    
+    footSensorFixture->SetUserData( sensorTypeContainer );
+    
+}
+
 Node* GameObject::getNode() {
     return _node;
+}
+
+void GameObject::addContact(BAContact contact) {
+    _contacts.push_back(contact);
+}
+
+void GameObject::removeContact(BAContact contact) {
+    
+    std::vector<BAContact>::iterator pos;
+    pos = std::find(_contacts.begin(), _contacts.end(), contact);
+    if (pos != _contacts.end()) {
+        _contacts.erase(pos);
+    }
+    
 }
 
 void GameObject::addBodyToWorld(b2World *world) {
@@ -102,6 +130,12 @@ void GameObject::update(float dt) {
     
     _node->setPosition(position.x * PTM_RATIO, position.y * PTM_RATIO);
     
+    this->handleMovement();
+        
+}
+
+void GameObject::handleMovement() {
+    
     b2Vec2 vel = _body->GetLinearVelocity();
     
     float desiredXVel = 0;
@@ -127,5 +161,5 @@ void GameObject::update(float dt) {
     float yImpulse = _body->GetMass() * yVelChange;
     
     _body->ApplyLinearImpulse( b2Vec2(xImpulse, yImpulse), _body->GetWorldCenter() );
-        
+    
 }

@@ -21,27 +21,16 @@ void Player::addFixtures() {
     
 }
 
-void Player::createSensorFixture(b2Shape *shape, SensorTypeContainer *sensorTypeContainer) {
-    
-    //fixture definition
-    b2FixtureDef fixtureDef;
-    fixtureDef.shape = shape;
-    fixtureDef.density = 1;
-    
-    //add foot sensor fixture
-    fixtureDef.isSensor = true;
-    b2Fixture* footSensorFixture = _body->CreateFixture(&fixtureDef);
-    
-    footSensorFixture->SetUserData( sensorTypeContainer );
-    
-}
-
 bool Player::init(b2World *world, Dictionary *properties) {
     
     _node = Sprite::createWithSpriteFrameName("right1.png");
+    _life = 100.0f;
+    _coffee = 100.0f;
 
     if (!GameObject::init(world, properties))
         return false;
+    
+    this->setType(GameObjectTypePlayer);
     
     return true;
 }

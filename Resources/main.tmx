@@ -5,51 +5,12 @@
  </tileset>
  <layer name="main" width="48" height="36">
   <data encoding="base64" compression="zlib">
-   eJztmDEOwjAMRQPstDuwAzt0B+5/JrxEqiI51HJtf1cMb0qVPunbjZuhlDIk50rcknGf+T+IZzKmv38K/x2xD+Sg9D8R50AuSn9Utupf652rOxQ4/1rvXN2hIKkfxEwk/oiZaPs3OhOtf3QmFt9Pz0ws/D0z8Tq/rDLx8rfKJHJ+WCOTSP81MkGb36SZoPlLM0Hzl2aSwb+XSQb/7PWzJf+2F7L5t72A7L/kLLCcn7n7p3ad81tyFlj4H2d7VsbO+qh4l+X8z92fteue80/0/27P/0W8f/ARPOtB9cnOF9stOos=
+   eJztziEOgDAUBNEPHKDXADytB+5/JtY0IRhS03STEeNGvBQRybxVbWbtL/+hslkFP378+PHjH8CD3yv8+PHjx48fP378XuHHjx+/i39Ss1oGsH/9p7p+uhveHlWPew/PoVLE
   </data>
  </layer>
  <objectgroup name="collision" width="48" height="36">
-  <object x="228" y="360">
-   <polyline points="0,0 0,36 72,36 72,0 0,0"/>
-  </object>
-  <object x="324" y="360">
-   <polyline points="0,0 0,36 60,36 60,0 0,0"/>
-  </object>
   <object x="24" y="24">
    <polyline points="0,0 0,384 96,384 96,372 132,372 132,384 528,384 528,0 0,0"/>
-  </object>
-  <object x="444" y="348">
-   <polyline points="0,0 0,24 36,24 36,0 0,0"/>
-  </object>
-  <object x="504" y="324">
-   <polyline points="0,0 0,24 36,24 36,0 0,0"/>
-  </object>
-  <object x="468" y="276">
-   <polyline points="0,0 0,24 36,24 36,0 0,0"/>
-  </object>
-  <object x="408" y="252">
-   <polyline points="0,0 0,24 36,24 36,0 0,0"/>
-  </object>
-  <object x="348" y="228">
-   <polyline points="0,0 0,24 36,24 36,0 0,0"/>
-  </object>
-  <object x="288" y="204">
-   <polyline points="0,0 0,24 36,24 36,0 0,0"/>
-  </object>
-  <object x="228" y="180">
-   <polyline points="0,0 0,24 36,24 36,0 0,0"/>
-  </object>
-  <object x="168" y="156">
-   <polyline points="0,0 0,24 36,24 36,0 0,0"/>
-  </object>
-  <object x="108" y="132">
-   <polyline points="0,0 0,24 36,24 36,0 0,0"/>
-  </object>
-  <object x="48" y="108">
-   <polyline points="0,0 0,24 36,24 36,0 0,0"/>
-  </object>
-  <object x="96" y="60">
-   <polyline points="0,0 0,24 396,24 396,0 0,0"/>
   </object>
  </objectgroup>
  <objectgroup name="objects" width="48" height="36">

@@ -15,7 +15,7 @@
 
 using namespace cocos2d;
 
-class BAContactListener;
+class BAContact;
 
 class SensorTypeContainer {
 public:
@@ -28,30 +28,34 @@ protected:
     
     b2Body *_body;
     Node *_node;
+    std::vector<BAContact> _contacts;
     
     virtual void setProperties(Dictionary *properties);
     virtual void addCircularFixture(float radius);
     virtual void addRectangularFixture(float width, float height);
     virtual void createFixture(b2Shape *shape);
     virtual void addFixtures();
-    
+    virtual void createSensorFixture(b2Shape *shape, SensorTypeContainer *sensorTypeContainer);
     
 public:
     
     GameObject();
     virtual ~GameObject();
     
-    BAContactListener *contactListener;
-    
     Node* getNode();
+    
+    virtual void addContact(BAContact contact);
+    virtual void removeContact(BAContact contact);
     
     virtual void addBodyToWorld(b2World *world);
     virtual bool init(b2World *world, Dictionary *properties);
     virtual void update(float dt);
+    virtual void handleMovement();
     
     CC_SYNTHESIZE(MovingHorizontalState, _movingHorizontalState, MovingHorizontalState);
     CC_SYNTHESIZE(MovingVerticalState, _movingVerticalState, MovingVerticalState);
     CC_SYNTHESIZE(GameObjectState, _state, State);
+    CC_SYNTHESIZE(GameObjectType, _type, Type);
     
 };
 

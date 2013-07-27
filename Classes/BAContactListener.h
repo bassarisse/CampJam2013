@@ -13,6 +13,9 @@
 #include <vector>
 #include <algorithm>
 
+#include "Common.h"
+#include "GameObject.h"
+
 struct BAContact {
     b2Fixture *fixtureA;
     b2Fixture *fixtureB;
@@ -34,6 +37,10 @@ struct BAContact {
         virtual void EndContact(b2Contact* contact);
         virtual void PreSolve(b2Contact* contact, const b2Manifold* oldManifold);
         virtual void PostSolve(b2Contact* contact, const b2ContactImpulse* impulse);
+        
+        std::vector<BAContact> getContacts(GameObjectType gameObjectType);
+        std::vector<BAContact> getContacts(GameObject *gameObject);
+        std::vector<BAContact> getContacts(GameObject *gameObject, GameObjectType gameObjectType);
         
     };
     

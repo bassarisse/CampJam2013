@@ -15,10 +15,12 @@ class Player : public GameObject {
     
 private:
     
+    float _life;
+    float _coffee;
+    
 protected:
     
     virtual void addFixtures();
-    virtual void createSensorFixture(b2Shape *shape, SensorTypeContainer *sensorTypeContainer);
     
 public:
     

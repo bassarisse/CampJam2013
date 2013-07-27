@@ -83,7 +83,6 @@ bool HelloWorld::init()
             
             _player = new Player();
             _player->init(_world, objectProperties);
-            _player->contactListener = _contactListener;
             
             _mainBatchNode->addChild(_player->getNode());
             //_gameObjects.push_back(player);
