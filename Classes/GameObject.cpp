@@ -81,6 +81,10 @@ void GameObject::createSensorFixture(b2Shape *shape, SensorTypeContainer *sensor
     
 }
 
+void GameObject::handleCollisions() {
+    
+}
+
 Node* GameObject::getNode() {
     return _node;
 }

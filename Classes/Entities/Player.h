@@ -21,6 +21,7 @@ private:
 protected:
     
     virtual void addFixtures();
+	virtual void handleCollisions();
     
 public:
     

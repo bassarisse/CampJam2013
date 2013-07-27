@@ -35,6 +35,7 @@ protected:
     virtual void createFixture(b2Shape *shape);
     virtual void addFixtures();
     virtual void createSensorFixture(b2Shape *shape, SensorTypeContainer *sensorTypeContainer);
+	virtual void handleCollisions();
     
 public:
     

@@ -40,3 +40,9 @@ void Player::update(float dt) {
     GameObject::update(dt);
     
 }
+
+void Player::handleCollisions() {
+    
+    
+    
+}
