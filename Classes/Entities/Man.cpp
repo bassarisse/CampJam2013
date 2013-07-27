@@ -17,10 +17,10 @@ void Man::addFixtures() {
 bool Man::init(b2World *world, Dictionary *properties, Player *ref) {
 	
 	//FIXME
-	_node = Sprite::createWithSpriteFrameName("man_down_right.png");
-
-	_damageFactor = 0.3f;
-	_speedFactor = 1.0f;
+	_node = Sprite::createWithSpriteFrameName("man_down.png");
+    _spriteFrameName = "man";
+    
+    _damageFactor = 0.3f;
 	_drinkedCoffee = 0;
 
 	this->setType(GameObjectTypeMan);
@@ -28,41 +28,15 @@ bool Man::init(b2World *world, Dictionary *properties, Player *ref) {
 	if (!Enemy::init(world, properties, ref))
         return false;
     
+	_speedFactor = -3.4f;
+    
     return true;
 }
 
 void Man::update(float dt) {
 	Enemy::update(dt);
-
-	if(_drinkedCoffee >= kEnemyDeathCoffeeNumber) {
-
-		if(_state != GameObjectStateDead)
-			this->setState(GameObjectStateDead);
-	
-	}
-
-}
-
-void Man::handleCollisions() {
-	for(std::vector<GameObject*>::size_type i = 0; i < _contacts.size(); i++) 
-	{
-		GameObject* collisionObject = _contacts[i];
-		if(!collisionObject)
-			continue;
-		
-		switch(collisionObject->getType()) {
-		case GameObjectTypeCoffee:
-			_speedFactor += 0.15f;
-			_drinkedCoffee++;
-			collisionObject->setState(GameObjectStateDead);
-
-			break;
-		default:
-			break;
-		}
-		
-
-		
-	}
+    
+	if(_drinkedCoffee >= kEnemyDeathCoffeeNumber && _state != GameObjectStateDead)
+        this->setState(GameObjectStateDead);
 
 }

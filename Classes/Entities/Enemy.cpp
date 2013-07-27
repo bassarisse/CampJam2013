@@ -21,15 +21,15 @@ bool Enemy::init(b2World *world, Dictionary *properties, Player *ref) {
 }
 
 void Enemy::handleMovement() {
-	b2Vec2 playerPosition = _playerReference->getPosition();
-	b2Vec2 manPosition = _body->GetPosition();
+	Point playerPosition = _playerReference->getNode()->getPosition();
+	Point manPosition = _node->getPosition();
 	
-	float angle = atan2(manPosition.y - playerPosition.y, 
-						manPosition.x - playerPosition.x) + 180;
+	float angle = 180 + atan2(manPosition.y - playerPosition.y,
+						manPosition.x - playerPosition.x) * 180 / M_PI; //degree conversion
 
 	//float angle = atan2(playerPosition.y - manPosition.y, 
 	//					playerPosition.x - manPosition.x);
-	
+    
 	if(angle == 0 || angle == 360)
 	{
 		this->setMovingHorizontalState(MovingStateRight);
@@ -62,9 +62,19 @@ void Enemy::handleMovement() {
 	{
 		this->setMovingHorizontalState(MovingStateRight);
 		this->setMovingVerticalState(MovingStateDown);
-	} 
+	}
+    
+    if (this->getMovingHorizontalState() == MovingStateRight)
+        _lastHorizontalDirection = kDirectionRight;
+    else if (this->getMovingHorizontalState() == MovingStateLeft)
+        _lastHorizontalDirection = kDirectionLeft;
+    
+    if (this->getMovingVerticalState() == MovingStateUp)
+        _lastVerticalDirection = kDirectionUp;
+    else if (this->getMovingVerticalState() == MovingStateDown)
+        _lastVerticalDirection = kDirectionDown;
 	
-	GameObject::handleMovement(angle * 180 / M_PI); //degree conversion
+	GameObject::handleMovement(angle); 
 }
 
 
@@ -72,23 +82,29 @@ void Enemy::update(float dt) {
     
     GameObject::update(dt);
     
-	
-	/*
-	if(playerPosition.x > manPosition.x) {
-		this->setMovingHorizontalState(MovingStateRight);
-	} else //if(playerPosition.x < manPosition.x) 
-	{
-		this->setMovingHorizontalState(MovingStateLeft);
-	}
-
-	if(playerPosition.y > manPosition.y) {
-		this->setMovingVerticalState(MovingStateUp);
-	} else 
-	{
-		this->setMovingVerticalState(MovingStateDown);
-	}*/
+    this->executeWalkAnimation();
+    
 }
 
 void Enemy::handleCollisions()  {
-	//Override this shit!
+    
+	for(std::vector<GameObject*>::size_type i = 0; i < _contacts.size(); i++)
+	{
+		GameObject* collisionObject = _contacts[i];
+		if(!collisionObject || collisionObject->getState() == GameObjectStateDead)
+			continue;
+		
+		switch(collisionObject->getType()) {
+            case GameObjectTypeCoffee:
+                _speedFactor += 2.2f;
+                _drinkedCoffee++;
+                collisionObject->setState(GameObjectStateDead);
+                
+                break;
+            default:
+                break;
+		}
+		
+	}
+    
 }

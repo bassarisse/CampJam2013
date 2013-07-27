@@ -23,9 +23,10 @@ void Player::addFixtures() {
 
 bool Player::init(b2World *world, Dictionary *properties) {
     
-    _node = Sprite::createWithSpriteFrameName("stag_down_right.png");
+    _node = Sprite::createWithSpriteFrameName("stag_down.png");
     _life = 100.0f;
     _coffee = 100.0f;
+    _spriteFrameName = "stag";
 
     if (!GameObject::init(world, properties))
         return false;
@@ -37,7 +38,6 @@ bool Player::init(b2World *world, Dictionary *properties) {
 
 void Player::update(float dt) {
   
-    
     GameObject::update(dt);
     
     float affectValue = dt * kCoffeeDamage;
@@ -49,35 +49,7 @@ void Player::update(float dt) {
         _life -= affectValue;
     }
     
-    if (this->getState() == GameObjectStateWalking && !_node->getActionByTag(kWalkActionTag)) {
-        
-        _node->runAction(FlipX::create(_lastHorizontalDirection == kDirectionLeft));
-        
-        SpriteFrameCache *spriteCache = SpriteFrameCache::sharedSpriteFrameCache();
-        
-        const char *frameNameHorizontal = getDirectionName(_lastHorizontalDirection);
-        const char *frameNameVertical = getDirectionName(_lastVerticalDirection);
-        
-        
-        
-        Animation *anim = Animation::create();
-        anim->setDelayPerUnit(0.2f);
-        anim->setRestoreOriginalFrame(true);
-        
-        anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("stag_%s_%s1.png", frameNameVertical, frameNameHorizontal)->getCString()));
-        anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("stag_%s_%s2.png", frameNameVertical, frameNameHorizontal)->getCString()));
-        
-        Action *repeatAction = RepeatForever::create(Animate::create(anim));
-        repeatAction->setTag(kWalkActionTag);
-        
-        _node->stopAllActions();
-        _node->runAction(repeatAction);
-        
-    } else if (this->getState() == GameObjectStateStanding) {
-        
-        _node->stopAllActions();
-        
-    }
+    this->executeWalkAnimation();
     
 }
 
@@ -101,9 +73,6 @@ void Player::handleCollisions() {
 		
 	}
     
-}
 
-b2Vec2 Player::getPosition() {
-	return _body->GetPosition();
 }
 

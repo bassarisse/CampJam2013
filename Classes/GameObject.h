@@ -32,6 +32,7 @@ protected:
     kDirection _lastVerticalDirection;
     kDirection _lastHorizontalDirection;
     float _speedFactor;
+    const char* _spriteFrameName;
     
     virtual void setProperties(Dictionary *properties);
     virtual void addCircularFixture(float radius);
@@ -41,6 +42,8 @@ protected:
     virtual void addFixtures();
     virtual void createSensorFixture(b2Shape *shape, SensorTypeContainer *sensorTypeContainer);
     virtual float getSpeed();
+    virtual void executeWalkAnimation();
+    virtual void setIdleFrame();
 	virtual void handleCollisions();
     
 public:
