@@ -87,5 +87,24 @@ void Enemy::update(float dt) {
 }
 
 void Enemy::handleCollisions()  {
-	//Override this shit!
+    
+	for(std::vector<GameObject*>::size_type i = 0; i < _contacts.size(); i++)
+	{
+		GameObject* collisionObject = _contacts[i];
+		if(!collisionObject || collisionObject->getState() == GameObjectStateDead)
+			continue;
+		
+		switch(collisionObject->getType()) {
+            case GameObjectTypeCoffee:
+                _speedFactor += 2.2f;
+                _drinkedCoffee++;
+                collisionObject->setState(GameObjectStateDead);
+                
+                break;
+            default:
+                break;
+		}
+		
+	}
+    
 }
