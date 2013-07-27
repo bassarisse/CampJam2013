@@ -27,4 +27,4 @@ public:
 
 };
 
-#endif /* defined(__PlatformerTest__Player__) */
+#endif /* defined(__CampJam__Player__) */

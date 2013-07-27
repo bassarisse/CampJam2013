@@ -1,6 +1,6 @@
 //
 //  BAContactListener.cpp
-//  PlatformerTest
+//  CampJam
 //
 //  Created by Bruno Assarisse on 24/07/13.
 //

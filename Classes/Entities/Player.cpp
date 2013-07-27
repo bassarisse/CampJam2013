@@ -1,6 +1,6 @@
 //
 //  Player.cpp
-//  PlatformerTest
+//  CampJam
 //
 //  Created by Bruno Assarisse on 23/07/13.
 //
@@ -42,6 +42,16 @@ void Player::update(float dt) {
     
     float affectValue = dt * kCoffeeDamage;
     
+    _peaBerryTime -= dt;
+    
+    if (_peaBerryTime < 0) {
+        _peaBerryTime = 0;
+        if (_isUnderPeaBerryEffect) {
+            _speedFactor -= kPeaBerrySpeedFactor;
+            _isUnderPeaBerryEffect = false;
+        }
+    }
+    
     _coffee -= affectValue;
     if (_coffee < 0) _coffee = 0;
     
@@ -65,6 +75,14 @@ void Player::handleCollision(GameObject *gameObject) {
             _coffee += kCoffeeLevelAdd;
             if (_coffee > 100.0f)
                 _coffee = 100.0f;
+            gameObject->setState(GameObjectStateDead);
+            
+            break;
+            
+        case GameObjectTypePeaBerry:
+            _speedFactor += kPeaBerrySpeedFactor;
+            _isUnderPeaBerryEffect = true;
+            _peaBerryTime = kPeaBerryTime;
             gameObject->setState(GameObjectStateDead);
             
             break;

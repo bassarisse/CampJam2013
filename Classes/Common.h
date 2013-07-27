@@ -1,6 +1,6 @@
 //
 //  Common.h
-//  PlatformerTest
+//  CampJam
 //
 //  Created by Bruno Assarisse on 25/07/13.
 //
@@ -10,8 +10,8 @@
 
 using namespace cocos2d;
 
-#ifndef PlatformerTest_Common_h
-#define PlatformerTest_Common_h
+#ifndef CampJam_Common_h
+#define CampJam_Common_h
 
 #define PTM_RATIO 32.0f
 #define kGravity 0
@@ -20,6 +20,8 @@ using namespace cocos2d;
 #define kCoffeeDamage 1.5f
 #define kCoffeePower 0.04f
 #define kCoffeeLevelAdd 10.0f
+#define kPeaBerrySpeedFactor 3.0f
+#define kPeaBerryTime 10.0f
 
 #define kEnemyDeathCoffeeNumber 3
 

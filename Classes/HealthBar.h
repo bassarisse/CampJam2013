@@ -1,6 +1,6 @@
 
-#ifndef __PlatformerTest__HealthBar__
-#define __PlatformerTest__HealthBar__
+#ifndef __CampJam__HealthBar__
+#define __CampJam__HealthBar__
 
 #include "cocos2d.h"
 
@@ -24,4 +24,4 @@ public:
 };
 
 
-#endif /* defined(__PlatformerTest__BaseLayer__) */
+#endif /* defined(__CampJam__BaseLayer__) */

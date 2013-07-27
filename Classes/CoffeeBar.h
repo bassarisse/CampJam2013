@@ -1,6 +1,6 @@
 
-#ifndef __PlatformerTest__CoffeeBar__
-#define __PlatformerTest__CoffeeBar__
+#ifndef __CampJam__CoffeeBar__
+#define __CampJam__CoffeeBar__
 
 #include "cocos2d.h"
 
@@ -24,4 +24,4 @@ public:
 };
 
 
-#endif /* defined(__PlatformerTest__BaseLayer__) */
+#endif /* defined(__CampJam__BaseLayer__) */
