@@ -85,7 +85,9 @@
 		622AA21A17A3609E00EEE5EB /* BaseLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 622AA20C17A3609E00EEE5EB /* BaseLayer.cpp */; };
 		622AA21B17A3609E00EEE5EB /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 622AA20F17A3609E00EEE5EB /* GameObject.cpp */; };
 		622AA21C17A3609E00EEE5EB /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 622AA21117A3609E00EEE5EB /* HelloWorldScene.cpp */; };
-		622AA21D17A3609E00EEE5EB /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 622AA21317A3609E00EEE5EB /* Player.cpp */; };
+		622AA22717A39ECE00EEE5EB /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 622AA22317A39ECE00EEE5EB /* Enemy.cpp */; };
+		622AA22817A39ECE00EEE5EB /* Man.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 622AA22517A39ECE00EEE5EB /* Man.cpp */; };
+		622AA22B17A39EE700EEE5EB /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 622AA22917A39EE700EEE5EB /* Player.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -250,8 +252,12 @@
 		622AA21017A3609E00EEE5EB /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObject.h; path = ../Classes/GameObject.h; sourceTree = "<group>"; };
 		622AA21117A3609E00EEE5EB /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = ../Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
 		622AA21217A3609E00EEE5EB /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = ../Classes/HelloWorldScene.h; sourceTree = "<group>"; };
-		622AA21317A3609E00EEE5EB /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = ../Classes/Player.cpp; sourceTree = "<group>"; };
-		622AA21417A3609E00EEE5EB /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = ../Classes/Player.h; sourceTree = "<group>"; };
+		622AA22317A39ECE00EEE5EB /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
+		622AA22417A39ECE00EEE5EB /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
+		622AA22517A39ECE00EEE5EB /* Man.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Man.cpp; sourceTree = "<group>"; };
+		622AA22617A39ECE00EEE5EB /* Man.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Man.h; sourceTree = "<group>"; };
+		622AA22917A39EE700EEE5EB /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		622AA22A17A39EE700EEE5EB /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				622AA20417A3609E00EEE5EB /* B2DebugDraw */,
+				622AA22217A39ECE00EEE5EB /* Entities */,
 				622AA20217A3609E00EEE5EB /* AppDelegate.cpp */,
 				622AA20317A3609E00EEE5EB /* AppDelegate.h */,
 				622AA20A17A3609E00EEE5EB /* BAContactListener.cpp */,
@@ -291,8 +298,6 @@
 				622AA21017A3609E00EEE5EB /* GameObject.h */,
 				622AA21117A3609E00EEE5EB /* HelloWorldScene.cpp */,
 				622AA21217A3609E00EEE5EB /* HelloWorldScene.h */,
-				622AA21317A3609E00EEE5EB /* Player.cpp */,
-				622AA21417A3609E00EEE5EB /* Player.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -575,6 +580,20 @@
 			path = ../Classes/B2DebugDraw;
 			sourceTree = "<group>";
 		};
+		622AA22217A39ECE00EEE5EB /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				622AA22917A39EE700EEE5EB /* Player.cpp */,
+				622AA22A17A39EE700EEE5EB /* Player.h */,
+				622AA22317A39ECE00EEE5EB /* Enemy.cpp */,
+				622AA22417A39ECE00EEE5EB /* Enemy.h */,
+				622AA22517A39ECE00EEE5EB /* Man.cpp */,
+				622AA22617A39ECE00EEE5EB /* Man.h */,
+			);
+			name = Entities;
+			path = ../Classes/Entities;
+			sourceTree = "<group>";
+		};
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -734,7 +753,9 @@
 				622AA21A17A3609E00EEE5EB /* BaseLayer.cpp in Sources */,
 				622AA21B17A3609E00EEE5EB /* GameObject.cpp in Sources */,
 				622AA21C17A3609E00EEE5EB /* HelloWorldScene.cpp in Sources */,
-				622AA21D17A3609E00EEE5EB /* Player.cpp in Sources */,
+				622AA22717A39ECE00EEE5EB /* Enemy.cpp in Sources */,
+				622AA22817A39ECE00EEE5EB /* Man.cpp in Sources */,
+				622AA22B17A39EE700EEE5EB /* Player.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
