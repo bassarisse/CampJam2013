@@ -10,6 +10,9 @@
     <Filter Include="Classes\B2DebugDraw">
       <UniqueIdentifier>{24e672e2-9562-4101-9a74-f382ab08b3b3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Entities">
+      <UniqueIdentifier>{7badce3d-d919-4471-834a-603468480ffd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -38,6 +41,9 @@
     </ClCompile>
     <ClCompile Include="..\Classes\B2DebugDraw\GLES-Render.cpp">
       <Filter>Classes\B2DebugDraw</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Classes\Entities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +76,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\B2DebugDraw\GLES-Render.h">
       <Filter>Classes\B2DebugDraw</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Classes\Entities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

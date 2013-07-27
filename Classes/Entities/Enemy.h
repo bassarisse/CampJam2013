@@ -1,17 +1,17 @@
 //
-//  Player.h
-//  PlatformerTest
+//  Enemy.h
+//  CampJam13
 //
-//  Created by Bruno Assarisse on 23/07/13.
+//  Created by Murilo Clemente - 27/07/13
 //
 //
 
-#ifndef __CampJam__Player__
-#define __CampJam__Player__
+#ifndef __CampJam__Enemy__
+#define __CampJam__Enemy__
 
 #include "GameObject.h"
 
-class Player : public GameObject {
+class Enemy : public GameObject {
     
 private:
     
@@ -22,11 +22,14 @@ protected:
     
 public:
     
-    virtual ~Player();
+    virtual ~Enemy();
     
     virtual bool init(b2World *world, Dictionary *properties);
     virtual void update(float dt);
     
+	float damageFactor;
+	float speedFactor;
+
 };
 
 #endif /* defined(__PlatformerTest__Player__) */
