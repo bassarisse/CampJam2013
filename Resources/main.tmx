@@ -15,5 +15,8 @@
  </objectgroup>
  <objectgroup name="objects" width="48" height="36">
   <object type="Player" x="84" y="348" width="12" height="12"/>
+  <object type="Coffee" x="312" y="348" width="12" height="12"/>
+  <object type="Donut" x="240" y="336" width="12" height="12"/>
+  <object x="-336" y="-72"/>
  </objectgroup>
 </map>

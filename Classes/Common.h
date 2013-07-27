@@ -31,7 +31,9 @@ enum MovingVerticalState {
 };
 
 enum GameObjectState {
-    GameObjectStateStanding = 0
+    GameObjectStateStanding = 0,
+    GameObjectStateTakingDamage,
+    GameObjectStateAfterDamage,
 };
 
 enum GameObjectType {

@@ -27,7 +27,7 @@ protected:
     
     b2Body *_body;
     Node *_node;
-    std::vector<BAContact> _contacts;
+    std::vector<GameObject *> _contacts;
     
     virtual void setProperties(Dictionary *properties);
     virtual void addCircularFixture(float radius);
@@ -43,8 +43,8 @@ public:
     
     Node* getNode();
     
-    virtual void addContact(BAContact contact);
-    virtual void removeContact(BAContact contact);
+    virtual void addContact(GameObject *contact);
+    virtual void removeContact(GameObject *contact);
     
     virtual void addBodyToWorld(b2World *world);
     virtual bool init(b2World *world, Dictionary *properties);

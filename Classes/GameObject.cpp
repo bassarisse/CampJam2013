@@ -85,13 +85,13 @@ Node* GameObject::getNode() {
     return _node;
 }
 
-void GameObject::addContact(BAContact contact) {
+void GameObject::addContact(GameObject *contact) {
     _contacts.push_back(contact);
 }
 
-void GameObject::removeContact(BAContact contact) {
+void GameObject::removeContact(GameObject *contact) {
     
-    std::vector<BAContact>::iterator pos;
+    std::vector<GameObject *>::iterator pos;
     pos = std::find(_contacts.begin(), _contacts.end(), contact);
     if (pos != _contacts.end()) {
         _contacts.erase(pos);

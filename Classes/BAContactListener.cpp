@@ -20,19 +20,21 @@ void BAContactListener::BeginContact(b2Contact* contact) {
     // We need to copy out the data because the b2Contact passed in
     // is reused.
     BAContact aContact = { contact->GetFixtureA(), contact->GetFixtureB() };
+    _contacts.push_back(aContact);
     
     GameObject *gameObjectA = (GameObject *)aContact.fixtureA->GetUserData();
     GameObject *gameObjectB = (GameObject *)aContact.fixtureB->GetUserData();
     
-    bool isPlayerContact = (gameObjectA && gameObjectA->getType() == GameObjectTypePlayer) || (gameObjectB && gameObjectB->getType() == GameObjectTypePlayer);
+    if (!gameObjectA || !gameObjectB)
+        return;
     
-    if (gameObjectA && (!isPlayerContact || gameObjectA->getType() == GameObjectTypePlayer))
-        gameObjectA->addContact(aContact);
+    bool isPlayerContact = gameObjectA->getType() == GameObjectTypePlayer || gameObjectB->getType() == GameObjectTypePlayer;
     
-    if (gameObjectB && (!isPlayerContact || gameObjectB->getType() == GameObjectTypePlayer))
-        gameObjectB->addContact(aContact);
+    if (!isPlayerContact || gameObjectA->getType() == GameObjectTypePlayer)
+        gameObjectA->addContact(gameObjectB);
     
-    _contacts.push_back(aContact);
+    if (!isPlayerContact || gameObjectB->getType() == GameObjectTypePlayer)
+        gameObjectB->addContact(gameObjectA);
 }
 
 void BAContactListener::EndContact(b2Contact* contact) {
@@ -45,10 +47,10 @@ void BAContactListener::EndContact(b2Contact* contact) {
         GameObject *gameObjectB = (GameObject *)aContact.fixtureB->GetUserData();
         
         if (gameObjectA)
-            gameObjectA->removeContact(aContact);
+            gameObjectA->removeContact(gameObjectB);
         
         if (gameObjectB)
-            gameObjectB->removeContact(aContact);
+            gameObjectB->removeContact(gameObjectA);
         
         _contacts.erase(pos);
     }
