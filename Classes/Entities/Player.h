@@ -29,6 +29,8 @@ public:
     
     virtual bool init(b2World *world, Dictionary *properties);
     virtual void update(float dt);
+
+	b2Vec2 getPosition();
     
 };
 

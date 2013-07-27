@@ -2,6 +2,7 @@
 
 #include "Entities/Player.h"
 #include "B2DebugDraw/B2DebugDrawLayer.h"
+#include "Entities/Man.h"
 
 USING_NS_CC;
 
@@ -72,6 +73,10 @@ bool HelloWorld::init()
     
     Array *gameObjects = gameObjectsGroup->getObjects();
     Object *gameObject;
+	//Allocating object here so that we can pass its reference to all enemies.
+	//Actual initialization occurs when it's TMX entity is found below
+	_player = new Player();
+
     CCARRAY_FOREACH(gameObjects, gameObject) {
         Dictionary *objectProperties = (Dictionary *)gameObject;
         
@@ -81,12 +86,15 @@ bool HelloWorld::init()
         
         if (type->compare("Player") == 0) {
             
-            _player = new Player();
             _player->init(_world, objectProperties);
-            
             _mainBatchNode->addChild(_player->getNode());
             //_gameObjects.push_back(player);
-        }
+        } else if(type->compare("Man") == 0) {
+			Man *newMan = new Man();
+			newMan->init(_world, objectProperties, (Player*)_player);
+			_mainBatchNode->addChild(newMan->getNode());
+			_gameObjects.push_back(newMan);
+		}
         
     }
     

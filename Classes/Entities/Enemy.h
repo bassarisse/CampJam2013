@@ -10,6 +10,7 @@
 #define __CampJam__Enemy__
 
 #include "GameObject.h"
+#include "Entities/Player.h"
 
 class Enemy : public GameObject {
     
@@ -21,16 +22,15 @@ protected:
 	
 	virtual void handleCollisions();
 
+	Player* _playerReference;
+
 public:
     
     virtual ~Enemy();
     
-    virtual bool init(b2World *world, Dictionary *properties);
+    virtual bool init(b2World *world, Dictionary *properties, Player* ref);
     virtual void update(float dt);
-    
-	float damageFactor;
-	float speedFactor;
-
+ 
 };
 
 #endif /* defined(__PlatformerTest__Player__) */

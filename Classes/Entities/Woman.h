@@ -17,7 +17,7 @@ public:
 
 	virtual ~Woman();
 
-	virtual bool init(b2World *world, Dictionary *properties);
+	virtual bool init(b2World *world, Dictionary *properties, Player* ref);
     virtual void update(float dt);
 
 };

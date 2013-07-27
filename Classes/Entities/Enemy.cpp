@@ -9,9 +9,10 @@ void Enemy::addFixtures() {
 	
 }
 
-bool Enemy::init(b2World *world, Dictionary *properties) {
+bool Enemy::init(b2World *world, Dictionary *properties, Player *ref) {
     
     //_node = Sprite::createWithSpriteFrameName("right1.png");
+	_playerReference = ref;
 
     if (!GameObject::init(world, properties))
         return false;

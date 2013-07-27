@@ -14,17 +14,17 @@ void Man::addFixtures() {
 
 }
 
-bool Man::init(b2World *world, Dictionary *properties) {
+bool Man::init(b2World *world, Dictionary *properties, Player *ref) {
 	
 	//FIXME
-	_node = Sprite::createWithSpriteFrameName("man.png");
+	_node = Sprite::createWithSpriteFrameName("enemydown1.png");
 
-	damageFactor = 0.3f;
-	speedFactor = 1.0f;
+	_damageFactor = 0.3f;
+	_speedFactor = 1.0f;
 	
 	_type = GameObjectTypeMan;
 
-	if (!Enemy::init(world, properties))
+	if (!Enemy::init(world, properties, ref))
         return false;
     
     return true;
@@ -32,6 +32,26 @@ bool Man::init(b2World *world, Dictionary *properties) {
 
 void Man::update(float dt) {
 	Enemy::update(dt);
+	
+	b2Vec2 playerPosition = _playerReference->getPosition();
+	b2Vec2 manPosition = _body->GetPosition();
+	
+	if(playerPosition.x > manPosition.x) {
+		this->setMovingHorizontalState(MovingStateRight);
+	} else //if(playerPosition.x < manPosition.x) 
+	{
+		this->setMovingHorizontalState(MovingStateLeft);
+	}
+
+	if(playerPosition.y > manPosition.y) {
+		this->setMovingVerticalState(MovingStateUp);
+	} else 
+	{
+		this->setMovingVerticalState(MovingStateDown);
+	}
+
+
+
 }
 
 void Man::handleCollisions() {
@@ -40,7 +60,8 @@ void Man::handleCollisions() {
 		GameObject* collisionObject = _contacts[i];
 		switch(collisionObject->getType()) {
 		case GameObjectTypeCoffee:
-			speedFactor += 0.05f;
+			_speedFactor += 0.05f;
+			_coffee += 0.1f;
 
 			break;
 		default:

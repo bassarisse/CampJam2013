@@ -46,3 +46,7 @@ void Player::handleCollisions() {
     
     
 }
+
+b2Vec2 Player::getPosition() {
+	return _body->GetPosition();
+}

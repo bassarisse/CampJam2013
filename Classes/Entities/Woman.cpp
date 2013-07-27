@@ -14,16 +14,16 @@ void Woman::addFixtures() {
 
 }
 
-bool Woman::init(b2World *world, Dictionary *properties) {
+bool Woman::init(b2World *world, Dictionary *properties, Player *ref) {
 	
 	//FIXME
 	_node = Sprite::createWithSpriteFrameName("woman.png");
 
-	damageFactor = 0.3;
-	speedFactor = 1.0;
+	_damageFactor = 0.3;
+	_speedFactor = 1.0;
 	
 
-	if (!Enemy::init(world, properties))
+	if (!Enemy::init(world, properties, ref))
         return false;
     
     return true;

@@ -43,7 +43,7 @@ public:
     virtual ~GameObject();
     
     Node* getNode();
-    
+
     virtual void addContact(GameObject *contact);
     virtual void removeContact(GameObject *contact);
     
