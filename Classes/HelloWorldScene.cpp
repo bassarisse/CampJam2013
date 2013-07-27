@@ -51,11 +51,11 @@ bool HelloWorld::init()
     //Size visibleSize = Director::sharedDirector()->getVisibleSize();
     //Point origin = Director::sharedDirector()->getVisibleOrigin();
     
-    SpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("chars.plist");
+    SpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("Stag.plist");
     
     _contactListener = new BAContactListener();
     _mainLayer = Layer::create();
-    _mainBatchNode = SpriteBatchNode::create("chars.png");
+    _mainBatchNode = SpriteBatchNode::create("Stag.png");
     _tiledMap = TMXTiledMap::create("main.tmx");
     
     _mainBatchNode->getTexture()->setAliasTexParameters();

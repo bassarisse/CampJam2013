@@ -17,7 +17,8 @@ void Man::addFixtures() {
 bool Man::init(b2World *world, Dictionary *properties, Player *ref) {
 	
 	//FIXME
-	_node = Sprite::createWithSpriteFrameName("enemydown1.png");
+	_node = Sprite::createWithSpriteFrameName("stag_down_right.png");
+    _node->runAction(TintTo::create(0, 150, 150, 150));
 
 	_damageFactor = 0.3f;
 	_speedFactor = 1.0f;
