@@ -17,13 +17,13 @@ void Player::addFixtures() {
     float width = _node->getContentSize().width * 0.75f;
     float height = _node->getContentSize().height * 0.8f;
     //this->addCircularFixture(width / 2);
-    this->addRectangularFixture(0, -height / 2, width, height);
+    this->addRectangularFixture(0, -height / 2, width, height / 2);
     
 }
 
 bool Player::init(b2World *world, Dictionary *properties) {
     
-    _node = Sprite::createWithSpriteFrameName("down1.png");
+    _node = Sprite::createWithSpriteFrameName("stag_down_right.png");
     _life = 100.0f;
     _coffee = 100.0f;
 
@@ -53,16 +53,15 @@ void Player::update(float dt) {
         
         SpriteFrameCache *spriteCache = SpriteFrameCache::sharedSpriteFrameCache();
         
-        const char *frameName = getDirectionName(_lastDirection);
+        const char *frameNameHorizontal = getDirectionName(_lastHorizontalDirection);
+        const char *frameNameVertical = getDirectionName(_lastVerticalDirection);
         
         Animation *anim = Animation::create();
         anim->setDelayPerUnit(0.2f);
         anim->setRestoreOriginalFrame(true);
         
-        anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("%s2.png", frameName)->getCString()));
-        anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("%s1.png", frameName)->getCString()));
-        anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("%s3.png", frameName)->getCString()));
-        anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("%s1.png", frameName)->getCString()));
+        anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("stag_%s_%s1.png", frameNameVertical, frameNameHorizontal)->getCString()));
+        anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("stag_%s_%s2.png", frameNameVertical, frameNameHorizontal)->getCString()));
         
         Action *repeatAction = RepeatForever::create(Animate::create(anim));
         repeatAction->setTag(kWalkActionTag);

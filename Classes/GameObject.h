@@ -29,6 +29,8 @@ protected:
     Node *_node;
     std::vector<GameObject *> _contacts;
     kDirection _lastDirection;
+    kDirection _lastVerticalDirection;
+    kDirection _lastHorizontalDirection;
     float _speedFactor;
     
     virtual void setProperties(Dictionary *properties);

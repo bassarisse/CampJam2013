@@ -135,6 +135,8 @@ bool GameObject::init(b2World *world, Dictionary *properties) {
     
     _speedFactor = 0.0f;
     _lastDirection = kDirectionDown;
+    _lastVerticalDirection = kDirectionDown;
+    _lastHorizontalDirection = kDirectionRight;
     
     this->setMovingVerticalState(MovingStateVerticalStopped);
     this->setMovingHorizontalState(MovingStateHorizontalStopped);
@@ -150,9 +152,10 @@ void GameObject::update(float dt) {
     b2Vec2 position = _body->GetPosition();
     
     int x = position.x * PTM_RATIO;
+    int y = position.y * PTM_RATIO;
     
-    _node->setPosition(x, position.y * PTM_RATIO);
-    _node->setVertexZ(10 + x);
+    _node->setPosition(x, y);
+    _node->setVertexZ(- 10 - y);
     
     this->handleMovement();
         
@@ -235,6 +238,11 @@ bool GameObject::changeDirection(kDirection direction) {
         return false;
     
     _lastDirection = direction;
+    
+    if (direction == kDirectionUp || direction == kDirectionDown)
+        _lastVerticalDirection = direction;
+    if (direction == kDirectionLeft || direction == kDirectionRight)
+        _lastHorizontalDirection = direction;
     
     if (_node->getActionByTag(kWalkActionTag))
         _node->stopActionByTag(kWalkActionTag);

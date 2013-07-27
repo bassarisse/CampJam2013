@@ -90,6 +90,8 @@
 		622AA22B17A39EE700EEE5EB /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 622AA22917A39EE700EEE5EB /* Player.cpp */; };
 		622AA22E17A3AA8300EEE5EB /* Woman.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 622AA22C17A3AA8300EEE5EB /* Woman.cpp */; };
 		62E5AFBF17A3FB4E00BE18FE /* Coffee.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFBD17A3FB4E00BE18FE /* Coffee.cpp */; };
+		62E5AFC317A404BD00BE18FE /* Stag.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62E5AFC117A404BD00BE18FE /* Stag.plist */; };
+		62E5AFC417A404BD00BE18FE /* Stag.png in Resources */ = {isa = PBXBuildFile; fileRef = 62E5AFC217A404BD00BE18FE /* Stag.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -264,6 +266,8 @@
 		622AA22D17A3AA8300EEE5EB /* Woman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Woman.h; sourceTree = "<group>"; };
 		62E5AFBD17A3FB4E00BE18FE /* Coffee.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Coffee.cpp; sourceTree = "<group>"; };
 		62E5AFBE17A3FB4E00BE18FE /* Coffee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coffee.h; sourceTree = "<group>"; };
+		62E5AFC117A404BD00BE18FE /* Stag.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Stag.plist; sourceTree = "<group>"; };
+		62E5AFC217A404BD00BE18FE /* Stag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Stag.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -611,6 +615,8 @@
 				622AA1FB17A35FF900EEE5EB /* chars.png */,
 				622AA1FC17A35FF900EEE5EB /* main.tmx */,
 				622AA1FD17A35FF900EEE5EB /* tileset.png */,
+				62E5AFC117A404BD00BE18FE /* Stag.plist */,
+				62E5AFC217A404BD00BE18FE /* Stag.png */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -693,6 +699,8 @@
 				622AA1FF17A35FF900EEE5EB /* chars.png in Resources */,
 				622AA20017A35FF900EEE5EB /* main.tmx in Resources */,
 				622AA20117A35FF900EEE5EB /* tileset.png in Resources */,
+				62E5AFC317A404BD00BE18FE /* Stag.plist in Resources */,
+				62E5AFC417A404BD00BE18FE /* Stag.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
