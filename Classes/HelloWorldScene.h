@@ -54,6 +54,8 @@ public:
     virtual void buttonUp(bool pressed);
     virtual void buttonDown(bool pressed);
     virtual void buttonA(bool pressed);
+
+	void removeObject(GameObject* deadObject);
     
 };
 

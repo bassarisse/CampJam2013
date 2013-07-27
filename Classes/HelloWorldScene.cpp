@@ -3,6 +3,10 @@
 #include "Entities/Player.h"
 #include "B2DebugDraw/B2DebugDrawLayer.h"
 #include "Entities/Man.h"
+#include "Entities/Coffee.h"
+#include "Entities/PeaBerry.h"
+#include "Entities/Water.h"
+#include "Entities/Donut.h"
 
 USING_NS_CC;
 
@@ -97,12 +101,47 @@ bool HelloWorld::init()
         if (!type)
             continue;
         
-        if (type->compare("Player") == 0) {
+        if (type->compare("Player") == 0) 
+		{
             
             _player->init(_world, objectProperties);
             _mainBatchNode->addChild(_player->getNode());
-            //_gameObjects.push_back(player);
-        } else if(type->compare("Man") == 0) {
+            //_gameObjects.push_back(player); 
+		} 
+		/* 
+		 * Powerups
+		 */
+		else if(type->compare("Coffee") == 0) 
+		{
+			Coffee* newCoffeePowerup = new Coffee();
+			newCoffeePowerup->init(_world, objectProperties);
+			_mainBatchNode->addChild(newCoffeePowerup->getNode());
+			_gameObjects.push_back(newCoffeePowerup);
+
+		} else if(type->compare("Water") == 0) 
+		{
+			Water* newWaterPowerup = new Water();
+			newWaterPowerup->init(_world, objectProperties);
+			_mainBatchNode->addChild(newWaterPowerup->getNode());
+			_gameObjects.push_back(newWaterPowerup);
+		} else if(type->compare("Donut") == 0) 
+		{
+			Donut* newDonutPowerup = new Donut();
+			newDonutPowerup->init(_world, objectProperties);
+			_mainBatchNode->addChild(newDonutPowerup->getNode());
+			_gameObjects.push_back(newDonutPowerup);
+		} else if(type->compare("Peaberry") == 0) 
+		{
+			Peaberry* newPeaberryPowerup = new Peaberry();
+			newPeaberryPowerup->init(_world, objectProperties);
+			_mainBatchNode->addChild(newPeaberryPowerup->getNode());
+			_gameObjects.push_back(newPeaberryPowerup);
+		} 
+		/* 
+		 * Enemies
+		 */
+		else if(type->compare("Man") == 0) 
+		{
 			Man *newMan = new Man();
 			newMan->init(_world, objectProperties, (Player*)_player);
 			_mainBatchNode->addChild(newMan->getNode());
@@ -211,10 +250,37 @@ void HelloWorld::update(float dt) {
     if (_debugLayer)
         _debugLayer->setPosition(viewPoint);
     
+	std::vector<int> removalQueue;
+
     for(std::vector<GameObject *>::size_type i = 0; i != _gameObjects.size(); i++) {
         _gameObjects[i]->update(dt);
     }
     
+
+	//Add the dead objects to be removed in a separated array
+	for(std::vector<GameObject *>::size_type i = 0; i != _gameObjects.size(); i++) {
+		if(_gameObjects[i]->getState() == GameObjectStateDead) {
+			removalQueue.push_back(i);
+		}
+    }
+
+	for(std::vector<int>::size_type i = 0; i != removalQueue.size(); i++) {
+		GameObject* deadObj = _gameObjects[i];
+		this->removeObject(deadObj);
+	}
+
+
+}
+
+void HelloWorld::removeObject(GameObject* deadObject) {
+	Node* deadNode = deadObject->getNode();
+	_world->DestroyBody(deadObject->getBody());
+
+	deadNode->removeFromParentAndCleanup(true);
+	std::vector<GameObject *>::iterator pos;
+	pos = std::find(_gameObjects.begin(), _gameObjects.end(), deadObject);
+	_gameObjects.erase(pos);
+	deadObject->release();
 }
 
 void HelloWorld::buttonLeft(bool pressed) {

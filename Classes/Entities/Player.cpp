@@ -82,8 +82,8 @@ float Player::getSpeed() {
 }
 
 void Player::handleCollisions() {
-    
-	for(std::vector<GameObject*>::size_type i = 0; i <= _contacts.size(); i++)
+
+	for(std::vector<GameObject*>::size_type i = 0; i < _contacts.size(); i++)
 	{
 		GameObject* collisionObject = _contacts[i];
 		switch(collisionObject->getType()) {

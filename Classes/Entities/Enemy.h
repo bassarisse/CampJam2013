@@ -24,6 +24,8 @@ protected:
 
 	Player* _playerReference;
 
+	int _drinkedCoffee;
+
 public:
     
     virtual ~Enemy();
@@ -32,7 +34,6 @@ public:
     virtual void update(float dt);
     
 	float _damageFactor;
-	float _coffee;
 
 	virtual void handleMovement();
 

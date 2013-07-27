@@ -49,6 +49,7 @@ public:
     virtual ~GameObject();
     
     Node* getNode();
+	b2Body* getBody();
 
     virtual void addContact(GameObject *contact);
     virtual void removeContact(GameObject *contact);
