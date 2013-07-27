@@ -199,6 +199,7 @@ void HelloWorld::buttonLeft(bool pressed) {
         _buttonLeftPressed = true;
         
         _movingHorizontalStates.push_back(MovingStateLeft);
+        _player->changeDirection(kDirectionLeft);
         
     } else {
         
@@ -223,6 +224,7 @@ void HelloWorld::buttonRight(bool pressed) {
         _buttonRightPressed = true;
         
         _movingHorizontalStates.push_back(MovingStateRight);
+        _player->changeDirection(kDirectionRight);
         
     } else {
         
@@ -247,6 +249,7 @@ void HelloWorld::buttonUp(bool pressed) {
         _buttonUpPressed = true;
         
         _movingVerticalStates.push_back(MovingStateUp);
+        _player->changeDirection(kDirectionUp);
         
     } else {
         
@@ -271,6 +274,7 @@ void HelloWorld::buttonDown(bool pressed) {
         _buttonDownPressed = true;
         
         _movingVerticalStates.push_back(MovingStateDown);
+        _player->changeDirection(kDirectionDown);
         
     } else {
         

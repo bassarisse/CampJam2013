@@ -15,8 +15,9 @@ using namespace cocos2d;
 
 #define PTM_RATIO 32.0f
 #define kGravity 0
-
 #define kWalkForce 3.0f
+
+#define kWalkActionTag 500
 
 enum kDirection {
     kDirectionUp = 0,
@@ -39,6 +40,7 @@ enum MovingVerticalState {
 
 enum GameObjectState {
     GameObjectStateStanding = 0,
+    GameObjectStateWalking,
     GameObjectStateTakingDamage,
     GameObjectStateAfterDamage,
 };
@@ -62,6 +64,16 @@ inline float floatValue(Object* o)
     if (string)
         return string->floatValue();
     return 0.0f;
+}
+
+
+inline const char* getDirectionName(kDirection direction) {
+    switch (direction) {
+        case kDirectionUp: return "up"; break;
+        case kDirectionLeft: return "left"; break;
+        case kDirectionRight: return "right"; break;
+        default: return "down"; break;
+    }
 }
 
 #endif
