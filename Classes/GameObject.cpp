@@ -166,7 +166,7 @@ void GameObject::update(float dt) {
     
     ((Sprite *)_node)->setFlipX(_lastHorizontalDirection == kDirectionRight);
     
-	if(_contacts.size() > 0) {
+	if (_contacts.size() > 0) {
 		this->handleCollisions();
 		_contacts.clear();
 	}
@@ -210,6 +210,9 @@ void GameObject::handleMovement() {
 }
 
 void GameObject::handleMovement(float angle) {
+    
+    if (this->getState() == GameObjectStateDead)
+        return;
     
     this->setState(this->getMovingHorizontalState() == MovingStateHorizontalStopped && this->getMovingVerticalState() == MovingStateVerticalStopped ? GameObjectStateStanding : GameObjectStateWalking);
     

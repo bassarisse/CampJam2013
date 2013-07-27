@@ -249,26 +249,18 @@ void HelloWorld::update(float dt) {
     
     if (_debugLayer)
         _debugLayer->setPosition(viewPoint);
-    
-	std::vector<int> removalQueue;
 
     for(std::vector<GameObject *>::size_type i = 0; i != _gameObjects.size(); i++) {
         _gameObjects[i]->update(dt);
     }
     
-
 	//Add the dead objects to be removed in a separated array
 	for(std::vector<GameObject *>::size_type i = 0; i != _gameObjects.size(); i++) {
-		if(_gameObjects[i]->getState() == GameObjectStateDead) {
-			removalQueue.push_back(i);
+        GameObject *gameObj = _gameObjects[i];
+		if(gameObj->getState() == GameObjectStateDead) {
+            this->removeObject(gameObj);
 		}
     }
-
-	for(std::vector<int>::size_type i = 0; i != removalQueue.size(); i++) {
-		GameObject* deadObj = _gameObjects[i];
-		this->removeObject(deadObj);
-	}
-
 
 }
 
@@ -276,11 +268,11 @@ void HelloWorld::removeObject(GameObject* deadObject) {
 	Node* deadNode = deadObject->getNode();
 	_world->DestroyBody(deadObject->getBody());
 
-	deadNode->removeFromParentAndCleanup(true);
 	std::vector<GameObject *>::iterator pos;
 	pos = std::find(_gameObjects.begin(), _gameObjects.end(), deadObject);
 	_gameObjects.erase(pos);
 	deadObject->release();
+	deadNode->removeFromParentAndCleanup(true);
 }
 
 void HelloWorld::buttonLeft(bool pressed) {
