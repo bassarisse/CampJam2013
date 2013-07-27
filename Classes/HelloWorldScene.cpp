@@ -47,14 +47,27 @@ bool HelloWorld::init()
     //Size visibleSize = Director::sharedDirector()->getVisibleSize();
     //Point origin = Director::sharedDirector()->getVisibleOrigin();
     
-    SpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("Stag.plist");
+    
+    GLProgram *alphaTestShader = ShaderCache::sharedShaderCache()->programForKey(kShader_PositionTextureColorAlphaTest);
+    
+    GLint alphaValueLocation = glGetUniformLocation(alphaTestShader->getProgram(), kUniformAlphaTestValue);
+    
+    // set alpha test value
+    // NOTE: alpha test shader is hard-coded to use the equivalent of a glAlphaFunc(GL_GREATER) comparison
+    if (getShaderProgram())
+    {
+        getShaderProgram()->setUniformLocationWith1f(alphaValueLocation, 1.0f);
+    }
+    
+    SpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("Characters.plist");
     
     _contactListener = new BAContactListener();
     _mainLayer = Layer::create();
-    _mainBatchNode = SpriteBatchNode::create("Stag.png");
+    _mainBatchNode = SpriteBatchNode::create("Characters.png");
     _tiledMap = TMXTiledMap::create("main.tmx");
     
     _mainBatchNode->getTexture()->setAliasTexParameters();
+    _mainBatchNode->setShaderProgram(alphaTestShader);
     
     _mainLayer->addChild(_tiledMap);
     _mainLayer->addChild(_mainBatchNode);
@@ -167,7 +180,10 @@ bool HelloWorld::init()
     
     this->scheduleUpdate();
     
-    //this->addChild(B2DebugDrawLayer::create(_world, PTM_RATIO), 9999);
+    //_debugLayer = B2DebugDrawLayer::create(_world, PTM_RATIO);
+    
+    if (_debugLayer)
+        this->addChild(_debugLayer, 9999);
     
     return true;
 }
@@ -191,6 +207,9 @@ void HelloWorld::update(float dt) {
     Point centerOfView = ccp(_winSize.width/2, _winSize.height/2);
     Point viewPoint = ccpSub(centerOfView, actualPosition);
     _mainLayer->setPosition(viewPoint);
+    
+    if (_debugLayer)
+        _debugLayer->setPosition(viewPoint);
     
     for(std::vector<GameObject *>::size_type i = 0; i != _gameObjects.size(); i++) {
         _gameObjects[i]->update(dt);

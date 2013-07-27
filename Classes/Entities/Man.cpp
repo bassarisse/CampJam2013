@@ -6,26 +6,24 @@ Man::~Man() {
 
 
 void Man::addFixtures() {
-	
-	float width = _node->getContentSize().width;// * 0.75f;
-    float height = _node->getContentSize().height;// * 0.8f;
+    
+    float width = _node->getContentSize().width * 0.32f;
+    float height = _node->getContentSize().height * 0.2f;
     //this->addCircularFixture(width / 2);
-    this->addRectangularFixture(width, height);
+    this->addRectangularFixture(0, -height * 2, width, height);
 
-}
+} 
 
 bool Man::init(b2World *world, Dictionary *properties, Player *ref) {
 	
 	//FIXME
-	_node = Sprite::createWithSpriteFrameName("stag_down_right.png");
-    _node->runAction(TintTo::create(0, 150, 150, 150));
+	_node = Sprite::createWithSpriteFrameName("man_down_right.png");
 
 	_damageFactor = 0.3f;
 	_speedFactor = 1.0f;
 	
 	this->setType(GameObjectTypeMan);
 	
-
 	if (!Enemy::init(world, properties, ref))
         return false;
     

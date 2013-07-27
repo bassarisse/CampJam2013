@@ -74,8 +74,6 @@
 		41BC70E615BF81A5006A0A6C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41BC70DE15BF81A5006A0A6C /* MainMenu.xib */; };
 		41BC70E715BF81A5006A0A6C /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 41BC70E015BF81A5006A0A6C /* Icon.icns */; };
 		41BC70E815BF81A5006A0A6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BC70E115BF81A5006A0A6C /* main.m */; };
-		622AA1FE17A35FF900EEE5EB /* chars.plist in Resources */ = {isa = PBXBuildFile; fileRef = 622AA1FA17A35FF900EEE5EB /* chars.plist */; };
-		622AA1FF17A35FF900EEE5EB /* chars.png in Resources */ = {isa = PBXBuildFile; fileRef = 622AA1FB17A35FF900EEE5EB /* chars.png */; };
 		622AA20017A35FF900EEE5EB /* main.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 622AA1FC17A35FF900EEE5EB /* main.tmx */; };
 		622AA20117A35FF900EEE5EB /* tileset.png in Resources */ = {isa = PBXBuildFile; fileRef = 622AA1FD17A35FF900EEE5EB /* tileset.png */; };
 		622AA21517A3609E00EEE5EB /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 622AA20217A3609E00EEE5EB /* AppDelegate.cpp */; };
@@ -90,8 +88,8 @@
 		622AA22B17A39EE700EEE5EB /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 622AA22917A39EE700EEE5EB /* Player.cpp */; };
 		622AA22E17A3AA8300EEE5EB /* Woman.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 622AA22C17A3AA8300EEE5EB /* Woman.cpp */; };
 		62E5AFBF17A3FB4E00BE18FE /* Coffee.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFBD17A3FB4E00BE18FE /* Coffee.cpp */; };
-		62E5AFC317A404BD00BE18FE /* Stag.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62E5AFC117A404BD00BE18FE /* Stag.plist */; };
-		62E5AFC417A404BD00BE18FE /* Stag.png in Resources */ = {isa = PBXBuildFile; fileRef = 62E5AFC217A404BD00BE18FE /* Stag.png */; };
+		62E5AFC917A4280800BE18FE /* Characters.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62E5AFC717A4280800BE18FE /* Characters.plist */; };
+		62E5AFCA17A4280800BE18FE /* Characters.png in Resources */ = {isa = PBXBuildFile; fileRef = 62E5AFC817A4280800BE18FE /* Characters.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -237,8 +235,6 @@
 		41BC70E115BF81A5006A0A6C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
 		41BC70E215BF81A5006A0A6C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 		41BC70E315BF81A5006A0A6C /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = SOURCE_ROOT; };
-		622AA1FA17A35FF900EEE5EB /* chars.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = chars.plist; sourceTree = "<group>"; };
-		622AA1FB17A35FF900EEE5EB /* chars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chars.png; sourceTree = "<group>"; };
 		622AA1FC17A35FF900EEE5EB /* main.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = main.tmx; sourceTree = "<group>"; };
 		622AA1FD17A35FF900EEE5EB /* tileset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tileset.png; sourceTree = "<group>"; };
 		622AA20217A3609E00EEE5EB /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = ../Classes/AppDelegate.cpp; sourceTree = "<group>"; };
@@ -266,8 +262,8 @@
 		622AA22D17A3AA8300EEE5EB /* Woman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Woman.h; sourceTree = "<group>"; };
 		62E5AFBD17A3FB4E00BE18FE /* Coffee.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Coffee.cpp; sourceTree = "<group>"; };
 		62E5AFBE17A3FB4E00BE18FE /* Coffee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coffee.h; sourceTree = "<group>"; };
-		62E5AFC117A404BD00BE18FE /* Stag.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Stag.plist; sourceTree = "<group>"; };
-		62E5AFC217A404BD00BE18FE /* Stag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Stag.png; sourceTree = "<group>"; };
+		62E5AFC717A4280800BE18FE /* Characters.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Characters.plist; sourceTree = "<group>"; };
+		62E5AFC817A4280800BE18FE /* Characters.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Characters.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,14 +291,14 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				622AA20417A3609E00EEE5EB /* B2DebugDraw */,
-				622AA22217A39ECE00EEE5EB /* Entities */,
 				622AA20217A3609E00EEE5EB /* AppDelegate.cpp */,
 				622AA20317A3609E00EEE5EB /* AppDelegate.h */,
 				622AA20A17A3609E00EEE5EB /* BAContactListener.cpp */,
 				622AA20B17A3609E00EEE5EB /* BAContactListener.h */,
 				622AA20C17A3609E00EEE5EB /* BaseLayer.cpp */,
 				622AA20D17A3609E00EEE5EB /* BaseLayer.h */,
+				622AA20417A3609E00EEE5EB /* B2DebugDraw */,
+				622AA22217A39ECE00EEE5EB /* Entities */,
 				622AA20E17A3609E00EEE5EB /* Common.h */,
 				622AA20F17A3609E00EEE5EB /* GameObject.cpp */,
 				622AA21017A3609E00EEE5EB /* GameObject.h */,
@@ -611,12 +607,10 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				622AA1FA17A35FF900EEE5EB /* chars.plist */,
-				622AA1FB17A35FF900EEE5EB /* chars.png */,
 				622AA1FC17A35FF900EEE5EB /* main.tmx */,
 				622AA1FD17A35FF900EEE5EB /* tileset.png */,
-				62E5AFC117A404BD00BE18FE /* Stag.plist */,
-				62E5AFC217A404BD00BE18FE /* Stag.png */,
+				62E5AFC717A4280800BE18FE /* Characters.plist */,
+				62E5AFC817A4280800BE18FE /* Characters.png */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -695,12 +689,10 @@
 				41BC70E515BF81A5006A0A6C /* InfoPlist.strings in Resources */,
 				41BC70E615BF81A5006A0A6C /* MainMenu.xib in Resources */,
 				41BC70E715BF81A5006A0A6C /* Icon.icns in Resources */,
-				622AA1FE17A35FF900EEE5EB /* chars.plist in Resources */,
-				622AA1FF17A35FF900EEE5EB /* chars.png in Resources */,
 				622AA20017A35FF900EEE5EB /* main.tmx in Resources */,
 				622AA20117A35FF900EEE5EB /* tileset.png in Resources */,
-				62E5AFC317A404BD00BE18FE /* Stag.plist in Resources */,
-				62E5AFC417A404BD00BE18FE /* Stag.png in Resources */,
+				62E5AFC917A4280800BE18FE /* Characters.plist in Resources */,
+				62E5AFCA17A4280800BE18FE /* Characters.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

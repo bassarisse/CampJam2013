@@ -8,6 +8,8 @@
 
 using namespace cocos2d;
 
+class B2DebugDrawLayer;
+
 class HelloWorld : public BaseLayer
 {
 private:
@@ -32,6 +34,7 @@ public:
     Layer *_mainLayer;
     SpriteBatchNode *_mainBatchNode;
     TMXTiledMap *_tiledMap;
+    B2DebugDrawLayer *_debugLayer;
     
     std::vector<MovingHorizontalState> _movingHorizontalStates;
     std::vector<MovingVerticalState> _movingVerticalStates;

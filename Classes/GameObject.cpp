@@ -155,7 +155,8 @@ void GameObject::update(float dt) {
     int y = position.y * PTM_RATIO;
     
     _node->setPosition(x, y);
-    _node->setVertexZ(- 10 - y);
+    _node->getParent()->reorderChild(_node, - 10 - y);
+    //_node->setVertexZ(- 10 - y);
     
     this->handleMovement();
         

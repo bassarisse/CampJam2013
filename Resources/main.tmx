@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="48" height="36" tilewidth="12" tileheight="12">
+<map version="1.0" orientation="orthogonal" width="100" height="100" tilewidth="12" tileheight="12">
  <tileset firstgid="1" name="tileset" tilewidth="12" tileheight="12">
   <image source="tileset.png" width="156" height="228"/>
  </tileset>
- <layer name="main" width="48" height="36">
+ <layer name="main" width="100" height="100">
   <data encoding="base64" compression="zlib">
-   eJztziEOgDAUBNEPHKDXADytB+5/JtY0IRhS03STEeNGvBQRybxVbWbtL/+hslkFP378+PHjH8CD3yv8+PHjx48fP378XuHHjx+/i39Ss1oGsH/9p7p+uhveHlWPew/PoVLE
+   eJzt0bENwkAQRUEDBbgNIAdyoP+auATJGbrIT2iCyTZY/bcuy7KSch4u7Oq66XEb7uzqoUeKHi16tOjRokeLHi16tOjRokeLHi16tOjRokeLHi16tOjRokeLHi16tOjRokeLHi16tOjRokeLHi16tOjRokeLHi16tOjRokeLHi16tOjRokeLHi16tOjRokeLHi16tOjRokeLHi16tOjRokeLHi16tOjRokeLHi16tOjRokeLHi16tOjRokeLHi16tOjRokeLHi16tOjRokeLHi16tOjRokeLHi16tOjRokeLHi16tOjRokeLHi16tOjRokeLHi16tOjRokeLHi16tOjRokeLHi2zPQ7DcTgFfv9H2x7P4fXDe+KWed99afkAsSAAtQ==
   </data>
  </layer>
- <objectgroup name="collision" width="48" height="36">
+ <objectgroup name="collision" width="100" height="100">
   <object x="24" y="24">
-   <polyline points="0,0 0,384 96,384 96,372 132,372 132,384 528,384 528,0 0,0"/>
+   <polyline points="0,0 0,1152 96,1152 96,1140 132,1140 132,1152 1152,1152 1152,0 0,0"/>
   </object>
  </objectgroup>
- <objectgroup name="objects" width="48" height="36">
-  <object type="Player" x="84" y="348" width="12" height="12"/>
-  <object type="Coffee" x="312" y="348" width="12" height="12"/>
-  <object type="Donut" x="240" y="336" width="12" height="12"/>
-  <object type="Man" x="123" y="251" width="12" height="12"/>
-  <object type="Man" x="200" y="231" width="12" height="12"/>
-  <object type="EnemySpawnPoint" x="108" y="132" width="12" height="12"/>
-  <object type="Man" x="199" y="70" width="12" height="12"/>
-  <object type="Man" x="118" y="78" width="12" height="12"/>
-  <object type="Man" x="153" y="183" width="12" height="12"/>
-  <object type="Man" x="111" y="206" width="12" height="12"/>
-  <object type="Man" x="47" y="157" width="12" height="12"/>
+ <objectgroup name="objects" width="100" height="100">
+  <object type="Player" x="337" y="410" width="12" height="12"/>
+  <object type="Coffee" x="565" y="410" width="12" height="12"/>
+  <object type="Donut" x="493" y="398" width="12" height="12"/>
+  <object type="Man" x="376" y="313" width="12" height="12"/>
+  <object type="Man" x="453" y="293" width="12" height="12"/>
+  <object type="EnemySpawnPoint" x="361" y="194" width="12" height="12"/>
+  <object type="Man" x="452" y="132" width="12" height="12"/>
+  <object type="Man" x="371" y="140" width="12" height="12"/>
+  <object type="Man" x="406" y="245" width="12" height="12"/>
+  <object type="Man" x="364" y="268" width="12" height="12"/>
+  <object type="Man" x="300" y="219" width="12" height="12"/>
  </objectgroup>
 </map>

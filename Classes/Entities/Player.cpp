@@ -14,10 +14,10 @@ Player::~Player() {
 
 void Player::addFixtures() {
     
-    float width = _node->getContentSize().width * 0.75f;
-    float height = _node->getContentSize().height * 0.8f;
+    float width = _node->getContentSize().width * 0.32f;
+    float height = _node->getContentSize().height * 0.2f;
     //this->addCircularFixture(width / 2);
-    this->addRectangularFixture(0, -height / 2, width, height / 2);
+    this->addRectangularFixture(0, -height * 2, width, height);
     
 }
 
