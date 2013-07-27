@@ -17,7 +17,10 @@
   <object type="Player" x="84" y="348" width="12" height="12"/>
   <object type="Coffee" x="312" y="348" width="12" height="12"/>
   <object type="Donut" x="240" y="336" width="12" height="12"/>
+
   <object type="Man" x="123" y="251" width="12" height="12"/>
   <object type="Man" x="200" y="231" width="12" height="12"/>
+  <object type="EnemySpawnPoint" x="108" y="132" width="12" height="12"/>
+
  </objectgroup>
 </map>

@@ -118,6 +118,9 @@ void GameObject::addBodyToWorld(b2World *world) {
 
 bool GameObject::init(b2World *world, Dictionary *properties) {
     
+    _speedFactor = 0.0f;
+    _lastDirection = kDirectionDown;
+    
     this->setMovingVerticalState(MovingStateVerticalStopped);
     this->setMovingHorizontalState(MovingStateHorizontalStopped);
     this->setProperties(properties);
@@ -139,23 +142,64 @@ void GameObject::update(float dt) {
 
 void GameObject::handleMovement() {
     
-    b2Vec2 vel = _body->GetLinearVelocity();
+    float angle = 0;
+    
+    switch (this->getMovingHorizontalState())
+    {
+        case MovingStateLeft:
+            switch (this->getMovingVerticalState())
+        {
+            case MovingStateDown: angle = 225; break;
+            case MovingStateVerticalStopped: angle = 180; break;
+            case MovingStateUp: angle = 135; break;
+        }
+            break;
+        case MovingStateHorizontalStopped:
+            switch (this->getMovingVerticalState())
+        {
+            case MovingStateDown: angle = 270; break;
+            case MovingStateVerticalStopped: angle = -1; break;
+            case MovingStateUp: angle = 90; break;
+        }
+            break;
+        case MovingStateRight:
+            switch (this->getMovingVerticalState())
+        {
+            case MovingStateDown: angle = 315; break;
+            case MovingStateVerticalStopped: angle = 0; break;
+            case MovingStateUp: angle = 45; break;
+        }
+            break;
+    }
+    
+    this->handleMovement(angle);
+    
+}
+
+void GameObject::handleMovement(float angle) {
+    
+    this->setState(this->getMovingHorizontalState() == MovingStateHorizontalStopped && this->getMovingVerticalState() == MovingStateVerticalStopped ? GameObjectStateStanding : GameObjectStateWalking);
+    
+    float x = (kWalkForce + _speedFactor) * cos(angle * M_PI / 180.0f);
+    float y = (kWalkForce + _speedFactor) * sin(angle * M_PI / 180.0f);
     
     float desiredXVel = 0;
     float desiredYVel = 0;
     
+    b2Vec2 vel = _body->GetLinearVelocity();
+    
     switch (this->getMovingHorizontalState())
     {
-        case MovingStateLeft:     desiredXVel = b2Max( vel.x - (kWalkForce/3.0f), -kWalkForce ); break;
+        case MovingStateLeft:     desiredXVel = b2Max( vel.x - (abs(x)/3.0f), x); break;
         case MovingStateHorizontalStopped:  desiredXVel = vel.x * 0.75f; break;
-        case MovingStateRight:    desiredXVel = b2Min( vel.x + (kWalkForce/3.0f),  kWalkForce ); break;
+        case MovingStateRight:    desiredXVel = b2Min( vel.x + (abs(x)/3.0f), x); break;
     }
     
     switch (this->getMovingVerticalState())
     {
-        case MovingStateDown:     desiredYVel = b2Max( vel.y - (kWalkForce/3.0f), -kWalkForce ); break;
+        case MovingStateDown:     desiredYVel = b2Max( vel.y - (abs(y)/3.0f), y); break;
         case MovingStateVerticalStopped:  desiredYVel = vel.y * 0.75f; break;
-        case MovingStateUp:    desiredYVel = b2Min( vel.y + (kWalkForce/3.0f),  kWalkForce ); break;
+        case MovingStateUp:    desiredYVel = b2Min( vel.y + (abs(y)/3.0f), y); break;
     }
     
     float xVelChange = desiredXVel - vel.x;
@@ -166,3 +210,18 @@ void GameObject::handleMovement() {
     _body->ApplyLinearImpulse( b2Vec2(xImpulse, yImpulse), _body->GetWorldCenter() );
     
 }
+
+bool GameObject::changeDirection(kDirection direction) {
+    
+    if (_lastDirection == direction)
+        return false;
+    
+    _lastDirection = direction;
+    
+    Action *walkAction = _node->getActionByTag(kWalkActionTag);
+    if (walkAction)
+        walkAction->stop();
+    
+    return true;
+}
+

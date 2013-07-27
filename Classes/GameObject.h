@@ -28,6 +28,8 @@ protected:
     b2Body *_body;
     Node *_node;
     std::vector<GameObject *> _contacts;
+    kDirection _lastDirection;
+    float _speedFactor;
     
     virtual void setProperties(Dictionary *properties);
     virtual void addCircularFixture(float radius);
@@ -51,6 +53,8 @@ public:
     virtual bool init(b2World *world, Dictionary *properties);
     virtual void update(float dt);
     virtual void handleMovement();
+    virtual void handleMovement(float angle);
+    virtual bool changeDirection(kDirection direction);
     
     CC_SYNTHESIZE(MovingHorizontalState, _movingHorizontalState, MovingHorizontalState);
     CC_SYNTHESIZE(MovingVerticalState, _movingVerticalState, MovingVerticalState);
