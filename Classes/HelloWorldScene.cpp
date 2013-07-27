@@ -8,6 +8,7 @@
 #include "Entities/Water.h"
 #include "Entities/Donut.h"
 
+
 USING_NS_CC;
 
 HelloWorld::~HelloWorld() {
@@ -217,6 +218,19 @@ bool HelloWorld::init()
     _movingHorizontalStates.push_back(MovingStateHorizontalStopped);
     _movingVerticalStates.push_back(MovingStateVerticalStopped);
     
+	_coffeeBar = new CoffeeBar();
+	_healthBar = new HealthBar();
+	Player* pl = (Player*)_player;
+
+	_coffeeBar->init(pl->getCoffee());
+	_coffeeBar->autorelease();
+
+	_healthBar->init(pl->getLife());
+	_healthBar->autorelease();
+
+	this->addChild(_coffeeBar);
+	this->addChild(_healthBar);
+
     this->scheduleUpdate();
     
     //_debugLayer = B2DebugDrawLayer::create(_world, PTM_RATIO);
@@ -269,7 +283,12 @@ void HelloWorld::update(float dt) {
 		this->removeObject(deadObj);
 	}
 
+	Player* pl = (Player*)_player;
+	_coffeeBar->setCoffeeLevel(pl->getCoffee());
+	_coffeeBar->update(dt);
 
+	_healthBar->setHealthLevel(pl->getLife());
+	_healthBar->update(dt);
 }
 
 void HelloWorld::removeObject(GameObject* deadObject) {

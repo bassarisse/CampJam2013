@@ -136,6 +136,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\Classes\B2DebugDraw\GLES-Render.cpp" />
     <ClCompile Include="..\Classes\BAContactListener.cpp" />
     <ClCompile Include="..\Classes\BaseLayer.cpp" />
+    <ClCompile Include="..\Classes\CoffeeBar.cpp" />
     <ClCompile Include="..\Classes\Entities\Coffee.cpp" />
     <ClCompile Include="..\Classes\Entities\Donut.cpp" />
     <ClCompile Include="..\Classes\Entities\Enemy.cpp" />
@@ -145,6 +146,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\Classes\Entities\Water.cpp" />
     <ClCompile Include="..\Classes\Entities\Woman.cpp" />
     <ClCompile Include="..\Classes\GameObject.cpp" />
+    <ClCompile Include="..\Classes\HealthBar.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -154,6 +156,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\Classes\B2DebugDraw\GLES-Render.h" />
     <ClInclude Include="..\Classes\BAContactListener.h" />
     <ClInclude Include="..\Classes\BaseLayer.h" />
+    <ClInclude Include="..\Classes\CoffeeBar.h" />
     <ClInclude Include="..\Classes\Common.h" />
     <ClInclude Include="..\Classes\Entities\Coffee.h" />
     <ClInclude Include="..\Classes\Entities\Donut.h" />
@@ -164,6 +167,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\Classes\Entities\Water.h" />
     <ClInclude Include="..\Classes\Entities\Woman.h" />
     <ClInclude Include="..\Classes\GameObject.h" />
+    <ClInclude Include="..\Classes\HealthBar.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>

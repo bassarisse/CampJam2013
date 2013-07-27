@@ -69,6 +69,12 @@
     <ClCompile Include="..\Classes\Entities\Woman.cpp">
       <Filter>Classes\Entities\Enemies</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\CoffeeBar.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HealthBar.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -121,6 +127,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Entities\Woman.h">
       <Filter>Classes\Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CoffeeBar.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HealthBar.h">
+      <Filter>Classes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

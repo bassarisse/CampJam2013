@@ -14,10 +14,7 @@
 class Player : public GameObject {
     
 private:
-    
-    float _life;
-    float _coffee;
-    
+        
 protected:
     
     virtual void addFixtures();
@@ -32,7 +29,10 @@ public:
     virtual void update(float dt);
 
 	b2Vec2 getPosition();
-    
+
+	CC_SYNTHESIZE(float, _coffee, Coffee);
+	CC_SYNTHESIZE(float, _life, Life);
+
 };
 
 #endif /* defined(__PlatformerTest__Player__) */

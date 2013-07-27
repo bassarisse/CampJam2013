@@ -5,6 +5,8 @@
 #include "Box2D/Box2D.h"
 #include "BAContactListener.h"
 #include "GameObject.h"
+#include "CoffeeBar.h"
+#include "HealthBar.h"
 
 using namespace cocos2d;
 
@@ -41,6 +43,9 @@ public:
     std::vector<GameObject *> _gameObjects;
     GameObject *_player;
     
+	CoffeeBar *_coffeeBar;
+	HealthBar *_healthBar;
+
     // Box2D
     
     b2World *_world;
