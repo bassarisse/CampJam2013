@@ -22,7 +22,8 @@ bool Man::init(b2World *world, Dictionary *properties, Player *ref) {
 	_damageFactor = 0.3f;
 	_speedFactor = 1.0f;
 	
-	_type = GameObjectTypeMan;
+	this->setType(GameObjectTypeMan);
+	
 
 	if (!Enemy::init(world, properties, ref))
         return false;

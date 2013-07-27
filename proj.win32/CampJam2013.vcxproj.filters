@@ -13,6 +13,12 @@
     <Filter Include="Classes\Entities">
       <UniqueIdentifier>{ccbaa11b-4c07-42a4-a465-1dd649cb09c9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Entities\Enemies">
+      <UniqueIdentifier>{689a0cf5-b29f-4f90-97df-72da2387b7e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Entities\Collectables">
+      <UniqueIdentifier>{23e1b56e-2b24-4391-bd8b-bb7a95d365d7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -39,20 +45,29 @@
     <ClCompile Include="..\Classes\B2DebugDraw\GLES-Render.cpp">
       <Filter>Classes\B2DebugDraw</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Entities\Enemy.cpp">
-      <Filter>Classes\Entities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Entities\Man.cpp">
-      <Filter>Classes\Entities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Entities\Woman.cpp">
-      <Filter>Classes\Entities</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\Entities\Player.cpp">
       <Filter>Classes\Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Entities\Coffee.cpp">
-      <Filter>Classes\Entities</Filter>
+      <Filter>Classes\Entities\Collectables</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Donut.cpp">
+      <Filter>Classes\Entities\Collectables</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\PeaBerry.cpp">
+      <Filter>Classes\Entities\Collectables</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Water.cpp">
+      <Filter>Classes\Entities\Collectables</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Enemy.cpp">
+      <Filter>Classes\Entities\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Man.cpp">
+      <Filter>Classes\Entities\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Woman.cpp">
+      <Filter>Classes\Entities\Enemies</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -83,20 +98,29 @@
     <ClInclude Include="..\Classes\B2DebugDraw\GLES-Render.h">
       <Filter>Classes\B2DebugDraw</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Entities\Enemy.h">
-      <Filter>Classes\Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Entities\Man.h">
-      <Filter>Classes\Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Entities\Woman.h">
-      <Filter>Classes\Entities</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\Entities\Player.h">
       <Filter>Classes\Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Entities\Coffee.h">
-      <Filter>Classes\Entities</Filter>
+      <Filter>Classes\Entities\Collectables</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Donut.h">
+      <Filter>Classes\Entities\Collectables</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\PeaBerry.h">
+      <Filter>Classes\Entities\Collectables</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Water.h">
+      <Filter>Classes\Entities\Collectables</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Enemy.h">
+      <Filter>Classes\Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Man.h">
+      <Filter>Classes\Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Woman.h">
+      <Filter>Classes\Entities\Enemies</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,20 +1,20 @@
-#include "Coffee.h"
+#include "Donut.h"
 
-Coffee::~Coffee() {
+Donut::~Donut() {
 	
 }
 
-void Coffee::addFixtures() {
+void Donut::addFixtures() {
 	float width = _node->getContentSize().width * 0.6f;
     float height = _node->getContentSize().height * 0.6f;
     this->addRectangularFixture(width, height);
 }
 
-bool Coffee::init(b2World *world, Dictionary *properties) {
+bool Donut::init(b2World *world, Dictionary *properties) {
     //FIXME
-    _node = Sprite::createWithSpriteFrameName("key.png");
+    _node = Sprite::createWithSpriteFrameName("arrowup.png");
 	
-	this->setType(GameObjectTypeCoffee);
+	this->setType(GameObjectTypeDonut);
 
     if (!GameObject::init(world, properties))
         return false;
@@ -22,6 +22,6 @@ bool Coffee::init(b2World *world, Dictionary *properties) {
     return true;
 }
 
-void Coffee::update(float dt) {
+void Donut::update(float dt) {
 	GameObject::update(dt);
 }

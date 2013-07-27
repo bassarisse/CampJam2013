@@ -1,28 +1,27 @@
 //
-//  Enemy.h
+//  Water.h
 //  CampJam13
 //
 //  Created by Murilo Clemente - 27/07/13
 //
 //
 
-#ifndef __CampJam__Coffee__
-#define __CampJam__Coffee__
+#ifndef __CampJam__Water__
+#define __CampJam__Water__
 
 #include "GameObject.h"
 
-class Coffee : public GameObject {
+class Water : public GameObject {
     
 private:
     
 protected:
     
     virtual void addFixtures();
-	
 
 public:
     
-    virtual ~Coffee();
+    virtual ~Water();
     
     virtual bool init(b2World *world, Dictionary *properties);
     virtual void update(float dt);

@@ -1,27 +1,27 @@
-#include "Coffee.h"
+#include "Water.h"
 
-Coffee::~Coffee() {
+Water::~Water() {
 	
 }
 
-void Coffee::addFixtures() {
+void Water::addFixtures() {
 	float width = _node->getContentSize().width * 0.6f;
     float height = _node->getContentSize().height * 0.6f;
     this->addRectangularFixture(width, height);
 }
 
-bool Coffee::init(b2World *world, Dictionary *properties) {
-    //FIXME
+bool Water::init(b2World *world, Dictionary *properties) {
+    
+	//FIXME
     _node = Sprite::createWithSpriteFrameName("key.png");
 	
-	this->setType(GameObjectTypeCoffee);
-
+	this->setType(GameObjectTypeWater);
     if (!GameObject::init(world, properties))
         return false;
     
     return true;
 }
 
-void Coffee::update(float dt) {
+void Water::update(float dt) {
 	GameObject::update(dt);
 }
