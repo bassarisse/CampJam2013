@@ -16,10 +16,8 @@ bool Coffee::init(b2World *world, Dictionary *properties) {
 	
 	this->setType(GameObjectTypeCoffee);
 
-    if (!GameObject::init(world, properties))
+    if (!GameObject::init(world, properties, true))
         return false;
-    
-    _isSensor = true;
     
     return true;
 }

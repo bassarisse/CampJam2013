@@ -8,6 +8,7 @@
 
 #include "Player.h"
 #include "Enemies/Enemy.h"
+#include "../GamePlay.h"
 
 Player::~Player() {
     
@@ -68,9 +69,10 @@ void Player::update(float dt) {
         _life -= affectValue * (0.8f + _coffee / 100.0f);
     }
     
-    if (_life < 0)
+    if (_life < 0) {
         _life = 0;
-    
+        Director::sharedDirector()->replaceScene(GamePlay::scene());
+    }
     _score += dt * (100 + _coffee);
     
     this->executeWalkAnimation();

@@ -89,7 +89,6 @@
 		62E5AFDF17A487DE00BE18FE /* HealthBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFDC17A487DE00BE18FE /* HealthBar.cpp */; };
 		62E5AFE217A4B01200BE18FE /* tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 62E5AFE117A4B01200BE18FE /* tiles.png */; };
 		62E5AFE717A525B400BE18FE /* drinked_coffee.wav in Resources */ = {isa = PBXBuildFile; fileRef = 62E5AFE517A525B400BE18FE /* drinked_coffee.wav */; };
-		62E5AFE817A525B400BE18FE /* main_bgm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 62E5AFE617A525B400BE18FE /* main_bgm.wav */; };
 		62E5AFFB17A5278800BE18FE /* Coffee.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFEA17A5278800BE18FE /* Coffee.cpp */; };
 		62E5AFFC17A5278800BE18FE /* Donut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFEC17A5278800BE18FE /* Donut.cpp */; };
 		62E5AFFD17A5278800BE18FE /* PeaBerry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFEE17A5278800BE18FE /* PeaBerry.cpp */; };
@@ -98,6 +97,7 @@
 		62E5B00017A5278800BE18FE /* Man.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFF517A5278800BE18FE /* Man.cpp */; };
 		62E5B00117A5278800BE18FE /* Manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFF717A5278800BE18FE /* Manager.cpp */; };
 		62E5B00217A5278800BE18FE /* Woman.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFF917A5278800BE18FE /* Woman.cpp */; };
+		62E5B00417A52CE100BE18FE /* main_bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62E5B00317A52CE100BE18FE /* main_bgm.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -269,7 +269,6 @@
 		62E5AFDD17A487DE00BE18FE /* HealthBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthBar.h; path = ../Classes/HealthBar.h; sourceTree = "<group>"; };
 		62E5AFE117A4B01200BE18FE /* tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tiles.png; sourceTree = "<group>"; };
 		62E5AFE517A525B400BE18FE /* drinked_coffee.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = drinked_coffee.wav; sourceTree = "<group>"; };
-		62E5AFE617A525B400BE18FE /* main_bgm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = main_bgm.wav; sourceTree = "<group>"; };
 		62E5AFEA17A5278800BE18FE /* Coffee.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Coffee.cpp; sourceTree = "<group>"; };
 		62E5AFEB17A5278800BE18FE /* Coffee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coffee.h; sourceTree = "<group>"; };
 		62E5AFEC17A5278800BE18FE /* Donut.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Donut.cpp; sourceTree = "<group>"; };
@@ -286,6 +285,7 @@
 		62E5AFF817A5278800BE18FE /* Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Manager.h; sourceTree = "<group>"; };
 		62E5AFF917A5278800BE18FE /* Woman.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Woman.cpp; sourceTree = "<group>"; };
 		62E5AFFA17A5278800BE18FE /* Woman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Woman.h; sourceTree = "<group>"; };
+		62E5B00317A52CE100BE18FE /* main_bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = main_bgm.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -662,7 +662,7 @@
 				62E5AFC717A4280800BE18FE /* Characters.plist */,
 				62E5AFC817A4280800BE18FE /* Characters.png */,
 				62E5AFE517A525B400BE18FE /* drinked_coffee.wav */,
-				62E5AFE617A525B400BE18FE /* main_bgm.wav */,
+				62E5B00317A52CE100BE18FE /* main_bgm.mp3 */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -746,7 +746,7 @@
 				62E5AFCA17A4280800BE18FE /* Characters.png in Resources */,
 				62E5AFE217A4B01200BE18FE /* tiles.png in Resources */,
 				62E5AFE717A525B400BE18FE /* drinked_coffee.wav in Resources */,
-				62E5AFE817A525B400BE18FE /* main_bgm.wav in Resources */,
+				62E5B00417A52CE100BE18FE /* main_bgm.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
