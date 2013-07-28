@@ -137,6 +137,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\Classes\BAContactListener.cpp" />
     <ClCompile Include="..\Classes\BaseLayer.cpp" />
     <ClCompile Include="..\Classes\CoffeeBar.cpp" />
+    <ClCompile Include="..\Classes\Entities\CollectableSpawnPoint.cpp" />
     <ClCompile Include="..\Classes\Entities\Collectables\Coffee.cpp" />
     <ClCompile Include="..\Classes\Entities\Collectables\Donut.cpp" />
     <ClCompile Include="..\Classes\Entities\Collectables\PeaBerry.cpp" />
@@ -145,6 +146,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\Classes\Entities\Enemies\Man.cpp" />
     <ClCompile Include="..\Classes\Entities\Enemies\Manager.cpp" />
     <ClCompile Include="..\Classes\Entities\Enemies\Woman.cpp" />
+    <ClCompile Include="..\Classes\Entities\EnemySpawnPoint.cpp" />
     <ClCompile Include="..\Classes\Entities\Player.cpp" />
     <ClCompile Include="..\Classes\GameObject.cpp" />
     <ClCompile Include="..\Classes\GamePlay.cpp" />
@@ -161,6 +163,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\Classes\BaseLayer.h" />
     <ClInclude Include="..\Classes\CoffeeBar.h" />
     <ClInclude Include="..\Classes\Common.h" />
+    <ClInclude Include="..\Classes\Entities\CollectableSpawnPoint.h" />
     <ClInclude Include="..\Classes\Entities\Collectables\Coffee.h" />
     <ClInclude Include="..\Classes\Entities\Collectables\Donut.h" />
     <ClInclude Include="..\Classes\Entities\Collectables\PeaBerry.h" />
@@ -169,6 +172,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\Classes\Entities\Enemies\Man.h" />
     <ClInclude Include="..\Classes\Entities\Enemies\Manager.h" />
     <ClInclude Include="..\Classes\Entities\Enemies\Woman.h" />
+    <ClInclude Include="..\Classes\Entities\EnemySpawnPoint.h" />
     <ClInclude Include="..\Classes\Entities\Player.h" />
     <ClInclude Include="..\Classes\GameObject.h" />
     <ClInclude Include="..\Classes\GamePlay.h" />

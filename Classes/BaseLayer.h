@@ -38,7 +38,7 @@ public:
     virtual void buttonB(bool pressed);
     virtual void buttonStart(bool pressed);
     virtual void buttonSelect(bool pressed);
-    
+    virtual void buttonAny(bool pressed);
 };
 
 

@@ -37,8 +37,8 @@ bool TitleScene::init()  {
 	bgGrad->setPosition(ccp(0,0));
 	bgGrad->setContentSize(this->getContentSize());
 
-	LabelBMFont *titlelabel = LabelBMFont::create("Press start!", 
-		"MainFont.fnt",300,kTextAlignmentCenter);
+	LabelBMFont *titlelabel = LabelBMFont::create("Press any button!", 
+		"MainFont.fnt",400,kTextAlignmentCenter);
 
 	
 	titlelabel->setAnchorPoint(ccp(0.5,0.5));
@@ -54,12 +54,12 @@ void TitleScene::update(float dt) {
 	
 }
 
-void TitleScene::buttonStart(bool pressed) {
+void TitleScene::buttonAny(bool pressed) {
 	if(pressed)
 		return;
 
-	Scene *pScene = GamePlay::scene();
 	CocosDenshion::SimpleAudioEngine::sharedEngine()->stopBackgroundMusic(true);
-
+	Scene *pScene = GamePlay::scene();
+	
 	Director::sharedDirector()->replaceScene(TransitionFade::create(1.0f, pScene));
 }

@@ -74,6 +74,7 @@ public:
     virtual void buttonA(bool pressed);
 	virtual void buttonB(bool pressed);
 
+	virtual void onEnter();
     
 };
 

@@ -66,7 +66,7 @@ void BaseLayer::keyReleased(int keyCode)
 }
 
 void BaseLayer::handleKey(int keyCode, bool pressed) {
-    
+	this->buttonAny(pressed);
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_MAC)
     switch (keyCode) {
         case 126:
@@ -152,4 +152,7 @@ void BaseLayer::buttonStart(bool pressed) {
 }
 
 void BaseLayer::buttonSelect(bool pressed) {
+}
+
+void BaseLayer::buttonAny(bool pressed) {
 }

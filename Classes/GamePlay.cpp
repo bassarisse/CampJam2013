@@ -259,7 +259,7 @@ bool GamePlay::init()
     if (_debugLayer)
         this->addChild(_debugLayer, 9999);
     
-	SimpleAudioEngine::sharedEngine()->playBackgroundMusic("main_bgm.mp3", true);
+	SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic("main_bgm.mp3");
 
     return true;
 }
@@ -549,4 +549,10 @@ void GamePlay::buttonB(bool pressed) {
 		this->addChild(_pauseLayer);
 		this->recursivelyPauseAllChildren(this);
 	}
+}
+
+void GamePlay::onEnter() {
+	Layer::onEnter();
+	SimpleAudioEngine::sharedEngine()->playBackgroundMusic("main_bgm.mp3", true);
+
 }

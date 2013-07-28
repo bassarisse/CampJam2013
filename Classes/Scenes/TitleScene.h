@@ -18,7 +18,7 @@ public:
 	CREATE_FUNC(TitleScene);
 
 	void update(float dt);
-	virtual void buttonStart(bool pressed);
+	virtual void buttonAny(bool pressed);
 
 };
 
