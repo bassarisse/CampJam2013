@@ -22,6 +22,9 @@
     <Filter Include="Classes\Scenes">
       <UniqueIdentifier>{2880091d-f8db-488c-97c6-fc5fe2c03566}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Entities\Static">
+      <UniqueIdentifier>{9235a467-f28e-4189-a953-452e2f7af9e2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -95,6 +98,18 @@
     </ClCompile>
     <ClCompile Include="..\Classes\Scenes\GameoverScene.cpp">
       <Filter>Classes\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Static\Document.cpp">
+      <Filter>Classes\Entities\Static</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Static\EmptyPaper.cpp">
+      <Filter>Classes\Entities\Static</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Static\Printer.cpp">
+      <Filter>Classes\Entities\Static</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Static\BossDesk.cpp">
+      <Filter>Classes\Entities\Static</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +187,18 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Scenes\GameoverScene.h">
       <Filter>Classes\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Static\Document.h">
+      <Filter>Classes\Entities\Static</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Static\EmptyPaper.h">
+      <Filter>Classes\Entities\Static</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Static\Printer.h">
+      <Filter>Classes\Entities\Static</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Static\BossDesk.h">
+      <Filter>Classes\Entities\Static</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

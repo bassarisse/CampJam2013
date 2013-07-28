@@ -321,7 +321,7 @@ bool GamePlay::init()
     if (_debugLayer)
         this->addChild(_debugLayer, 9999);
     
-	SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic("main_bgm.mp3");
+	SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic("main_bgm.wav");
 
     return true;
 }
@@ -681,7 +681,7 @@ void GamePlay::buttonB(bool pressed) {
 
 void GamePlay::onEnter() {
 	BaseLayer::onEnter();
-	SimpleAudioEngine::sharedEngine()->playBackgroundMusic("main_bgm.mp3", true);
+	SimpleAudioEngine::sharedEngine()->playBackgroundMusic("main_bgm.wav", true);
 
 }
 

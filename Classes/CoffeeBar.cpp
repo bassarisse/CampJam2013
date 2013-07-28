@@ -28,14 +28,14 @@ bool CoffeeBar::init(float coffeeLevel) {
 	_bar->setPosition(5, 3);
 	_bar->setContentSize(CCSizeMake(_gaugeSprite->getContentSize().width - 3, 25));
 
-	/*
+	
 	LayerColor *coffeeThreshold = LayerColor::create(ccc4(120,120,120,255));
 
 	coffeeThreshold->setPosition(
-		(this->getContentSize().width * (kCoffeeThreshold / 100 ) ), 3);
+		(_bar->getContentSize().width * (kCoffeeThreshold / 100 ) ), 3);
 
 	coffeeThreshold->setContentSize(CCSizeMake(3, 34));
-	*/
+	
 
 	Sprite* coffeeIcon = Sprite::createWithSpriteFrameName("coffee.png");;
 	coffeeIcon->setPosition(ccp(0, this->getContentSize().height / 2));
