@@ -286,24 +286,33 @@ bool GameObject::changeDirection(kDirection direction) {
 
 void GameObject::executeWalkAnimation() {
     
-    if (this->getState() == GameObjectStateWalking && !_node->getActionByTag(kWalkActionTag)) {
+    if (this->getState() == GameObjectStateWalking) {
         
-        SpriteFrameCache *spriteCache = SpriteFrameCache::sharedSpriteFrameCache();
+        float speed = (abs(kWalkForce + this->getSpeed())) / 1.9f;
         
-        const char *frameNameVertical = getDirectionName(_lastVerticalDirection);
+        Speed *walkAction = dynamic_cast<Speed*>(_node->getActionByTag(kWalkActionTag));
         
-        Animation *anim = Animation::create();
-        anim->setDelayPerUnit(0.2f);
-        anim->setRestoreOriginalFrame(true);
+        if (!walkAction) {
+            
+            SpriteFrameCache *spriteCache = SpriteFrameCache::sharedSpriteFrameCache();
+            
+            const char *frameNameVertical = getDirectionName(_lastVerticalDirection);
+            
+            Animation *anim = Animation::create();
+            anim->setDelayPerUnit(0.5f);
+            anim->setRestoreOriginalFrame(true);
+            
+            anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("%s_%s1.png", _spriteFrameName, frameNameVertical)->getCString()));
+            anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("%s_%s2.png", _spriteFrameName, frameNameVertical)->getCString()));
+            
+            walkAction = Speed::create(RepeatForever::create(Animate::create(anim)), speed);
+            walkAction->setTag(kWalkActionTag);
+            
+            _node->stopAllActions();
+            _node->runAction(walkAction);
+        }
         
-        anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("%s_%s1.png", _spriteFrameName, frameNameVertical)->getCString()));
-        anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("%s_%s2.png", _spriteFrameName, frameNameVertical)->getCString()));
-        
-        Action *repeatAction = RepeatForever::create(Animate::create(anim));
-        repeatAction->setTag(kWalkActionTag);
-        
-        _node->stopAllActions();
-        _node->runAction(repeatAction);
+        walkAction->setSpeed(speed);
         
     } else if (this->getState() == GameObjectStateStanding) {
         

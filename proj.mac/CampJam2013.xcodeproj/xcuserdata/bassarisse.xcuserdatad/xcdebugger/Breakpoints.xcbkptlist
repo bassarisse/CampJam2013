@@ -7,39 +7,13 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "../Classes/Entities/Enemy.cpp"
-         timestampString = "396644115.16465"
+         filePath = "../Classes/GameObject.cpp"
+         timestampString = "396665922.498756"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "55"
-         endingLineNumber = "55"
-         landmarkName = "Enemy::handleMovement()"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "../Classes/Entities/Enemy.cpp"
-         timestampString = "396644115.16465"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "51"
-         endingLineNumber = "51"
-         landmarkName = "Enemy::handleMovement()"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "../Classes/HelloWorldScene.cpp"
-         timestampString = "396654882.488906"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "280"
-         endingLineNumber = "280"
-         landmarkName = "HelloWorld::update(float dt)"
+         startingLineNumber = "315"
+         endingLineNumber = "315"
+         landmarkName = "GameObject::executeWalkAnimation()"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
