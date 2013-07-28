@@ -12,10 +12,10 @@ class GameoverScene : public BaseLayer
 public:
 
 
-	static GameoverScene* create(int score) 
+	static GameoverScene* create(int score, bool isRecord) 
 	{ 
 		GameoverScene *pRet = new GameoverScene(); 
-		if (pRet && pRet->init(score)) 
+		if (pRet && pRet->init(score, isRecord))
 		{ 
 			pRet->autorelease(); 
 			return pRet; 
@@ -32,8 +32,8 @@ public:
 
 	virtual ~GameoverScene();
 
-	virtual bool init(int score);
-	static Scene* scene(int score);
+	virtual bool init(int score, bool isRecord);
+	static Scene* scene(int score, bool isRecord);
 
 	void update(float dt);
 

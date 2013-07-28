@@ -11,13 +11,13 @@ GameoverScene::~GameoverScene() {
 	
 }
 
-Scene* GameoverScene::scene(int score)
+Scene* GameoverScene::scene(int score, bool isRecord)
 {
     // 'scene' is an autorelease object
     Scene *scene = Scene::create();
     
     // 'layer' is an autorelease object
-    GameoverScene *layer = GameoverScene::create(score);
+    GameoverScene *layer = GameoverScene::create(score, isRecord);
 
     // add layer as a child to scene
     scene->addChild(layer);
@@ -26,7 +26,7 @@ Scene* GameoverScene::scene(int score)
     return scene;
 }
 
-bool GameoverScene::init(int score)  {
+bool GameoverScene::init(int score, bool isRecord)  {
 	
 	if ( !BaseLayer::init() )
     {
@@ -41,20 +41,13 @@ bool GameoverScene::init(int score)  {
 	bgSprite->setPosition(ccp((this->getContentSize().width / 2) ,
 						this->getContentSize().height / 2));
 
-
-	
-
 	LabelBMFont *scoreLabel = LabelBMFont::create(
-		String::createWithFormat("Your score: %d", _score)->getCString(),
-		"MainFont.fnt",400,kTextAlignmentCenter);
+		String::createWithFormat("Your score: %d%s", _score, isRecord ? "\nNew record, good job!\nNow go back to work!" : "")->getCString(), "MainFont.fnt", 600,kTextAlignmentLeft);
 
 	
-	scoreLabel->setAnchorPoint(ccp(0.5,0.5));
-	scoreLabel->setPosition(ccp(180, this->getContentSize().height - 200));
+	scoreLabel->setAnchorPoint(ccp(0.0,0.5));
+	scoreLabel->setPosition(ccp(10, this->getContentSize().height - 90));
 
-
-
-	
 	MenuItemLabel* item1;
 	MenuItemLabel* item2;
 	

@@ -82,8 +82,18 @@ void Player::update(float dt) {
     }
     
     if (_life < 0) {
+        
+        int bestScore = UserDefault::sharedUserDefault()->getIntegerForKey("Record", 0);
+        
+        bool isRecord = _score > bestScore;
+        
+        if (bestScore) {
+            UserDefault::sharedUserDefault()->setIntegerForKey("Record", _score);
+            UserDefault::sharedUserDefault()->flush();
+        }
+        
 		SimpleAudioEngine::sharedEngine()->playEffect("wilhem.wav");
-		Scene* over = GameoverScene::scene(_score);
+		Scene* over = GameoverScene::scene(_score, isRecord);
 		Director::sharedDirector()->replaceScene(over);
 		return;
     }
