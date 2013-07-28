@@ -327,6 +327,8 @@ void GamePlay::update(float dt) {
                 case GameObjectTypeCoffee:
                     SimpleAudioEngine::sharedEngine()->playEffect("drinked_coffee.wav");
                     break;
+				case GameObjectTypeDonut:
+					SimpleAudioEngine::sharedEngine()->playEffect("donut_eating.wav");
                 default:
                     break;
 			}

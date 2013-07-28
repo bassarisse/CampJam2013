@@ -51,7 +51,7 @@ void EnemySpawnPoint::update(float dt) {
         _spawnTime = 0;
         _nextSpawnTime = 0;
         
-        if (_gameObjects.size() >= _maxObjects)
+        if ((int)_gameObjects.size() >= _maxObjects)
             return;
         
         GameObject *newObj = _gamePlay->createGameObject((GameObjectType)(GameObjectTypeMan + rand() % (1 + GameObjectTypeManager - GameObjectTypeMan)), _properties);
