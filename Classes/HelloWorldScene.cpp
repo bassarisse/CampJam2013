@@ -260,7 +260,7 @@ bool HelloWorld::init()
     if (_debugLayer)
         this->addChild(_debugLayer, 9999);
     
-	CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("main_bgm.mp3", true);
+	CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("main_bgm.wav", true);
 
     return true;
 }
@@ -296,6 +296,12 @@ void HelloWorld::update(float dt) {
 	for(std::vector<GameObject *>::size_type i = 0; i < _gameObjects.size(); i++) {
         GameObject *gameObj = _gameObjects[i];
 		if(gameObj->getState() == GameObjectStateDead) {
+			switch(gameObj->getType()) {
+			case GameObjectTypeCoffee:
+				CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("drinked_coffee.wav");
+				break;
+			}
+
             this->removeObject(gameObj);
 		}
     }
