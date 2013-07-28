@@ -36,7 +36,9 @@ public:
 	static Scene* scene(int score);
 
 	void update(float dt);
-	virtual void buttonAny(bool pressed);
+
+	void GameoverScene::clickedRetry(Object* sender);
+	void GameoverScene::clickedTitle(Object* sender);
 
 };
 
