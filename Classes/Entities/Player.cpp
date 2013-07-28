@@ -26,7 +26,7 @@ bool Player::init(b2World *world, Dictionary *properties) {
     
     _node = Sprite::createWithSpriteFrameName("stag_down.png");
     _life = 100.0f;
-    _coffee = 100.0f;
+    _coffee = 100.0f; // CHANGE IT!
     _spriteFrameName = "stag";
 
     if (!GameObject::init(world, properties))
@@ -70,6 +70,8 @@ void Player::update(float dt) {
     
     if (_life < 0)
         _life = 0;
+    
+    _score += dt * (100 + _coffee);
     
     this->executeWalkAnimation();
     

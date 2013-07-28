@@ -13,12 +13,13 @@ void Donut::addFixtures() {
 bool Donut::init(b2World *world, Dictionary *properties) {
     
     _node = Sprite::createWithSpriteFrameName("donut.png");
-    _isSensor = true;
 	
 	this->setType(GameObjectTypeDonut);
 
     if (!GameObject::init(world, properties))
         return false;
+    
+    _isSensor = true;
     
     return true;
 }

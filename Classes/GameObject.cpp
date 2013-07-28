@@ -153,6 +153,7 @@ void GameObject::addBodyToWorld(b2World *world) {
 bool GameObject::init(b2World *world, Dictionary *properties) {
     
     _speedFactor = 0.0f;
+    _isSensor = false;
     _shouldFlipSprite = true;
     _lastDirection = kDirectionDown;
     _lastVerticalDirection = kDirectionDown;

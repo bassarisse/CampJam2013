@@ -13,12 +13,13 @@ void PeaBerry::addFixtures() {
 bool PeaBerry::init(b2World *world, Dictionary *properties) {
     
 	_node = Sprite::createWithSpriteFrameName("special_coffee.png");
-    _isSensor = true;
     
 	this->setType(GameObjectTypePeaBerry);
 
     if (!GameObject::init(world, properties))
         return false;
+    
+    _isSensor = true;
     
     return true;
 }

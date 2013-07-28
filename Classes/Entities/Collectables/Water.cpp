@@ -13,12 +13,13 @@ void Water::addFixtures() {
 bool Water::init(b2World *world, Dictionary *properties) {
     
     _node = Sprite::createWithSpriteFrameName("water.png");
-    _isSensor = true;
 	
 	this->setType(GameObjectTypeWater);
     
     if (!GameObject::init(world, properties))
         return false;
+    
+    _isSensor = true;
     
     return true;
 }
