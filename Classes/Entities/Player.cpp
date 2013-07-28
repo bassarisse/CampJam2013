@@ -104,6 +104,7 @@ void Player::handleCollision(GameObject *gameObject) {
             if (_damageTime > 0)
                 return;
             
+			SimpleAudioEngine::sharedEngine()->playEffect("player_hit.wav");
             _damageTime = 0.3f;
             
             Enemy *enemy = (Enemy *)gameObject;

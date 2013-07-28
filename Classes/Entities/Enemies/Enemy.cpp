@@ -84,7 +84,7 @@ void Enemy::update(float dt) {
 	
 		_playerReference->getGameScreen()->showScore(ccp(
 													_node->getPosition().x + (_node->getContentSize().width / 2),
-													_node->getPosition().y + (_node->getContentSize().height / 2 ),
+													_node->getPosition().y + (_node->getContentSize().height / 2 )
 													), kEnemyScore);
 		this->setState(GameObjectStateDying);
 		_node->runAction(deathRitual);

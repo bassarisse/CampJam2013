@@ -9,7 +9,7 @@
 #include "EnemySpawnPoint.h"
 
 #include "GamePlay.h"
-#include "Enemy.h"
+#include "Enemies/Enemy.h"
 
 EnemySpawnPoint::~EnemySpawnPoint() {
     CC_SAFE_RELEASE(_properties);
