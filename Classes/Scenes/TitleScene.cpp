@@ -73,7 +73,7 @@ bool TitleScene::init()  {
 
 	menu = Menu::create(startOpt, creditsOpt, NULL);
 	menu->setPosition(ccp(this->getContentSize().width / 2, 60));
-	menu->alignItemsHorizontallyWithPadding(600);
+	menu->alignItemsHorizontallyWithPadding(650);
 
 	this->addChild(bgSprite);
 	this->addChild(menu);
