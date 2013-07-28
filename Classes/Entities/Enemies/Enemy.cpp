@@ -67,7 +67,7 @@ void Enemy::update(float dt) {
     GameObject::update(dt);
     
     Sprite *sprite = (Sprite *)_node;
-    if (_state != GameObjectStateDead && sprite->getOpacity() < 255) {
+    if (_state != GameObjectStateDead && _state != GameObjectStateDying && sprite->getOpacity() < 255) {
         int newOpacity = sprite->getOpacity() + dt * 500;
         if (newOpacity > 255) newOpacity = 255;
         sprite->setOpacity(newOpacity);
@@ -89,7 +89,7 @@ void Enemy::update(float dt) {
 	
 		_playerReference->getGameScreen()->showScore(ccp(
 													_node->getPosition().x + (_node->getContentSize().width / 2),
-													_node->getPosition().y + (_node->getContentSize().height / 2 ),
+													_node->getPosition().y + (_node->getContentSize().height / 2 )
 													), kEnemyScore);
 		this->setState(GameObjectStateDying);
 		_node->runAction(deathRitual);
