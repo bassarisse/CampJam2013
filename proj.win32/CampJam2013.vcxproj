@@ -137,18 +137,18 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\Classes\BAContactListener.cpp" />
     <ClCompile Include="..\Classes\BaseLayer.cpp" />
     <ClCompile Include="..\Classes\CoffeeBar.cpp" />
-    <ClCompile Include="..\Classes\Entities\Coffee.cpp" />
-    <ClCompile Include="..\Classes\Entities\Donut.cpp" />
-    <ClCompile Include="..\Classes\Entities\Enemy.cpp" />
-    <ClCompile Include="..\Classes\Entities\Man.cpp" />
-    <ClCompile Include="..\Classes\Entities\Manager.cpp" />
-    <ClCompile Include="..\Classes\Entities\PeaBerry.cpp" />
+    <ClCompile Include="..\Classes\Entities\Collectables\Coffee.cpp" />
+    <ClCompile Include="..\Classes\Entities\Collectables\Donut.cpp" />
+    <ClCompile Include="..\Classes\Entities\Collectables\PeaBerry.cpp" />
+    <ClCompile Include="..\Classes\Entities\Collectables\Water.cpp" />
+    <ClCompile Include="..\Classes\Entities\Enemies\Enemy.cpp" />
+    <ClCompile Include="..\Classes\Entities\Enemies\Man.cpp" />
+    <ClCompile Include="..\Classes\Entities\Enemies\Manager.cpp" />
+    <ClCompile Include="..\Classes\Entities\Enemies\Woman.cpp" />
     <ClCompile Include="..\Classes\Entities\Player.cpp" />
-    <ClCompile Include="..\Classes\Entities\Water.cpp" />
-    <ClCompile Include="..\Classes\Entities\Woman.cpp" />
     <ClCompile Include="..\Classes\GameObject.cpp" />
+    <ClCompile Include="..\Classes\GamePlay.cpp" />
     <ClCompile Include="..\Classes\HealthBar.cpp" />
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -159,18 +159,18 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\Classes\BaseLayer.h" />
     <ClInclude Include="..\Classes\CoffeeBar.h" />
     <ClInclude Include="..\Classes\Common.h" />
-    <ClInclude Include="..\Classes\Entities\Coffee.h" />
-    <ClInclude Include="..\Classes\Entities\Donut.h" />
-    <ClInclude Include="..\Classes\Entities\Enemy.h" />
-    <ClInclude Include="..\Classes\Entities\Man.h" />
-    <ClInclude Include="..\Classes\Entities\Manager.h" />
-    <ClInclude Include="..\Classes\Entities\PeaBerry.h" />
+    <ClInclude Include="..\Classes\Entities\Collectables\Coffee.h" />
+    <ClInclude Include="..\Classes\Entities\Collectables\Donut.h" />
+    <ClInclude Include="..\Classes\Entities\Collectables\PeaBerry.h" />
+    <ClInclude Include="..\Classes\Entities\Collectables\Water.h" />
+    <ClInclude Include="..\Classes\Entities\Enemies\Enemy.h" />
+    <ClInclude Include="..\Classes\Entities\Enemies\Man.h" />
+    <ClInclude Include="..\Classes\Entities\Enemies\Manager.h" />
+    <ClInclude Include="..\Classes\Entities\Enemies\Woman.h" />
     <ClInclude Include="..\Classes\Entities\Player.h" />
-    <ClInclude Include="..\Classes\Entities\Water.h" />
-    <ClInclude Include="..\Classes\Entities\Woman.h" />
     <ClInclude Include="..\Classes\GameObject.h" />
+    <ClInclude Include="..\Classes\GamePlay.h" />
     <ClInclude Include="..\Classes\HealthBar.h" />
-    <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>

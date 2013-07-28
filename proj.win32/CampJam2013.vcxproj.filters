@@ -27,9 +27,6 @@
     <ClCompile Include="..\Classes\AppDelegate.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\GameObject.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
@@ -48,35 +45,38 @@
     <ClCompile Include="..\Classes\Entities\Player.cpp">
       <Filter>Classes\Entities</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Entities\Coffee.cpp">
-      <Filter>Classes\Entities\Collectables</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Entities\Donut.cpp">
-      <Filter>Classes\Entities\Collectables</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Entities\PeaBerry.cpp">
-      <Filter>Classes\Entities\Collectables</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Entities\Water.cpp">
-      <Filter>Classes\Entities\Collectables</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Entities\Enemy.cpp">
-      <Filter>Classes\Entities\Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Entities\Man.cpp">
-      <Filter>Classes\Entities\Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Entities\Woman.cpp">
-      <Filter>Classes\Entities\Enemies</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\CoffeeBar.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\HealthBar.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Entities\Manager.cpp">
+    <ClCompile Include="..\Classes\Entities\Enemies\Enemy.cpp">
       <Filter>Classes\Entities\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Enemies\Man.cpp">
+      <Filter>Classes\Entities\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Enemies\Manager.cpp">
+      <Filter>Classes\Entities\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Enemies\Woman.cpp">
+      <Filter>Classes\Entities\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Collectables\Coffee.cpp">
+      <Filter>Classes\Entities\Collectables</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Collectables\Donut.cpp">
+      <Filter>Classes\Entities\Collectables</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Collectables\PeaBerry.cpp">
+      <Filter>Classes\Entities\Collectables</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Collectables\Water.cpp">
+      <Filter>Classes\Entities\Collectables</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GamePlay.cpp">
+      <Filter>Classes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -84,9 +84,6 @@
       <Filter>win32</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\AppDelegate.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>Classes</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GameObject.h">
@@ -110,35 +107,38 @@
     <ClInclude Include="..\Classes\Entities\Player.h">
       <Filter>Classes\Entities</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Entities\Coffee.h">
-      <Filter>Classes\Entities\Collectables</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Entities\Donut.h">
-      <Filter>Classes\Entities\Collectables</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Entities\PeaBerry.h">
-      <Filter>Classes\Entities\Collectables</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Entities\Water.h">
-      <Filter>Classes\Entities\Collectables</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Entities\Enemy.h">
-      <Filter>Classes\Entities\Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Entities\Man.h">
-      <Filter>Classes\Entities\Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Entities\Woman.h">
-      <Filter>Classes\Entities\Enemies</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\CoffeeBar.h">
       <Filter>Classes</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\HealthBar.h">
       <Filter>Classes</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Entities\Manager.h">
+    <ClInclude Include="..\Classes\Entities\Enemies\Woman.h">
       <Filter>Classes\Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Enemies\Enemy.h">
+      <Filter>Classes\Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Enemies\Man.h">
+      <Filter>Classes\Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Enemies\Manager.h">
+      <Filter>Classes\Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Collectables\Water.h">
+      <Filter>Classes\Entities\Collectables</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Collectables\Coffee.h">
+      <Filter>Classes\Entities\Collectables</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Collectables\Donut.h">
+      <Filter>Classes\Entities\Collectables</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Collectables\PeaBerry.h">
+      <Filter>Classes\Entities\Collectables</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GamePlay.h">
+      <Filter>Classes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
