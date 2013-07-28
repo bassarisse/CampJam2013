@@ -19,8 +19,9 @@ GamePlay::~GamePlay() {
     
     delete _contactListener;
     
-    CC_SAFE_DELETE(_player);
-    
+    CC_SAFE_RELEASE(_player);
+	CC_SAFE_RELEASE(_pauseLayer);
+
     for(std::vector<GameObject *>::size_type i = 0; i < _gameObjects.size(); i++) {
         
         GameObject *deadObject = _gameObjects[i];
@@ -232,16 +233,34 @@ bool GamePlay::init()
     
 	_coffeeBar = new CoffeeBar();
 	_healthBar = new HealthBar();
+	_scoreLayer = new ScoreLayer();
+
 	Player* pl = (Player*)_player;
 
 	_coffeeBar->init(pl->getCoffee());
 	_coffeeBar->autorelease();
-
+	
 	_healthBar->init(pl->getLife());
 	_healthBar->autorelease();
 
+	_scoreLayer->init();
+	_scoreLayer->autorelease();
+
+	this->addChild(_scoreLayer);
 	this->addChild(_coffeeBar);
 	this->addChild(_healthBar);
+
+	_pauseLayer = LayerColor::create(ccc4(0,0,0,130));
+	_pauseLayer->retain();
+	_pauseLayer->setPosition(ccp(0,0));
+	_pauseLayer->setContentSize(CCSizeMake(1024, 768));
+	LabelBMFont* pauseLabel = LabelBMFont::create("Paused!", 
+		"MainFont.fnt",300,kTextAlignmentCenter);
+	pauseLabel->setAnchorPoint(ccp(0.5f, 0.5f));
+	pauseLabel->setPosition(ccp(this->getContentSize().width / 2, this->getContentSize().height / 2));
+	_pauseLayer->addChild(pauseLabel);
+
+	_isPaused = false;
 
     this->scheduleUpdate();
     
@@ -259,7 +278,8 @@ bool GamePlay::init()
 
 void GamePlay::update(float dt) {
     
-    _world->Step(dt, 8, 3);
+	if(!_isPaused)
+		_world->Step(dt, 8, 3);
     
     _player->setMovingHorizontalState(_movingHorizontalStates[_movingHorizontalStates.size() - 1]);
     _player->setMovingVerticalState(_movingVerticalStates[_movingVerticalStates.size() - 1]);
@@ -308,6 +328,9 @@ void GamePlay::update(float dt) {
 
 	_healthBar->setHealthLevel(pl->getLife());
 	_healthBar->update(dt);
+
+	_scoreLayer->setScore(pl->getScore());
+	_scoreLayer->update(dt);
 
 }
 
@@ -428,6 +451,21 @@ void GamePlay::buttonDown(bool pressed) {
 
 void GamePlay::buttonA(bool pressed) {
     
-    
-    
+}
+
+void GamePlay::buttonB(bool pressed) {
+	if(!pressed)
+		return;
+
+	if(_isPaused)
+	{
+		_isPaused = false;
+		this->removeChild(_pauseLayer);
+		this->recursivelyResumeAllChildren(this);
+	} else 
+	{
+		_isPaused = true;
+		this->addChild(_pauseLayer);
+		this->recursivelyPauseAllChildren(this);
+	}
 }

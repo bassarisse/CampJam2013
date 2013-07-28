@@ -68,6 +68,8 @@ public:
     virtual void handleMovement(float angle);
     virtual bool changeDirection(kDirection direction);
     
+	
+
     CC_SYNTHESIZE(MovingHorizontalState, _movingHorizontalState, MovingHorizontalState);
     CC_SYNTHESIZE(MovingVerticalState, _movingVerticalState, MovingVerticalState);
     CC_SYNTHESIZE(GameObjectState, _state, State);

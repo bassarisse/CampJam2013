@@ -25,6 +25,7 @@ void Player::addFixtures() {
 
 bool Player::init(b2World *world, Dictionary *properties) {
     
+	_score = 0;
     _node = Sprite::createWithSpriteFrameName("stag_down.png");
     _life = 100.0f;
     _coffee = 100.0f; // CHANGE IT!

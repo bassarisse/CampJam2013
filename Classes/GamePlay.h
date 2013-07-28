@@ -7,6 +7,7 @@
 #include "GameObject.h"
 #include "CoffeeBar.h"
 #include "HealthBar.h"
+#include "ScoreLayer.h"
 
 using namespace cocos2d;
 
@@ -45,6 +46,11 @@ public:
     
 	CoffeeBar *_coffeeBar;
 	HealthBar *_healthBar;
+	ScoreLayer *_scoreLayer;
+
+
+	LayerColor* _pauseLayer;
+	bool _isPaused;
 
     // Box2D
     
@@ -59,6 +65,7 @@ public:
     virtual void buttonUp(bool pressed);
     virtual void buttonDown(bool pressed);
     virtual void buttonA(bool pressed);
+	virtual void buttonB(bool pressed);
 
 	void removeObject(GameObject* deadObject);
     
