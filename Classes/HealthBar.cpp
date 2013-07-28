@@ -25,7 +25,7 @@ bool HealthBar::init(float healthLevel) {
 
 	_bar = LayerColor::create(ccc4(0, 255, 0, 255));
 	_bar->setPosition(5, 5);
-	_bar->setContentSize(CCSizeMake(250, 34));
+	_bar->setContentSize(CCSizeMake(250, 35));
 
 	Sprite* healthIcon = Sprite::createWithSpriteFrameName("donut.png");
 	healthIcon->setPosition(ccp(0, this->getContentSize().height / 2));
@@ -48,6 +48,11 @@ void HealthBar::update(float dt) {
 	int bgbarMaxWidth = 250;
 	_bar->setContentSize(CCSizeMake(bgbarMaxWidth * (_healthLevel / 100), 34));
 
+}
 
-
+void HealthBar::blinkBar() {
+	Blink* blink = Blink::create(0.3f, 2);
+	this->stopAllActions();
+	this->runAction(blink);
+	
 }

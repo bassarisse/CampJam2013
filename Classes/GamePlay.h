@@ -50,10 +50,15 @@ public:
     std::vector<CollectableSpawnPoint *> _collectableSpawnPoints;
     GameObject *_player;
     
+	CC_SYNTHESIZE(CoffeeBar*, _coffeeBar, CoffeeBar);
+	CC_SYNTHESIZE(HealthBar*, _healthBar, HealthBar);
+	CC_SYNTHESIZE(ScoreLayer*, _scoreLayer, ScoreLayer);
+
+	/*
 	CoffeeBar *_coffeeBar;
 	HealthBar *_healthBar;
 	ScoreLayer *_scoreLayer;
-
+	*/
 
 	LayerColor* _pauseLayer;
 	bool _isPaused;

@@ -22,7 +22,7 @@ bool EnemySpawnPoint::init(GamePlay *gamePlay, Dictionary *properties) {
     _properties->retain();
     _spawnTime = 0;
     _nextSpawnTime = 1 + rand() % 10;
-    _maxObjects = 5;
+    _maxObjects = 0;
     
     String *maxObjects = (String *)properties->objectForKey("MaxObjects");
     if (maxObjects)
@@ -51,7 +51,7 @@ void EnemySpawnPoint::update(float dt) {
         _spawnTime = 0;
         _nextSpawnTime = 0;
         
-        if (_maxObjects > 0 && _gameObjects.size() >= _maxObjects)
+        if (_maxObjects > 0 && (int)_gameObjects.size() >= _maxObjects)
             return;
         
         Enemy *newObj = (Enemy *)_gamePlay->createGameObject((GameObjectType)(GameObjectTypeMan + rand() % (1 + GameObjectTypeManager - GameObjectTypeMan)), _properties);

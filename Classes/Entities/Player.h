@@ -10,6 +10,7 @@
 #define __CampJam__Player__
 
 #include "GameObject.h"
+#include "../GamePlay.h"
 
 class Player : public GameObject {
     
@@ -33,11 +34,13 @@ public:
     
     virtual ~Player();
     
-    virtual bool init(b2World *world, Dictionary *properties);
+    virtual bool init(b2World *world, Dictionary *properties, GamePlay* gameScreen);
     virtual void update(float dt);
     virtual void followPoint(Point point);
     virtual void stopFollowingPoint();
     
+	GamePlay* _gameScreen;
+
 	CC_SYNTHESIZE(float, _score, Score);
 	CC_SYNTHESIZE(float, _coffee, Coffee);
 	CC_SYNTHESIZE(float, _life, Life);
