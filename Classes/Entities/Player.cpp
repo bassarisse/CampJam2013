@@ -41,7 +41,13 @@ void Player::update(float dt) {
   
     GameObject::update(dt);
     
-    float affectValue = dt * kCoffeeDamage;
+    _damageTime -= dt;
+    if (_damageTime < 0)
+        _damageTime = 0;
+    
+    int colorAdd = 100 + 155 * ((kDamageTime - _damageTime) / kDamageTime);
+    Sprite *thisSprite = (Sprite *)this->getNode();
+    thisSprite->setColor(ccc3(255, colorAdd, colorAdd));
     
     _peaBerryTime -= dt;
     
@@ -53,12 +59,17 @@ void Player::update(float dt) {
         }
     }
     
+    float affectValue = dt * kCoffeeDamage;
+    
     _coffee -= affectValue;
     if (_coffee < 0) _coffee = 0;
     
     if (_coffee > kCoffeeThreshold) {
         _life -= affectValue * (0.8f + _coffee / 100.0f);
     }
+    
+    if (_life < 0)
+        _life = 0;
     
     this->executeWalkAnimation();
     
@@ -76,10 +87,28 @@ void Player::handleCollision(GameObject *gameObject) {
         case GameObjectTypeWoman:
         case GameObjectTypeManager:
         {
-            Enemy *enemy = (Enemy *)gameObject;
-            _life -= kDamageBaseAmout * enemy->getDamageFactor();
+            if (_damageTime > 0)
+                return;
             
-            this->setState(GameObjectStateTakingDamage);
+            _damageTime = 0.3f;
+            
+            Enemy *enemy = (Enemy *)gameObject;
+            _life -= kDamageBaseAmount * enemy->getDamageFactor();
+            
+            b2Vec2 vel = _body->GetLinearVelocity();
+            b2Vec2 enemyVel = enemy->getBody()->GetLinearVelocity();
+            
+            b2Vec2 targetVel;
+            
+            if (this->getMovingHorizontalState() == MovingStateHorizontalStopped && this->getMovingVerticalState() == MovingStateVerticalStopped) {
+                targetVel.x = enemyVel.x * 40;
+                targetVel.y = enemyVel.y * 40;
+            } else {
+                targetVel.x = vel.x * -12;
+                targetVel.y = vel.y * -12;
+            }
+            
+            _body->ApplyLinearImpulse(targetVel, _body->GetWorldCenter());
             
         }
             break;
@@ -101,7 +130,7 @@ void Player::handleCollision(GameObject *gameObject) {
             break;
             
         case GameObjectTypeWater:
-            _coffee -= kDonutEffectAmout;
+            _coffee -= kDonutEffectAmount;
             if (_coffee < 0.0f)
                 _coffee = 0.0f;
             gameObject->setState(GameObjectStateDead);
@@ -109,7 +138,7 @@ void Player::handleCollision(GameObject *gameObject) {
             break;
             
         case GameObjectTypeDonut:
-            _life += kDonutEffectAmout;
+            _life += kDonutEffectAmount;
             if (_life > 100.0f)
                 _life = 100.0f;
             gameObject->setState(GameObjectStateDead);

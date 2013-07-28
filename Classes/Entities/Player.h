@@ -19,6 +19,7 @@ protected:
     
     bool _isUnderPeaBerryEffect;
     float _peaBerryTime;
+    float _damageTime;
     
     virtual void addFixtures();
     virtual float getSpeed();

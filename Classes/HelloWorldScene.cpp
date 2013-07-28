@@ -57,18 +57,6 @@ bool HelloWorld::init()
     //Size visibleSize = Director::sharedDirector()->getVisibleSize();
     //Point origin = Director::sharedDirector()->getVisibleOrigin();
     
-    
-    GLProgram *alphaTestShader = ShaderCache::sharedShaderCache()->programForKey(kShader_PositionTextureColorAlphaTest);
-    
-    GLint alphaValueLocation = glGetUniformLocation(alphaTestShader->getProgram(), kUniformAlphaTestValue);
-    
-    // set alpha test value
-    // NOTE: alpha test shader is hard-coded to use the equivalent of a glAlphaFunc(GL_GREATER) comparison
-    if (getShaderProgram())
-    {
-        getShaderProgram()->setUniformLocationWith1f(alphaValueLocation, 1.0f);
-    }
-    
     SpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("Characters.plist");
     
     _contactListener = new BAContactListener();
@@ -77,7 +65,6 @@ bool HelloWorld::init()
     _tiledMap = TMXTiledMap::create("main.tmx");
     
     _mainBatchNode->getTexture()->setAliasTexParameters();
-    _mainBatchNode->setShaderProgram(alphaTestShader);
     
     _mainLayer->addChild(_tiledMap);
     _mainLayer->addChild(_mainBatchNode);
