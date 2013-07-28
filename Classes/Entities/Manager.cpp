@@ -20,8 +20,7 @@ bool Manager::init(b2World *world, Dictionary *properties, Player *ref) {
 	_node = Sprite::createWithSpriteFrameName("manager_down.png");
     _spriteFrameName = "manager";
     
-	_damageFactor = 0.3f;
-	_speedFactor = 1.0f;
+	_damageFactor = 1.5f;
     
 	this->setType(GameObjectTypeManager);
 	
@@ -36,26 +35,35 @@ bool Manager::init(b2World *world, Dictionary *properties, Player *ref) {
 
 void Manager::executeWalkAnimation() {
     
-    if (this->getState() == GameObjectStateWalking && !_node->getActionByTag(kWalkActionTag)) {
+    if (this->getState() == GameObjectStateWalking) {
         
-        SpriteFrameCache *spriteCache = SpriteFrameCache::sharedSpriteFrameCache();
+        float speed = (abs(kWalkForce + this->getSpeed())) / 1.9f;
         
-        const char *frameNameVertical = getDirectionName(_lastVerticalDirection);
+        Speed *walkAction = dynamic_cast<Speed*>(_node->getActionByTag(kWalkActionTag));
         
-        Animation *anim = Animation::create();
-        anim->setDelayPerUnit(0.15f);
-        anim->setRestoreOriginalFrame(true);
+        if (!walkAction) {
+            
+            SpriteFrameCache *spriteCache = SpriteFrameCache::sharedSpriteFrameCache();
+            
+            const char *frameNameVertical = getDirectionName(_lastVerticalDirection);
+            
+            Animation *anim = Animation::create();
+            anim->setDelayPerUnit(0.15f);
+            anim->setRestoreOriginalFrame(true);
+            
+            anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("%s_%s1.png", _spriteFrameName, frameNameVertical)->getCString()));
+            anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("%s_%s.png", _spriteFrameName, frameNameVertical)->getCString()));
+            anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("%s_%s2.png", _spriteFrameName, frameNameVertical)->getCString()));
+            anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("%s_%s.png", _spriteFrameName, frameNameVertical)->getCString()));
+            
+            walkAction = Speed::create(RepeatForever::create(Animate::create(anim)), speed);
+            walkAction->setTag(kWalkActionTag);
+            
+            _node->stopAllActions();
+            _node->runAction(walkAction);
+        }
         
-        anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("%s_%s1.png", _spriteFrameName, frameNameVertical)->getCString()));
-        anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("%s_%s.png", _spriteFrameName, frameNameVertical)->getCString()));
-        anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("%s_%s2.png", _spriteFrameName, frameNameVertical)->getCString()));
-        anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("%s_%s.png", _spriteFrameName, frameNameVertical)->getCString()));
-        
-        Action *repeatAction = RepeatForever::create(Animate::create(anim));
-        repeatAction->setTag(kWalkActionTag);
-        
-        _node->stopAllActions();
-        _node->runAction(repeatAction);
+        walkAction->setSpeed(speed);
         
     } else if (this->getState() == GameObjectStateStanding) {
         

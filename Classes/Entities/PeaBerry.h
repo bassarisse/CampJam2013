@@ -1,5 +1,5 @@
 //
-//  Peaberry.h
+//  PeaBerry.h
 //  CampJam13
 //
 //  Created by Murilo Clemente - 27/07/13
@@ -11,7 +11,7 @@
 
 #include "GameObject.h"
 
-class Peaberry : public GameObject {
+class PeaBerry : public GameObject {
     
 private:
     
@@ -22,7 +22,7 @@ protected:
 
 public:
     
-    virtual ~Peaberry();
+    virtual ~PeaBerry();
     
     virtual bool init(b2World *world, Dictionary *properties);
 

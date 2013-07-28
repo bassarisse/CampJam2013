@@ -20,8 +20,7 @@ bool Woman::init(b2World *world, Dictionary *properties, Player *ref) {
 	_node = Sprite::createWithSpriteFrameName("woman_down.png");
     _spriteFrameName = "woman";
     
-	_damageFactor = 0.3f;
-	_speedFactor = 1.0f;
+	_damageFactor = 0.8f;
     
 	this->setType(GameObjectTypeWoman);
 	

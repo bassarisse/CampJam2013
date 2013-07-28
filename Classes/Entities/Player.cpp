@@ -7,6 +7,7 @@
 //
 
 #include "Player.h"
+#include "Enemy.h"
 
 Player::~Player() {
     
@@ -56,7 +57,7 @@ void Player::update(float dt) {
     if (_coffee < 0) _coffee = 0;
     
     if (_coffee > kCoffeeThreshold) {
-        _life -= affectValue;
+        _life -= affectValue * (0.8f + _coffee / 100.0f);
     }
     
     this->executeWalkAnimation();
@@ -70,6 +71,18 @@ float Player::getSpeed() {
 void Player::handleCollision(GameObject *gameObject) {
     
     switch(gameObject->getType()) {
+            
+        case GameObjectTypeMan:
+        case GameObjectTypeWoman:
+        case GameObjectTypeManager:
+        {
+            Enemy *enemy = (Enemy *)gameObject;
+            _life -= kDamageBaseAmout * enemy->getDamageFactor();
+            
+            this->setState(GameObjectStateTakingDamage);
+            
+        }
+            break;
             
         case GameObjectTypeCoffee:
             _coffee += kCoffeeLevelAdd;

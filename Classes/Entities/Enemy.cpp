@@ -13,6 +13,7 @@ bool Enemy::init(b2World *world, Dictionary *properties, Player *ref) {
     
     //_node = Sprite::createWithSpriteFrameName("right1.png");
 	_playerReference = ref;
+    _drinkedCoffee = 0;
 
     if (!GameObject::init(world, properties))
         return false;
