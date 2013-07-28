@@ -625,10 +625,10 @@
 		622AA22217A39ECE00EEE5EB /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				622AA22917A39EE700EEE5EB /* Player.cpp */,
-				622AA22A17A39EE700EEE5EB /* Player.h */,
 				62E5AFE917A5278800BE18FE /* Collectables */,
 				62E5AFF217A5278800BE18FE /* Enemies */,
+				622AA22917A39EE700EEE5EB /* Player.cpp */,
+				622AA22A17A39EE700EEE5EB /* Player.h */,
 				62E5B00917A540AD00BE18FE /* EnemySpawnPoint.cpp */,
 				62E5B00A17A540AD00BE18FE /* EnemySpawnPoint.h */,
 				62E5B00D17A54CBA00BE18FE /* CollectableSpawnPoint.cpp */,

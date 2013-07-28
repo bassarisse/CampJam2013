@@ -22,12 +22,21 @@ bool CollectableSpawnPoint::init(GamePlay *gamePlay, Dictionary *properties) {
     _properties->retain();
     _spawnTime = 0;
     _nextSpawnTime = 1 + rand() % 10;
-    _maxObjects = 5;
+    _maxObjects = 1;
     
     return true;
 }
 
 void CollectableSpawnPoint::update(float dt) {
+    
+    for (std::vector<GameObject *>::size_type i; i < _gameObjects.size(); i++) {
+        GameObject *gameObject = _gameObjects[i];
+        if (gameObject->getState() == GameObjectStateDead) {
+            std::vector<GameObject *>::iterator pos;
+            pos = std::find(_gameObjects.begin(), _gameObjects.end(), gameObject);
+            _gameObjects.erase(pos);
+        }
+    }
     
     _spawnTime += dt;
     
@@ -39,7 +48,11 @@ void CollectableSpawnPoint::update(float dt) {
         _spawnTime = 0;
         _nextSpawnTime = 0;
         
-        _gamePlay->createGameObject((GameObjectType)(GameObjectTypeCoffee + rand() % (GameObjectTypeWater - GameObjectTypeCoffee)), _properties);
+        if (_gameObjects.size() >= _maxObjects)
+            return;
+        
+        GameObject *newObj = _gamePlay->createGameObject((GameObjectType)(GameObjectTypeCoffee + rand() % (1 + GameObjectTypeWater - GameObjectTypeCoffee)), _properties);
+        _gameObjects.push_back(newObj);
         
     }
     
