@@ -95,7 +95,7 @@ void Enemy::handleCollisions()  {
 			continue;
 		
 		switch(collisionObject->getType()) {
-            case GameObjectTypeCoffee:
+		case GameObjectTypeCoffee || GameObjectTypePeaBerry:
                 _speedFactor += 2.2f;
                 _drinkedCoffee++;
                 collisionObject->setState(GameObjectStateDead);
