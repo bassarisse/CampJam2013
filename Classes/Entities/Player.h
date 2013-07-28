@@ -45,6 +45,10 @@ public:
 	CC_SYNTHESIZE(float, _score, Score);
 	CC_SYNTHESIZE(float, _coffee, Coffee);
 	CC_SYNTHESIZE(float, _life, Life);
+    
+	CC_SYNTHESIZE(bool, _hasEmptyPaper, HasEmptyPaper);
+	CC_SYNTHESIZE(bool, _hasDocument, HasDocument);
+	CC_SYNTHESIZE(int, _copiesQty, CopiesQty);
 
 };
 

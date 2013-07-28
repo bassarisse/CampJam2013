@@ -22,8 +22,6 @@ protected:
 
 public:
     
-    virtual ~PeaBerry();
-    
     virtual bool init(b2World *world, Dictionary *properties);
 
 };

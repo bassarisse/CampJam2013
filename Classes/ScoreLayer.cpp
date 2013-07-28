@@ -11,15 +11,13 @@ bool ScoreLayer::init() {
 
 	_score = 0;
 	
-
 	_scoreLabel = LabelBMFont::create(
 		String::createWithFormat("%d", _score)->getCString(), 
 		"MainFont.fnt",300,kTextAlignmentRight);
 
 	
-	_scoreLabel->setAnchorPoint(ccp(1,1));
-
-	_scoreLabel->setPosition(ccp(1014,758));
+	_scoreLabel->setAnchorPoint(ccp(1, 1));
+	_scoreLabel->setPosition(ccp(1014, 758));
 
 
 	this->addChild(_scoreLabel);

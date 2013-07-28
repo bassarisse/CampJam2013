@@ -1,7 +1,8 @@
 #include "GamePlay.h"
 
-#include "Entities/Player.h"
+#include "SimpleAudioEngine.h"
 #include "B2DebugDraw/B2DebugDrawLayer.h"
+#include "Entities/Player.h"
 #include "Entities/Enemies/Man.h"
 #include "Entities/Enemies/Woman.h"
 #include "Entities/Enemies/Manager.h"
@@ -9,7 +10,10 @@
 #include "Entities/Collectables/PeaBerry.h"
 #include "Entities/Collectables/Water.h"
 #include "Entities/Collectables/Donut.h"
-#include "SimpleAudioEngine.h"
+#include "Entities/Static/Printer.h"
+#include "Entities/Static/EmptyPaper.h"
+#include "Entities/Static/Document.h"
+#include "Entities/Static/BossDesk.h"
 #include "Entities/EnemySpawnPoint.h"
 #include "Entities/CollectableSpawnPoint.h"
 
@@ -30,6 +34,10 @@ GamePlay::~GamePlay() {
         
         deadObject->release();
         deadObject = NULL;
+    }
+    
+    for(std::vector<GameObject *>::size_type i = 0; i < _staticObjects.size(); i++) {
+        _staticObjects[i]->release();
     }
     
     for(std::vector<EnemySpawnPoint *>::size_type i = 0; i < _enemySpawnPoints.size(); i++) {
@@ -193,6 +201,30 @@ bool GamePlay::init()
             b2FixtureDef fixtureDef;
             fixtureDef.shape = &shape;
             
+            String *type = (String *)objectProperties->objectForKey("type");
+            if (type) {
+                
+                GameObject *gameObject = NULL;
+                if(type->compare("Printer") == 0)
+                    gameObject = new Printer();
+                
+                else if(type->compare("EmptyPaper") == 0)
+                    gameObject = new EmptyPaper();
+                
+                else if(type->compare("Document") == 0)
+                    gameObject = new Document();
+                
+                else if(type->compare("BossDesk") == 0)
+                    gameObject = new BossDesk();
+                
+                if (gameObject) {
+                    gameObject->init(_world, objectProperties);
+                    fixtureDef.userData = gameObject;
+                    _staticObjects.push_back(gameObject);
+                }
+                
+            }
+            
             b2BodyDef bodyDef;
             bodyDef.type = b2_staticBody;
             bodyDef.position.Set(x, y);
@@ -250,15 +282,34 @@ bool GamePlay::init()
 	this->addChild(_scoreLayer);
 	this->addChild(_coffeeBar);
 	this->addChild(_healthBar);
+    
+    _copySprite = Sprite::createWithSpriteFrameName("paper_copy.png");
+    _copiesQtyLabel = LabelBMFont::create("0", "MainFont.fnt", 100, kTextAlignmentLeft);
+    _emptyPaperSprite = Sprite::createWithSpriteFrameName("paper_empty.png");
+    _documentSprite = Sprite::createWithSpriteFrameName("paper_printed.png");
+    
+    _copySprite->setPosition(ccp(370, 720));
+    _copiesQtyLabel->setPosition(ccp(424, 716));
+    _emptyPaperSprite->setPosition(ccp(510, 720));
+    _documentSprite->setPosition(ccp(570, 722));
+    
+    _emptyPaperSprite->setOpacity(0);
+    _documentSprite->setOpacity(0);
+    
+    this->addChild(_emptyPaperSprite);
+    this->addChild(_documentSprite);
+    this->addChild(_copySprite);
+    this->addChild(_copiesQtyLabel);
 
 	_pauseLayer = LayerColor::create(ccc4(0,0,0,130));
 	_pauseLayer->retain();
 	_pauseLayer->setPosition(ccp(0,0));
 	_pauseLayer->setContentSize(CCSizeMake(1024, 768));
-	LabelBMFont* pauseLabel = LabelBMFont::create("Paused!", 
-		"MainFont.fnt",300,kTextAlignmentCenter);
+    
+	LabelBMFont* pauseLabel = LabelBMFont::create("Paused!", "MainFont.fnt", 300, kTextAlignmentCenter);
 	pauseLabel->setAnchorPoint(ccp(0.5f, 0.5f));
 	pauseLabel->setPosition(ccp(this->getContentSize().width / 2, this->getContentSize().height / 2));
+    
 	_pauseLayer->addChild(pauseLabel);
 
 	_isPaused = false;
@@ -354,6 +405,11 @@ void GamePlay::update(float dt) {
 
 
 	Player* pl = (Player*)_player;
+    
+    _copiesQtyLabel->setString(String::createWithFormat("%i", pl->getCopiesQty())->getCString());
+    _emptyPaperSprite->setOpacity(pl->getHasEmptyPaper() ? 255 : 0);
+    _documentSprite->setOpacity(pl->getHasDocument() ? 255 : 0);
+    
 	_coffeeBar->setCoffeeLevel(pl->getCoffee());
 	_coffeeBar->update(dt);
 

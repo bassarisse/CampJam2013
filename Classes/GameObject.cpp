@@ -18,8 +18,7 @@ GameObject::~GameObject() {
 
 void GameObject::setProperties(Dictionary* properties)
 {
-    if (properties) {
-        
+    if (properties && _hasNode) {
         float x = floatValue(properties->objectForKey("x"));
         float y = floatValue(properties->objectForKey("y"));
         float halfwidth = floatValue(properties->objectForKey("width")) / 2.0f;
@@ -139,6 +138,9 @@ void GameObject::removeContact(GameObject *contact) {
 
 void GameObject::addBodyToWorld(b2World *world) {
     
+    if (!_hasNode)
+        return;
+    
     b2BodyDef bodyDef;
     
     bodyDef.type = b2_dynamicBody;
@@ -151,16 +153,17 @@ void GameObject::addBodyToWorld(b2World *world) {
 }
 
 bool GameObject::init(b2World *world, Dictionary *properties) {
-    
     return this->init(world, properties, false);
-    
-    return true;
-    
 }
 
 bool GameObject::init(b2World *world, Dictionary *properties, bool isSensor) {
+    return this->init(world, properties, isSensor, true);
+}
+
+bool GameObject::init(b2World *world, Dictionary *properties, bool isSensor, bool hasNode) {
     
     _speedFactor = 0.0f;
+    _hasNode = hasNode;
     _isSensor = isSensor;
     _shouldFlipSprite = true;
     _lastDirection = kDirectionDown;

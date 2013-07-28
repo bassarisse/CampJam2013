@@ -1,9 +1,5 @@
 #include "Donut.h"
 
-Donut::~Donut() {
-	
-}
-
 void Donut::addFixtures() {
 	float width = _node->getContentSize().width * 0.6f;
     float height = _node->getContentSize().height * 0.6f;

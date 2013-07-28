@@ -34,6 +34,10 @@ bool Player::init(b2World *world, Dictionary *properties, GamePlay* gameScreen) 
     _node = Sprite::createWithSpriteFrameName("stag_down.png");
     _life = 100.0f;
     _coffee = 0.0f;
+    _hasEmptyPaper = false;
+    _hasDocument = false;
+    _copiesQty = 0;
+    
     _spriteFrameName = "stag";
     
     this->setType(GameObjectTypePlayer);
@@ -143,6 +147,10 @@ void Player::handleCollision(GameObject *gameObject) {
         }
             break;
             
+            /*
+             * Collectables
+             */
+            
         case GameObjectTypeCoffee:
             _coffee += kCoffeeLevelAdd;
             if (_coffee > 100.0f)
@@ -177,11 +185,39 @@ void Player::handleCollision(GameObject *gameObject) {
 			_gameScreen->getHealthBar()->blinkBar();
             break;
             
+            /*
+             * Static
+             */
+            
+        case GameObjectTypeEmptyPaper:
+            _hasEmptyPaper = true;
+            break;
+            
+        case GameObjectTypeDocument:
+            _hasDocument = true;
+            break;
+            
+        case GameObjectTypePrinter:
+            if (_hasEmptyPaper && _hasDocument) {
+                _copiesQty++;
+                _hasEmptyPaper = false;
+                _hasDocument = false;
+            }
+            break;
+            
+        case GameObjectTypeBossDesk:
+            if (_copiesQty > 0) {
+                int addedScore = 4000 * _copiesQty;
+                _copiesQty = 0;
+                _score += addedScore;
+                _gameScreen->showScore(_node->getPosition(), addedScore);
+            }
+            break;
+            
         default:
             break;
     }
     
-
 }
 
 void Player::followPoint(Point point) {

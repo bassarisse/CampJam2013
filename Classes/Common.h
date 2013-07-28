@@ -74,7 +74,11 @@ enum GameObjectType {
     GameObjectTypeWater,
 	GameObjectTypeMan,
 	GameObjectTypeWoman,
-	GameObjectTypeManager
+	GameObjectTypeManager,
+	GameObjectTypePrinter,
+	GameObjectTypeEmptyPaper,
+	GameObjectTypeDocument,
+	GameObjectTypeBossDesk
 };
 
 enum SensorType {

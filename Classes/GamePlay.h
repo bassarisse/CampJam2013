@@ -46,19 +46,18 @@ public:
     std::vector<MovingHorizontalState> _movingHorizontalStates;
     std::vector<MovingVerticalState> _movingVerticalStates;
     std::vector<GameObject *> _gameObjects;
+    std::vector<GameObject *> _staticObjects;
     std::vector<EnemySpawnPoint *> _enemySpawnPoints;
     std::vector<CollectableSpawnPoint *> _collectableSpawnPoints;
     GameObject *_player;
+    Sprite *_emptyPaperSprite;
+    Sprite *_documentSprite;
+    Sprite *_copySprite;
+    LabelBMFont *_copiesQtyLabel;
     
 	CC_SYNTHESIZE(CoffeeBar*, _coffeeBar, CoffeeBar);
 	CC_SYNTHESIZE(HealthBar*, _healthBar, HealthBar);
 	CC_SYNTHESIZE(ScoreLayer*, _scoreLayer, ScoreLayer);
-
-	/*
-	CoffeeBar *_coffeeBar;
-	HealthBar *_healthBar;
-	ScoreLayer *_scoreLayer;
-	*/
 
 	LayerColor* _pauseLayer;
 	bool _isPaused;

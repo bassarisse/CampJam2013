@@ -105,6 +105,16 @@
 		62E5B01317A5604A00BE18FE /* TitleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5B01117A5604A00BE18FE /* TitleScene.cpp */; };
 		62E5B01617A5605600BE18FE /* ScoreLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5B01417A5605300BE18FE /* ScoreLayer.cpp */; };
 		62E5B01B17A575D400BE18FE /* GameoverScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5B01917A575D400BE18FE /* GameoverScene.cpp */; };
+		62E5B01F17A5B25300BE18FE /* Printer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5B01D17A5B25300BE18FE /* Printer.cpp */; };
+		62E5B02217A5B2ED00BE18FE /* EmptyPaper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5B02017A5B2ED00BE18FE /* EmptyPaper.cpp */; };
+		62E5B02517A5B2F500BE18FE /* Document.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5B02317A5B2F500BE18FE /* Document.cpp */; };
+		62E5B02817A5B2FE00BE18FE /* BossDesk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5B02617A5B2FD00BE18FE /* BossDesk.cpp */; };
+		62E5B03017A5C77200BE18FE /* death_man.wav in Resources */ = {isa = PBXBuildFile; fileRef = 62E5B02A17A5C77100BE18FE /* death_man.wav */; };
+		62E5B03117A5C77200BE18FE /* death_manager.wav in Resources */ = {isa = PBXBuildFile; fileRef = 62E5B02B17A5C77100BE18FE /* death_manager.wav */; };
+		62E5B03217A5C77200BE18FE /* death_woman.wav in Resources */ = {isa = PBXBuildFile; fileRef = 62E5B02C17A5C77100BE18FE /* death_woman.wav */; };
+		62E5B03317A5C77200BE18FE /* donut_eating.wav in Resources */ = {isa = PBXBuildFile; fileRef = 62E5B02D17A5C77100BE18FE /* donut_eating.wav */; };
+		62E5B03417A5C77200BE18FE /* title_bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62E5B02E17A5C77200BE18FE /* title_bgm.mp3 */; };
+		62E5B03517A5C77200BE18FE /* wilhem.wav in Resources */ = {isa = PBXBuildFile; fileRef = 62E5B02F17A5C77200BE18FE /* wilhem.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -305,6 +315,20 @@
 		62E5B01517A5605400BE18FE /* ScoreLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreLayer.h; path = ../Classes/ScoreLayer.h; sourceTree = "<group>"; };
 		62E5B01917A575D400BE18FE /* GameoverScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameoverScene.cpp; sourceTree = "<group>"; };
 		62E5B01A17A575D400BE18FE /* GameoverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameoverScene.h; sourceTree = "<group>"; };
+		62E5B01D17A5B25300BE18FE /* Printer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Printer.cpp; sourceTree = "<group>"; };
+		62E5B01E17A5B25300BE18FE /* Printer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Printer.h; sourceTree = "<group>"; };
+		62E5B02017A5B2ED00BE18FE /* EmptyPaper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EmptyPaper.cpp; sourceTree = "<group>"; };
+		62E5B02117A5B2ED00BE18FE /* EmptyPaper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyPaper.h; sourceTree = "<group>"; };
+		62E5B02317A5B2F500BE18FE /* Document.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Document.cpp; sourceTree = "<group>"; };
+		62E5B02417A5B2F500BE18FE /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		62E5B02617A5B2FD00BE18FE /* BossDesk.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BossDesk.cpp; sourceTree = "<group>"; };
+		62E5B02717A5B2FD00BE18FE /* BossDesk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BossDesk.h; sourceTree = "<group>"; };
+		62E5B02A17A5C77100BE18FE /* death_man.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = death_man.wav; sourceTree = "<group>"; };
+		62E5B02B17A5C77100BE18FE /* death_manager.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = death_manager.wav; sourceTree = "<group>"; };
+		62E5B02C17A5C77100BE18FE /* death_woman.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = death_woman.wav; sourceTree = "<group>"; };
+		62E5B02D17A5C77100BE18FE /* donut_eating.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = donut_eating.wav; sourceTree = "<group>"; };
+		62E5B02E17A5C77200BE18FE /* title_bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = title_bgm.mp3; sourceTree = "<group>"; };
+		62E5B02F17A5C77200BE18FE /* wilhem.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wilhem.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -639,6 +663,7 @@
 			children = (
 				62E5AFE917A5278800BE18FE /* Collectables */,
 				62E5AFF217A5278800BE18FE /* Enemies */,
+				62E5B01C17A5B24600BE18FE /* Static */,
 				622AA22917A39EE700EEE5EB /* Player.cpp */,
 				622AA22A17A39EE700EEE5EB /* Player.h */,
 				62E5B00917A540AD00BE18FE /* EnemySpawnPoint.cpp */,
@@ -692,6 +717,21 @@
 			path = ../Classes/Scenes;
 			sourceTree = "<group>";
 		};
+		62E5B01C17A5B24600BE18FE /* Static */ = {
+			isa = PBXGroup;
+			children = (
+				62E5B01D17A5B25300BE18FE /* Printer.cpp */,
+				62E5B01E17A5B25300BE18FE /* Printer.h */,
+				62E5B02017A5B2ED00BE18FE /* EmptyPaper.cpp */,
+				62E5B02117A5B2ED00BE18FE /* EmptyPaper.h */,
+				62E5B02317A5B2F500BE18FE /* Document.cpp */,
+				62E5B02417A5B2F500BE18FE /* Document.h */,
+				62E5B02617A5B2FD00BE18FE /* BossDesk.cpp */,
+				62E5B02717A5B2FD00BE18FE /* BossDesk.h */,
+			);
+			path = Static;
+			sourceTree = "<group>";
+		};
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -703,6 +743,12 @@
 				62E5AFC817A4280800BE18FE /* Characters.png */,
 				62E5AFE517A525B400BE18FE /* drinked_coffee.wav */,
 				62E5B00317A52CE100BE18FE /* main_bgm.mp3 */,
+				62E5B02A17A5C77100BE18FE /* death_man.wav */,
+				62E5B02B17A5C77100BE18FE /* death_manager.wav */,
+				62E5B02C17A5C77100BE18FE /* death_woman.wav */,
+				62E5B02D17A5C77100BE18FE /* donut_eating.wav */,
+				62E5B02E17A5C77200BE18FE /* title_bgm.mp3 */,
+				62E5B02F17A5C77200BE18FE /* wilhem.wav */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -789,6 +835,12 @@
 				62E5B00417A52CE100BE18FE /* main_bgm.mp3 in Resources */,
 				62E5B00717A534C000BE18FE /* MainFont.fnt in Resources */,
 				62E5B00817A534C000BE18FE /* MainFont.png in Resources */,
+				62E5B03017A5C77200BE18FE /* death_man.wav in Resources */,
+				62E5B03117A5C77200BE18FE /* death_manager.wav in Resources */,
+				62E5B03217A5C77200BE18FE /* death_woman.wav in Resources */,
+				62E5B03317A5C77200BE18FE /* donut_eating.wav in Resources */,
+				62E5B03417A5C77200BE18FE /* title_bgm.mp3 in Resources */,
+				62E5B03517A5C77200BE18FE /* wilhem.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -875,6 +927,10 @@
 				62E5B01317A5604A00BE18FE /* TitleScene.cpp in Sources */,
 				62E5B01617A5605600BE18FE /* ScoreLayer.cpp in Sources */,
 				62E5B01B17A575D400BE18FE /* GameoverScene.cpp in Sources */,
+				62E5B01F17A5B25300BE18FE /* Printer.cpp in Sources */,
+				62E5B02217A5B2ED00BE18FE /* EmptyPaper.cpp in Sources */,
+				62E5B02517A5B2F500BE18FE /* Document.cpp in Sources */,
+				62E5B02817A5B2FE00BE18FE /* BossDesk.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

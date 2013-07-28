@@ -22,8 +22,6 @@ protected:
 
 public:
     
-    virtual ~Coffee();
-    
     virtual bool init(b2World *world, Dictionary *properties);
 
 };

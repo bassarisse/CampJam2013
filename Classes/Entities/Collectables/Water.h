@@ -21,8 +21,6 @@ protected:
 
 public:
     
-    virtual ~Water();
-    
     virtual bool init(b2World *world, Dictionary *properties);
 
 };
