@@ -9,6 +9,9 @@
 #include "Entities/PeaBerry.h"
 #include "Entities/Water.h"
 #include "Entities/Donut.h"
+#include "SimpleAudioEngine.h"
+
+using namespace CocosDenshion;
 
 
 USING_NS_CC;
@@ -257,6 +260,8 @@ bool HelloWorld::init()
     if (_debugLayer)
         this->addChild(_debugLayer, 9999);
     
+	CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("main_bgm.mp3", true);
+
     return true;
 }
 

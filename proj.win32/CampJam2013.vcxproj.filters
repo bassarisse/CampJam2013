@@ -75,6 +75,9 @@
     <ClCompile Include="..\Classes\HealthBar.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Manager.cpp">
+      <Filter>Classes\Entities\Enemies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -133,6 +136,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\HealthBar.h">
       <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Manager.h">
+      <Filter>Classes\Entities\Enemies</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
