@@ -228,7 +228,8 @@ void Player::handleCollision(GameObject *gameObject) {
                 _score += addedScore;
 
 				if(_copiesQty > 1) {
-					addedScore = addedScore * (1 + (_copiesQty / 50));  
+					//float factor = (float)((float)_copiesQty / 50.0f);
+					addedScore = addedScore * (1 + (_copiesQty / 50.0f));  
 				}
 				_copiesQty = 0;
 				
