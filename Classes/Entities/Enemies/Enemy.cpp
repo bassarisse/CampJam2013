@@ -14,6 +14,20 @@ bool Enemy::init(b2World *world, Dictionary *properties, Player *ref) {
     //_node = Sprite::createWithSpriteFrameName("right1.png");
 	_playerReference = ref;
     _drinkedCoffee = 0;
+    
+    _sightRange = 0.0f;
+    _randomMoveOnly = false;
+    _randomMovingTime = 0.0f;
+    _isRandomMoving = false;
+    _walkingPoint = ccp(0, 0);
+    
+    String *randomOnly = (String *)properties->objectForKey("Random");
+    if (randomOnly)
+        _randomMoveOnly = true;
+    
+    String *sight = (String *)properties->objectForKey("Sight");
+    if (sight)
+        _sightRange = sight->intValue();
 
     if (!GameObject::init(world, properties))
         return false;
@@ -22,7 +36,30 @@ bool Enemy::init(b2World *world, Dictionary *properties, Player *ref) {
 }
 
 void Enemy::handleMovement() {
-	GameObject::handleMovement(this->getAngleForPoint(_playerReference->getNode()->getPosition()));
+    
+    _randomMoveOnly = true;
+    
+    if (!_randomMoveOnly && this->isNearPlayer()) {
+        _isRandomMoving = false;
+        GameObject::handleMovement(this->getAngleForPoint(_playerReference->getNode()->getPosition()));
+    } else {
+        
+        Point thisPosition = this->getNode()->getPosition();
+        
+        if (!_isRandomMoving || _randomMovingTime <= 0) {
+            _walkingPoint = ccp(thisPosition.x, thisPosition.y);
+            _randomMovingTime = kEnemyRandomTime;
+        }
+        
+        while (abs(_walkingPoint.x - thisPosition.x) <= 5 && abs(_walkingPoint.y - thisPosition.y) <= 5) {
+            int x = (thisPosition.x + rand() % (kEnemyRandomRange + 1)) - kEnemyRandomRange / 2;
+            int y = (thisPosition.y + rand() % (kEnemyRandomRange + 1)) - kEnemyRandomRange / 2;
+            _walkingPoint = ccp(x, y);
+        }
+        
+        _isRandomMoving = true;
+        GameObject::handleMovement(this->getAngleForPoint(_walkingPoint));
+    }
 }
 
 void Enemy::update(float dt) {
@@ -30,6 +67,8 @@ void Enemy::update(float dt) {
 		return;
 
     GameObject::update(dt);
+    
+    _randomMovingTime -= dt;
     
     this->executeWalkAnimation();
     
@@ -73,6 +112,19 @@ void Enemy::handleCollision(GameObject *gameObject)  {
     
 }
 
+
 void Enemy::finishedDyingAction() {
 	this->setState(GameObjectStateDead);
+}
+
+bool Enemy::isNearPlayer() {
+    
+    Point playerPosition = _playerReference->getNode()->getPosition();
+    Point thisPosition = this->getNode()->getPosition();
+    
+    float xDifference = abs(playerPosition.x - thisPosition.x);
+    float yDifference = abs(playerPosition.y - thisPosition.y);
+    
+    return (_sightRange == 0 || xDifference <= _sightRange || yDifference <= _sightRange);
+
 }

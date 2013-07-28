@@ -47,7 +47,7 @@ void CollectableSpawnPoint::update(float dt) {
         _spawnTime = 0;
         _nextSpawnTime = 0;
         
-        if ((int)_gameObjects.size() >= _maxObjects)
+        if (_maxObjects > 0 && (int)_gameObjects.size() >= _maxObjects)
             return;
         
         GameObject *newObj = _gamePlay->createGameObject((GameObjectType)(GameObjectTypeCoffee + rand() % (1 + GameObjectTypeWater - GameObjectTypeCoffee)), _properties);

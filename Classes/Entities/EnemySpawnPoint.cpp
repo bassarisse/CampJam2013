@@ -9,7 +9,7 @@
 #include "EnemySpawnPoint.h"
 
 #include "GamePlay.h"
-#include "GameObject.h"
+#include "Enemy.h"
 
 EnemySpawnPoint::~EnemySpawnPoint() {
     CC_SAFE_RELEASE(_properties);
@@ -22,7 +22,7 @@ bool EnemySpawnPoint::init(GamePlay *gamePlay, Dictionary *properties) {
     _properties->retain();
     _spawnTime = 0;
     _nextSpawnTime = 1 + rand() % 10;
-    _maxObjects = 5;
+    _maxObjects = 0;
     
     String *maxObjects = (String *)properties->objectForKey("MaxObjects");
     if (maxObjects)
@@ -51,10 +51,15 @@ void EnemySpawnPoint::update(float dt) {
         _spawnTime = 0;
         _nextSpawnTime = 0;
         
-        if ((int)_gameObjects.size() >= _maxObjects)
+        if (_maxObjects > 0 && (int)_gameObjects.size() >= _maxObjects)
             return;
         
-        GameObject *newObj = _gamePlay->createGameObject((GameObjectType)(GameObjectTypeMan + rand() % (1 + GameObjectTypeManager - GameObjectTypeMan)), _properties);
+        Enemy *newObj = (Enemy *)_gamePlay->createGameObject((GameObjectType)(GameObjectTypeMan + rand() % (1 + GameObjectTypeManager - GameObjectTypeMan)), _properties);
+        
+        if (rand() % 2 == 0)
+            newObj->setSightRange(200 + rand() % 1000);
+        newObj->setRandomMoveOnly(rand() % 2 == 0);
+        
         _gameObjects.push_back(newObj);
         
     }

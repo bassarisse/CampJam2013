@@ -280,9 +280,6 @@ float GameObject::getAngleForPoint(Point point) {
 	float angle = 180 + atan2(thisPosition.y - point.y,
                               thisPosition.x - point.x) * 180 / M_PI; //degree conversion
     
-	//float angle = atan2(playerPosition.y - manPosition.y,
-	//					playerPosition.x - manPosition.x);
-    
 	if(angle == 0 || angle == 360)
 	{
 		this->setMovingHorizontalState(MovingStateRight);
