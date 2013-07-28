@@ -66,6 +66,8 @@ bool GamePlay::init()
         return false;
     }
     
+    this->setTouchEnabled(true);
+    
     srand(time(NULL));
     
     _winSize = Director::sharedDirector()->getWinSize();
@@ -416,6 +418,10 @@ void GamePlay::removeObject(GameObject* deadObject) {
 	deadNode->removeFromParentAndCleanup(true);
     deadObject = NULL;
     
+}
+
+bool GamePlay::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) {
+    return true;
 }
 
 void GamePlay::buttonLeft(bool pressed) {
