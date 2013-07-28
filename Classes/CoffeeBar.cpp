@@ -13,18 +13,19 @@ bool CoffeeBar::init(float coffeeLevel) {
 	_coffeeLevel = coffeeLevel;
 
 	LayerColor* bgBar = LayerColor::create(ccc4(0, 0, 0, 255));
-	bgBar->setPosition(970, 400);
-	bgBar->setContentSize(CCSizeMake(46, 256));
+	bgBar->setPosition(80, 670);
+	bgBar->setContentSize(CCSizeMake(256, 40));
 
 	_bar = LayerColor::create(ccc4(94, 49, 19, 255));
-	_bar->setPosition(973, 400);
-	_bar->setContentSize(CCSizeMake(40, 250));
+	_bar->setPosition(83, 673);
+	_bar->setContentSize(CCSizeMake(250, 34));
 
-	LayerColor *coffeeThreshold = LayerColor::create(ccc4(0,0,0,255));
-	coffeeThreshold->setPosition(973, 
-		_bar->getPosition().y + (_bar->getContentSize().height * (kCoffeeThreshold / 100 ) ));
+	LayerColor *coffeeThreshold = LayerColor::create(ccc4(120,120,120,255));
 
-	coffeeThreshold->setContentSize(CCSizeMake(40, 6));
+	coffeeThreshold->setPosition(
+		_bar->getPosition().x + (_bar->getContentSize().width * (kCoffeeThreshold / 100 ) ), 673);
+
+	coffeeThreshold->setContentSize(CCSizeMake(3, 34));
 
 	this->addChild(bgBar);
 	this->addChild(_bar);
@@ -38,8 +39,8 @@ void CoffeeBar::setCoffeeLevel(float coff) {
 }
 
 void CoffeeBar::update(float dt) {
-	int bgbarMaxHeight = 250;
-	_bar->setContentSize(CCSizeMake(40, bgbarMaxHeight * (_coffeeLevel / 100)));
+	int bgbarMaxWidth = 250;
+	_bar->setContentSize(CCSizeMake(bgbarMaxWidth * (_coffeeLevel / 100), 34));
 
 
 

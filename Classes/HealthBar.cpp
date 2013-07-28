@@ -12,12 +12,12 @@ bool HealthBar::init(float healthLevel) {
 	_healthLevel = healthLevel;
 
 	LayerColor* bgBar = LayerColor::create(ccc4(0, 0, 0, 255));
-	bgBar->setPosition(80, 710);
-	bgBar->setContentSize(CCSizeMake(256, 46));
+	bgBar->setPosition(80, 720);
+	bgBar->setContentSize(CCSizeMake(256, 40));
 
 	_bar = LayerColor::create(ccc4(255, 0, 0, 255));
-	_bar->setPosition(83, 713);
-	_bar->setContentSize(CCSizeMake(250, 40));
+	_bar->setPosition(83, 723);
+	_bar->setContentSize(CCSizeMake(250, 34));
 
 	
 
@@ -34,7 +34,7 @@ void HealthBar::setHealthLevel(float health) {
 
 void HealthBar::update(float dt) {
 	int bgbarMaxWidth = 250;
-	_bar->setContentSize(CCSizeMake(bgbarMaxWidth * (_healthLevel / 100), 40));
+	_bar->setContentSize(CCSizeMake(bgbarMaxWidth * (_healthLevel / 100), 34));
 
 
 
