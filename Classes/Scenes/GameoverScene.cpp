@@ -78,9 +78,16 @@ bool GameoverScene::init(int score)  {
 		Director::sharedDirector()->replaceScene(TransitionFade::create(1.0f, pScene));
 	});
 
-	Menu* menu = Menu::create(startOpt, item2, NULL);
-	menu->setPosition(ccp(this->getContentSize().width / 2, this->getContentSize().height - 80));
-	menu->alignItemsHorizontallyWithPadding(380);
+
+	MenuItemImage* returnOpt = MenuItemImage::create("return.png", "return.png", [](Object* obj) {
+		Scene *pScene = TitleScene::scene();
+	
+		Director::sharedDirector()->replaceScene(TransitionFade::create(1.0f, pScene));
+	});
+
+	Menu* menu = Menu::create(startOpt, returnOpt, NULL);
+	menu->setPosition(ccp(this->getContentSize().width - 200, this->getContentSize().height - 80));
+	menu->alignItemsVertically();
 
 	
 	this->addChild(bgSprite);
