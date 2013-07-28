@@ -67,9 +67,9 @@ bool TitleScene::init()  {
 	credits->setAnchorPoint(ccp(0, 0));
 	credits->setPosition(ccp(0,0));
 
-	LabelBMFont* creditstitle = LabelBMFont::create("Credits:", 
-		"MainFont.fnt",450,kTextAlignmentCenter);
-	creditstitle->setPosition(ccp(this->getContentSize().width / 2, this->getContentSize().height - 50));
+	LabelBMFont* creditstitle = LabelBMFont::create("CREDITS \n \n Coding: \n Bruno Assarisse \n Murilo Clemente \n \n Art: \n Camila \n \n Made in CampJam 2013 \n within 48 hours :)", 
+		"MainFont.fnt",750,kTextAlignmentCenter);
+	creditstitle->setPosition(ccp(this->getContentSize().width / 2, this->getContentSize().height - 350));
 
 	credits->addChild(creditstitle);
 

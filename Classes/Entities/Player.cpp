@@ -208,8 +208,14 @@ void Player::handleCollision(GameObject *gameObject) {
         case GameObjectTypeBossDesk:
             if (_copiesQty > 0) {
                 int addedScore = 4000 * _copiesQty;
-                _copiesQty = 0;
+                
                 _score += addedScore;
+
+				if(_copiesQty > 1) {
+					addedScore = addedScore * (1 + (_copiesQty / 50));  
+				}
+				_copiesQty = 0;
+				
                 _gameScreen->showScore(_node->getPosition(), addedScore);
             }
             break;
