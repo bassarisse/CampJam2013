@@ -58,7 +58,8 @@ enum GameObjectState {
     GameObjectStateWalking,
     GameObjectStateTakingDamage,
     GameObjectStateAfterDamage,
-	GameObjectStateDead
+	GameObjectStateDead,
+	GameObjectStateDying
 };
 
 enum GameObjectType {

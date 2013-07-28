@@ -64,3 +64,4 @@ void CoffeeBar::blinkBar() {
 	this->runAction(blink);
 	
 }
+

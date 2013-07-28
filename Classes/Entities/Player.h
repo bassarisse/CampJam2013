@@ -39,7 +39,8 @@ public:
     virtual void followPoint(Point point);
     virtual void stopFollowingPoint();
     
-	GamePlay* _gameScreen;
+	//GamePlay* _gameScreen;
+	CC_SYNTHESIZE(GamePlay*, _gameScreen, GameScreen);
 
 	CC_SYNTHESIZE(float, _score, Score);
 	CC_SYNTHESIZE(float, _coffee, Coffee);

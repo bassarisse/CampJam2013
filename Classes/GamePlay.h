@@ -89,6 +89,8 @@ public:
 
 	virtual void onEnter();
     
+	virtual void showScore(Point positionToShow, int scoreAmount);
+	virtual void scoreDidJump(Node* scoreNode);
 };
 
 #endif // __CAMPJAM_SCENE_H__

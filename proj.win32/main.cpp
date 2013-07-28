@@ -15,7 +15,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
     // create the application instance
     AppDelegate app;
     EGLView* eglView = EGLView::sharedOpenGLView();
-    eglView->setViewName("CampJam2013");
+    eglView->setViewName("Office Rampage");
     eglView->setFrameSize(1024, 768);
     return Application::sharedApplication()->run();
 }

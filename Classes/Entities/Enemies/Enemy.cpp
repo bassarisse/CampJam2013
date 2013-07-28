@@ -26,7 +26,9 @@ void Enemy::handleMovement() {
 }
 
 void Enemy::update(float dt) {
-    
+    if(_state == GameObjectStateDying || _state == GameObjectStateDead)
+		return;
+
     GameObject::update(dt);
     
     this->executeWalkAnimation();
@@ -36,7 +38,18 @@ void Enemy::update(float dt) {
     thisSprite->setColor(ccc3(255, colorAdd, colorAdd));
     
 	if(_drinkedCoffee >= kEnemyDeathCoffeeNumber && _state != GameObjectStateDead) {
-        this->setState(GameObjectStateDead);
+		FadeOut* dying = FadeOut::create(1.5f);
+		JumpTo* deathLeap = JumpTo::create(0.75f, ccp(_node->getPosition().x,_node->getPosition().y), 15, 1);
+		Sequence* deathSequence = Sequence::create(dying, CallFunc::create(this, callfunc_selector(Enemy::finishedDyingAction)), NULL);
+		Spawn* deathRitual = Spawn::create(deathLeap, deathSequence, NULL);
+	
+		_playerReference->getGameScreen()->showScore(ccp(
+													_node->getPosition().x + (_node->getContentSize().width / 2),
+													_node->getPosition().y + (_node->getContentSize().height / 2 ),
+													), kEnemyScore);
+		this->setState(GameObjectStateDying);
+		_node->runAction(deathRitual);
+        
         _playerReference->setScore(_playerReference->getScore() + kEnemyScore);
     }
     
@@ -58,4 +71,8 @@ void Enemy::handleCollision(GameObject *gameObject)  {
             break;
     }
     
+}
+
+void Enemy::finishedDyingAction() {
+	this->setState(GameObjectStateDead);
 }

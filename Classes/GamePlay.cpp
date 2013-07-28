@@ -628,3 +628,36 @@ void GamePlay::onEnter() {
 	SimpleAudioEngine::sharedEngine()->playBackgroundMusic("main_bgm.mp3", true);
 
 }
+
+
+void GamePlay::showScore(Point positionToShow, int scoreAmount) {
+	LabelBMFont *deathScore = LabelBMFont::create(
+					String::createWithFormat("%d", scoreAmount)->getCString(), 
+					"MainFont.fnt",50,kTextAlignmentCenter);
+
+
+	//deathScore->setPosition(ccp(_node->getPosition().x + (_node->getContentSize().width / 2),
+	//	_node->getPosition().y + (_node->getContentSize().height + 10)));
+
+	deathScore->setPosition(ccp(positionToShow.x, positionToShow.y));
+
+	_mainLayer->addChild(deathScore);
+
+	int randomNumber = (15 + (rand() % 31)) * (rand() % 2 == 0 ? 1 : -1);
+	int randomHeig = (15 + (rand() % 16));
+
+	JumpTo* scoreJump = JumpTo::create(1.0f, ccp(deathScore->getPosition().x + randomNumber,
+		deathScore->getPosition().y), randomHeig, 1);
+
+	FadeOut* fadingOut = FadeOut::create(0.7f);
+	Sequence* timerFade = Sequence::create(DelayTime::create(0.4f), fadingOut, 
+											CallFuncN::create(this, callfuncN_selector(GamePlay::scoreDidJump)), NULL);
+
+	Spawn* wrap = Spawn::create(timerFade, scoreJump, NULL);
+
+	deathScore->runAction(wrap);
+}
+
+void GamePlay::scoreDidJump(Node* scoreNode) {
+	scoreNode->removeFromParentAndCleanup(true);
+}

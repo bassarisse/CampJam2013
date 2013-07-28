@@ -34,6 +34,8 @@ public:
     virtual void update(float dt);
 
 	virtual void handleMovement();
+
+	void finishedDyingAction();
     
     CC_SYNTHESIZE(float, _damageFactor, DamageFactor);
 
