@@ -98,6 +98,8 @@
 		62E5B00117A5278800BE18FE /* Manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFF717A5278800BE18FE /* Manager.cpp */; };
 		62E5B00217A5278800BE18FE /* Woman.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFF917A5278800BE18FE /* Woman.cpp */; };
 		62E5B00417A52CE100BE18FE /* main_bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62E5B00317A52CE100BE18FE /* main_bgm.mp3 */; };
+		62E5B00717A534C000BE18FE /* MainFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 62E5B00517A534C000BE18FE /* MainFont.fnt */; };
+		62E5B00817A534C000BE18FE /* MainFont.png in Resources */ = {isa = PBXBuildFile; fileRef = 62E5B00617A534C000BE18FE /* MainFont.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -286,6 +288,8 @@
 		62E5AFF917A5278800BE18FE /* Woman.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Woman.cpp; sourceTree = "<group>"; };
 		62E5AFFA17A5278800BE18FE /* Woman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Woman.h; sourceTree = "<group>"; };
 		62E5B00317A52CE100BE18FE /* main_bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = main_bgm.mp3; sourceTree = "<group>"; };
+		62E5B00517A534C000BE18FE /* MainFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MainFont.fnt; sourceTree = "<group>"; };
+		62E5B00617A534C000BE18FE /* MainFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainFont.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -657,6 +661,8 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				62E5B00517A534C000BE18FE /* MainFont.fnt */,
+				62E5B00617A534C000BE18FE /* MainFont.png */,
 				62E5AFE117A4B01200BE18FE /* tiles.png */,
 				622AA1FC17A35FF900EEE5EB /* main.tmx */,
 				62E5AFC717A4280800BE18FE /* Characters.plist */,
@@ -747,6 +753,8 @@
 				62E5AFE217A4B01200BE18FE /* tiles.png in Resources */,
 				62E5AFE717A525B400BE18FE /* drinked_coffee.wav in Resources */,
 				62E5B00417A52CE100BE18FE /* main_bgm.mp3 in Resources */,
+				62E5B00717A534C000BE18FE /* MainFont.fnt in Resources */,
+				62E5B00817A534C000BE18FE /* MainFont.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
