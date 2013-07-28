@@ -1,5 +1,5 @@
-#ifndef __HELLOWORLD_SCENE_H__
-#define __HELLOWORLD_SCENE_H__
+#ifndef __CAMPJAM_SCENE_H__
+#define __CAMPJAM_SCENE_H__
 
 #include "BaseLayer.h"
 #include "Box2D/Box2D.h"
@@ -12,7 +12,7 @@ using namespace cocos2d;
 
 class B2DebugDrawLayer;
 
-class HelloWorld : public BaseLayer
+class GamePlay : public BaseLayer
 {
 private:
     
@@ -23,11 +23,11 @@ private:
     bool _buttonAPressed;
     
 public:
-    virtual ~HelloWorld();
+    virtual ~GamePlay();
     
     virtual bool init();
     static Scene* scene();
-    CREATE_FUNC(HelloWorld);
+    CREATE_FUNC(GamePlay);
     
     // Variables/properties
     
@@ -64,4 +64,4 @@ public:
     
 };
 
-#endif // __HELLOWORLD_SCENE_H__
+#endif // __CAMPJAM_SCENE_H__

@@ -1,22 +1,21 @@
-#include "HelloWorldScene.h"
+#include "GamePlay.h"
 
 #include "Entities/Player.h"
 #include "B2DebugDraw/B2DebugDrawLayer.h"
-#include "Entities/Man.h"
-#include "Entities/Woman.h"
-#include "Entities/Manager.h"
-#include "Entities/Coffee.h"
-#include "Entities/PeaBerry.h"
-#include "Entities/Water.h"
-#include "Entities/Donut.h"
+#include "Entities/Enemies/Man.h"
+#include "Entities/Enemies/Woman.h"
+#include "Entities/Enemies/Manager.h"
+#include "Entities/Collectables/Coffee.h"
+#include "Entities/Collectables/PeaBerry.h"
+#include "Entities/Collectables/Water.h"
+#include "Entities/Collectables/Donut.h"
 #include "SimpleAudioEngine.h"
-
-using namespace CocosDenshion;
-
 
 USING_NS_CC;
 
-HelloWorld::~HelloWorld() {
+using namespace CocosDenshion;
+
+GamePlay::~GamePlay() {
     
     delete _contactListener;
     
@@ -28,13 +27,13 @@ HelloWorld::~HelloWorld() {
     
 }
 
-Scene* HelloWorld::scene()
+Scene* GamePlay::scene()
 {
     // 'scene' is an autorelease object
     Scene *scene = Scene::create();
     
     // 'layer' is an autorelease object
-    HelloWorld *layer = HelloWorld::create();
+    GamePlay *layer = GamePlay::create();
 
     // add layer as a child to scene
     scene->addChild(layer);
@@ -44,7 +43,7 @@ Scene* HelloWorld::scene()
 }
 
 // on "init" you need to initialize your instance
-bool HelloWorld::init()
+bool GamePlay::init()
 {
     //////////////////////////////
     // 1. super init first
@@ -252,7 +251,7 @@ bool HelloWorld::init()
     return true;
 }
 
-void HelloWorld::update(float dt) {
+void GamePlay::update(float dt) {
     
     _world->Step(dt, 8, 3);
     
@@ -284,9 +283,11 @@ void HelloWorld::update(float dt) {
         GameObject *gameObj = _gameObjects[i];
 		if(gameObj->getState() == GameObjectStateDead) {
 			switch(gameObj->getType()) {
-			case GameObjectTypeCoffee:
-				CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("drinked_coffee.wav");
-				break;
+                case GameObjectTypeCoffee:
+                    SimpleAudioEngine::sharedEngine()->playEffect("drinked_coffee.wav");
+                    break;
+                default:
+                    break;
 			}
 
             this->removeObject(gameObj);
@@ -304,7 +305,7 @@ void HelloWorld::update(float dt) {
 
 }
 
-void HelloWorld::removeObject(GameObject* deadObject) {
+void GamePlay::removeObject(GameObject* deadObject) {
     
 	std::vector<GameObject *>::iterator pos;
 	pos = std::find(_gameObjects.begin(), _gameObjects.end(), deadObject);
@@ -319,7 +320,7 @@ void HelloWorld::removeObject(GameObject* deadObject) {
     
 }
 
-void HelloWorld::buttonLeft(bool pressed) {
+void GamePlay::buttonLeft(bool pressed) {
     
     if (pressed) {
         
@@ -344,7 +345,7 @@ void HelloWorld::buttonLeft(bool pressed) {
     
 }
 
-void HelloWorld::buttonRight(bool pressed) {
+void GamePlay::buttonRight(bool pressed) {
     
     if (pressed) {
         
@@ -369,7 +370,7 @@ void HelloWorld::buttonRight(bool pressed) {
     
 }
 
-void HelloWorld::buttonUp(bool pressed) {
+void GamePlay::buttonUp(bool pressed) {
     
     if (pressed) {
         
@@ -394,7 +395,7 @@ void HelloWorld::buttonUp(bool pressed) {
     
 }
 
-void HelloWorld::buttonDown(bool pressed) {
+void GamePlay::buttonDown(bool pressed) {
     
     if (pressed) {
         
@@ -419,7 +420,7 @@ void HelloWorld::buttonDown(bool pressed) {
     
 }
 
-void HelloWorld::buttonA(bool pressed) {
+void GamePlay::buttonA(bool pressed) {
     
     
     

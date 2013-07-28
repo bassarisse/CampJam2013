@@ -10,7 +10,7 @@
 #define __CampJam__Enemy__
 
 #include "GameObject.h"
-#include "Player.h"
+#include "../Player.h"
 
 class Enemy : public GameObject {
     

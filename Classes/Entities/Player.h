@@ -32,8 +32,8 @@ public:
     
     virtual bool init(b2World *world, Dictionary *properties);
     virtual void update(float dt);
-
-
+    
+	CC_SYNTHESIZE(float, _score, Score);
 	CC_SYNTHESIZE(float, _coffee, Coffee);
 	CC_SYNTHESIZE(float, _life, Life);
 

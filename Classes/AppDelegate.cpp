@@ -1,5 +1,5 @@
 #include "AppDelegate.h"
-#include "HelloWorldScene.h"
+#include "GamePlay.h"
 
 USING_NS_CC;
 
@@ -26,7 +26,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     pDirector->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-    Scene *pScene = HelloWorld::scene();
+    Scene *pScene = GamePlay::scene();
 
     // run
     pDirector->runWithScene(pScene);
