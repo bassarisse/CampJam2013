@@ -70,7 +70,7 @@ void Player::update(float dt) {
     }
     
     if (_life < 0) {
-        _life = 0;
+        Director::sharedDirector()->replaceScene(GamePlay::scene());
         Director::sharedDirector()->replaceScene(GamePlay::scene());
     }
     _score += dt * (100 + _coffee);
