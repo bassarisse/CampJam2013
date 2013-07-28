@@ -32,8 +32,8 @@ bool Player::init(b2World *world, Dictionary *properties) {
     if (!GameObject::init(world, properties))
         return false;
     
-    this->setType(GameObjectTypePlayer);
-    
+	
+
     return true;
 }
 
