@@ -33,7 +33,7 @@ bool Player::init(b2World *world, Dictionary *properties, GamePlay* gameScreen) 
 	_score = 0;
     _node = Sprite::createWithSpriteFrameName("stag_down.png");
     _life = 100.0f;
-    _coffee = 100.0f; // CHANGE IT!
+    _coffee = 0.0f;
     _spriteFrameName = "stag";
     
     this->setType(GameObjectTypePlayer);
