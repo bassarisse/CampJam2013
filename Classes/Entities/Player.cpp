@@ -104,13 +104,31 @@ void Player::handleCollision(GameObject *gameObject) {
             
             b2Vec2 targetVel;
             
+            float maxForce = 0;
+            
             if (this->getMovingHorizontalState() == MovingStateHorizontalStopped && this->getMovingVerticalState() == MovingStateVerticalStopped) {
+                
                 targetVel.x = enemyVel.x * 40;
                 targetVel.y = enemyVel.y * 40;
+                
+                maxForce = kDamageMaxForceStopped;
+                
             } else {
+                
                 targetVel.x = vel.x * -12;
                 targetVel.y = vel.y * -12;
+                
+                maxForce = kDamageMaxForce;
+                
             }
+            
+            if (targetVel.x >  maxForce) { targetVel.y *=  maxForce / targetVel.x; targetVel.x =  maxForce; }
+            if (targetVel.x < -maxForce) { targetVel.y *= -maxForce / targetVel.x; targetVel.x = -maxForce; }
+            if (targetVel.y >  maxForce) { targetVel.x *=  maxForce / targetVel.y; targetVel.y =  maxForce; }
+            if (targetVel.y < -maxForce) { targetVel.x *= -maxForce / targetVel.y; targetVel.y = -maxForce; }
+            
+            CCLog("targetVel.x: %f", targetVel.x);
+            CCLog("targetVel.y: %f", targetVel.y);
             
             _body->ApplyLinearImpulse(targetVel, _body->GetWorldCenter());
             

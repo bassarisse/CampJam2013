@@ -250,9 +250,7 @@ bool GamePlay::init()
     if (_debugLayer)
         this->addChild(_debugLayer, 9999);
     
-	CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("main_bgm.mp3", true);
-
-	
+	SimpleAudioEngine::sharedEngine()->playBackgroundMusic("main_bgm.mp3", true);
 
     return true;
 }
