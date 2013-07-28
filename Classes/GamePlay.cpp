@@ -314,6 +314,7 @@ void GamePlay::update(float dt) {
         GameObject *gameObj = _gameObjects[i];
 		if(gameObj->getState() == GameObjectStateDead) {
 			switch(gameObj->getType()) {
+				case GameObjectTypeWater:
                 case GameObjectTypePeaBerry:
                 case GameObjectTypeCoffee:
                     SimpleAudioEngine::sharedEngine()->playEffect("drinked_coffee.wav");
@@ -569,7 +570,7 @@ void GamePlay::buttonB(bool pressed) {
 }
 
 void GamePlay::onEnter() {
-	Layer::onEnter();
+	BaseLayer::onEnter();
 	SimpleAudioEngine::sharedEngine()->playBackgroundMusic("main_bgm.mp3", true);
 
 }

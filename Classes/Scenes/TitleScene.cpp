@@ -48,6 +48,7 @@ bool TitleScene::init()  {
 	this->addChild(titlelabel);
 	CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("title_bgm.mp3", true);
 
+	return true;
 }
 
 void TitleScene::update(float dt) {
@@ -58,7 +59,7 @@ void TitleScene::buttonAny(bool pressed) {
 	if(pressed)
 		return;
 
-	CocosDenshion::SimpleAudioEngine::sharedEngine()->stopBackgroundMusic(true);
+	CocosDenshion::SimpleAudioEngine::sharedEngine()->stopBackgroundMusic(false);
 	Scene *pScene = GamePlay::scene();
 	
 	Director::sharedDirector()->replaceScene(TransitionFade::create(1.0f, pScene));

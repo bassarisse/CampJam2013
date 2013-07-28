@@ -8,7 +8,11 @@
 
 #include "Player.h"
 #include "Enemies/Enemy.h"
+#include "SimpleAudioEngine.h"
 #include "../GamePlay.h"
+#include "../Scenes/GameoverScene.h"
+
+using namespace CocosDenshion;
 
 Player::~Player() {
     
@@ -71,8 +75,9 @@ void Player::update(float dt) {
     }
     
     if (_life < 0) {
-        Director::sharedDirector()->replaceScene(GamePlay::scene());
-        Director::sharedDirector()->replaceScene(GamePlay::scene());
+		SimpleAudioEngine::sharedEngine()->playEffect("wilhem.wav");
+		Scene* over = GameoverScene::scene(_score);
+		Director::sharedDirector()->replaceScene(TransitionFade::create(0.7f, over));
     }
     _score += dt * (100 + _coffee);
     

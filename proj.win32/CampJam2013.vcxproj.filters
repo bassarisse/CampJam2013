@@ -93,6 +93,9 @@
     <ClCompile Include="..\Classes\Entities\CollectableSpawnPoint.cpp">
       <Filter>Classes\Entities</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Scenes\GameoverScene.cpp">
+      <Filter>Classes\Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -166,6 +169,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Entities\EnemySpawnPoint.h">
       <Filter>Classes\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scenes\GameoverScene.h">
+      <Filter>Classes\Scenes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
