@@ -18,7 +18,7 @@ using namespace cocos2d;
 #define kWalkForce 6.0f
 #define kCoffeeThreshold 60.0f
 #define kCoffeeDamage 1.5f
-#define kCoffeePower 0.04f
+#define kCoffeePower 0.065f
 #define kCoffeeLevelAdd 10.0f
 #define kPeaBerrySpeedFactor 3.0f
 #define kPeaBerryTime 10.0f

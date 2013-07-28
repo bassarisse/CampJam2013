@@ -152,3 +152,10 @@ void Player::handleCollision(GameObject *gameObject) {
 
 }
 
+void Player::handleMovement(float angle) {
+    
+    if (_damageTime > 0)
+        return;
+    
+    GameObject::handleMovement(angle);
+}

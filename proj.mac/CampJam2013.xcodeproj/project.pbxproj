@@ -96,6 +96,8 @@
 		62E5AFDE17A487DE00BE18FE /* CoffeeBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFDA17A487DE00BE18FE /* CoffeeBar.cpp */; };
 		62E5AFDF17A487DE00BE18FE /* HealthBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFDC17A487DE00BE18FE /* HealthBar.cpp */; };
 		62E5AFE217A4B01200BE18FE /* tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 62E5AFE117A4B01200BE18FE /* tiles.png */; };
+		62E5AFE717A525B400BE18FE /* drinked_coffee.wav in Resources */ = {isa = PBXBuildFile; fileRef = 62E5AFE517A525B400BE18FE /* drinked_coffee.wav */; };
+		62E5AFE817A525B400BE18FE /* main_bgm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 62E5AFE617A525B400BE18FE /* main_bgm.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -282,6 +284,8 @@
 		62E5AFDC17A487DE00BE18FE /* HealthBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HealthBar.cpp; path = ../Classes/HealthBar.cpp; sourceTree = "<group>"; };
 		62E5AFDD17A487DE00BE18FE /* HealthBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthBar.h; path = ../Classes/HealthBar.h; sourceTree = "<group>"; };
 		62E5AFE117A4B01200BE18FE /* tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tiles.png; sourceTree = "<group>"; };
+		62E5AFE517A525B400BE18FE /* drinked_coffee.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = drinked_coffee.wav; sourceTree = "<group>"; };
+		62E5AFE617A525B400BE18FE /* main_bgm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = main_bgm.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -641,6 +645,8 @@
 				622AA1FC17A35FF900EEE5EB /* main.tmx */,
 				62E5AFC717A4280800BE18FE /* Characters.plist */,
 				62E5AFC817A4280800BE18FE /* Characters.png */,
+				62E5AFE517A525B400BE18FE /* drinked_coffee.wav */,
+				62E5AFE617A525B400BE18FE /* main_bgm.wav */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -723,6 +729,8 @@
 				62E5AFC917A4280800BE18FE /* Characters.plist in Resources */,
 				62E5AFCA17A4280800BE18FE /* Characters.png in Resources */,
 				62E5AFE217A4B01200BE18FE /* tiles.png in Resources */,
+				62E5AFE717A525B400BE18FE /* drinked_coffee.wav in Resources */,
+				62E5AFE817A525B400BE18FE /* main_bgm.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

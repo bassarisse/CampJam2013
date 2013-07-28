@@ -24,6 +24,7 @@ protected:
     virtual void addFixtures();
     virtual float getSpeed();
 	virtual void handleCollision(GameObject *gameObject);
+	virtual void handleMovement(float angle);
     
 public:
     
