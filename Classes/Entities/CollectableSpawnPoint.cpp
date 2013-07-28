@@ -40,9 +40,8 @@ void CollectableSpawnPoint::update(float dt) {
     
     _spawnTime += dt;
     
-    if (_nextSpawnTime == 0) {
-        _nextSpawnTime = 8 + rand() % 20;
-    }
+    if (_nextSpawnTime == 0)
+        _nextSpawnTime = 10 + rand() % 25;
     
     if (_spawnTime > _nextSpawnTime) {
         _spawnTime = 0;
