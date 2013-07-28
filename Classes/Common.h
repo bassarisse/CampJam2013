@@ -26,6 +26,8 @@ using namespace cocos2d;
 #define kDonutEffectAmount 20.0f
 #define kDamageBaseAmount 10.0f
 #define kDamageTime 0.3f
+#define kDamageMaxForceStopped 20.0f
+#define kDamageMaxForce 40.0f
 
 #define kEnemyDeathCoffeeNumber 3
 
@@ -59,7 +61,8 @@ enum GameObjectState {
 };
 
 enum GameObjectType {
-    GameObjectTypePlayer = 0,
+    GameObjectTypeUnknown = 0,
+    GameObjectTypePlayer,
     GameObjectTypeCoffee,
     GameObjectTypePeaBerry,
     GameObjectTypeDonut,

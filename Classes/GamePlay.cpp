@@ -10,6 +10,8 @@
 #include "Entities/Collectables/Water.h"
 #include "Entities/Collectables/Donut.h"
 #include "SimpleAudioEngine.h"
+#include "Entities/EnemySpawnPoint.h"
+#include "Entities/CollectableSpawnPoint.h"
 
 USING_NS_CC;
 
@@ -28,6 +30,14 @@ GamePlay::~GamePlay() {
         
         deadObject->release();
         deadObject = NULL;
+    }
+    
+    for(std::vector<EnemySpawnPoint *>::size_type i = 0; i < _enemySpawnPoints.size(); i++) {
+        _enemySpawnPoints[i]->release();
+    }
+    
+    for(std::vector<CollectableSpawnPoint *>::size_type i = 0; i < _collectableSpawnPoints.size(); i++) {
+        _collectableSpawnPoints[i]->release();
     }
     
 }
@@ -56,6 +66,8 @@ bool GamePlay::init()
     {
         return false;
     }
+    
+    srand(time(NULL));
     
     _winSize = Director::sharedDirector()->getWinSize();
     //Size visibleSize = Director::sharedDirector()->getVisibleSize();
@@ -98,69 +110,47 @@ bool GamePlay::init()
         if (!type)
             continue;
         
-        if (type->compare("Player") == 0) 
+        if (type->compare("Player") == 0)
 		{
             
             _player->init(_world, objectProperties);
             _mainBatchNode->addChild(_player->getNode());
-            //_gameObjects.push_back(player); 
-		} 
-		/* 
-		 * Powerups
-		 */
-		else if(type->compare("Coffee") == 0) 
-		{
-			Coffee* newPowerup = new Coffee();
-			newPowerup->init(_world, objectProperties);
-			_mainBatchNode->addChild(newPowerup->getNode());
-			_gameObjects.push_back(newPowerup);
-
-		} else if(type->compare("Water") == 0) 
-		{
-			Water* newPowerup = new Water();
-			newPowerup->init(_world, objectProperties);
-			_mainBatchNode->addChild(newPowerup->getNode());
-			_gameObjects.push_back(newPowerup);
-            
-		} else if(type->compare("Donut") == 0) 
-		{
-			Donut* newPowerup = new Donut();
-			newPowerup->init(_world, objectProperties);
-			_mainBatchNode->addChild(newPowerup->getNode());
-			_gameObjects.push_back(newPowerup);
-            
-		} else if(type->compare("PeaBerry") == 0) 
-		{
-			PeaBerry* newPowerup = new PeaBerry();
-			newPowerup->init(_world, objectProperties);
-			_mainBatchNode->addChild(newPowerup->getNode());
-			_gameObjects.push_back(newPowerup);
-            
-		} 
-		/* 
-		 * Enemies
-		 */
-		else if(type->compare("Man") == 0)
-		{
-			Man *newEnemy = new Man();
-			newEnemy->init(_world, objectProperties, (Player*)_player);
-			_mainBatchNode->addChild(newEnemy->getNode());
-			_gameObjects.push_back(newEnemy);
+            //_gameObjects.push_back(player);
 		}
-		else if(type->compare("Woman") == 0)
-		{
-			Woman *newEnemy = new Woman();
-			newEnemy->init(_world, objectProperties, (Player*)_player);
-			_mainBatchNode->addChild(newEnemy->getNode());
-			_gameObjects.push_back(newEnemy);
-		}
-		else if(type->compare("Manager") == 0)
-		{
-			Manager *newEnemy = new Manager();
-			newEnemy->init(_world, objectProperties, (Player*)_player);
-			_mainBatchNode->addChild(newEnemy->getNode());
-			_gameObjects.push_back(newEnemy);
-		}
+		else if (type->compare("EnemySpawnPoint") == 0)
+        {
+            EnemySpawnPoint *spawnPoint = new EnemySpawnPoint();
+            spawnPoint->init(this, objectProperties);
+            _enemySpawnPoints.push_back(spawnPoint);
+            
+        } else {
+            
+            GameObjectType gameObjectType = GameObjectTypeUnknown;
+            
+            if(type->compare("Coffee") == 0)
+                gameObjectType = GameObjectTypeCoffee;
+            
+            else if(type->compare("Water") == 0)
+                gameObjectType = GameObjectTypeWater;
+            
+            else if(type->compare("Donut") == 0)
+                gameObjectType = GameObjectTypeDonut;
+            
+            else if(type->compare("PeaBerry") == 0)
+                gameObjectType = GameObjectTypePeaBerry;
+            
+            else if(type->compare("Man") == 0)
+                gameObjectType = GameObjectTypeMan;
+            
+            else if(type->compare("Woman") == 0)
+                gameObjectType = GameObjectTypeWoman;
+            
+            else if(type->compare("Manager") == 0)
+                gameObjectType = GameObjectTypeManager;
+            
+            if (gameObjectType != GameObjectTypeUnknown)
+                this->createGameObject(gameObjectType, objectProperties);
+        }
         
     }
     
@@ -269,9 +259,7 @@ bool GamePlay::init()
     if (_debugLayer)
         this->addChild(_debugLayer, 9999);
     
-	CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("main_bgm.mp3", true);
-
-	
+	SimpleAudioEngine::sharedEngine()->playBackgroundMusic("main_bgm.mp3", true);
 
     return true;
 }
@@ -299,9 +287,17 @@ void GamePlay::update(float dt) {
     
     if (_debugLayer)
         _debugLayer->setPosition(viewPoint);
-
+    
     for(std::vector<GameObject *>::size_type i = 0; i < _gameObjects.size(); i++) {
         _gameObjects[i]->update(dt);
+    }
+    
+    for(std::vector<EnemySpawnPoint *>::size_type i = 0; i < _enemySpawnPoints.size(); i++) {
+        _enemySpawnPoints[i]->update(dt);
+    }
+    
+    for(std::vector<CollectableSpawnPoint *>::size_type i = 0; i < _collectableSpawnPoints.size(); i++) {
+        _collectableSpawnPoints[i]->update(dt);
     }
     
 	//Add the dead objects to be removed in a separated array
@@ -309,6 +305,7 @@ void GamePlay::update(float dt) {
         GameObject *gameObj = _gameObjects[i];
 		if(gameObj->getState() == GameObjectStateDead) {
 			switch(gameObj->getType()) {
+                case GameObjectTypePeaBerry:
                 case GameObjectTypeCoffee:
                     SimpleAudioEngine::sharedEngine()->playEffect("drinked_coffee.wav");
                     break;
@@ -332,6 +329,90 @@ void GamePlay::update(float dt) {
 	_scoreLayer->setScore(pl->getScore());
 	_scoreLayer->update(dt);
 
+}
+
+void GamePlay::createGameObject(GameObjectType type, Dictionary *properties) {
+    
+    switch (type) {
+            
+            /*
+             * Collectables
+             */
+            
+        case GameObjectTypeCoffee:
+        {
+            Coffee* newPowerup = new Coffee();
+            newPowerup->init(_world, properties);
+            _mainBatchNode->addChild(newPowerup->getNode());
+            _gameObjects.push_back(newPowerup);
+            
+        }
+            break;
+            
+        case GameObjectTypeWater:
+        {
+            Water* newPowerup = new Water();
+            newPowerup->init(_world, properties);
+            _mainBatchNode->addChild(newPowerup->getNode());
+            _gameObjects.push_back(newPowerup);
+            
+        }
+            break;
+            
+        case GameObjectTypeDonut:
+        {
+            Donut* newPowerup = new Donut();
+            newPowerup->init(_world, properties);
+            _mainBatchNode->addChild(newPowerup->getNode());
+            _gameObjects.push_back(newPowerup);
+            
+        }
+            break;
+            
+        case GameObjectTypePeaBerry:
+        {
+            PeaBerry* newPowerup = new PeaBerry();
+            newPowerup->init(_world, properties);
+            _mainBatchNode->addChild(newPowerup->getNode());
+            _gameObjects.push_back(newPowerup);
+            
+        }
+            break;
+            
+            /*
+             * Enemies
+             */
+        case GameObjectTypeMan:
+        {
+            Man *newEnemy = new Man();
+            newEnemy->init(_world, properties, (Player*)_player);
+            _mainBatchNode->addChild(newEnemy->getNode());
+            _gameObjects.push_back(newEnemy);
+        }
+            break;
+            
+        case GameObjectTypeWoman:
+        {
+            Woman *newEnemy = new Woman();
+            newEnemy->init(_world, properties, (Player*)_player);
+            _mainBatchNode->addChild(newEnemy->getNode());
+            _gameObjects.push_back(newEnemy);
+        }
+            break;
+            
+        case GameObjectTypeManager:
+        {
+            Manager *newEnemy = new Manager();
+            newEnemy->init(_world, properties, (Player*)_player);
+            _mainBatchNode->addChild(newEnemy->getNode());
+            _gameObjects.push_back(newEnemy);
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
 }
 
 void GamePlay::removeObject(GameObject* deadObject) {
