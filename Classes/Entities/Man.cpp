@@ -32,11 +32,3 @@ bool Man::init(b2World *world, Dictionary *properties, Player *ref) {
     
     return true;
 }
-
-void Man::update(float dt) {
-	Enemy::update(dt);
-    
-	if(_drinkedCoffee >= kEnemyDeathCoffeeNumber && _state != GameObjectStateDead)
-        this->setState(GameObjectStateDead);
-
-}

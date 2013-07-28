@@ -1,6 +1,6 @@
 //
 //  Player.cpp
-//  PlatformerTest
+//  CampJam
 //
 //  Created by Bruno Assarisse on 23/07/13.
 //
@@ -42,6 +42,16 @@ void Player::update(float dt) {
     
     float affectValue = dt * kCoffeeDamage;
     
+    _peaBerryTime -= dt;
+    
+    if (_peaBerryTime < 0) {
+        _peaBerryTime = 0;
+        if (_isUnderPeaBerryEffect) {
+            _speedFactor -= kPeaBerrySpeedFactor;
+            _isUnderPeaBerryEffect = false;
+        }
+    }
+    
     _coffee -= affectValue;
     if (_coffee < 0) _coffee = 0;
     
@@ -57,21 +67,45 @@ float Player::getSpeed() {
     return _speedFactor + _coffee * kCoffeePower;
 }
 
-void Player::handleCollisions() {
-
-	for(std::vector<GameObject*>::size_type i = 0; i < _contacts.size(); i++)
-	{
-		GameObject* collisionObject = _contacts[i];
-		switch(collisionObject->getType()) {
-            case GameObjectTypeCoffee:
-                _speedFactor += 0.05f;
-                
-                break;
-            default:
-                break;
-		}
-		
-	}
+void Player::handleCollision(GameObject *gameObject) {
+    
+    switch(gameObject->getType()) {
+            
+        case GameObjectTypeCoffee:
+            _coffee += kCoffeeLevelAdd;
+            if (_coffee > 100.0f)
+                _coffee = 100.0f;
+            gameObject->setState(GameObjectStateDead);
+            
+            break;
+            
+        case GameObjectTypePeaBerry:
+            _speedFactor += kPeaBerrySpeedFactor;
+            _isUnderPeaBerryEffect = true;
+            _peaBerryTime = kPeaBerryTime;
+            gameObject->setState(GameObjectStateDead);
+            
+            break;
+            
+        case GameObjectTypeWater:
+            _coffee -= kDonutEffectAmout;
+            if (_coffee < 0.0f)
+                _coffee = 0.0f;
+            gameObject->setState(GameObjectStateDead);
+            
+            break;
+            
+        case GameObjectTypeDonut:
+            _life += kDonutEffectAmout;
+            if (_life > 100.0f)
+                _life = 100.0f;
+            gameObject->setState(GameObjectStateDead);
+            
+            break;
+            
+        default:
+            break;
+    }
     
 
 }

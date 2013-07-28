@@ -1,6 +1,6 @@
 //
 //  Player.h
-//  PlatformerTest
+//  CampJam
 //
 //  Created by Bruno Assarisse on 23/07/13.
 //
@@ -17,9 +17,12 @@ private:
         
 protected:
     
+    bool _isUnderPeaBerryEffect;
+    float _peaBerryTime;
+    
     virtual void addFixtures();
     virtual float getSpeed();
-	virtual void handleCollisions();
+	virtual void handleCollision(GameObject *gameObject);
     
 public:
     
@@ -34,4 +37,4 @@ public:
 
 };
 
-#endif /* defined(__PlatformerTest__Player__) */
+#endif /* defined(__CampJam__Player__) */

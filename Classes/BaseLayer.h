@@ -1,13 +1,13 @@
 //
 //  BaseLayer.h
-//  PlatformerTest
+//  CampJam
 //
 //  Created by Bruno Assarisse on 23/07/13.
 //
 //
 
-#ifndef __PlatformerTest__BaseLayer__
-#define __PlatformerTest__BaseLayer__
+#ifndef __CampJam__BaseLayer__
+#define __CampJam__BaseLayer__
 
 #include "cocos2d.h"
 
@@ -42,4 +42,4 @@ public:
 };
 
 
-#endif /* defined(__PlatformerTest__BaseLayer__) */
+#endif /* defined(__CampJam__BaseLayer__) */

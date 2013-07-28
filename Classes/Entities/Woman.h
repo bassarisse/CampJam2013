@@ -10,17 +10,14 @@ private:
 protected:
 
 	virtual void addFixtures();
-    
-	virtual void handleCollisions();
 
 public:
 
 	virtual ~Woman();
 
 	virtual bool init(b2World *world, Dictionary *properties, Player* ref);
-    virtual void update(float dt);
 
 };
 
 
-#endif /* defined(__PlatformerTest__Player__) */
+#endif /* defined(__CampJam__Player__) */

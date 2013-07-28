@@ -11,9 +11,9 @@ void Coffee::addFixtures() {
 }
 
 bool Coffee::init(b2World *world, Dictionary *properties) {
-    //FIXME
-    _node = Sprite::createWithSpriteFrameName("man_down.png");
-	_node->setScale(0.2f);
+    
+    _node = Sprite::createWithSpriteFrameName("coffee.png");
+    _isSensor = true;
 	
 	this->setType(GameObjectTypeCoffee);
 
@@ -21,8 +21,4 @@ bool Coffee::init(b2World *world, Dictionary *properties) {
         return false;
     
     return true;
-}
-
-void Coffee::update(float dt) {
-	GameObject::update(dt);
 }

@@ -1,19 +1,20 @@
 
-#ifndef __CampJam__Man__
-#define __CampJam__Man__
+#ifndef __CampJam__Manager__
+#define __CampJam__Manager__
 
 #include "Enemy.h"
 
-class Man : public Enemy {
+class Manager : public Enemy {
 private:
 
 protected:
 
 	virtual void addFixtures();
+    virtual void executeWalkAnimation();
 
 public:
 
-	virtual ~Man();
+	virtual ~Manager();
 
 	virtual bool init(b2World *world, Dictionary *properties, Player* ref);
 

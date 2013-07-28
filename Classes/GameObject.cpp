@@ -1,6 +1,6 @@
 //
 //  GameObject.cpp
-//  PlatformerTest
+//  CampJam
 //
 //  Created by Bruno Assarisse on 23/07/13.
 //
@@ -70,6 +70,7 @@ void GameObject::createFixture(b2Shape *shape) {
     fixtureDef.friction = 0.0f;
     fixtureDef.restitution = 0.0f;
     fixtureDef.userData = this;
+    fixtureDef.isSensor = _isSensor;
     
     _body->CreateFixture(&fixtureDef);
     
@@ -97,6 +98,20 @@ float GameObject::getSpeed() {
 }
 
 void GameObject::handleCollisions() {
+    
+	for(std::vector<GameObject*>::size_type i = 0; i < _contacts.size(); i++)
+	{
+		GameObject* collisionObject = _contacts[i];
+		if(!collisionObject || collisionObject->getState() == GameObjectStateDead)
+			continue;
+		
+        this->handleCollision(collisionObject);
+		
+	}
+    
+}
+
+void GameObject::handleCollision(GameObject *gameObject) {
     
 }
 
@@ -138,6 +153,7 @@ void GameObject::addBodyToWorld(b2World *world) {
 bool GameObject::init(b2World *world, Dictionary *properties) {
     
     _speedFactor = 0.0f;
+    _shouldFlipSprite = true;
     _lastDirection = kDirectionDown;
     _lastVerticalDirection = kDirectionDown;
     _lastHorizontalDirection = kDirectionRight;
@@ -164,7 +180,8 @@ void GameObject::update(float dt) {
     
     this->handleMovement();
     
-    ((Sprite *)_node)->setFlipX(_lastHorizontalDirection == kDirectionRight);
+    if (_shouldFlipSprite)
+        ((Sprite *)_node)->setFlipX(_lastHorizontalDirection == kDirectionRight);
     
 	if (_contacts.size() > 0) {
 		this->handleCollisions();
@@ -269,24 +286,33 @@ bool GameObject::changeDirection(kDirection direction) {
 
 void GameObject::executeWalkAnimation() {
     
-    if (this->getState() == GameObjectStateWalking && !_node->getActionByTag(kWalkActionTag)) {
+    if (this->getState() == GameObjectStateWalking) {
         
-        SpriteFrameCache *spriteCache = SpriteFrameCache::sharedSpriteFrameCache();
+        float speed = (abs(kWalkForce + this->getSpeed())) / 1.9f;
         
-        const char *frameNameVertical = getDirectionName(_lastVerticalDirection);
+        Speed *walkAction = dynamic_cast<Speed*>(_node->getActionByTag(kWalkActionTag));
         
-        Animation *anim = Animation::create();
-        anim->setDelayPerUnit(0.2f);
-        anim->setRestoreOriginalFrame(true);
+        if (!walkAction) {
+            
+            SpriteFrameCache *spriteCache = SpriteFrameCache::sharedSpriteFrameCache();
+            
+            const char *frameNameVertical = getDirectionName(_lastVerticalDirection);
+            
+            Animation *anim = Animation::create();
+            anim->setDelayPerUnit(0.5f);
+            anim->setRestoreOriginalFrame(true);
+            
+            anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("%s_%s1.png", _spriteFrameName, frameNameVertical)->getCString()));
+            anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("%s_%s2.png", _spriteFrameName, frameNameVertical)->getCString()));
+            
+            walkAction = Speed::create(RepeatForever::create(Animate::create(anim)), speed);
+            walkAction->setTag(kWalkActionTag);
+            
+            _node->stopAllActions();
+            _node->runAction(walkAction);
+        }
         
-        anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("%s_%s1.png", _spriteFrameName, frameNameVertical)->getCString()));
-        anim->addSpriteFrame(spriteCache->spriteFrameByName(String::createWithFormat("%s_%s2.png", _spriteFrameName, frameNameVertical)->getCString()));
-        
-        Action *repeatAction = RepeatForever::create(Animate::create(anim));
-        repeatAction->setTag(kWalkActionTag);
-        
-        _node->stopAllActions();
-        _node->runAction(repeatAction);
+        walkAction->setSpeed(speed);
         
     } else if (this->getState() == GameObjectStateStanding) {
         

@@ -1,6 +1,6 @@
 //
 //  BAContactListener.cpp
-//  PlatformerTest
+//  CampJam
 //
 //  Created by Bruno Assarisse on 24/07/13.
 //
@@ -66,7 +66,7 @@ std::vector<BAContact> BAContactListener::getContacts(GameObjectType gameObjectT
     
     std::vector<BAContact> foundContacts;
     
-    for(std::vector<GameObject *>::size_type i = 0; i != _contacts.size(); i++) {
+    for(std::vector<GameObject *>::size_type i = 0; i < _contacts.size(); i++) {
         BAContact aContact = _contacts[i];
         
         void *fixtureAUserData = aContact.fixtureA->GetUserData();
@@ -89,7 +89,7 @@ std::vector<BAContact> BAContactListener::getContacts(GameObject *gameObject) {
     
     std::vector<BAContact> foundContacts;
     
-    for(std::vector<GameObject *>::size_type i = 0; i != _contacts.size(); i++) {
+    for(std::vector<GameObject *>::size_type i = 0; i < _contacts.size(); i++) {
         BAContact aContact = _contacts[i];
         
         void *fixtureAUserData = aContact.fixtureA->GetUserData();
@@ -112,7 +112,7 @@ std::vector<BAContact> BAContactListener::getContacts(GameObject *gameObject, Ga
     
     std::vector<BAContact> foundContacts;
     
-    for(std::vector<GameObject *>::size_type i = 0; i != _contacts.size(); i++) {
+    for(std::vector<GameObject *>::size_type i = 0; i < _contacts.size(); i++) {
         BAContact aContact = _contacts[i];
         
         void *fixtureAUserData = aContact.fixtureA->GetUserData();

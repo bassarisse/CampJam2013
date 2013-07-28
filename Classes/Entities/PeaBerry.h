@@ -25,8 +25,7 @@ public:
     virtual ~Peaberry();
     
     virtual bool init(b2World *world, Dictionary *properties);
-    virtual void update(float dt);
 
 };
 
-#endif /* defined(__PlatformerTest__Player__) */
+#endif /* defined(__CampJam__Player__) */

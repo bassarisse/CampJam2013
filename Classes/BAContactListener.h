@@ -1,13 +1,13 @@
 //
 //  BAContactListener.h
-//  PlatformerTest
+//  CampJam
 //
 //  Created by Bruno Assarisse on 24/07/13.
 //
 //
 
-#ifndef __PlatformerTest__BAContactListener__
-#define __PlatformerTest__BAContactListener__
+#ifndef __CampJam__BAContactListener__
+#define __CampJam__BAContactListener__
 
 #include "Box2d/Box2d.h"
 #include <vector>
@@ -45,4 +45,4 @@ struct BAContact {
         
     };
     
-#endif /* defined(__PlatformerTest__BAContactListener__) */
+#endif /* defined(__CampJam__BAContactListener__) */

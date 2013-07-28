@@ -1,13 +1,13 @@
 //
 //  GameObject.h
-//  PlatformerTest
+//  CampJam
 //
 //  Created by Bruno Assarisse on 23/07/13.
 //
 //
 
-#ifndef __PlatformerTest__GameObject__
-#define __PlatformerTest__GameObject__
+#ifndef __CampJam__GameObject__
+#define __CampJam__GameObject__
 
 #include "cocos2d.h"
 #include <Box2D/Box2D.h>
@@ -27,6 +27,8 @@ protected:
     
     b2Body *_body;
     Node *_node;
+    bool _isSensor;
+    bool _shouldFlipSprite;
     std::vector<GameObject *> _contacts;
     kDirection _lastDirection;
     kDirection _lastVerticalDirection;
@@ -45,6 +47,7 @@ protected:
     virtual void executeWalkAnimation();
     virtual void setIdleFrame();
 	virtual void handleCollisions();
+	virtual void handleCollision(GameObject *gameObject);
     
 public:
     
@@ -71,4 +74,4 @@ public:
     
 };
 
-#endif /* defined(__PlatformerTest__GameObject__) */
+#endif /* defined(__CampJam__GameObject__) */

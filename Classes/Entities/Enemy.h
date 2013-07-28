@@ -20,7 +20,7 @@ protected:
     
     virtual void addFixtures();
 	
-	virtual void handleCollisions();
+	virtual void handleCollision(GameObject *gameObject);
 
 	Player* _playerReference;
 
@@ -40,4 +40,4 @@ public:
 
 };
 
-#endif /* defined(__PlatformerTest__Player__) */
+#endif /* defined(__CampJam__Player__) */

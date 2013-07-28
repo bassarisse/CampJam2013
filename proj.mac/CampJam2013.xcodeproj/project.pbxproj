@@ -93,6 +93,9 @@
 		62E5AFD217A43FE000BE18FE /* Donut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFCC17A43FE000BE18FE /* Donut.cpp */; };
 		62E5AFD317A43FE000BE18FE /* PeaBerry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFCE17A43FE000BE18FE /* PeaBerry.cpp */; };
 		62E5AFD417A43FE000BE18FE /* Water.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFD017A43FE000BE18FE /* Water.cpp */; };
+		62E5AFD817A471B200BE18FE /* Manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFD617A471B200BE18FE /* Manager.cpp */; };
+		62E5AFDE17A487DE00BE18FE /* CoffeeBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFDA17A487DE00BE18FE /* CoffeeBar.cpp */; };
+		62E5AFDF17A487DE00BE18FE /* HealthBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFDC17A487DE00BE18FE /* HealthBar.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -273,6 +276,12 @@
 		62E5AFCF17A43FE000BE18FE /* PeaBerry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeaBerry.h; sourceTree = "<group>"; };
 		62E5AFD017A43FE000BE18FE /* Water.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Water.cpp; sourceTree = "<group>"; };
 		62E5AFD117A43FE000BE18FE /* Water.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Water.h; sourceTree = "<group>"; };
+		62E5AFD617A471B200BE18FE /* Manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Manager.cpp; sourceTree = "<group>"; };
+		62E5AFD717A471B200BE18FE /* Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Manager.h; sourceTree = "<group>"; };
+		62E5AFDA17A487DE00BE18FE /* CoffeeBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CoffeeBar.cpp; path = ../Classes/CoffeeBar.cpp; sourceTree = "<group>"; };
+		62E5AFDB17A487DE00BE18FE /* CoffeeBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoffeeBar.h; path = ../Classes/CoffeeBar.h; sourceTree = "<group>"; };
+		62E5AFDC17A487DE00BE18FE /* HealthBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HealthBar.cpp; path = ../Classes/HealthBar.cpp; sourceTree = "<group>"; };
+		62E5AFDD17A487DE00BE18FE /* HealthBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthBar.h; path = ../Classes/HealthBar.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +322,10 @@
 				622AA21017A3609E00EEE5EB /* GameObject.h */,
 				622AA21117A3609E00EEE5EB /* HelloWorldScene.cpp */,
 				622AA21217A3609E00EEE5EB /* HelloWorldScene.h */,
+				62E5AFDA17A487DE00BE18FE /* CoffeeBar.cpp */,
+				62E5AFDB17A487DE00BE18FE /* CoffeeBar.h */,
+				62E5AFDC17A487DE00BE18FE /* HealthBar.cpp */,
+				62E5AFDD17A487DE00BE18FE /* HealthBar.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -606,6 +619,8 @@
 				622AA22617A39ECE00EEE5EB /* Man.h */,
 				622AA22C17A3AA8300EEE5EB /* Woman.cpp */,
 				622AA22D17A3AA8300EEE5EB /* Woman.h */,
+				62E5AFD617A471B200BE18FE /* Manager.cpp */,
+				62E5AFD717A471B200BE18FE /* Manager.h */,
 				62E5AFBD17A3FB4E00BE18FE /* Coffee.cpp */,
 				62E5AFBE17A3FB4E00BE18FE /* Coffee.h */,
 				62E5AFCC17A43FE000BE18FE /* Donut.cpp */,
@@ -786,6 +801,9 @@
 				62E5AFD217A43FE000BE18FE /* Donut.cpp in Sources */,
 				62E5AFD317A43FE000BE18FE /* PeaBerry.cpp in Sources */,
 				62E5AFD417A43FE000BE18FE /* Water.cpp in Sources */,
+				62E5AFD817A471B200BE18FE /* Manager.cpp in Sources */,
+				62E5AFDE17A487DE00BE18FE /* CoffeeBar.cpp in Sources */,
+				62E5AFDF17A487DE00BE18FE /* HealthBar.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
