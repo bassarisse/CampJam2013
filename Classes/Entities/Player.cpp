@@ -36,6 +36,8 @@ bool Player::init(b2World *world, Dictionary *properties) {
     _life = 100.0f;
     _coffee = 100.0f; // CHANGE IT!
     _spriteFrameName = "stag";
+    
+    this->setType(GameObjectTypePlayer);
 
     if (!GameObject::init(world, properties))
         return false;

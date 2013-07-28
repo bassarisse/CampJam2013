@@ -23,8 +23,11 @@ protected:
 	virtual void handleCollision(GameObject *gameObject);
 
 	Player* _playerReference;
-
+    
 	int _drinkedCoffee;
+    float _randomMovingTime;
+    bool _isRandomMoving;
+    Point _walkingPoint;
 
 public:
     
@@ -34,8 +37,11 @@ public:
     virtual void update(float dt);
 
 	virtual void handleMovement();
+    virtual bool isNearPlayer();
     
     CC_SYNTHESIZE(float, _damageFactor, DamageFactor);
+    CC_SYNTHESIZE(float, _sightRange, SightRange);
+    CC_SYNTHESIZE(bool, _randomMoveOnly, RandomMoveOnly);
 
 
 };

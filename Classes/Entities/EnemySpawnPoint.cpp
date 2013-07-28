@@ -9,7 +9,7 @@
 #include "EnemySpawnPoint.h"
 
 #include "GamePlay.h"
-#include "GameObject.h"
+#include "Enemy.h"
 
 EnemySpawnPoint::~EnemySpawnPoint() {
     CC_SAFE_RELEASE(_properties);
@@ -51,10 +51,15 @@ void EnemySpawnPoint::update(float dt) {
         _spawnTime = 0;
         _nextSpawnTime = 0;
         
-        if (_gameObjects.size() >= _maxObjects)
+        if (_maxObjects > 0 && _gameObjects.size() >= _maxObjects)
             return;
         
-        GameObject *newObj = _gamePlay->createGameObject((GameObjectType)(GameObjectTypeMan + rand() % (1 + GameObjectTypeManager - GameObjectTypeMan)), _properties);
+        Enemy *newObj = (Enemy *)_gamePlay->createGameObject((GameObjectType)(GameObjectTypeMan + rand() % (1 + GameObjectTypeManager - GameObjectTypeMan)), _properties);
+        
+        if (rand() % 2 == 0)
+            newObj->setSightRange(200 + rand() % 1000);
+        newObj->setRandomMoveOnly(rand() % 2 == 0);
+        
         _gameObjects.push_back(newObj);
         
     }
