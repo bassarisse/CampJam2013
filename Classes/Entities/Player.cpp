@@ -77,7 +77,8 @@ void Player::update(float dt) {
     if (_life < 0) {
 		SimpleAudioEngine::sharedEngine()->playEffect("wilhem.wav");
 		Scene* over = GameoverScene::scene(_score);
-		Director::sharedDirector()->replaceScene(TransitionFade::create(0.7f, over));
+		Director::sharedDirector()->replaceScene(over);
+		return;
     }
     _score += dt * (100 + _coffee);
     
