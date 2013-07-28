@@ -104,6 +104,7 @@
 		62E5B00F17A54CBC00BE18FE /* CollectableSpawnPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5B00D17A54CBA00BE18FE /* CollectableSpawnPoint.cpp */; };
 		62E5B01317A5604A00BE18FE /* TitleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5B01117A5604A00BE18FE /* TitleScene.cpp */; };
 		62E5B01617A5605600BE18FE /* ScoreLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5B01417A5605300BE18FE /* ScoreLayer.cpp */; };
+		62E5B01B17A575D400BE18FE /* GameoverScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5B01917A575D400BE18FE /* GameoverScene.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -302,6 +303,8 @@
 		62E5B01217A5604A00BE18FE /* TitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleScene.h; sourceTree = "<group>"; };
 		62E5B01417A5605300BE18FE /* ScoreLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ScoreLayer.cpp; path = ../Classes/ScoreLayer.cpp; sourceTree = "<group>"; };
 		62E5B01517A5605400BE18FE /* ScoreLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreLayer.h; path = ../Classes/ScoreLayer.h; sourceTree = "<group>"; };
+		62E5B01917A575D400BE18FE /* GameoverScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameoverScene.cpp; sourceTree = "<group>"; };
+		62E5B01A17A575D400BE18FE /* GameoverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameoverScene.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -682,6 +685,8 @@
 			children = (
 				62E5B01117A5604A00BE18FE /* TitleScene.cpp */,
 				62E5B01217A5604A00BE18FE /* TitleScene.h */,
+				62E5B01917A575D400BE18FE /* GameoverScene.cpp */,
+				62E5B01A17A575D400BE18FE /* GameoverScene.h */,
 			);
 			name = Scenes;
 			path = ../Classes/Scenes;
@@ -869,6 +874,7 @@
 				62E5B00F17A54CBC00BE18FE /* CollectableSpawnPoint.cpp in Sources */,
 				62E5B01317A5604A00BE18FE /* TitleScene.cpp in Sources */,
 				62E5B01617A5605600BE18FE /* ScoreLayer.cpp in Sources */,
+				62E5B01B17A575D400BE18FE /* GameoverScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

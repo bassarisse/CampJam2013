@@ -37,8 +37,8 @@ public:
 
 	void update(float dt);
 
-	void GameoverScene::clickedRetry(Object* sender);
-	void GameoverScene::clickedTitle(Object* sender);
+	void clickedRetry(Object* sender);
+	void clickedTitle(Object* sender);
 
 };
 

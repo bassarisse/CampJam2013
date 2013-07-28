@@ -28,6 +28,7 @@ using namespace cocos2d;
 #define kDamageTime 0.3f
 #define kDamageMaxForceStopped 20.0f
 #define kDamageMaxForce 40.0f
+#define kEnemyScore 300.0f
 
 #define kEnemyDeathCoffeeNumber 3
 

@@ -35,8 +35,10 @@ void Enemy::update(float dt) {
     Sprite *thisSprite = (Sprite *)this->getNode();
     thisSprite->setColor(ccc3(255, colorAdd, colorAdd));
     
-	if(_drinkedCoffee >= kEnemyDeathCoffeeNumber && _state != GameObjectStateDead)
+	if(_drinkedCoffee >= kEnemyDeathCoffeeNumber && _state != GameObjectStateDead) {
         this->setState(GameObjectStateDead);
+        _playerReference->setScore(_playerReference->getScore() + kEnemyScore);
+    }
     
 }
 
