@@ -74,7 +74,7 @@ void Player::update(float dt) {
     if (_coffee < 0) _coffee = 0;
     
     if (_coffee > kCoffeeThreshold) {
-        _life -= affectValue * (0.8f + _coffee / 100.0f);
+        _life -= (dt * kCoffeeLifeDamage) * (0.8f + _coffee / 100.0f);
     }
     
     if (_life < 0) {
@@ -162,7 +162,7 @@ void Player::handleCollision(GameObject *gameObject) {
             break;
             
         case GameObjectTypeWater:
-            _coffee -= kDonutEffectAmount;
+            _coffee -= kWaterEffectAmount;
             if (_coffee < 0.0f)
                 _coffee = 0.0f;
             gameObject->setState(GameObjectStateDead);

@@ -36,18 +36,13 @@ bool GameoverScene::init(int score)  {
 
 	_score = score;
 
-	LayerGradient* bgGrad = LayerGradient::create(ccc4(255,116,0,255), 
-		ccc4(255,103,15,255));
-	bgGrad->setPosition(ccp(0,0));
-	bgGrad->setContentSize(this->getContentSize());
+	Sprite* bgSprite = Sprite::create("gameover.jpg");
+	bgSprite->setContentSize(ccp(1024,768));
+	bgSprite->setPosition(ccp((this->getContentSize().width / 2) ,
+						this->getContentSize().height / 2));
 
-	LabelBMFont *titlelabel = LabelBMFont::create("Game over, INTERN!", 
-		"MainFont.fnt",400,kTextAlignmentCenter);
 
 	
-	titlelabel->setAnchorPoint(ccp(0.5,0.5));
-	titlelabel->setPosition(ccp(this->getContentSize().width / 2, this->getContentSize().height / 2));
-
 
 	LabelBMFont *scoreLabel = LabelBMFont::create(
 		String::createWithFormat("Your score: %d", _score)->getCString(),
@@ -55,7 +50,7 @@ bool GameoverScene::init(int score)  {
 
 	
 	scoreLabel->setAnchorPoint(ccp(0.5,0.5));
-	scoreLabel->setPosition(ccp(titlelabel->getPosition().x, titlelabel->getPosition().y + 200));
+	scoreLabel->setPosition(ccp(180, this->getContentSize().height - 200));
 
 
 
@@ -71,19 +66,24 @@ bool GameoverScene::init(int score)  {
 		"Title screen",
 		"MainFont.fnt",400,kTextAlignmentCenter);
 
-	item1 = MenuItemLabel::create(retryLabel, this,
-									menu_selector(GameoverScene::clickedRetry));
  
 	item2 = MenuItemLabel::create(titleLabel, this,
 									menu_selector(GameoverScene::clickedTitle));
  
-	Menu* menu = Menu::create(item1, item2, NULL);
-	menu->setPosition(ccp(this->getContentSize().width / 2, 100));
-	menu->alignItemsVertically();
+
+	MenuItemImage* startOpt = MenuItemImage::create("startover.png", "startover.png", [](Object* obj) {
+		CocosDenshion::SimpleAudioEngine::sharedEngine()->stopBackgroundMusic(false);
+		Scene *pScene = GamePlay::scene();
+	
+		Director::sharedDirector()->replaceScene(TransitionFade::create(1.0f, pScene));
+	});
+
+	Menu* menu = Menu::create(startOpt, item2, NULL);
+	menu->setPosition(ccp(this->getContentSize().width / 2, this->getContentSize().height - 80));
+	menu->alignItemsHorizontallyWithPadding(380);
 
 	
-	this->addChild(bgGrad);
-	this->addChild(titlelabel);
+	this->addChild(bgSprite);
 	this->addChild(scoreLabel);
 	//CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("title_bgm.mp3", true);
 	this->addChild(menu);

@@ -19,7 +19,10 @@ public:
 
 	void update(float dt);
 	virtual void buttonAny(bool pressed);
+	bool _creditsShown;
 
+	LayerColor *credits;
+	Menu* menu;
 };
 
 #endif // __CAMPJAM_SCENE_H__

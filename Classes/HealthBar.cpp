@@ -13,9 +13,9 @@ bool HealthBar::init(float healthLevel) {
 	this->setContentSize(CCSizeMake(256,40));
 	this->setPosition(25, 720);
 
-	Sprite* gaugeSprite = Sprite::createWithSpriteFrameName("lifebar.png");
-	gaugeSprite->setAnchorPoint(ccp(0, 0));
-	gaugeSprite->setPosition(ccp(0, 0));
+	_gaugeSprite = Sprite::createWithSpriteFrameName("lifebar.png");
+	_gaugeSprite->setAnchorPoint(ccp(0, 0));
+	_gaugeSprite->setPosition(ccp(0, 0));
 
 	/*
 	LayerColor* bgBar = LayerColor::create(ccc4(0, 0, 0, 255));
@@ -25,7 +25,7 @@ bool HealthBar::init(float healthLevel) {
 
 	_bar = LayerColor::create(ccc4(0, 255, 0, 255));
 	_bar->setPosition(5, 5);
-	_bar->setContentSize(CCSizeMake(250, 35));
+	_bar->setContentSize(CCSizeMake(_gaugeSprite->getContentSize().width - 3, 36));
 
 	Sprite* healthIcon = Sprite::createWithSpriteFrameName("donut.png");
 	healthIcon->setPosition(ccp(0, this->getContentSize().height / 2));
@@ -33,7 +33,7 @@ bool HealthBar::init(float healthLevel) {
 	
 	
 	this->addChild(_bar);
-	this->addChild(gaugeSprite);
+	this->addChild(_gaugeSprite);
 	this->addChild(healthIcon);
 
 	return true;
@@ -45,8 +45,8 @@ void HealthBar::setHealthLevel(float health) {
 }
 
 void HealthBar::update(float dt) {
-	int bgbarMaxWidth = 250;
-	_bar->setContentSize(CCSizeMake(bgbarMaxWidth * (_healthLevel / 100), 34));
+	int bgbarMaxWidth = _gaugeSprite->getContentSize().width - 6;
+	_bar->setContentSize(CCSizeMake(bgbarMaxWidth * (_healthLevel / 100), 36));
 
 }
 
