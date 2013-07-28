@@ -22,7 +22,11 @@ GamePlay::~GamePlay() {
     CC_SAFE_DELETE(_player);
     
     for(std::vector<GameObject *>::size_type i = 0; i < _gameObjects.size(); i++) {
-        this->removeObject(_gameObjects[i]);
+        
+        GameObject *deadObject = _gameObjects[i];
+        
+        deadObject->release();
+        deadObject = NULL;
     }
     
 }
@@ -314,7 +318,7 @@ void GamePlay::removeObject(GameObject* deadObject) {
 	_gameObjects.erase(pos);
     
 	Node* deadNode = deadObject->getNode();
-	_world->DestroyBody(deadObject->getBody());
+    _world->DestroyBody(deadObject->getBody());
     
 	deadObject->release();
 	deadNode->removeFromParentAndCleanup(true);
