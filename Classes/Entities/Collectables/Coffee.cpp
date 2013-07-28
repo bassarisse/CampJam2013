@@ -13,12 +13,13 @@ void Coffee::addFixtures() {
 bool Coffee::init(b2World *world, Dictionary *properties) {
     
     _node = Sprite::createWithSpriteFrameName("coffee.png");
-    _isSensor = true;
 	
 	this->setType(GameObjectTypeCoffee);
 
     if (!GameObject::init(world, properties))
         return false;
+    
+    _isSensor = true;
     
     return true;
 }
