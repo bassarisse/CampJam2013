@@ -23,14 +23,13 @@ bool HealthBar::init(float healthLevel) {
 	bgBar->setContentSize(CCSizeMake(256, 40));
 	*/
 
-	_bar = LayerColor::create(ccc4(0, 255, 0, 255));
+	_bar = LayerColor::create(ccc4(30, 230, 30, 255));
 	_bar->setPosition(5, 5);
 	_bar->setContentSize(CCSizeMake(_gaugeSprite->getContentSize().width - 3, 36));
 
 	Sprite* healthIcon = Sprite::createWithSpriteFrameName("donut.png");
 	healthIcon->setPosition(ccp(0, this->getContentSize().height / 2));
 	healthIcon->setOpacity(240);
-	
 	
 	this->addChild(_bar);
 	this->addChild(_gaugeSprite);

@@ -682,7 +682,6 @@ void GamePlay::buttonB(bool pressed) {
 void GamePlay::onEnter() {
 	BaseLayer::onEnter();
 	SimpleAudioEngine::sharedEngine()->playBackgroundMusic("main_bgm.wav", true);
-
 }
 
 

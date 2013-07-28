@@ -190,15 +190,20 @@ void Player::handleCollision(GameObject *gameObject) {
              */
             
         case GameObjectTypeEmptyPaper:
+            if (!_hasEmptyPaper)
+                SimpleAudioEngine::sharedEngine()->playEffect("paper.wav");
             _hasEmptyPaper = true;
             break;
             
         case GameObjectTypeDocument:
+            if (!_hasDocument)
+                SimpleAudioEngine::sharedEngine()->playEffect("paper.wav");
             _hasDocument = true;
             break;
             
         case GameObjectTypePrinter:
             if (_hasEmptyPaper && _hasDocument) {
+                SimpleAudioEngine::sharedEngine()->playEffect("printer.wav");
                 _copiesQty++;
                 _hasEmptyPaper = false;
                 _hasDocument = false;
@@ -207,6 +212,7 @@ void Player::handleCollision(GameObject *gameObject) {
             
         case GameObjectTypeBossDesk:
             if (_copiesQty > 0) {
+                SimpleAudioEngine::sharedEngine()->playEffect("paper.wav");
                 int addedScore = 4000 * _copiesQty;
                 
                 _score += addedScore;
