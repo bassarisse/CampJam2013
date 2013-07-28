@@ -148,11 +148,11 @@ void Player::handleCollision(GameObject *gameObject) {
             break;
             
         case GameObjectTypePeaBerry:
-            _speedFactor += kPeaBerrySpeedFactor;
+            if (!_isUnderPeaBerryEffect)
+                _speedFactor += kPeaBerrySpeedFactor;
             _isUnderPeaBerryEffect = true;
             _peaBerryTime = kPeaBerryTime;
             gameObject->setState(GameObjectStateDead);
-            
             break;
             
         case GameObjectTypeWater:
@@ -185,6 +185,17 @@ void Player::followPoint(Point point) {
 
 void Player::stopFollowingPoint() {
     _isFollowingPoint = false;
+}
+
+void Player::handleMovement() {
+    
+    if (!_isFollowingPoint) {
+        GameObject::handleMovement();
+        return;
+    }
+    
+    this->handleMovement(this->getAngleForPoint(_pointToFollow));
+    
 }
 
 void Player::handleMovement(float angle) {

@@ -81,6 +81,8 @@ bool GamePlay::init()
     _mainLayer = Layer::create();
     _mainBatchNode = SpriteBatchNode::create("Characters.png");
     _tiledMap = TMXTiledMap::create("main.tmx");
+    _isTouching = false;
+    _touchLocation = ccp(0,0);
     
     _mainBatchNode->getTexture()->setAliasTexParameters();
     
@@ -278,6 +280,12 @@ void GamePlay::update(float dt) {
 	if(!_isPaused)
 		_world->Step(dt, 8, 3);
     
+    if (_isTouching) {
+        Point touchLocation = Director::sharedDirector()->convertToGL(_touchLocation);
+        touchLocation = _tiledMap->convertToNodeSpace(touchLocation);
+        ((Player *)_player)->followPoint(touchLocation);
+    }
+    
     _player->setMovingHorizontalState(_movingHorizontalStates[_movingHorizontalStates.size() - 1]);
     _player->setMovingVerticalState(_movingVerticalStates[_movingVerticalStates.size() - 1]);
     _player->update(dt);
@@ -450,16 +458,18 @@ void GamePlay::registerWithTouchDispatcher()
 }
 
 bool GamePlay::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) {
+    _isTouching = true;
     
-    this->cocos2d::Layer::ccTouchMoved(pTouch, pEvent);
+    this->ccTouchMoved(pTouch, pEvent);
     
     return true;
 }
 
 void GamePlay::ccTouchMoved(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) {
     
-    Point touchLocation = pTouch->getLocationInView();
-    touchLocation = Director::sharedDirector()->convertToGL(touchLocation);
+    _touchLocation = pTouch->getLocationInView();
+    
+    Point touchLocation = Director::sharedDirector()->convertToGL(_touchLocation);
     touchLocation = _tiledMap->convertToNodeSpace(touchLocation);
     
     ((Player *)_player)->followPoint(touchLocation);
@@ -467,10 +477,12 @@ void GamePlay::ccTouchMoved(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) {
 }
 
 void GamePlay::ccTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) {
+    _isTouching = false;
     ((Player *)_player)->stopFollowingPoint();
 }
 
 void GamePlay::ccTouchCancelled(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) {
+    _isTouching = false;
     ((Player *)_player)->stopFollowingPoint();
 }
 
