@@ -46,10 +46,6 @@ bool GameoverScene::init(int score, bool isRecord)  {
 
 	scoreLabel->setAnchorPoint(ccp(0.0,0.5));
 	scoreLabel->setPosition(ccp(10, this->getContentSize().height - 90));
-
-	LabelBMFont *titleLabel = LabelBMFont::create(
-		"Title screen",
-		"MainFont.fnt",400,kTextAlignmentCenter);
  
 	MenuItemImage* startOpt = MenuItemImage::create("startover.png", "startover.png", [](Object* obj) {
 		CocosDenshion::SimpleAudioEngine::sharedEngine()->stopBackgroundMusic(false);
