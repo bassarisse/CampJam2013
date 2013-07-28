@@ -23,6 +23,9 @@ public:
     
     double getCurrentTimeInSeconds();
     
+    virtual void onEnter();
+    virtual void onExit();
+    
     virtual void recursivelyPauseAllChildren(Node *node);
     virtual void recursivelyResumeAllChildren(Node *node);
     

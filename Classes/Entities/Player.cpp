@@ -29,6 +29,8 @@ void Player::addFixtures() {
 
 bool Player::init(b2World *world, Dictionary *properties) {
     
+    _isFollowingPoint = false;
+    _isUnderPeaBerryEffect = false;
 	_score = 0;
     _node = Sprite::createWithSpriteFrameName("stag_down.png");
     _life = 100.0f;
@@ -38,8 +40,6 @@ bool Player::init(b2World *world, Dictionary *properties) {
     if (!GameObject::init(world, properties))
         return false;
     
-	
-
     return true;
 }
 
@@ -175,6 +175,15 @@ void Player::handleCollision(GameObject *gameObject) {
     }
     
 
+}
+
+void Player::followPoint(Point point) {
+    _isFollowingPoint = true;
+    _pointToFollow = point;
+}
+
+void Player::stopFollowingPoint() {
+    _isFollowingPoint = false;
 }
 
 void Player::handleMovement(float angle) {
