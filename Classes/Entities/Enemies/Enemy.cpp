@@ -37,8 +37,6 @@ bool Enemy::init(b2World *world, Dictionary *properties, Player *ref) {
 
 void Enemy::handleMovement() {
     
-    _randomMoveOnly = true;
-    
     if (!_randomMoveOnly && this->isNearPlayer()) {
         _isRandomMoving = false;
         GameObject::handleMovement(this->getAngleForPoint(_playerReference->getNode()->getPosition()));
@@ -67,6 +65,13 @@ void Enemy::update(float dt) {
 		return;
 
     GameObject::update(dt);
+    
+    Sprite *sprite = (Sprite *)_node;
+    if (_state != GameObjectStateDead && _state != GameObjectStateDying && sprite->getOpacity() < 255) {
+        int newOpacity = sprite->getOpacity() + dt * 500;
+        if (newOpacity > 255) newOpacity = 255;
+        sprite->setOpacity(newOpacity);
+    }
     
     _randomMovingTime -= dt;
     

@@ -56,9 +56,11 @@ void EnemySpawnPoint::update(float dt) {
         
         Enemy *newObj = (Enemy *)_gamePlay->createGameObject((GameObjectType)(GameObjectTypeMan + rand() % (1 + GameObjectTypeManager - GameObjectTypeMan)), _properties);
         
-        if (rand() % 2 == 0)
+        if (rand() % 6 > 0)
             newObj->setSightRange(200 + rand() % 1000);
-        newObj->setRandomMoveOnly(rand() % 2 == 0);
+        newObj->setRandomMoveOnly(rand() % 6 == 0);
+        
+        ((Sprite *)newObj->getNode())->setOpacity(0);
         
         _gameObjects.push_back(newObj);
         
