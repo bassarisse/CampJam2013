@@ -127,9 +127,6 @@ void Player::handleCollision(GameObject *gameObject) {
             if (targetVel.y >  maxForce) { targetVel.x *=  maxForce / targetVel.y; targetVel.y =  maxForce; }
             if (targetVel.y < -maxForce) { targetVel.x *= -maxForce / targetVel.y; targetVel.y = -maxForce; }
             
-            CCLog("targetVel.x: %f", targetVel.x);
-            CCLog("targetVel.y: %f", targetVel.y);
-            
             _body->ApplyLinearImpulse(targetVel, _body->GetWorldCenter());
             
         }

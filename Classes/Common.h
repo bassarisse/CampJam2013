@@ -61,7 +61,8 @@ enum GameObjectState {
 };
 
 enum GameObjectType {
-    GameObjectTypePlayer = 0,
+    GameObjectTypeUnknown = 0,
+    GameObjectTypePlayer,
     GameObjectTypeCoffee,
     GameObjectTypePeaBerry,
     GameObjectTypeDonut,
