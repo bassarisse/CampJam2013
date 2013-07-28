@@ -273,6 +273,72 @@ void GameObject::handleMovement(float angle) {
     
 }
 
+float GameObject::getAngleForPoint(Point point) {
+    
+	Point thisPosition = _node->getPosition();
+	
+	float angle = 180 + atan2(thisPosition.y - point.y,
+                              thisPosition.x - point.x) * 180 / M_PI; //degree conversion
+    
+	//float angle = atan2(playerPosition.y - manPosition.y,
+	//					playerPosition.x - manPosition.x);
+    
+	if(angle == 0 || angle == 360)
+	{
+		this->setMovingHorizontalState(MovingStateRight);
+		this->setMovingVerticalState(MovingStateVerticalStopped);
+	} else if(angle > 0 && angle < 90)
+	{
+		this->setMovingHorizontalState(MovingStateRight);
+		this->setMovingVerticalState(MovingStateUp);
+	} else if(angle == 90)
+	{
+		this->setMovingHorizontalState(MovingStateHorizontalStopped);
+		this->setMovingVerticalState(MovingStateUp);
+	} else if(angle > 90 && angle < 180)
+	{
+		this->setMovingHorizontalState(MovingStateLeft);
+		this->setMovingVerticalState(MovingStateUp);
+	} else if(angle == 180)
+	{
+		this->setMovingHorizontalState(MovingStateLeft);
+		this->setMovingVerticalState(MovingStateVerticalStopped);
+	} else if(angle > 180 && angle < 270)
+	{
+		this->setMovingHorizontalState(MovingStateLeft);
+		this->setMovingVerticalState(MovingStateDown);
+	} else if(angle == 270)
+	{
+		this->setMovingHorizontalState(MovingStateHorizontalStopped);
+		this->setMovingVerticalState(MovingStateDown);
+	} else if(angle > 270 && angle < 360)
+	{
+		this->setMovingHorizontalState(MovingStateRight);
+		this->setMovingVerticalState(MovingStateDown);
+	}
+    
+    kDirection newHorizontalDirection = kDirectionLeft;
+    kDirection newVerticalDirection = kDirectionUp;
+    
+    if (this->getMovingHorizontalState() == MovingStateRight)
+        newHorizontalDirection = kDirectionRight;
+    else if (this->getMovingHorizontalState() == MovingStateLeft)
+        newHorizontalDirection = kDirectionLeft;
+    
+    if (this->getMovingVerticalState() == MovingStateUp) {
+        newVerticalDirection = kDirectionUp;
+    } else if (this->getMovingVerticalState() == MovingStateDown)
+        newVerticalDirection = kDirectionDown;
+    
+    if (_lastVerticalDirection != newVerticalDirection)
+        this->getNode()->stopActionByTag(kWalkActionTag);
+    
+    _lastHorizontalDirection = newHorizontalDirection;
+    _lastVerticalDirection = newVerticalDirection;
+	
+    return angle;
+}
+
 bool GameObject::changeDirection(kDirection direction) {
     
     if (_lastDirection == direction)

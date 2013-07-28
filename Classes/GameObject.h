@@ -48,6 +48,7 @@ protected:
     virtual void setIdleFrame();
 	virtual void handleCollisions();
 	virtual void handleCollision(GameObject *gameObject);
+    virtual float getAngleForPoint(Point point);
     
 public:
     
@@ -67,8 +68,6 @@ public:
     virtual void handleMovement();
     virtual void handleMovement(float angle);
     virtual bool changeDirection(kDirection direction);
-    
-	
 
     CC_SYNTHESIZE(MovingHorizontalState, _movingHorizontalState, MovingHorizontalState);
     CC_SYNTHESIZE(MovingVerticalState, _movingVerticalState, MovingVerticalState);

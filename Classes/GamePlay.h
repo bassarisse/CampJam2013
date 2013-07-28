@@ -40,6 +40,8 @@ public:
     SpriteBatchNode *_mainBatchNode;
     TMXTiledMap *_tiledMap;
     B2DebugDrawLayer *_debugLayer;
+    bool _isTouching;
+    Point _touchLocation;
     
     std::vector<MovingHorizontalState> _movingHorizontalStates;
     std::vector<MovingVerticalState> _movingVerticalStates;
