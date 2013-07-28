@@ -116,9 +116,9 @@ bool GamePlay::init()
         
         if (type->compare("Player") == 0)
 		{
-            
-            _player->init(_world, objectProperties);
-            _mainBatchNode->addChild(_player->getNode());
+			Player* plinit = (Player*)_player;
+            plinit->init(_world, objectProperties, this);
+            _mainBatchNode->addChild(plinit->getNode());
             //_gameObjects.push_back(player);
 		}
 		else if (type->compare("EnemySpawnPoint") == 0)
@@ -326,10 +326,24 @@ void GamePlay::update(float dt) {
                 case GameObjectTypePeaBerry:
                 case GameObjectTypeCoffee:
                     SimpleAudioEngine::sharedEngine()->playEffect("drinked_coffee.wav");
-                    break;
+                    
+					break;
 				case GameObjectTypeDonut:
 					SimpleAudioEngine::sharedEngine()->playEffect("donut_eating.wav");
-                default:
+					break;
+				case GameObjectTypeMan:
+					SimpleAudioEngine::sharedEngine()->playEffect("death_man.wav");
+
+					break;
+				case GameObjectTypeManager:
+					SimpleAudioEngine::sharedEngine()->playEffect("death_manager.wav");
+
+					break;
+				case GameObjectTypeWoman:
+					SimpleAudioEngine::sharedEngine()->playEffect("death_woman.wav");
+
+					break;
+				default:
                     break;
 			}
 

@@ -20,7 +20,7 @@ public:
 	virtual void update(float dt);
 
 	LayerColor* _bar;
-
+	void blinkBar();
 };
 
 

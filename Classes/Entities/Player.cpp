@@ -9,7 +9,6 @@
 #include "Player.h"
 #include "Enemies/Enemy.h"
 #include "SimpleAudioEngine.h"
-#include "../GamePlay.h"
 #include "../Scenes/GameoverScene.h"
 
 using namespace CocosDenshion;
@@ -27,7 +26,7 @@ void Player::addFixtures() {
     
 }
 
-bool Player::init(b2World *world, Dictionary *properties) {
+bool Player::init(b2World *world, Dictionary *properties, GamePlay* gameScreen) {
     
     _isFollowingPoint = false;
     _isUnderPeaBerryEffect = false;
@@ -36,6 +35,7 @@ bool Player::init(b2World *world, Dictionary *properties) {
     _life = 100.0f;
     _coffee = 100.0f; // CHANGE IT!
     _spriteFrameName = "stag";
+	_gameScreen = gameScreen;
 
     if (!GameObject::init(world, properties))
         return false;
@@ -144,7 +144,8 @@ void Player::handleCollision(GameObject *gameObject) {
             if (_coffee > 100.0f)
                 _coffee = 100.0f;
             gameObject->setState(GameObjectStateDead);
-            
+			_gameScreen->getCoffeeBar()->blinkBar();
+			
             break;
             
         case GameObjectTypePeaBerry:
@@ -153,6 +154,7 @@ void Player::handleCollision(GameObject *gameObject) {
             _isUnderPeaBerryEffect = true;
             _peaBerryTime = kPeaBerryTime;
             gameObject->setState(GameObjectStateDead);
+			_gameScreen->getCoffeeBar()->blinkBar();
             break;
             
         case GameObjectTypeWater:
@@ -160,7 +162,7 @@ void Player::handleCollision(GameObject *gameObject) {
             if (_coffee < 0.0f)
                 _coffee = 0.0f;
             gameObject->setState(GameObjectStateDead);
-            
+            _gameScreen->getCoffeeBar()->blinkBar();
             break;
             
         case GameObjectTypeDonut:
@@ -168,7 +170,7 @@ void Player::handleCollision(GameObject *gameObject) {
             if (_life > 100.0f)
                 _life = 100.0f;
             gameObject->setState(GameObjectStateDead);
-            
+			_gameScreen->getHealthBar()->blinkBar();
             break;
             
         default:

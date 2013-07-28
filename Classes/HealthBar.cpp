@@ -48,6 +48,11 @@ void HealthBar::update(float dt) {
 	int bgbarMaxWidth = 250;
 	_bar->setContentSize(CCSizeMake(bgbarMaxWidth * (_healthLevel / 100), 34));
 
+}
 
-
+void HealthBar::blinkBar() {
+	Blink* blink = Blink::create(0.3f, 2);
+	this->stopAllActions();
+	this->runAction(blink);
+	
 }

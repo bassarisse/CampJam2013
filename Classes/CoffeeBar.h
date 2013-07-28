@@ -21,6 +21,8 @@ public:
 
 	LayerColor* _bar;
 
+	void blinkBar();
+
 };
 
 
