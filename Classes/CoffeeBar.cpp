@@ -12,11 +12,11 @@ bool CoffeeBar::init(float coffeeLevel) {
 
 	_coffeeLevel = coffeeLevel;
 	this->setContentSize(CCSizeMake(256,40));
-	this->setPosition(80, 680);
+	this->setPosition(25, 685);
 
 	Sprite* gaugeSprite = Sprite::createWithSpriteFrameName("coffeebar.png");
 	gaugeSprite->setAnchorPoint(ccp(0, 0));
-	gaugeSprite->setPosition(ccp(-10, -10));
+	gaugeSprite->setPosition(ccp(0, 0));
 
 	/*
 	LayerColor* bgBar = LayerColor::create(ccc4(0, 0, 0, 255));
@@ -26,7 +26,7 @@ bool CoffeeBar::init(float coffeeLevel) {
 
 	_bar = LayerColor::create(ccc4(0, 255, 0, 255));
 	_bar->setPosition(5, 3);
-	_bar->setContentSize(CCSizeMake(250, 24));
+	_bar->setContentSize(CCSizeMake(250, 25));
 
 	/*
 	LayerColor *coffeeThreshold = LayerColor::create(ccc4(120,120,120,255));
@@ -54,7 +54,7 @@ void CoffeeBar::setCoffeeLevel(float coff) {
 
 void CoffeeBar::update(float dt) {
 	int bgbarMaxWidth = 250;
-	_bar->setContentSize(CCSizeMake(bgbarMaxWidth * (_coffeeLevel / 100), 34));
+	_bar->setContentSize(CCSizeMake(bgbarMaxWidth * (_coffeeLevel / 100), 25));
 
 
 

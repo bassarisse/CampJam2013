@@ -29,7 +29,7 @@ bool CollectableSpawnPoint::init(GamePlay *gamePlay, Dictionary *properties) {
 
 void CollectableSpawnPoint::update(float dt) {
     
-    for (std::vector<GameObject *>::size_type i; i < _gameObjects.size(); i++) {
+    for (std::vector<GameObject *>::size_type i = 0; i < _gameObjects.size(); i++) {
         GameObject *gameObject = _gameObjects[i];
         if (gameObject->getState() == GameObjectStateDead) {
             std::vector<GameObject *>::iterator pos;
