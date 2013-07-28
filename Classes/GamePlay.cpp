@@ -67,6 +67,8 @@ bool GamePlay::init()
         return false;
     }
     
+    this->setTouchEnabled(true);
+    
     srand(time(NULL));
     
     _winSize = Director::sharedDirector()->getWinSize();
@@ -122,6 +124,13 @@ bool GamePlay::init()
             EnemySpawnPoint *spawnPoint = new EnemySpawnPoint();
             spawnPoint->init(this, objectProperties);
             _enemySpawnPoints.push_back(spawnPoint);
+            
+        }
+		else if (type->compare("CollectableSpawnPoint") == 0)
+        {
+            CollectableSpawnPoint *spawnPoint = new CollectableSpawnPoint();
+            spawnPoint->init(this, objectProperties);
+            _collectableSpawnPoints.push_back(spawnPoint);
             
         } else {
             
@@ -331,7 +340,7 @@ void GamePlay::update(float dt) {
 
 }
 
-void GamePlay::createGameObject(GameObjectType type, Dictionary *properties) {
+GameObject* GamePlay::createGameObject(GameObjectType type, Dictionary *properties) {
     
     switch (type) {
             
@@ -345,7 +354,7 @@ void GamePlay::createGameObject(GameObjectType type, Dictionary *properties) {
             newPowerup->init(_world, properties);
             _mainBatchNode->addChild(newPowerup->getNode());
             _gameObjects.push_back(newPowerup);
-            
+            return newPowerup;
         }
             break;
             
@@ -355,7 +364,7 @@ void GamePlay::createGameObject(GameObjectType type, Dictionary *properties) {
             newPowerup->init(_world, properties);
             _mainBatchNode->addChild(newPowerup->getNode());
             _gameObjects.push_back(newPowerup);
-            
+            return newPowerup;
         }
             break;
             
@@ -365,7 +374,7 @@ void GamePlay::createGameObject(GameObjectType type, Dictionary *properties) {
             newPowerup->init(_world, properties);
             _mainBatchNode->addChild(newPowerup->getNode());
             _gameObjects.push_back(newPowerup);
-            
+            return newPowerup;
         }
             break;
             
@@ -375,7 +384,7 @@ void GamePlay::createGameObject(GameObjectType type, Dictionary *properties) {
             newPowerup->init(_world, properties);
             _mainBatchNode->addChild(newPowerup->getNode());
             _gameObjects.push_back(newPowerup);
-            
+            return newPowerup;
         }
             break;
             
@@ -388,6 +397,7 @@ void GamePlay::createGameObject(GameObjectType type, Dictionary *properties) {
             newEnemy->init(_world, properties, (Player*)_player);
             _mainBatchNode->addChild(newEnemy->getNode());
             _gameObjects.push_back(newEnemy);
+            return newEnemy;
         }
             break;
             
@@ -397,6 +407,7 @@ void GamePlay::createGameObject(GameObjectType type, Dictionary *properties) {
             newEnemy->init(_world, properties, (Player*)_player);
             _mainBatchNode->addChild(newEnemy->getNode());
             _gameObjects.push_back(newEnemy);
+            return newEnemy;
         }
             break;
             
@@ -406,6 +417,7 @@ void GamePlay::createGameObject(GameObjectType type, Dictionary *properties) {
             newEnemy->init(_world, properties, (Player*)_player);
             _mainBatchNode->addChild(newEnemy->getNode());
             _gameObjects.push_back(newEnemy);
+            return newEnemy;
         }
             break;
             
@@ -413,6 +425,7 @@ void GamePlay::createGameObject(GameObjectType type, Dictionary *properties) {
             break;
     }
     
+    return NULL;
 }
 
 void GamePlay::removeObject(GameObject* deadObject) {
@@ -428,6 +441,10 @@ void GamePlay::removeObject(GameObject* deadObject) {
 	deadNode->removeFromParentAndCleanup(true);
     deadObject = NULL;
     
+}
+
+bool GamePlay::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) {
+    return true;
 }
 
 void GamePlay::buttonLeft(bool pressed) {

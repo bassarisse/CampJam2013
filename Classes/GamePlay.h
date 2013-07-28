@@ -64,8 +64,10 @@ public:
     
     void update(float dt);
     
-    void createGameObject(GameObjectType type, Dictionary *properties);
+    GameObject* createGameObject(GameObjectType type, Dictionary *properties);
 	void removeObject(GameObject* deadObject);
+    
+    virtual bool ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent);
     
     virtual void buttonLeft(bool pressed);
     virtual void buttonRight(bool pressed);

@@ -25,9 +25,8 @@ private:
     Dictionary *_properties;
     float _spawnTime;
     float _nextSpawnTime;
-    float _maxObjects;
-    float _spawnX;
-    float _spawnY;
+    int _maxObjects;
+    std::vector<GameObject *> _gameObjects;
     
 public:
     
