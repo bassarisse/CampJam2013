@@ -199,6 +199,7 @@ void Player::handleCollision(GameObject *gameObject) {
             
         case GameObjectTypePrinter:
             if (_hasEmptyPaper && _hasDocument) {
+                SimpleAudioEngine::sharedEngine()->playEffect("printer.wav");
                 _copiesQty++;
                 _hasEmptyPaper = false;
                 _hasDocument = false;

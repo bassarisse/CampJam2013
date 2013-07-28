@@ -31,7 +31,6 @@ bool HealthBar::init(float healthLevel) {
 	healthIcon->setPosition(ccp(0, this->getContentSize().height / 2));
 	healthIcon->setOpacity(240);
 	
-	
 	this->addChild(_bar);
 	this->addChild(_gaugeSprite);
 	this->addChild(healthIcon);

@@ -39,10 +39,8 @@ bool TitleScene::init()  {
 	bgGrad->setContentSize(this->getContentSize());
 	*/
 
-	Sprite* bgSprite = Sprite::create("officerampage.jpg");
-	bgSprite->setContentSize(ccp(1024,768));
-	bgSprite->setPosition(ccp((this->getContentSize().width / 2) + 12,
-						this->getContentSize().height / 2));
+	Sprite* bgSprite = Sprite::create("officerampage.png");
+	bgSprite->setPosition(ccp((this->getContentSize().width / 2), this->getContentSize().height / 2));
 
 	_creditsShown = false;
 
