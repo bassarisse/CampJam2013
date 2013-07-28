@@ -310,9 +310,12 @@ void GameObject::executeWalkAnimation() {
             
             _node->stopAllActions();
             _node->runAction(walkAction);
+            
+        } else {
+            
+            walkAction->setSpeed(speed);
+            
         }
-        
-        walkAction->setSpeed(speed);
         
     } else if (this->getState() == GameObjectStateStanding) {
         

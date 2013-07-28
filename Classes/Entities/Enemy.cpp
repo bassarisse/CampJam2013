@@ -65,15 +65,24 @@ void Enemy::handleMovement() {
 		this->setMovingVerticalState(MovingStateDown);
 	}
     
-    if (this->getMovingHorizontalState() == MovingStateRight)
-        _lastHorizontalDirection = kDirectionRight;
-    else if (this->getMovingHorizontalState() == MovingStateLeft)
-        _lastHorizontalDirection = kDirectionLeft;
+    kDirection newHorizontalDirection = kDirectionLeft;
+    kDirection newVerticalDirection = kDirectionUp;
     
-    if (this->getMovingVerticalState() == MovingStateUp)
-        _lastVerticalDirection = kDirectionUp;
-    else if (this->getMovingVerticalState() == MovingStateDown)
-        _lastVerticalDirection = kDirectionDown;
+    if (this->getMovingHorizontalState() == MovingStateRight)
+        newHorizontalDirection = kDirectionRight;
+    else if (this->getMovingHorizontalState() == MovingStateLeft)
+        newHorizontalDirection = kDirectionLeft;
+    
+    if (this->getMovingVerticalState() == MovingStateUp) {
+        newVerticalDirection = kDirectionUp;
+    } else if (this->getMovingVerticalState() == MovingStateDown)
+        newVerticalDirection = kDirectionDown;
+    
+    if (_lastVerticalDirection != newVerticalDirection)
+        this->getNode()->stopActionByTag(kWalkActionTag);
+    
+    _lastHorizontalDirection = newHorizontalDirection;
+    _lastVerticalDirection = newVerticalDirection;
 	
 	GameObject::handleMovement(angle); 
 }
