@@ -102,6 +102,8 @@
 		62E5B00817A534C000BE18FE /* MainFont.png in Resources */ = {isa = PBXBuildFile; fileRef = 62E5B00617A534C000BE18FE /* MainFont.png */; };
 		62E5B00B17A540AE00BE18FE /* EnemySpawnPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5B00917A540AD00BE18FE /* EnemySpawnPoint.cpp */; };
 		62E5B00F17A54CBC00BE18FE /* CollectableSpawnPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5B00D17A54CBA00BE18FE /* CollectableSpawnPoint.cpp */; };
+		62E5B01317A5604A00BE18FE /* TitleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5B01117A5604A00BE18FE /* TitleScene.cpp */; };
+		62E5B01617A5605600BE18FE /* ScoreLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5B01417A5605300BE18FE /* ScoreLayer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -296,6 +298,10 @@
 		62E5B00A17A540AD00BE18FE /* EnemySpawnPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemySpawnPoint.h; sourceTree = "<group>"; };
 		62E5B00D17A54CBA00BE18FE /* CollectableSpawnPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CollectableSpawnPoint.cpp; sourceTree = "<group>"; };
 		62E5B00E17A54CBB00BE18FE /* CollectableSpawnPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectableSpawnPoint.h; sourceTree = "<group>"; };
+		62E5B01117A5604A00BE18FE /* TitleScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TitleScene.cpp; sourceTree = "<group>"; };
+		62E5B01217A5604A00BE18FE /* TitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleScene.h; sourceTree = "<group>"; };
+		62E5B01417A5605300BE18FE /* ScoreLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ScoreLayer.cpp; path = ../Classes/ScoreLayer.cpp; sourceTree = "<group>"; };
+		62E5B01517A5605400BE18FE /* ScoreLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreLayer.h; path = ../Classes/ScoreLayer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,6 +337,7 @@
 				622AA20D17A3609E00EEE5EB /* BaseLayer.h */,
 				622AA20417A3609E00EEE5EB /* B2DebugDraw */,
 				622AA22217A39ECE00EEE5EB /* Entities */,
+				62E5B01017A5604900BE18FE /* Scenes */,
 				622AA20E17A3609E00EEE5EB /* Common.h */,
 				622AA20F17A3609E00EEE5EB /* GameObject.cpp */,
 				622AA21017A3609E00EEE5EB /* GameObject.h */,
@@ -340,6 +347,8 @@
 				62E5AFDB17A487DE00BE18FE /* CoffeeBar.h */,
 				62E5AFDC17A487DE00BE18FE /* HealthBar.cpp */,
 				62E5AFDD17A487DE00BE18FE /* HealthBar.h */,
+				62E5B01417A5605300BE18FE /* ScoreLayer.cpp */,
+				62E5B01517A5605400BE18FE /* ScoreLayer.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -668,6 +677,16 @@
 			path = Enemies;
 			sourceTree = "<group>";
 		};
+		62E5B01017A5604900BE18FE /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				62E5B01117A5604A00BE18FE /* TitleScene.cpp */,
+				62E5B01217A5604A00BE18FE /* TitleScene.h */,
+			);
+			name = Scenes;
+			path = ../Classes/Scenes;
+			sourceTree = "<group>";
+		};
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -848,6 +867,8 @@
 				62E5B00217A5278800BE18FE /* Woman.cpp in Sources */,
 				62E5B00B17A540AE00BE18FE /* EnemySpawnPoint.cpp in Sources */,
 				62E5B00F17A54CBC00BE18FE /* CollectableSpawnPoint.cpp in Sources */,
+				62E5B01317A5604A00BE18FE /* TitleScene.cpp in Sources */,
+				62E5B01617A5605600BE18FE /* ScoreLayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

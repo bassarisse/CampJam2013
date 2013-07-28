@@ -67,7 +67,11 @@ public:
     GameObject* createGameObject(GameObjectType type, Dictionary *properties);
 	void removeObject(GameObject* deadObject);
     
+    virtual void registerWithTouchDispatcher();
     virtual bool ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent);
+    virtual void ccTouchMoved(cocos2d::Touch *pTouch, cocos2d::Event *pEvent);
+    virtual void ccTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent);
+    virtual void ccTouchCancelled(cocos2d::Touch *pTouch, cocos2d::Event *pEvent);
     
     virtual void buttonLeft(bool pressed);
     virtual void buttonRight(bool pressed);

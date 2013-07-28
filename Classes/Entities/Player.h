@@ -17,9 +17,11 @@ private:
         
 protected:
     
+    bool _isFollowingPoint;
     bool _isUnderPeaBerryEffect;
     float _peaBerryTime;
     float _damageTime;
+    Point _pointToFollow;
     
     virtual void addFixtures();
     virtual float getSpeed();
@@ -32,6 +34,8 @@ public:
     
     virtual bool init(b2World *world, Dictionary *properties);
     virtual void update(float dt);
+    virtual void followPoint(Point point);
+    virtual void stopFollowingPoint();
     
 	CC_SYNTHESIZE(float, _score, Score);
 	CC_SYNTHESIZE(float, _coffee, Coffee);

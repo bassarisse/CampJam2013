@@ -443,8 +443,34 @@ void GamePlay::removeObject(GameObject* deadObject) {
     
 }
 
+void GamePlay::registerWithTouchDispatcher()
+{
+    Director::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
+}
+
 bool GamePlay::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) {
+    
+    this->cocos2d::Layer::ccTouchMoved(pTouch, pEvent);
+    
     return true;
+}
+
+void GamePlay::ccTouchMoved(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) {
+    
+    Point touchLocation = pTouch->getLocationInView();
+    touchLocation = Director::sharedDirector()->convertToGL(touchLocation);
+    touchLocation = _tiledMap->convertToNodeSpace(touchLocation);
+    
+    ((Player *)_player)->followPoint(touchLocation);
+    
+}
+
+void GamePlay::ccTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) {
+    ((Player *)_player)->stopFollowingPoint();
+}
+
+void GamePlay::ccTouchCancelled(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) {
+    ((Player *)_player)->stopFollowingPoint();
 }
 
 void GamePlay::buttonLeft(bool pressed) {
