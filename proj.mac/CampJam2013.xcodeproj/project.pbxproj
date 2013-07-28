@@ -75,7 +75,6 @@
 		41BC70E715BF81A5006A0A6C /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 41BC70E015BF81A5006A0A6C /* Icon.icns */; };
 		41BC70E815BF81A5006A0A6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BC70E115BF81A5006A0A6C /* main.m */; };
 		622AA20017A35FF900EEE5EB /* main.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 622AA1FC17A35FF900EEE5EB /* main.tmx */; };
-		622AA20117A35FF900EEE5EB /* tileset.png in Resources */ = {isa = PBXBuildFile; fileRef = 622AA1FD17A35FF900EEE5EB /* tileset.png */; };
 		622AA21517A3609E00EEE5EB /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 622AA20217A3609E00EEE5EB /* AppDelegate.cpp */; };
 		622AA21717A3609E00EEE5EB /* B2DebugDrawLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 622AA20617A3609E00EEE5EB /* B2DebugDrawLayer.cpp */; };
 		622AA21817A3609E00EEE5EB /* GLES-Render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 622AA20817A3609E00EEE5EB /* GLES-Render.cpp */; };
@@ -96,6 +95,7 @@
 		62E5AFD817A471B200BE18FE /* Manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFD617A471B200BE18FE /* Manager.cpp */; };
 		62E5AFDE17A487DE00BE18FE /* CoffeeBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFDA17A487DE00BE18FE /* CoffeeBar.cpp */; };
 		62E5AFDF17A487DE00BE18FE /* HealthBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFDC17A487DE00BE18FE /* HealthBar.cpp */; };
+		62E5AFE217A4B01200BE18FE /* tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 62E5AFE117A4B01200BE18FE /* tiles.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -242,7 +242,6 @@
 		41BC70E215BF81A5006A0A6C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 		41BC70E315BF81A5006A0A6C /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = SOURCE_ROOT; };
 		622AA1FC17A35FF900EEE5EB /* main.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = main.tmx; sourceTree = "<group>"; };
-		622AA1FD17A35FF900EEE5EB /* tileset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tileset.png; sourceTree = "<group>"; };
 		622AA20217A3609E00EEE5EB /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = ../Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		622AA20317A3609E00EEE5EB /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../Classes/AppDelegate.h; sourceTree = "<group>"; };
 		622AA20617A3609E00EEE5EB /* B2DebugDrawLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = B2DebugDrawLayer.cpp; sourceTree = "<group>"; };
@@ -282,6 +281,7 @@
 		62E5AFDB17A487DE00BE18FE /* CoffeeBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoffeeBar.h; path = ../Classes/CoffeeBar.h; sourceTree = "<group>"; };
 		62E5AFDC17A487DE00BE18FE /* HealthBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HealthBar.cpp; path = ../Classes/HealthBar.cpp; sourceTree = "<group>"; };
 		62E5AFDD17A487DE00BE18FE /* HealthBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthBar.h; path = ../Classes/HealthBar.h; sourceTree = "<group>"; };
+		62E5AFE117A4B01200BE18FE /* tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tiles.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -637,8 +637,8 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				62E5AFE117A4B01200BE18FE /* tiles.png */,
 				622AA1FC17A35FF900EEE5EB /* main.tmx */,
-				622AA1FD17A35FF900EEE5EB /* tileset.png */,
 				62E5AFC717A4280800BE18FE /* Characters.plist */,
 				62E5AFC817A4280800BE18FE /* Characters.png */,
 			);
@@ -720,9 +720,9 @@
 				41BC70E615BF81A5006A0A6C /* MainMenu.xib in Resources */,
 				41BC70E715BF81A5006A0A6C /* Icon.icns in Resources */,
 				622AA20017A35FF900EEE5EB /* main.tmx in Resources */,
-				622AA20117A35FF900EEE5EB /* tileset.png in Resources */,
 				62E5AFC917A4280800BE18FE /* Characters.plist in Resources */,
 				62E5AFCA17A4280800BE18FE /* Characters.png in Resources */,
+				62E5AFE217A4B01200BE18FE /* tiles.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,10 +32,10 @@ public:
     
     virtual bool init(b2World *world, Dictionary *properties, Player* ref);
     virtual void update(float dt);
-    
-	float _damageFactor;
 
 	virtual void handleMovement();
+    
+    CC_SYNTHESIZE(float, _damageFactor, DamageFactor);
 
 
 };

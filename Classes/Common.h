@@ -24,6 +24,7 @@ using namespace cocos2d;
 #define kPeaBerryTime 10.0f
 #define kWaterEffectAmout 20.0f
 #define kDonutEffectAmout 20.0f
+#define kDamageBaseAmout 10.0f
 
 #define kEnemyDeathCoffeeNumber 3
 

@@ -138,9 +138,9 @@ bool HelloWorld::init()
 			_mainBatchNode->addChild(newPowerup->getNode());
 			_gameObjects.push_back(newPowerup);
             
-		} else if(type->compare("Peaberry") == 0) 
+		} else if(type->compare("PeaBerry") == 0) 
 		{
-			Peaberry* newPowerup = new Peaberry();
+			PeaBerry* newPowerup = new PeaBerry();
 			newPowerup->init(_world, objectProperties);
 			_mainBatchNode->addChild(newPowerup->getNode());
 			_gameObjects.push_back(newPowerup);

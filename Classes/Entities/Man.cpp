@@ -20,8 +20,7 @@ bool Man::init(b2World *world, Dictionary *properties, Player *ref) {
 	_node = Sprite::createWithSpriteFrameName("man_down.png");
     _spriteFrameName = "man";
     
-    _damageFactor = 0.3f;
-	_drinkedCoffee = 0;
+    _damageFactor = 1.0f;
 
 	this->setType(GameObjectTypeMan);
 	
