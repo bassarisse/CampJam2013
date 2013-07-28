@@ -16,10 +16,8 @@ bool Water::init(b2World *world, Dictionary *properties) {
 	
 	this->setType(GameObjectTypeWater);
     
-    if (!GameObject::init(world, properties))
+    if (!GameObject::init(world, properties, true))
         return false;
-    
-    _isSensor = true;
     
     return true;
 }

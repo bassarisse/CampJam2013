@@ -62,6 +62,7 @@ public:
     
     virtual void addBodyToWorld(b2World *world);
     virtual bool init(b2World *world, Dictionary *properties);
+    virtual bool init(b2World *world, Dictionary *properties, bool isSensor);
     virtual void update(float dt);
     virtual void handleMovement();
     virtual void handleMovement(float angle);
