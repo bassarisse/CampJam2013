@@ -18,13 +18,14 @@ using namespace cocos2d;
 #define kWalkForce 6.0f
 #define kCoffeeThreshold 60.0f
 #define kCoffeeDamage 1.5f
-#define kCoffeePower 0.04f
+#define kCoffeePower 0.065f
 #define kCoffeeLevelAdd 10.0f
 #define kPeaBerrySpeedFactor 3.0f
 #define kPeaBerryTime 10.0f
-#define kWaterEffectAmout 20.0f
-#define kDonutEffectAmout 20.0f
-#define kDamageBaseAmout 10.0f
+#define kWaterEffectAmount 20.0f
+#define kDonutEffectAmount 20.0f
+#define kDamageBaseAmount 10.0f
+#define kDamageTime 0.3f
 
 #define kEnemyDeathCoffeeNumber 3
 

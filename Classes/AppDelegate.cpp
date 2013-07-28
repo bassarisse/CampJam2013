@@ -1,5 +1,5 @@
 #include "AppDelegate.h"
-#include "HelloWorldScene.h"
+#include "GamePlay.h"
 
 USING_NS_CC;
 
@@ -16,7 +16,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     Director* pDirector = Director::sharedDirector();
     EGLView* pEGLView = EGLView::sharedOpenGLView();
     
-    pDirector->setProjection(kDirectorProjection2D);
+    //pDirector->setProjection(kDirectorProjection2D);
     pDirector->setOpenGLView(pEGLView);
 	
     // turn on display FPS
@@ -26,7 +26,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     pDirector->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-    Scene *pScene = HelloWorld::scene();
+    Scene *pScene = GamePlay::scene();
 
     // run
     pDirector->runWithScene(pScene);

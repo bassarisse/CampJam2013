@@ -19,10 +19,12 @@ protected:
     
     bool _isUnderPeaBerryEffect;
     float _peaBerryTime;
+    float _damageTime;
     
     virtual void addFixtures();
     virtual float getSpeed();
 	virtual void handleCollision(GameObject *gameObject);
+	virtual void handleMovement(float angle);
     
 public:
     
@@ -30,8 +32,8 @@ public:
     
     virtual bool init(b2World *world, Dictionary *properties);
     virtual void update(float dt);
-
-
+    
+	CC_SYNTHESIZE(float, _score, Score);
 	CC_SYNTHESIZE(float, _coffee, Coffee);
 	CC_SYNTHESIZE(float, _life, Life);
 

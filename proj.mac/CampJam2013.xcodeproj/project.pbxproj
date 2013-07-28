@@ -81,21 +81,23 @@
 		622AA21917A3609E00EEE5EB /* BAContactListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 622AA20A17A3609E00EEE5EB /* BAContactListener.cpp */; };
 		622AA21A17A3609E00EEE5EB /* BaseLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 622AA20C17A3609E00EEE5EB /* BaseLayer.cpp */; };
 		622AA21B17A3609E00EEE5EB /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 622AA20F17A3609E00EEE5EB /* GameObject.cpp */; };
-		622AA21C17A3609E00EEE5EB /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 622AA21117A3609E00EEE5EB /* HelloWorldScene.cpp */; };
-		622AA22717A39ECE00EEE5EB /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 622AA22317A39ECE00EEE5EB /* Enemy.cpp */; };
-		622AA22817A39ECE00EEE5EB /* Man.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 622AA22517A39ECE00EEE5EB /* Man.cpp */; };
+		622AA21C17A3609E00EEE5EB /* GamePlay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 622AA21117A3609E00EEE5EB /* GamePlay.cpp */; };
 		622AA22B17A39EE700EEE5EB /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 622AA22917A39EE700EEE5EB /* Player.cpp */; };
-		622AA22E17A3AA8300EEE5EB /* Woman.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 622AA22C17A3AA8300EEE5EB /* Woman.cpp */; };
-		62E5AFBF17A3FB4E00BE18FE /* Coffee.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFBD17A3FB4E00BE18FE /* Coffee.cpp */; };
 		62E5AFC917A4280800BE18FE /* Characters.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62E5AFC717A4280800BE18FE /* Characters.plist */; };
 		62E5AFCA17A4280800BE18FE /* Characters.png in Resources */ = {isa = PBXBuildFile; fileRef = 62E5AFC817A4280800BE18FE /* Characters.png */; };
-		62E5AFD217A43FE000BE18FE /* Donut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFCC17A43FE000BE18FE /* Donut.cpp */; };
-		62E5AFD317A43FE000BE18FE /* PeaBerry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFCE17A43FE000BE18FE /* PeaBerry.cpp */; };
-		62E5AFD417A43FE000BE18FE /* Water.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFD017A43FE000BE18FE /* Water.cpp */; };
-		62E5AFD817A471B200BE18FE /* Manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFD617A471B200BE18FE /* Manager.cpp */; };
 		62E5AFDE17A487DE00BE18FE /* CoffeeBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFDA17A487DE00BE18FE /* CoffeeBar.cpp */; };
 		62E5AFDF17A487DE00BE18FE /* HealthBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFDC17A487DE00BE18FE /* HealthBar.cpp */; };
 		62E5AFE217A4B01200BE18FE /* tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 62E5AFE117A4B01200BE18FE /* tiles.png */; };
+		62E5AFE717A525B400BE18FE /* drinked_coffee.wav in Resources */ = {isa = PBXBuildFile; fileRef = 62E5AFE517A525B400BE18FE /* drinked_coffee.wav */; };
+		62E5AFE817A525B400BE18FE /* main_bgm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 62E5AFE617A525B400BE18FE /* main_bgm.wav */; };
+		62E5AFFB17A5278800BE18FE /* Coffee.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFEA17A5278800BE18FE /* Coffee.cpp */; };
+		62E5AFFC17A5278800BE18FE /* Donut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFEC17A5278800BE18FE /* Donut.cpp */; };
+		62E5AFFD17A5278800BE18FE /* PeaBerry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFEE17A5278800BE18FE /* PeaBerry.cpp */; };
+		62E5AFFE17A5278800BE18FE /* Water.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFF017A5278800BE18FE /* Water.cpp */; };
+		62E5AFFF17A5278800BE18FE /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFF317A5278800BE18FE /* Enemy.cpp */; };
+		62E5B00017A5278800BE18FE /* Man.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFF517A5278800BE18FE /* Man.cpp */; };
+		62E5B00117A5278800BE18FE /* Manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFF717A5278800BE18FE /* Manager.cpp */; };
+		62E5B00217A5278800BE18FE /* Woman.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E5AFF917A5278800BE18FE /* Woman.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -255,33 +257,35 @@
 		622AA20E17A3609E00EEE5EB /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Common.h; path = ../Classes/Common.h; sourceTree = "<group>"; };
 		622AA20F17A3609E00EEE5EB /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameObject.cpp; path = ../Classes/GameObject.cpp; sourceTree = "<group>"; };
 		622AA21017A3609E00EEE5EB /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObject.h; path = ../Classes/GameObject.h; sourceTree = "<group>"; };
-		622AA21117A3609E00EEE5EB /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = ../Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
-		622AA21217A3609E00EEE5EB /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = ../Classes/HelloWorldScene.h; sourceTree = "<group>"; };
-		622AA22317A39ECE00EEE5EB /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
-		622AA22417A39ECE00EEE5EB /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
-		622AA22517A39ECE00EEE5EB /* Man.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Man.cpp; sourceTree = "<group>"; };
-		622AA22617A39ECE00EEE5EB /* Man.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Man.h; sourceTree = "<group>"; };
+		622AA21117A3609E00EEE5EB /* GamePlay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GamePlay.cpp; path = ../Classes/GamePlay.cpp; sourceTree = "<group>"; };
+		622AA21217A3609E00EEE5EB /* GamePlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GamePlay.h; path = ../Classes/GamePlay.h; sourceTree = "<group>"; };
 		622AA22917A39EE700EEE5EB /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		622AA22A17A39EE700EEE5EB /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
-		622AA22C17A3AA8300EEE5EB /* Woman.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Woman.cpp; sourceTree = "<group>"; };
-		622AA22D17A3AA8300EEE5EB /* Woman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Woman.h; sourceTree = "<group>"; };
-		62E5AFBD17A3FB4E00BE18FE /* Coffee.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Coffee.cpp; sourceTree = "<group>"; };
-		62E5AFBE17A3FB4E00BE18FE /* Coffee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coffee.h; sourceTree = "<group>"; };
 		62E5AFC717A4280800BE18FE /* Characters.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Characters.plist; sourceTree = "<group>"; };
 		62E5AFC817A4280800BE18FE /* Characters.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Characters.png; sourceTree = "<group>"; };
-		62E5AFCC17A43FE000BE18FE /* Donut.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Donut.cpp; sourceTree = "<group>"; };
-		62E5AFCD17A43FE000BE18FE /* Donut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Donut.h; sourceTree = "<group>"; };
-		62E5AFCE17A43FE000BE18FE /* PeaBerry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PeaBerry.cpp; sourceTree = "<group>"; };
-		62E5AFCF17A43FE000BE18FE /* PeaBerry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeaBerry.h; sourceTree = "<group>"; };
-		62E5AFD017A43FE000BE18FE /* Water.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Water.cpp; sourceTree = "<group>"; };
-		62E5AFD117A43FE000BE18FE /* Water.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Water.h; sourceTree = "<group>"; };
-		62E5AFD617A471B200BE18FE /* Manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Manager.cpp; sourceTree = "<group>"; };
-		62E5AFD717A471B200BE18FE /* Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Manager.h; sourceTree = "<group>"; };
 		62E5AFDA17A487DE00BE18FE /* CoffeeBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CoffeeBar.cpp; path = ../Classes/CoffeeBar.cpp; sourceTree = "<group>"; };
 		62E5AFDB17A487DE00BE18FE /* CoffeeBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoffeeBar.h; path = ../Classes/CoffeeBar.h; sourceTree = "<group>"; };
 		62E5AFDC17A487DE00BE18FE /* HealthBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HealthBar.cpp; path = ../Classes/HealthBar.cpp; sourceTree = "<group>"; };
 		62E5AFDD17A487DE00BE18FE /* HealthBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthBar.h; path = ../Classes/HealthBar.h; sourceTree = "<group>"; };
 		62E5AFE117A4B01200BE18FE /* tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tiles.png; sourceTree = "<group>"; };
+		62E5AFE517A525B400BE18FE /* drinked_coffee.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = drinked_coffee.wav; sourceTree = "<group>"; };
+		62E5AFE617A525B400BE18FE /* main_bgm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = main_bgm.wav; sourceTree = "<group>"; };
+		62E5AFEA17A5278800BE18FE /* Coffee.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Coffee.cpp; sourceTree = "<group>"; };
+		62E5AFEB17A5278800BE18FE /* Coffee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coffee.h; sourceTree = "<group>"; };
+		62E5AFEC17A5278800BE18FE /* Donut.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Donut.cpp; sourceTree = "<group>"; };
+		62E5AFED17A5278800BE18FE /* Donut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Donut.h; sourceTree = "<group>"; };
+		62E5AFEE17A5278800BE18FE /* PeaBerry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PeaBerry.cpp; sourceTree = "<group>"; };
+		62E5AFEF17A5278800BE18FE /* PeaBerry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeaBerry.h; sourceTree = "<group>"; };
+		62E5AFF017A5278800BE18FE /* Water.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Water.cpp; sourceTree = "<group>"; };
+		62E5AFF117A5278800BE18FE /* Water.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Water.h; sourceTree = "<group>"; };
+		62E5AFF317A5278800BE18FE /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
+		62E5AFF417A5278800BE18FE /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
+		62E5AFF517A5278800BE18FE /* Man.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Man.cpp; sourceTree = "<group>"; };
+		62E5AFF617A5278800BE18FE /* Man.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Man.h; sourceTree = "<group>"; };
+		62E5AFF717A5278800BE18FE /* Manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Manager.cpp; sourceTree = "<group>"; };
+		62E5AFF817A5278800BE18FE /* Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Manager.h; sourceTree = "<group>"; };
+		62E5AFF917A5278800BE18FE /* Woman.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Woman.cpp; sourceTree = "<group>"; };
+		62E5AFFA17A5278800BE18FE /* Woman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Woman.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,8 +324,8 @@
 				622AA20E17A3609E00EEE5EB /* Common.h */,
 				622AA20F17A3609E00EEE5EB /* GameObject.cpp */,
 				622AA21017A3609E00EEE5EB /* GameObject.h */,
-				622AA21117A3609E00EEE5EB /* HelloWorldScene.cpp */,
-				622AA21217A3609E00EEE5EB /* HelloWorldScene.h */,
+				622AA21117A3609E00EEE5EB /* GamePlay.cpp */,
+				622AA21217A3609E00EEE5EB /* GamePlay.h */,
 				62E5AFDA17A487DE00BE18FE /* CoffeeBar.cpp */,
 				62E5AFDB17A487DE00BE18FE /* CoffeeBar.h */,
 				62E5AFDC17A487DE00BE18FE /* HealthBar.cpp */,
@@ -613,25 +617,41 @@
 			children = (
 				622AA22917A39EE700EEE5EB /* Player.cpp */,
 				622AA22A17A39EE700EEE5EB /* Player.h */,
-				622AA22317A39ECE00EEE5EB /* Enemy.cpp */,
-				622AA22417A39ECE00EEE5EB /* Enemy.h */,
-				622AA22517A39ECE00EEE5EB /* Man.cpp */,
-				622AA22617A39ECE00EEE5EB /* Man.h */,
-				622AA22C17A3AA8300EEE5EB /* Woman.cpp */,
-				622AA22D17A3AA8300EEE5EB /* Woman.h */,
-				62E5AFD617A471B200BE18FE /* Manager.cpp */,
-				62E5AFD717A471B200BE18FE /* Manager.h */,
-				62E5AFBD17A3FB4E00BE18FE /* Coffee.cpp */,
-				62E5AFBE17A3FB4E00BE18FE /* Coffee.h */,
-				62E5AFCC17A43FE000BE18FE /* Donut.cpp */,
-				62E5AFCD17A43FE000BE18FE /* Donut.h */,
-				62E5AFCE17A43FE000BE18FE /* PeaBerry.cpp */,
-				62E5AFCF17A43FE000BE18FE /* PeaBerry.h */,
-				62E5AFD017A43FE000BE18FE /* Water.cpp */,
-				62E5AFD117A43FE000BE18FE /* Water.h */,
+				62E5AFE917A5278800BE18FE /* Collectables */,
+				62E5AFF217A5278800BE18FE /* Enemies */,
 			);
 			name = Entities;
 			path = ../Classes/Entities;
+			sourceTree = "<group>";
+		};
+		62E5AFE917A5278800BE18FE /* Collectables */ = {
+			isa = PBXGroup;
+			children = (
+				62E5AFEA17A5278800BE18FE /* Coffee.cpp */,
+				62E5AFEB17A5278800BE18FE /* Coffee.h */,
+				62E5AFEC17A5278800BE18FE /* Donut.cpp */,
+				62E5AFED17A5278800BE18FE /* Donut.h */,
+				62E5AFEE17A5278800BE18FE /* PeaBerry.cpp */,
+				62E5AFEF17A5278800BE18FE /* PeaBerry.h */,
+				62E5AFF017A5278800BE18FE /* Water.cpp */,
+				62E5AFF117A5278800BE18FE /* Water.h */,
+			);
+			path = Collectables;
+			sourceTree = "<group>";
+		};
+		62E5AFF217A5278800BE18FE /* Enemies */ = {
+			isa = PBXGroup;
+			children = (
+				62E5AFF317A5278800BE18FE /* Enemy.cpp */,
+				62E5AFF417A5278800BE18FE /* Enemy.h */,
+				62E5AFF517A5278800BE18FE /* Man.cpp */,
+				62E5AFF617A5278800BE18FE /* Man.h */,
+				62E5AFF917A5278800BE18FE /* Woman.cpp */,
+				62E5AFFA17A5278800BE18FE /* Woman.h */,
+				62E5AFF717A5278800BE18FE /* Manager.cpp */,
+				62E5AFF817A5278800BE18FE /* Manager.h */,
+			);
+			path = Enemies;
 			sourceTree = "<group>";
 		};
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
@@ -641,6 +661,8 @@
 				622AA1FC17A35FF900EEE5EB /* main.tmx */,
 				62E5AFC717A4280800BE18FE /* Characters.plist */,
 				62E5AFC817A4280800BE18FE /* Characters.png */,
+				62E5AFE517A525B400BE18FE /* drinked_coffee.wav */,
+				62E5AFE617A525B400BE18FE /* main_bgm.wav */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -723,6 +745,8 @@
 				62E5AFC917A4280800BE18FE /* Characters.plist in Resources */,
 				62E5AFCA17A4280800BE18FE /* Characters.png in Resources */,
 				62E5AFE217A4B01200BE18FE /* tiles.png in Resources */,
+				62E5AFE717A525B400BE18FE /* drinked_coffee.wav in Resources */,
+				62E5AFE817A525B400BE18FE /* main_bgm.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -792,18 +816,18 @@
 				622AA21917A3609E00EEE5EB /* BAContactListener.cpp in Sources */,
 				622AA21A17A3609E00EEE5EB /* BaseLayer.cpp in Sources */,
 				622AA21B17A3609E00EEE5EB /* GameObject.cpp in Sources */,
-				622AA21C17A3609E00EEE5EB /* HelloWorldScene.cpp in Sources */,
-				622AA22717A39ECE00EEE5EB /* Enemy.cpp in Sources */,
-				622AA22817A39ECE00EEE5EB /* Man.cpp in Sources */,
+				622AA21C17A3609E00EEE5EB /* GamePlay.cpp in Sources */,
 				622AA22B17A39EE700EEE5EB /* Player.cpp in Sources */,
-				622AA22E17A3AA8300EEE5EB /* Woman.cpp in Sources */,
-				62E5AFBF17A3FB4E00BE18FE /* Coffee.cpp in Sources */,
-				62E5AFD217A43FE000BE18FE /* Donut.cpp in Sources */,
-				62E5AFD317A43FE000BE18FE /* PeaBerry.cpp in Sources */,
-				62E5AFD417A43FE000BE18FE /* Water.cpp in Sources */,
-				62E5AFD817A471B200BE18FE /* Manager.cpp in Sources */,
 				62E5AFDE17A487DE00BE18FE /* CoffeeBar.cpp in Sources */,
 				62E5AFDF17A487DE00BE18FE /* HealthBar.cpp in Sources */,
+				62E5AFFB17A5278800BE18FE /* Coffee.cpp in Sources */,
+				62E5AFFC17A5278800BE18FE /* Donut.cpp in Sources */,
+				62E5AFFD17A5278800BE18FE /* PeaBerry.cpp in Sources */,
+				62E5AFFE17A5278800BE18FE /* Water.cpp in Sources */,
+				62E5AFFF17A5278800BE18FE /* Enemy.cpp in Sources */,
+				62E5B00017A5278800BE18FE /* Man.cpp in Sources */,
+				62E5B00117A5278800BE18FE /* Manager.cpp in Sources */,
+				62E5B00217A5278800BE18FE /* Woman.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

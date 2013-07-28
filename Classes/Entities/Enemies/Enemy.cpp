@@ -65,15 +65,24 @@ void Enemy::handleMovement() {
 		this->setMovingVerticalState(MovingStateDown);
 	}
     
-    if (this->getMovingHorizontalState() == MovingStateRight)
-        _lastHorizontalDirection = kDirectionRight;
-    else if (this->getMovingHorizontalState() == MovingStateLeft)
-        _lastHorizontalDirection = kDirectionLeft;
+    kDirection newHorizontalDirection = kDirectionLeft;
+    kDirection newVerticalDirection = kDirectionUp;
     
-    if (this->getMovingVerticalState() == MovingStateUp)
-        _lastVerticalDirection = kDirectionUp;
-    else if (this->getMovingVerticalState() == MovingStateDown)
-        _lastVerticalDirection = kDirectionDown;
+    if (this->getMovingHorizontalState() == MovingStateRight)
+        newHorizontalDirection = kDirectionRight;
+    else if (this->getMovingHorizontalState() == MovingStateLeft)
+        newHorizontalDirection = kDirectionLeft;
+    
+    if (this->getMovingVerticalState() == MovingStateUp) {
+        newVerticalDirection = kDirectionUp;
+    } else if (this->getMovingVerticalState() == MovingStateDown)
+        newVerticalDirection = kDirectionDown;
+    
+    if (_lastVerticalDirection != newVerticalDirection)
+        this->getNode()->stopActionByTag(kWalkActionTag);
+    
+    _lastHorizontalDirection = newHorizontalDirection;
+    _lastVerticalDirection = newVerticalDirection;
 	
 	GameObject::handleMovement(angle); 
 }
@@ -84,6 +93,10 @@ void Enemy::update(float dt) {
     GameObject::update(dt);
     
     this->executeWalkAnimation();
+    
+    int colorAdd = 255 - 60 * _drinkedCoffee;
+    Sprite *thisSprite = (Sprite *)this->getNode();
+    thisSprite->setColor(ccc3(255, colorAdd, colorAdd));
     
 	if(_drinkedCoffee >= kEnemyDeathCoffeeNumber && _state != GameObjectStateDead)
         this->setState(GameObjectStateDead);
