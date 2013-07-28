@@ -42,28 +42,15 @@ bool GameoverScene::init(int score, bool isRecord)  {
 						this->getContentSize().height / 2));
 
 	LabelBMFont *scoreLabel = LabelBMFont::create(
-		String::createWithFormat("Your score: %d%s", _score, isRecord ? "\nNew record, good job!\nNow go back to work!" : "")->getCString(), "MainFont.fnt", 600,kTextAlignmentLeft);
+		String::createWithFormat("Your score: %d%s", _score, isRecord ? "\nNew record!\nNow get back to work!" : "")->getCString(), "MainFont.fnt", 600,kTextAlignmentLeft);
 
-	
 	scoreLabel->setAnchorPoint(ccp(0.0,0.5));
 	scoreLabel->setPosition(ccp(10, this->getContentSize().height - 90));
-
-	MenuItemLabel* item1;
-	MenuItemLabel* item2;
-	
-	LabelBMFont *retryLabel = LabelBMFont::create(
-		"Try again",
-		"MainFont.fnt",400,kTextAlignmentCenter);
 
 	LabelBMFont *titleLabel = LabelBMFont::create(
 		"Title screen",
 		"MainFont.fnt",400,kTextAlignmentCenter);
-
  
-	item2 = MenuItemLabel::create(titleLabel, this,
-									menu_selector(GameoverScene::clickedTitle));
- 
-
 	MenuItemImage* startOpt = MenuItemImage::create("startover.png", "startover.png", [](Object* obj) {
 		CocosDenshion::SimpleAudioEngine::sharedEngine()->stopBackgroundMusic(false);
 		Scene *pScene = GamePlay::scene();
