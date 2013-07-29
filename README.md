@@ -1,6 +1,8 @@
 Office Rampage
 ===========
 
+![Title screen](http://i217.photobucket.com/albums/cc96/muclemente/offgithub_zps5ca34f29.png "Logo")
+
 Office Rampage is a game made for [CampJam 13](http://www.gamux.com.br/campjam/edicoes/2013/) *within 48 hours*. The jam theme was "Coffee". :)
 
 It's a fast paced running survival, in which an office became totally ravaged by the addiction to caffeine. The workers transformed into brainiac zombies, possessing only one object: drink more coffee.
