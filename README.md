@@ -22,7 +22,7 @@ Gameplay: pickups
 ---------------------
 
 By picking up the items on the ground you absorb its' effects:
--   Coffee: can be picked up by either the player or the enemies. Increases the movement speed of the unit, but adding more caffeine to its' users organisms.
+-   Coffee: can be picked up by either the player or the workers. Increases the movement speed of the unit, but adding more caffeine to its' users organisms.
 -   Water bottle: reduces the caffeine level of the player.
 -   Donut: Heals the player.
 -   Peaberry: increases the speed of the unit without increasing the caffeine level.
