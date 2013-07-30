@@ -9,15 +9,9 @@
 #ifndef __CampJam__Donut__
 #define __CampJam__Donut__
 
-#include "GameObject.h"
+#include "Collectable.h"
 
-class Donut : public GameObject {
-    
-private:
-    
-protected:
-    
-    virtual void addFixtures();
+class Donut : public Collectable {
 	
 
 public:

@@ -401,21 +401,11 @@ void GamePlay::update(float dt) {
                 case GameObjectTypePeaBerry:
                 case GameObjectTypeCoffee:
                     SimpleAudioEngine::sharedEngine()->playEffect("drinked_coffee.wav");
-                    
 					break;
+                    
 				case GameObjectTypeDonut:
 					SimpleAudioEngine::sharedEngine()->playEffect("donut_eating.wav");
 					break;
-				case GameObjectTypeMan:
-					SimpleAudioEngine::sharedEngine()->playEffect("death_man.wav");
-
-					break;
-				case GameObjectTypeManager:
-					SimpleAudioEngine::sharedEngine()->playEffect("death_manager.wav");
-
-					break;
-				case GameObjectTypeWoman:
-					SimpleAudioEngine::sharedEngine()->playEffect("death_woman.wav");
 
 					break;
 				default:
@@ -425,8 +415,6 @@ void GamePlay::update(float dt) {
             this->removeObject(gameObj);
 		}
     }
-
-
 
 	Player* pl = (Player*)_player;
     
@@ -459,6 +447,7 @@ GameObject* GamePlay::createGameObject(GameObjectType type, Dictionary *properti
             newPowerup->init(_world, properties);
             _mainBatchNode->addChild(newPowerup->getNode());
             _gameObjects.push_back(newPowerup);
+            this->startHover(newPowerup);
             return newPowerup;
         }
             break;
@@ -469,6 +458,7 @@ GameObject* GamePlay::createGameObject(GameObjectType type, Dictionary *properti
             newPowerup->init(_world, properties);
             _mainBatchNode->addChild(newPowerup->getNode());
             _gameObjects.push_back(newPowerup);
+            this->startHover(newPowerup);
             return newPowerup;
         }
             break;
@@ -479,6 +469,7 @@ GameObject* GamePlay::createGameObject(GameObjectType type, Dictionary *properti
             newPowerup->init(_world, properties);
             _mainBatchNode->addChild(newPowerup->getNode());
             _gameObjects.push_back(newPowerup);
+            this->startHover(newPowerup);
             return newPowerup;
         }
             break;
@@ -489,6 +480,7 @@ GameObject* GamePlay::createGameObject(GameObjectType type, Dictionary *properti
             newPowerup->init(_world, properties);
             _mainBatchNode->addChild(newPowerup->getNode());
             _gameObjects.push_back(newPowerup);
+            this->startHover(newPowerup);
             return newPowerup;
         }
             break;
@@ -533,6 +525,18 @@ GameObject* GamePlay::createGameObject(GameObjectType type, Dictionary *properti
     return NULL;
 }
 
+void GamePlay::startHover(GameObject *gameObject) {
+    
+    ActionInterval *action = Sequence::create(
+                                              EaseInOut::create(MoveBy::create(1.2f, ccp(0, 15)), 1.5f),
+                                              EaseInOut::create(MoveBy::create(1.2f, ccp(0, -15)), 1.5f),
+                                              NULL
+                                              );
+    
+    gameObject->getNode()->runAction(RepeatForever::create(action));
+    
+}
+
 void GamePlay::removeObject(GameObject* deadObject) {
     
 	std::vector<GameObject *>::iterator pos;
@@ -543,6 +547,7 @@ void GamePlay::removeObject(GameObject* deadObject) {
     _world->DestroyBody(deadObject->getBody());
     
 	deadObject->release();
+    deadNode->stopAllActions();
 	deadNode->removeFromParentAndCleanup(true);
     deadObject = NULL;
     

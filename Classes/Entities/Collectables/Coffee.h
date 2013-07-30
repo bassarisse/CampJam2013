@@ -9,16 +9,9 @@
 #ifndef __CampJam__Coffee__
 #define __CampJam__Coffee__
 
-#include "GameObject.h"
+#include "Collectable.h"
 
-class Coffee : public GameObject {
-    
-private:
-    
-protected:
-    
-    virtual void addFixtures();
-	
+class Coffee : public Collectable {	
 
 public:
     

@@ -9,15 +9,9 @@
 #ifndef __CampJam__Water__
 #define __CampJam__Water__
 
-#include "GameObject.h"
+#include "Collectable.h"
 
-class Water : public GameObject {
-    
-private:
-    
-protected:
-    
-    virtual void addFixtures();
+class Water : public Collectable {
 
 public:
     

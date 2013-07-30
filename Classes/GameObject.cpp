@@ -186,7 +186,9 @@ void GameObject::update(float dt) {
     int x = position.x * PTM_RATIO;
     int y = position.y * PTM_RATIO;
     
-    _node->setPosition(x, y);
+    if (!_isSensor)
+        _node->setPosition(x, y);
+    
     _node->getParent()->reorderChild(_node, - 10 - y + (_node->getContentSize().height * _node->getScaleY()) / 2);
     //_node->setVertexZ(- 10 - y);
     

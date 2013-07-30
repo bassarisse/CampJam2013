@@ -9,15 +9,9 @@
 #ifndef __CampJam__Peaberry__
 #define __CampJam__Peaberry__
 
-#include "GameObject.h"
+#include "Collectable.h"
 
-class PeaBerry : public GameObject {
-    
-private:
-    
-protected:
-    
-    virtual void addFixtures();
+class PeaBerry : public Collectable {
 	
 
 public:

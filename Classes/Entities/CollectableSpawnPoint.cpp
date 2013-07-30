@@ -64,8 +64,10 @@ void CollectableSpawnPoint::update(float dt) {
 			spawnType = GameObjectTypeDonut;
 		}
 
-
         GameObject *newObj = _gamePlay->createGameObject(spawnType, _properties);
+        
+        ((Sprite *)newObj->getNode())->setOpacity(0);
+        
         _gameObjects.push_back(newObj);
         
     }

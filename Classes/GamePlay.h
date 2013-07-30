@@ -71,7 +71,8 @@ public:
     void update(float dt);
     
     GameObject* createGameObject(GameObjectType type, Dictionary *properties);
-	void removeObject(GameObject* deadObject);
+    void startHover(GameObject *gameObject);
+	void removeObject(GameObject *deadObject);
     
     virtual void registerWithTouchDispatcher();
     virtual bool ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent);
