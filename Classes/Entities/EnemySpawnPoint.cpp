@@ -45,7 +45,7 @@ void EnemySpawnPoint::update(float dt) {
     _spawnTime += dt;
     
     if (_nextSpawnTime == 0)
-        _nextSpawnTime = 8 + rand() % 20;
+        _nextSpawnTime = 12 + rand() % 28;
     
     if (_spawnTime > _nextSpawnTime) {
         _spawnTime = 0;

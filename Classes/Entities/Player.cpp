@@ -223,7 +223,7 @@ void Player::handleCollision(GameObject *gameObject) {
         case GameObjectTypeBossDesk:
             if (_copiesQty > 0) {
                 SimpleAudioEngine::sharedEngine()->playEffect("paper.wav");
-                int addedScore = 4000 * _copiesQty;
+                int addedScore = kCopyScore * _copiesQty;
                 
                 _score += addedScore;
 

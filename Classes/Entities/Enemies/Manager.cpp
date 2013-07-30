@@ -24,7 +24,7 @@ bool Manager::init(b2World *world, Dictionary *properties, Player *ref) {
 	if (!Enemy::init(world, properties, ref))
         return false;
     
-	_speedFactor = -4.5f;
+	_speedFactor = -4.2f;
     _shouldFlipSprite = false;
     
     return true;

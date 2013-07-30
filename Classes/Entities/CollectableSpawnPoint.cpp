@@ -41,7 +41,7 @@ void CollectableSpawnPoint::update(float dt) {
     _spawnTime += dt;
     
     if (_nextSpawnTime == 0)
-        _nextSpawnTime = 10 + rand() % 25;
+        _nextSpawnTime = 10 + rand() % 30;
     
     if (_spawnTime > _nextSpawnTime) {
         _spawnTime = 0;
@@ -50,19 +50,19 @@ void CollectableSpawnPoint::update(float dt) {
         if ((int)_gameObjects.size() >= _maxObjects)
             return;
         
-		int dice = rand() % 10;
+		int dice = rand() % 9;
 
 		GameObjectType spawnType = GameObjectTypeCoffee;
 
-		if(dice <= 6) {
-			spawnType = GameObjectTypeCoffee;
-		} else if(dice > 6 && dice <= 7 ) {
+		       if(dice == 2) {
 			spawnType = GameObjectTypeWater;
-		} else if(dice > 7 && dice <= 8) {
+		} else if(dice == 4) {
 			spawnType = GameObjectTypePeaBerry;
-		} else if(dice > 8 && dice <= 9) {
+		} else if(dice == 6) {
 			spawnType = GameObjectTypeDonut;
-		}
+		} else {
+			spawnType = GameObjectTypeCoffee;
+        }
 
         GameObject *newObj = _gamePlay->createGameObject(spawnType, _properties);
         
