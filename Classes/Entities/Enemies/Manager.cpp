@@ -1,9 +1,6 @@
 #include "Manager.h"
 
-Manager::~Manager() {
-	
-}
-
+#include "SimpleAudioEngine.h"
 
 void Manager::addFixtures() {
     
@@ -71,4 +68,9 @@ void Manager::executeWalkAnimation() {
         this->setIdleFrame();
         
     }
+}
+
+void Manager::die() {
+    CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("death_manager.wav");
+    Enemy::die();
 }

@@ -13,9 +13,8 @@ protected:
 
 public:
 
-	virtual ~Man();
-
 	virtual bool init(b2World *world, Dictionary *properties, Player* ref);
+    virtual void die();
 
 };
 

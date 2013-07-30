@@ -124,6 +124,7 @@
 		62E5B0B717A5CFCF00BE18FE /* main_bgm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 62E5B0B617A5CFCF00BE18FE /* main_bgm.wav */; };
 		62E5B0B917A5D10700BE18FE /* return.png in Resources */ = {isa = PBXBuildFile; fileRef = 62E5B0B817A5D10700BE18FE /* return.png */; };
 		62E5B0BB17A5D11500BE18FE /* paper.wav in Resources */ = {isa = PBXBuildFile; fileRef = 62E5B0BA17A5D11500BE18FE /* paper.wav */; };
+		62E95D6517A775ED00DBC820 /* Collectable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E95D6317A775ED00DBC820 /* Collectable.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -347,6 +348,8 @@
 		62E5B0B617A5CFCF00BE18FE /* main_bgm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = main_bgm.wav; sourceTree = "<group>"; };
 		62E5B0B817A5D10700BE18FE /* return.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = return.png; sourceTree = "<group>"; };
 		62E5B0BA17A5D11500BE18FE /* paper.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = paper.wav; sourceTree = "<group>"; };
+		62E95D6317A775ED00DBC820 /* Collectable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Collectable.cpp; sourceTree = "<group>"; };
+		62E95D6417A775ED00DBC820 /* Collectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collectable.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -696,6 +699,8 @@
 		62E5AFE917A5278800BE18FE /* Collectables */ = {
 			isa = PBXGroup;
 			children = (
+				62E95D6317A775ED00DBC820 /* Collectable.cpp */,
+				62E95D6417A775ED00DBC820 /* Collectable.h */,
 				62E5AFEA17A5278800BE18FE /* Coffee.cpp */,
 				62E5AFEB17A5278800BE18FE /* Coffee.h */,
 				62E5AFEC17A5278800BE18FE /* Donut.cpp */,
@@ -967,6 +972,7 @@
 				62E5B02217A5B2ED00BE18FE /* EmptyPaper.cpp in Sources */,
 				62E5B02517A5B2F500BE18FE /* Document.cpp in Sources */,
 				62E5B02817A5B2FE00BE18FE /* BossDesk.cpp in Sources */,
+				62E95D6517A775ED00DBC820 /* Collectable.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

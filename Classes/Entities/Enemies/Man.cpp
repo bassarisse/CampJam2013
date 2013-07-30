@@ -1,9 +1,6 @@
 #include "Man.h"
 
-Man::~Man() {
-	
-}
-
+#include "SimpleAudioEngine.h"
 
 void Man::addFixtures() {
     
@@ -30,4 +27,9 @@ bool Man::init(b2World *world, Dictionary *properties, Player *ref) {
 	_speedFactor = -3.4f;
     
     return true;
+}
+
+void Man::die() {
+    CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("death_man.wav");
+    Enemy::die();
 }

@@ -67,7 +67,7 @@ void Enemy::update(float dt) {
     GameObject::update(dt);
     
     Sprite *sprite = (Sprite *)_node;
-    if (_state != GameObjectStateDead && _state != GameObjectStateDying && sprite->getOpacity() < 255) {
+    if (sprite->getOpacity() < 255) {
         int newOpacity = sprite->getOpacity() + dt * 500;
         if (newOpacity > 255) newOpacity = 255;
         sprite->setOpacity(newOpacity);
@@ -82,19 +82,7 @@ void Enemy::update(float dt) {
     thisSprite->setColor(ccc3(255, colorAdd, colorAdd));
     
 	if(_drinkedCoffee >= kEnemyDeathCoffeeNumber) {
-		FadeOut* dying = FadeOut::create(1.5f);
-		JumpTo* deathLeap = JumpTo::create(0.75f, ccp(_node->getPosition().x,_node->getPosition().y), 15, 1);
-		Sequence* deathSequence = Sequence::create(dying, CallFunc::create(this, callfunc_selector(Enemy::finishedDyingAction)), NULL);
-		Spawn* deathRitual = Spawn::create(deathLeap, deathSequence, NULL);
-	
-		_playerReference->getGameScreen()->showScore(ccp(
-													_node->getPosition().x + (_node->getContentSize().width / 2),
-													_node->getPosition().y + (_node->getContentSize().height / 2 )
-													), kEnemyScore);
-		this->setState(GameObjectStateDying);
-		_node->runAction(deathRitual);
-        
-        _playerReference->setScore(_playerReference->getScore() + kEnemyScore);
+        this->die();
     }
     
 }
@@ -108,7 +96,6 @@ void Enemy::handleCollision(GameObject *gameObject)  {
             _speedFactor += 1.9f;
             _drinkedCoffee++;
             gameObject->setState(GameObjectStateDead);
-            
             break;
             
         default:
@@ -117,6 +104,25 @@ void Enemy::handleCollision(GameObject *gameObject)  {
     
 }
 
+void Enemy::die() {
+    
+    this->setState(GameObjectStateDying);
+    _playerReference->setScore(_playerReference->getScore() + kEnemyScore);
+    
+    FadeOut* dying = FadeOut::create(1.5f);
+    JumpTo* deathLeap = JumpTo::create(0.75f, ccp(_node->getPosition().x, _node->getPosition().y), 40, 1);
+    Sequence* deathSequence = Sequence::create(dying,
+                                               CallFunc::create(this, callfunc_selector(Enemy::finishedDyingAction)),
+                                               NULL);
+    Spawn* deathRitual = Spawn::create(deathLeap, deathSequence, NULL);
+	
+    _playerReference->getGameScreen()->showScore(ccp(
+                                                     _node->getPosition().x + (_node->getContentSize().width * 0.25f),
+                                                     _node->getPosition().y + (_node->getContentSize().height * 0.25f)
+                                                     ), kEnemyScore);
+    _node->runAction(deathRitual);
+    
+}
 
 void Enemy::finishedDyingAction() {
 	this->setState(GameObjectStateDead);

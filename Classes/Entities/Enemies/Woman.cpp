@@ -1,9 +1,6 @@
 #include "Woman.h"
 
-Woman::~Woman() {
-	
-}
-
+#include "SimpleAudioEngine.h"
 
 void Woman::addFixtures() {
     
@@ -30,4 +27,9 @@ bool Woman::init(b2World *world, Dictionary *properties, Player *ref) {
 	_speedFactor = -2.4f;
     
     return true;
+}
+
+void Woman::die() {
+    CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("death_woman.wav");
+    Enemy::die();
 }

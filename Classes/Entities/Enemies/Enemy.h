@@ -37,9 +37,9 @@ public:
     virtual void update(float dt);
 
 	virtual void handleMovement();
-	void finishedDyingAction();
+    virtual void die();
+	virtual void finishedDyingAction();
     virtual bool isNearPlayer();
-
     
     CC_SYNTHESIZE(float, _damageFactor, DamageFactor);
     CC_SYNTHESIZE(float, _sightRange, SightRange);
