@@ -153,6 +153,7 @@ void Player::handleCollision(GameObject *gameObject) {
             if (targetVel.y < -maxForce) { targetVel.x *= -maxForce / targetVel.y; targetVel.y = -maxForce; }
             
             _body->ApplyLinearImpulse(targetVel, _body->GetWorldCenter());
+            _gameScreen->shakeScreen();
             
         }
             break;

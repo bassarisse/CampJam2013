@@ -91,6 +91,7 @@ public:
     
 	virtual void showScore(Point positionToShow, int scoreAmount);
 	virtual void scoreDidJump(Node* scoreNode);
+	virtual void shakeScreen();
 };
 
 #endif // __CAMPJAM_SCENE_H__

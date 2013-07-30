@@ -578,6 +578,8 @@ void GamePlay::ccTouchMoved(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) {
 }
 
 void GamePlay::ccTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) {
+    if (_isPaused)
+        this->buttonB(false);
     _isTouching = false;
     ((Player *)_player)->stopFollowingPoint();
 }
@@ -692,7 +694,7 @@ void GamePlay::buttonA(bool pressed) {
 }
 
 void GamePlay::buttonB(bool pressed) {
-	if(!pressed)
+	if(pressed)
 		return;
 
 	if(_isPaused)
@@ -744,4 +746,23 @@ void GamePlay::showScore(Point positionToShow, int scoreAmount) {
 
 void GamePlay::scoreDidJump(Node* scoreNode) {
 	scoreNode->removeFromParentAndCleanup(true);
+}
+
+void GamePlay::shakeScreen() {
+    
+    int multiplier = rand() % 2 == 0 ? 1 : -1;
+    
+    Action *shakeAction = Sequence::create(
+                                           MoveTo::create(0.06f, ccp( 6,  6 * multiplier)),
+                                           MoveTo::create(0.06f, ccp(-6, -6 * multiplier)),
+                                           MoveTo::create(0.05f, ccp( 4,  4 * multiplier)),
+                                           MoveTo::create(0.05f, ccp(-4, -4 * multiplier)),
+                                           MoveTo::create(0.04f, ccp( 2,  2 * multiplier)),
+                                           MoveTo::create(0.04f, ccp(-2, -2 * multiplier)),
+                                           MoveTo::create(0.03f, ccp( 0,  0)),
+                                           NULL);
+    
+    this->stopAllActions();
+    this->runAction(shakeAction);
+    
 }
