@@ -1,4 +1,4 @@
-EXECUTABLE = CampJam2013
+EXECUTABLE = OfficeRampage
 
 INCLUDES = -I.. -I../Classes
 

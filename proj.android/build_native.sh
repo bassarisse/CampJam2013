@@ -1,4 +1,4 @@
-APPNAME="CampJam2013"
+APPNAME="OfficeRampage"
 
 # options
 
