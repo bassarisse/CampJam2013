@@ -251,6 +251,30 @@ bool GamePlay::init()
             b2FixtureDef fixtureDef;
             fixtureDef.shape = &shape;
             
+            String *type = (String *)objectProperties->objectForKey("type");
+            if (type) {
+                
+                GameObject *gameObject = NULL;
+                if(type->compare("Printer") == 0)
+                    gameObject = new Printer();
+                
+                else if(type->compare("EmptyPaper") == 0)
+                    gameObject = new EmptyPaper();
+                
+                else if(type->compare("Document") == 0)
+                    gameObject = new Document();
+                
+                else if(type->compare("BossDesk") == 0)
+                    gameObject = new BossDesk();
+                
+                if (gameObject) {
+                    gameObject->init(_world, objectProperties);
+                    fixtureDef.userData = gameObject;
+                    _staticObjects.push_back(gameObject);
+                }
+                
+            }
+            
             b2BodyDef bodyDef;
             bodyDef.type = b2_staticBody;
             bodyDef.position.Set(x, y);
