@@ -17,7 +17,7 @@ The more caffeine, the more speed.
 By reaching a certain amount of caffeine, the player begins to take health damage, and gets closer to being one of the addicted workers.
 
 You must survive the addicion as long as possible to accumulate more score.
-By taking xerox copies, you gain bonus score.
+By making copies, you gain bonus score.
 
 
 Gameplay: pickups
