@@ -2,6 +2,8 @@
 #include "AppDelegate.h"
 #include "CCEGLView.h"
 
+#include "resource.h"
+
 USING_NS_CC;
 
 int APIENTRY _tWinMain(HINSTANCE hInstance,
@@ -17,5 +19,13 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
     EGLView* eglView = EGLView::sharedOpenGLView();
     eglView->setViewName("Office Rampage");
     eglView->setFrameSize(1024, 768);
+    
+	HICON hIcon = LoadIcon( GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_ICON1) );
+	if( hIcon )
+	{
+        SendMessage( eglView->getHWnd(), WM_SETICON, ICON_BIG, (LPARAM)hIcon );
+        DestroyIcon( hIcon );
+	}
+    
     return Application::sharedApplication()->run();
 }
