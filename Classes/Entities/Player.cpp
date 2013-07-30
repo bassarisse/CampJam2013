@@ -87,7 +87,7 @@ void Player::update(float dt) {
         
         bool isRecord = _score > bestScore;
         
-        if (bestScore) {
+        if (isRecord) {
             UserDefault::sharedUserDefault()->setIntegerForKey("Record", _score);
             UserDefault::sharedUserDefault()->flush();
         }

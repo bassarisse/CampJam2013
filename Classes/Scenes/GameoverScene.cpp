@@ -44,8 +44,8 @@ bool GameoverScene::init(int score, bool isRecord)  {
 	LabelBMFont *scoreLabel = LabelBMFont::create(
 		String::createWithFormat("Your score: %d%s", _score, isRecord ? "\nNew record!\nNow get back to work!" : "")->getCString(), "MainFont.fnt", 600,kTextAlignmentLeft);
 
-	scoreLabel->setAnchorPoint(ccp(0.0,0.5));
-	scoreLabel->setPosition(ccp(10, this->getContentSize().height - 90));
+	scoreLabel->setAnchorPoint(ccp(0.0, 1.0));
+	scoreLabel->setPosition(ccp(10, this->getContentSize().height - 10));
  
 	MenuItemImage* startOpt = MenuItemImage::create("startover.png", "startover.png", [](Object* obj) {
 		CocosDenshion::SimpleAudioEngine::sharedEngine()->stopBackgroundMusic(false);
