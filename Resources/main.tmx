@@ -5,57 +5,54 @@
  </tileset>
  <layer name="main" width="30" height="23">
   <data encoding="base64" compression="zlib">
-   eJztlWsLwjAMReNjk31TRFDBCT7wgX7Q///jvIUOSsjWZHZTxMCBwso9Y0vTjIgyBaTcp2UAhhHG3qvZq8Hl5WACbuDu15zCe/Oa5xqWYBXkVVkP8OzQuwGl4G0ihZfn/b2/7Z2CGeNo9B6EjCbmJBfPj3kLISNW0gzrwyvNvmsLr3U+p+iri/Du2vn8zedI0/sxFi28Ulm/wdrofac/QrYGr+ubUQ2891P+39SE3h3Yf8B7AucevdLZ6Bp3L7wA9H4Uxw==
+   eJztlWsLwiAUhk+XbexbEcEKWrCKLtSH9f9/3F7BgbizeQzdYCQ8ICjvI3g8JkSUCCDhPikLsHSw1l7JXgkqLwUZeIOPntvk2pv2rEsowMHIa7Nq8I3oPYGS8Q4Rwmvn/b3z9m7A1uLm6b0yGUPsiB92vsubMxmuwfWwMbxc73v94PXtzyHq6smcXdqf5/6O9hN5j55eaS24OHt4Vd2sqFvnse83NKa3ApcJvHfwGNHL/QuxUf9CA41eFLg=
   </data>
  </layer>
  <objectgroup name="collision" width="30" height="23">
   <object x="50" y="1250">
-   <polyline points="0,0 0,1000 2900,1000 2900,100 1700,100 1700,-300 2900,-300 2900,-1100 1100,-1100 1100,300 1600,300 1600,600 900,600 900,-1100 0,-1100 0,-300 500,-300 500,0 0,0"/>
+   <polyline points="0,0 0,1000 2900,1000 2900,100 1700,100 1700,-300 2900,-300 2900,-1100 1100,-1100 1100,300 1100,600 900,600 900,-1100 0,-1100 0,-300 500,-300 500,0 0,0"/>
   </object>
-  <object type="BossDesk" x="210" y="211">
-   <polyline points="0,0 182,1 183,157 0,157 0,0"/>
-  </object>
-  <object type="Document" x="210" y="2010">
-   <polyline points="0,0 182,1 183,157 0,157 0,0"/>
-  </object>
-  <object type="EmptyPaper" x="2607" y="212">
-   <polyline points="0,0 182,1 183,157 0,157 0,0"/>
-  </object>
-  <object type="Printer" x="2808" y="1507">
-   <polyline points="0,0 84,0 84,239 2,239 0,0"/>
-  </object>
+  <object type="EmptyPaper" x="2608" y="213" width="181" height="161"/>
+  <object type="Document" x="211" y="2011" width="181" height="157"/>
+  <object type="BossDesk" x="211" y="212" width="181" height="157"/>
+  <object type="Printer" x="2809" y="1509" width="83" height="238"/>
  </objectgroup>
  <objectgroup name="objects" width="30" height="23">
   <object type="Player" x="2565" y="1567" width="100" height="100"/>
-  <object type="EnemySpawnPoint" x="1400" y="845" width="100" height="100">
-   <properties>
-    <property name="MaxObjects" value="2"/>
-   </properties>
-  </object>
   <object type="CollectableSpawnPoint" x="2279" y="627" width="100" height="100"/>
-  <object type="EnemySpawnPoint" x="554" y="1900" width="100" height="100"/>
   <object type="CollectableSpawnPoint" x="1752" y="452" width="100" height="100"/>
-  <object type="CollectableSpawnPoint" x="1100" y="2100" width="100" height="100"/>
+  <object type="CollectableSpawnPoint" x="1148" y="2056" width="100" height="100"/>
   <object type="CollectableSpawnPoint" x="388" y="1727" width="100" height="100"/>
   <object type="CollectableSpawnPoint" x="600" y="1300" width="100" height="100"/>
-  <object type="CollectableSpawnPoint" x="200" y="600" width="100" height="100"/>
+  <object type="CollectableSpawnPoint" x="140" y="668" width="100" height="100"/>
   <object type="CollectableSpawnPoint" x="1842" y="1906" width="100" height="100"/>
   <object type="CollectableSpawnPoint" x="1700" y="1400" width="100" height="100"/>
   <object type="CollectableSpawnPoint" x="2252" y="1830" width="100" height="100"/>
   <object type="CollectableSpawnPoint" x="176" y="1442" width="100" height="100"/>
-  <object type="EnemySpawnPoint" x="2682" y="2022" width="100" height="100"/>
-  <object type="EnemySpawnPoint" x="646" y="470" width="100" height="100"/>
+  <object type="EnemySpawnPoint" x="646" y="470" width="100" height="100">
+   <properties>
+    <property name="MaxObjects" value="3"/>
+   </properties>
+  </object>
   <object type="EnemySpawnPoint" x="2030" y="1574" width="100" height="100"/>
-  <object type="EnemySpawnPoint" x="318" y="1410" width="100" height="100"/>
-  <object type="EnemySpawnPoint" x="410" y="614" width="100" height="100"/>
+  <object type="EnemySpawnPoint" x="318" y="1410" width="100" height="100">
+   <properties>
+    <property name="MaxObjects" value="3"/>
+   </properties>
+  </object>
+  <object type="EnemySpawnPoint" x="410" y="614" width="100" height="100">
+   <properties>
+    <property name="MaxObjects" value="3"/>
+   </properties>
+  </object>
   <object type="EnemySpawnPoint" x="2554" y="558" width="100" height="100">
    <properties>
-    <property name="MaxObjects" value="5"/>
+    <property name="MaxObjects" value="3"/>
    </properties>
   </object>
   <object type="EnemySpawnPoint" x="1574" y="226" width="100" height="100">
    <properties>
-    <property name="MaxObjects" value="2"/>
+    <property name="MaxObjects" value="3"/>
    </properties>
   </object>
   <object type="CollectableSpawnPoint" x="2074" y="330" width="100" height="100"/>
@@ -66,8 +63,9 @@
   <object type="CollectableSpawnPoint" x="678" y="218" width="100" height="100"/>
   <object type="CollectableSpawnPoint" x="542" y="2114" width="100" height="100"/>
   <object type="CollectableSpawnPoint" x="1434" y="1978" width="100" height="100"/>
-  <object type="EnemySpawnPoint" x="1310" y="2102" width="100" height="100"/>
-  <object type="EnemySpawnPoint" x="1938" y="766" width="100" height="100"/>
-  <object type="EnemySpawnPoint" x="778" y="1210" width="100" height="100"/>
+  <object type="CollectableSpawnPoint" x="1490" y="886" width="100" height="100"/>
+  <object type="CollectableSpawnPoint" x="1294" y="1678" width="100" height="100"/>
+  <object type="CollectableSpawnPoint" x="78" y="2110" width="100" height="100"/>
+  <object type="CollectableSpawnPoint" x="766" y="1750" width="100" height="100"/>
  </objectgroup>
 </map>
