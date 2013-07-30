@@ -62,7 +62,6 @@ void CoffeeBar::update(float dt) {
 void CoffeeBar::blinkBar() {
 	Blink* blink = Blink::create(0.3f, 2);
 	this->stopAllActions();
-	this->runAction(blink);
-	
+	this->runAction(Sequence::create(Show::create(), blink, NULL));
 }
 
