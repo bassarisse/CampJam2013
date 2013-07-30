@@ -139,6 +139,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\Classes\CoffeeBar.cpp" />
     <ClCompile Include="..\Classes\Entities\CollectableSpawnPoint.cpp" />
     <ClCompile Include="..\Classes\Entities\Collectables\Coffee.cpp" />
+    <ClCompile Include="..\Classes\Entities\Collectables\Collectable.cpp" />
     <ClCompile Include="..\Classes\Entities\Collectables\Donut.cpp" />
     <ClCompile Include="..\Classes\Entities\Collectables\PeaBerry.cpp" />
     <ClCompile Include="..\Classes\Entities\Collectables\Water.cpp" />
@@ -170,6 +171,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\Classes\Common.h" />
     <ClInclude Include="..\Classes\Entities\CollectableSpawnPoint.h" />
     <ClInclude Include="..\Classes\Entities\Collectables\Coffee.h" />
+    <ClInclude Include="..\Classes\Entities\Collectables\Collectable.h" />
     <ClInclude Include="..\Classes\Entities\Collectables\Donut.h" />
     <ClInclude Include="..\Classes\Entities\Collectables\PeaBerry.h" />
     <ClInclude Include="..\Classes\Entities\Collectables\Water.h" />
@@ -190,6 +192,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\Classes\Scenes\TitleScene.h" />
     <ClInclude Include="..\Classes\ScoreLayer.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\cocos2dx\proj.win32\cocos2d.vcxproj">
@@ -204,6 +207,9 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
       <Project>{929480e7-23c0-4df6-8456-096d71547116}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resources.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
