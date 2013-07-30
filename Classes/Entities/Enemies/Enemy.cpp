@@ -81,7 +81,7 @@ void Enemy::update(float dt) {
     Sprite *thisSprite = (Sprite *)this->getNode();
     thisSprite->setColor(ccc3(255, colorAdd, colorAdd));
     
-	if(_drinkedCoffee >= kEnemyDeathCoffeeNumber && _state != GameObjectStateDead) {
+	if(_drinkedCoffee >= kEnemyDeathCoffeeNumber) {
 		FadeOut* dying = FadeOut::create(1.5f);
 		JumpTo* deathLeap = JumpTo::create(0.75f, ccp(_node->getPosition().x,_node->getPosition().y), 15, 1);
 		Sequence* deathSequence = Sequence::create(dying, CallFunc::create(this, callfunc_selector(Enemy::finishedDyingAction)), NULL);

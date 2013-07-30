@@ -31,18 +31,11 @@ bool TitleScene::init()  {
     {
         return false;
     }
-
-	/*
-	LayerGradient* bgGrad = LayerGradient::create(ccc4(255,116,0,255), 
-		ccc4(255,103,15,255));
-	bgGrad->setPosition(ccp(0,0));
-	bgGrad->setContentSize(this->getContentSize());
-	*/
+    
+	_creditsShown = false;
 
 	Sprite* bgSprite = Sprite::create("officerampage.png");
 	bgSprite->setPosition(ccp((this->getContentSize().width / 2), this->getContentSize().height / 2));
-
-	_creditsShown = false;
 
 	MenuItemImage* startOpt = MenuItemImage::create("gettowork.png", "gettowork.png", [](Object* obj) {
 		CocosDenshion::SimpleAudioEngine::sharedEngine()->stopBackgroundMusic(false);
@@ -50,45 +43,56 @@ bool TitleScene::init()  {
 	
 		Director::sharedDirector()->replaceScene(TransitionFade::create(1.0f, pScene));
 	});
+    
 	MenuItemImage* creditsOpt = MenuItemImage::create("credits.png", "credits.png",  [this](Object* obj) {
 		_creditsShown = true;
 		this->addChild(credits);
 		menu->setEnabled(false);
 	});
+    
+	LabelBMFont* creditsText = LabelBMFont::create("CREDITS\n \nCoding:\n Bruno Assarisse\nMurilo Clemente\n \nArt:\nCamila Christie\n \nMade in CampJam 2013\n within 48 hours :)", "MainFont.fnt", 750, kTextAlignmentCenter);
+	creditsText->setPosition(ccp(this->getContentSize().width / 2, this->getContentSize().height / 2));
 	
-
 	credits = LayerColor::create(ccc4(0,0,0,130));
 	credits->retain();
 	credits->setPosition(ccp(0,0));
 	credits->setContentSize(CCSizeMake(1024, 768));
-	
 	credits->setAnchorPoint(ccp(0, 0));
 	credits->setPosition(ccp(0,0));
-
-	LabelBMFont* creditstitle = LabelBMFont::create("CREDITS \n \n Coding: \n Bruno Assarisse \n Murilo Clemente \n \n Art: \n Camila Christie \n \n Made in CampJam 2013 \n within 48 hours :)", 
-		"MainFont.fnt",750,kTextAlignmentCenter);
-	creditstitle->setPosition(ccp(this->getContentSize().width / 2, this->getContentSize().height - 350));
-
-	credits->addChild(creditstitle);
+	credits->addChild(creditsText);
 
 	menu = Menu::create(startOpt, creditsOpt, NULL);
 	menu->setPosition(ccp(this->getContentSize().width / 2, 60));
-	menu->alignItemsHorizontallyWithPadding(650);
+	menu->alignItemsHorizontallyWithPadding(670);
 
 	this->addChild(bgSprite);
 	this->addChild(menu);
-	CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("title_bgm.mp3", true);
+	
+    SimpleAudioEngine::sharedEngine()->playBackgroundMusic("title_bgm.mp3", true);
+    
+    this->setTouchEnabled(true);
 
 	return true;
 }
 
-void TitleScene::update(float dt) {
-	
+void TitleScene::registerWithTouchDispatcher()
+{
+    Director::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
+}
+
+bool TitleScene::ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) {
+    return true;
+}
+
+void TitleScene::ccTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) {
+    this->buttonAny(false);
 }
 
 void TitleScene::buttonAny(bool pressed) {
-	if(!pressed)
+    
+	if(pressed)
 		return;
+    
 	if(_creditsShown)
 	{
 		_creditsShown = false;

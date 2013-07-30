@@ -13,16 +13,19 @@ public:
 
 	virtual ~TitleScene();
 
+	LayerColor *credits;
+	Menu* menu;
+	bool _creditsShown;
+
 	virtual bool init();
 	static Scene* scene();
 	CREATE_FUNC(TitleScene);
-
-	void update(float dt);
+    
+    virtual void registerWithTouchDispatcher();
+    bool ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent);
+    void ccTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent);
 	virtual void buttonAny(bool pressed);
-	bool _creditsShown;
-
-	LayerColor *credits;
-	Menu* menu;
+    
 };
 
 #endif // __CAMPJAM_SCENE_H__
