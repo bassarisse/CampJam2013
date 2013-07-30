@@ -69,6 +69,7 @@ void Player::update(float dt) {
         if (_isUnderPeaBerryEffect) {
             _speedFactor -= kPeaBerrySpeedFactor;
             _isUnderPeaBerryEffect = false;
+			_gameScreen->getCoffeeBar()->setPeaBerry(false);
         }
     }
     
@@ -177,6 +178,7 @@ void Player::handleCollision(GameObject *gameObject) {
             _isUnderPeaBerryEffect = true;
             _peaBerryTime = kPeaBerryTime;
             gameObject->setState(GameObjectStateDead);
+			_gameScreen->getCoffeeBar()->setPeaBerry(true);
 			_gameScreen->getCoffeeBar()->blinkBar();
             break;
             

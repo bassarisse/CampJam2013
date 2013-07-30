@@ -8,9 +8,15 @@ using namespace cocos2d;
 
 class CoffeeBar : public Layer
 {
-public:
     
-    ~CoffeeBar();
+private:
+    
+    Sprite* _coffeeIcon;
+	LayerColor* _bar;
+	Sprite* _gaugeSprite;
+    
+    
+public:
     
     virtual bool init(float coffeeLevel);
             
@@ -18,11 +24,9 @@ public:
 	void setCoffeeLevel(float coff);
 
 	virtual void update(float dt);
-
-	LayerColor* _bar;
-	Sprite* _gaugeSprite;
-
+    
 	void blinkBar();
+	void setPeaBerry(bool isPeaBerry);
 
 };
 
