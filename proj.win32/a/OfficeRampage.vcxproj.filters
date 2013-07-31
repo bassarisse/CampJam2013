@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\B2DebugDraw">
+      <UniqueIdentifier>{491bb68e-a1bf-4129-add5-2fabe5f51f9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Entities">
+      <UniqueIdentifier>{46cb38cb-78ef-4e45-a78e-f458668ff18e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Scenes">
+      <UniqueIdentifier>{94616487-c3fd-4f6d-baea-9b59d07ec6e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Entities\Collectables">
+      <UniqueIdentifier>{a147a527-e74e-45a6-8ba8-920eaa1e8235}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Entities\Enemies">
+      <UniqueIdentifier>{a74abc85-44b8-4529-b25f-39e036bc5d65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Entities\Static">
+      <UniqueIdentifier>{bbeecf6f-25a3-4f51-bef7-94b131bc562d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\B2DebugDraw\GLES-Render.cpp">
+      <Filter>Classes\B2DebugDraw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\B2DebugDraw\B2DebugDrawLayer.cpp">
+      <Filter>Classes\B2DebugDraw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\CollectableSpawnPoint.cpp">
+      <Filter>Classes\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\EnemySpawnPoint.cpp">
+      <Filter>Classes\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Player.cpp">
+      <Filter>Classes\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Static\BossDesk.cpp">
+      <Filter>Classes\Entities\Static</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Static\Document.cpp">
+      <Filter>Classes\Entities\Static</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Static\EmptyPaper.cpp">
+      <Filter>Classes\Entities\Static</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Static\Printer.cpp">
+      <Filter>Classes\Entities\Static</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Enemies\Woman.cpp">
+      <Filter>Classes\Entities\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Enemies\Enemy.cpp">
+      <Filter>Classes\Entities\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Enemies\Man.cpp">
+      <Filter>Classes\Entities\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Enemies\Manager.cpp">
+      <Filter>Classes\Entities\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Collectables\PeaBerry.cpp">
+      <Filter>Classes\Entities\Collectables</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Collectables\Water.cpp">
+      <Filter>Classes\Entities\Collectables</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Collectables\Coffee.cpp">
+      <Filter>Classes\Entities\Collectables</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Collectables\Collectable.cpp">
+      <Filter>Classes\Entities\Collectables</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Collectables\Donut.cpp">
+      <Filter>Classes\Entities\Collectables</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Scenes\TitleScene.cpp">
+      <Filter>Classes\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Scenes\GameoverScene.cpp">
+      <Filter>Classes\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\BAContactListener.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\BaseLayer.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CoffeeBar.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameObject.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GamePlay.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HealthBar.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ScoreLayer.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\B2DebugDraw\B2DebugDrawLayer.h">
+      <Filter>Classes\B2DebugDraw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\B2DebugDraw\GLES-Render.h">
+      <Filter>Classes\B2DebugDraw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\CollectableSpawnPoint.h">
+      <Filter>Classes\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\EnemySpawnPoint.h">
+      <Filter>Classes\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Player.h">
+      <Filter>Classes\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Static\BossDesk.h">
+      <Filter>Classes\Entities\Static</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Static\Document.h">
+      <Filter>Classes\Entities\Static</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Static\EmptyPaper.h">
+      <Filter>Classes\Entities\Static</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Static\Printer.h">
+      <Filter>Classes\Entities\Static</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Enemies\Manager.h">
+      <Filter>Classes\Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Enemies\Woman.h">
+      <Filter>Classes\Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Enemies\Enemy.h">
+      <Filter>Classes\Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Enemies\Man.h">
+      <Filter>Classes\Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Collectables\PeaBerry.h">
+      <Filter>Classes\Entities\Collectables</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Collectables\Water.h">
+      <Filter>Classes\Entities\Collectables</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Collectables\Coffee.h">
+      <Filter>Classes\Entities\Collectables</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Collectables\Collectable.h">
+      <Filter>Classes\Entities\Collectables</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Collectables\Donut.h">
+      <Filter>Classes\Entities\Collectables</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scenes\TitleScene.h">
+      <Filter>Classes\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scenes\GameoverScene.h">
+      <Filter>Classes\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BAContactListener.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BaseLayer.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CoffeeBar.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Common.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameObject.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GamePlay.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HealthBar.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ScoreLayer.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resources.rc">
+      <Filter>win32</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
