@@ -76,6 +76,7 @@ public:
     CC_SYNTHESIZE(GameObjectState, _state, State);
     CC_SYNTHESIZE(GameObjectType, _type, Type);
     
+    
 };
 
 #endif /* defined(__CampJam__GameObject__) */

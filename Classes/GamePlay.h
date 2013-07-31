@@ -58,6 +58,7 @@ public:
 	CC_SYNTHESIZE(CoffeeBar*, _coffeeBar, CoffeeBar);
 	CC_SYNTHESIZE(HealthBar*, _healthBar, HealthBar);
 	CC_SYNTHESIZE(ScoreLayer*, _scoreLayer, ScoreLayer);
+    
 
 	LayerColor* _pauseLayer;
 	bool _isPaused;
@@ -94,4 +95,12 @@ public:
 	virtual void shakeScreen();
 };
 
+
+
+class Shadow : public Node {
+public:
+    static Shadow *create(void);
+    virtual void draw();
+    
+};
 #endif // __CAMPJAM_SCENE_H__

@@ -24,15 +24,22 @@ bool BaseLayer::init()
     Director::sharedDirector()->purgeCachedData();
     SpriteFrameCache::sharedSpriteFrameCache()->removeUnusedSpriteFrames();
     
-	this->setKeyboardEnabled(true);
-    
+    if(!CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    {
+        this->setKeyboardEnabled(true);
+    }
+
     return true;
 }
 
 void BaseLayer::onEnterTransitionDidFinish() {
     Layer::onEnterTransitionDidFinish();
     
-	this->setKeyboardEnabled(true);
+	if(!CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    {
+        this->setKeyboardEnabled(true);
+    }
+
 }
 
 double BaseLayer::getCurrentTimeInSeconds() {
