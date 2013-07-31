@@ -23,14 +23,16 @@ bool BaseLayer::init()
     
     Director::sharedDirector()->purgeCachedData();
     SpriteFrameCache::sharedSpriteFrameCache()->removeUnusedSpriteFrames();
-	this->setKeypadEnabled(true);
+    
+	this->setKeyboardEnabled(true);
+    
     return true;
 }
 
 void BaseLayer::onEnterTransitionDidFinish() {
     Layer::onEnterTransitionDidFinish();
     
-	this->setKeypadEnabled(true);
+	this->setKeyboardEnabled(true);
 }
 
 double BaseLayer::getCurrentTimeInSeconds() {
