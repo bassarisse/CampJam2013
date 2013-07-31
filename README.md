@@ -16,7 +16,7 @@ You have two gauges that measures the caffeine level and the health of the playe
 The more caffeine, the more speed.
 By reaching a certain amount of caffeine, the player begins to take health damage, and gets closer to being one of the addicted workers.
 
-You must survive the addicion as long as possible to accumulate more score.
+You must survive the addiction as long as possible to accumulate more score.
 By making copies, you gain bonus score.
 
 
