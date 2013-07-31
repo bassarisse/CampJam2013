@@ -10,8 +10,6 @@ class HealthBar : public Layer
 {
 public:
     
-    ~HealthBar();
-    
     virtual bool init(float healthLevel);
             
 	float _healthLevel;
@@ -20,8 +18,9 @@ public:
 	virtual void update(float dt);
 
 	LayerColor* _bar;
-	void blinkBar();
 	Sprite* _gaugeSprite;
+    
+	void blinkBar();
 
 };
 

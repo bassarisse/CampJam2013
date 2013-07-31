@@ -10,7 +10,6 @@
 #define __CampJam2013__EnemySpawnPoint__
 
 #include "cocos2d.h"
-//#include <Box2D/Box2D.h>
 #include "Common.h"
 
 class GamePlay;

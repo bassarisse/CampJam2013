@@ -1,14 +1,6 @@
 
 #include "Enemy.h"
 
-Enemy::~Enemy() {
-    
-}
-
-void Enemy::addFixtures() {
-	
-}
-
 bool Enemy::init(b2World *world, Dictionary *properties, Player *ref) {
     
     //_node = Sprite::createWithSpriteFrameName("right1.png");

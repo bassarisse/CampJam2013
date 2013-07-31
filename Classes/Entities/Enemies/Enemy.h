@@ -14,11 +14,7 @@
 
 class Enemy : public GameObject {
     
-private:
-    
 protected:
-    
-    virtual void addFixtures();
 	
 	virtual void handleCollision(GameObject *gameObject);
 
@@ -30,8 +26,6 @@ protected:
     Point _walkingPoint;
 
 public:
-    
-    virtual ~Enemy();
     
     virtual bool init(b2World *world, Dictionary *properties, Player* ref);
     virtual void update(float dt);

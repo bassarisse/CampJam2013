@@ -1,8 +1,5 @@
 #include "HealthBar.h"
 
-HealthBar::~HealthBar() {
-}
-
 bool HealthBar::init(float healthLevel) {
 	if ( !Layer::init() )
     {
@@ -17,15 +14,10 @@ bool HealthBar::init(float healthLevel) {
 	_gaugeSprite->setAnchorPoint(ccp(0, 0));
 	_gaugeSprite->setPosition(ccp(0, 0));
 
-	/*
-	LayerColor* bgBar = LayerColor::create(ccc4(0, 0, 0, 255));
-	bgBar->setPosition(0, 0);
-	bgBar->setContentSize(CCSizeMake(256, 40));
-	*/
-
 	_bar = LayerColor::create(ccc4(30, 230, 30, 255));
 	_bar->setPosition(5, 5);
-	_bar->setContentSize(CCSizeMake(_gaugeSprite->getContentSize().width - 3, 36));
+    
+    this->update(0);
 
 	Sprite* healthIcon = Sprite::createWithSpriteFrameName("donut.png");
 	healthIcon->setPosition(ccp(0, this->getContentSize().height / 2));
@@ -44,14 +36,12 @@ void HealthBar::setHealthLevel(float health) {
 }
 
 void HealthBar::update(float dt) {
-	int bgbarMaxWidth = _gaugeSprite->getContentSize().width - 6;
+	int bgbarMaxWidth = _gaugeSprite->getContentSize().width - 7;
 	_bar->setContentSize(CCSizeMake(bgbarMaxWidth * (_healthLevel / 100), 36));
-
 }
 
 void HealthBar::blinkBar() {
 	Blink* blink = Blink::create(0.3f, 2);
 	this->stopAllActions();
-	this->runAction(blink);
-	
+	this->runAction(Sequence::create(Show::create(), blink, NULL));
 }
