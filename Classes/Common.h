@@ -27,7 +27,7 @@ using namespace cocos2d;
 #define kDonutEffectAmount 25.0f
 #define kDamageBaseAmount 17.0f
 #define kDamageTime 0.3f
-#define kDamageImpulse 22.0f
+#define kDamageImpulse 20.0f
 #define kEnemyScore 300.0f
 #define kEnemyRandomRange 600
 #define kEnemyRandomTime 5.0f

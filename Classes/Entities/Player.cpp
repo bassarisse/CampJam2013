@@ -125,35 +125,26 @@ void Player::handleCollision(GameObject *gameObject) {
             Enemy *enemy = (Enemy *)gameObject;
             _life -= kDamageBaseAmount * enemy->getDamageFactor();
             
-            b2Vec2 vel = _body->GetLinearVelocity();
-            b2Vec2 enemyVel = enemy->getBody()->GetLinearVelocity();
+            Point thisPosition = _node->getPosition();
+            Point enemyPosition = enemy->getNode()->getPosition();
             
-            b2Vec2 targetVel;
+            float angleFromEnemy = 180 + atan2(enemyPosition.y - thisPosition.y,
+                                               enemyPosition.x - thisPosition.x) * 180 / M_PI;
             
-            float maxForce = 0;
+            float angleFromPlayer = 180 + atan2(thisPosition.y - enemyPosition.y,
+                                                thisPosition.x - enemyPosition.x) * 180 / M_PI;
             
-            if (this->getMovingHorizontalState() == MovingStateHorizontalStopped && this->getMovingVerticalState() == MovingStateVerticalStopped) {
-                
-                targetVel.x = enemyVel.x * 40;
-                targetVel.y = enemyVel.y * 40;
-                
-                maxForce = kDamageMaxForceStopped;
-                
-            } else {
-                
-                targetVel.x = vel.x * -12;
-                targetVel.y = vel.y * -12;
-                
-                maxForce = kDamageMaxForce;
-                
-            }
+            float playerImpulseX = kDamageImpulse * cos(angleFromEnemy * M_PI / 180.0f);
+            float playerImpulseY = kDamageImpulse * sin(angleFromEnemy * M_PI / 180.0f);
             
-            if (targetVel.x >  maxForce) { targetVel.y *=  maxForce / targetVel.x; targetVel.x =  maxForce; }
-            if (targetVel.x < -maxForce) { targetVel.y *= -maxForce / targetVel.x; targetVel.x = -maxForce; }
-            if (targetVel.y >  maxForce) { targetVel.x *=  maxForce / targetVel.y; targetVel.y =  maxForce; }
-            if (targetVel.y < -maxForce) { targetVel.x *= -maxForce / targetVel.y; targetVel.y = -maxForce; }
+            float enemyImpulseX = kDamageImpulse * 0.96f * cos(angleFromPlayer * M_PI / 180.0f);
+            float enemyImpulseY = kDamageImpulse * 0.96f * sin(angleFromPlayer * M_PI / 180.0f);
             
-            _body->ApplyLinearImpulse(targetVel, _body->GetWorldCenter());
+            b2Vec2 playerImpulse = b2Vec2(playerImpulseX, playerImpulseY);
+            b2Vec2 enemyImpulse = b2Vec2(enemyImpulseX, enemyImpulseY);
+            
+            enemy->getBody()->ApplyLinearImpulse(enemyImpulse, _body->GetWorldCenter());
+            _body->ApplyLinearImpulse(playerImpulse, _body->GetWorldCenter());
             _gameScreen->shakeScreen();
             
         }
