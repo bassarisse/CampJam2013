@@ -1,5 +1,7 @@
 
 #include "Enemy.h"
+#include "../Shadow.h"
+#include "Box2D.h"
 
 bool Enemy::init(b2World *world, Dictionary *properties, Player *ref) {
     
@@ -79,6 +81,11 @@ void Enemy::update(float dt) {
     
 }
 
+void Enemy::updatePosition(Point position) {
+    position.y += 6;
+    _node->setPosition(position);
+}
+
 void Enemy::handleCollision(GameObject *gameObject)  {
     
     switch(gameObject->getType()) {
@@ -113,6 +120,8 @@ void Enemy::die() {
                                                      _node->getPosition().y + (_node->getContentSize().height * 0.25f)
                                                      ), kEnemyScore);
     _node->runAction(deathRitual);
+    
+    this->getShadow()->runAction(Hide::create());
     
 }
 

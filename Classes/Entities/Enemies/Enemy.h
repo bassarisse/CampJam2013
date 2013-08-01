@@ -29,6 +29,7 @@ public:
     
     virtual bool init(b2World *world, Dictionary *properties, Player* ref);
     virtual void update(float dt);
+    virtual void updatePosition(Point position);
 
 	virtual void handleMovement();
     virtual void die();

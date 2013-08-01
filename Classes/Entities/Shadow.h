@@ -7,6 +7,7 @@
 using namespace cocos2d;
 
 class Shadow : public Node {
+    
 public:
 	CC_SYNTHESIZE(GameObject*, _baseEntity, BaseEntity);
 
@@ -15,4 +16,4 @@ public:
 
     
 };
-#endif // __CAMPJAM_SCENE_H__
+#endif // __CAMPJAM_SHADOW_H__

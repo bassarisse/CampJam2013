@@ -37,6 +37,7 @@ public:
     Size _winSize;
     BAContactListener *_contactListener;
     Layer *_mainLayer;
+    Layer *_shadowlayer;
     SpriteBatchNode *_mainBatchNode;
     TMXTiledMap *_tiledMap;
     B2DebugDrawLayer *_debugLayer;

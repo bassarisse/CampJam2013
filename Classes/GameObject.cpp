@@ -7,6 +7,7 @@
 //
 
 #include "GameObject.h"
+#include "Entities/Shadow.h"
 
 GameObject::GameObject() {
     
@@ -34,6 +35,15 @@ void GameObject::setProperties(Dictionary* properties)
 void GameObject::addCircularFixture(float radius) {
     
     b2CircleShape shape;
+    shape.m_radius = radius * _node->getScale() / PTM_RATIO;
+    this->createFixture(&shape);
+    
+}
+
+void GameObject::addCircularFixture(float x, float y, float radius) {
+    
+    b2CircleShape shape;
+    shape.m_p = b2Vec2(x * _node->getScale() / PTM_RATIO, y * _node->getScale() / PTM_RATIO);
     shape.m_radius = radius * _node->getScale() / PTM_RATIO;
     this->createFixture(&shape);
     
@@ -187,9 +197,11 @@ void GameObject::update(float dt) {
     int y = position.y * PTM_RATIO;
     
     if (!_isSensor)
-        _node->setPosition(x, y);
+        this->updatePosition(ccp(x, y));
     
-    _node->getParent()->reorderChild(_node, - 10 - y + (_node->getContentSize().height * _node->getScaleY()) / 2);
+    int zOrder = - 10 - y + (_node->getContentSize().height * _node->getScaleY()) / 2;
+    
+    _node->getParent()->reorderChild(_node, zOrder);
     //_node->setVertexZ(- 10 - y);
     
     this->handleMovement();
@@ -202,6 +214,10 @@ void GameObject::update(float dt) {
 		_contacts.clear();
 	}
         
+}
+
+void GameObject::updatePosition(Point position) {
+    _node->setPosition(position);
 }
 
 void GameObject::handleMovement() {

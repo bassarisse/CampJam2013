@@ -125,6 +125,7 @@
 		627A379517A8B13D00C169B3 /* tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 627A377E17A8B13D00C169B3 /* tiles.png */; };
 		627A379617A8B13D00C169B3 /* title_bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 627A377F17A8B13D00C169B3 /* title_bgm.mp3 */; };
 		627A379717A8B13D00C169B3 /* wilhem.wav in Resources */ = {isa = PBXBuildFile; fileRef = 627A378017A8B13D00C169B3 /* wilhem.wav */; };
+		62840FDA17A9EA5C0010E074 /* Shadow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62840FD817A9EA5C0010E074 /* Shadow.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -350,6 +351,8 @@
 		627A377E17A8B13D00C169B3 /* tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tiles.png; sourceTree = "<group>"; };
 		627A377F17A8B13D00C169B3 /* title_bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = title_bgm.mp3; sourceTree = "<group>"; };
 		627A378017A8B13D00C169B3 /* wilhem.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wilhem.wav; sourceTree = "<group>"; };
+		62840FD817A9EA5C0010E074 /* Shadow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shadow.cpp; sourceTree = "<group>"; };
+		62840FD917A9EA5C0010E074 /* Shadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shadow.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -691,6 +694,8 @@
 				627A373517A8B12000C169B3 /* EnemySpawnPoint.h */,
 				627A373617A8B12000C169B3 /* Player.cpp */,
 				627A373717A8B12000C169B3 /* Player.h */,
+				62840FD817A9EA5C0010E074 /* Shadow.cpp */,
+				62840FD917A9EA5C0010E074 /* Shadow.h */,
 			);
 			name = Entities;
 			path = ../Classes/Entities;
@@ -973,6 +978,7 @@
 				627A376717A8B12000C169B3 /* GameoverScene.cpp in Sources */,
 				627A376817A8B12000C169B3 /* TitleScene.cpp in Sources */,
 				627A376917A8B12000C169B3 /* ScoreLayer.cpp in Sources */,
+				62840FDA17A9EA5C0010E074 /* Shadow.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -88,6 +88,7 @@ bool GamePlay::init()
     
     _contactListener = new BAContactListener();
     _mainLayer = Layer::create();
+    _shadowlayer = Layer::create();
     _mainBatchNode = SpriteBatchNode::create("Characters.png");
     _tiledMap = TMXTiledMap::create("main.tmx");
     _isTouching = false;
@@ -96,6 +97,7 @@ bool GamePlay::init()
     _mainBatchNode->getTexture()->setAliasTexParameters();
     
     _mainLayer->addChild(_tiledMap);
+    _mainLayer->addChild(_shadowlayer);
     _mainLayer->addChild(_mainBatchNode);
     
     this->addChild(_mainLayer);
@@ -129,7 +131,7 @@ bool GamePlay::init()
             plinit->init(_world, objectProperties, this);
             _mainBatchNode->addChild(plinit->getNode());
 			Shadow* playerShadow = Shadow::create(plinit);
-            _mainLayer->addChild(playerShadow);
+            _shadowlayer->addChild(playerShadow);
             //_gameObjects.push_back(player);
 		}
 		else if (type->compare("EnemySpawnPoint") == 0)
@@ -344,8 +346,9 @@ bool GamePlay::init()
 
     this->scheduleUpdate();
     
-    //_debugLayer = B2DebugDrawLayer::create(_world, PTM_RATIO);
 	_debugLayer = NULL;
+    //_debugLayer = B2DebugDrawLayer::create(_world, PTM_RATIO);
+    
     if (_debugLayer)
         this->addChild(_debugLayer, 9999);
     
@@ -399,7 +402,11 @@ void GamePlay::update(float dt) {
 	//Add the dead objects to be removed in a separated array
 	for(std::vector<GameObject *>::size_type i = 0; i < _gameObjects.size(); i++) {
         GameObject *gameObj = _gameObjects[i];
-		if(gameObj->getState() == GameObjectStateDead) {
+        
+        if (gameObj->getState() == GameObjectStateDying && gameObj->getBody()->IsActive())
+            _world->DestroyBody(gameObj->getBody());
+        
+		if (gameObj->getState() == GameObjectStateDead) {
 			switch(gameObj->getType()) {
 				case GameObjectTypeWater:
                 case GameObjectTypePeaBerry:
@@ -418,6 +425,7 @@ void GamePlay::update(float dt) {
 
             this->removeObject(gameObj);
 		}
+            
     }
 
 	Player* pl = (Player*)_player;
@@ -454,7 +462,7 @@ GameObject* GamePlay::createGameObject(GameObjectType type, Dictionary *properti
             _gameObjects.push_back(newPowerup);
 
 			objShadow = Shadow::create(newPowerup);
-			_mainLayer->addChild(objShadow);
+			_shadowlayer->addChild(objShadow);
 			newPowerup->setShadow(objShadow);
 
             this->startHover(newPowerup);
@@ -470,7 +478,7 @@ GameObject* GamePlay::createGameObject(GameObjectType type, Dictionary *properti
             _gameObjects.push_back(newPowerup);
 			
 			objShadow = Shadow::create(newPowerup);
-			_mainLayer->addChild(objShadow);
+			_shadowlayer->addChild(objShadow);
 			newPowerup->setShadow(objShadow);
 
             this->startHover(newPowerup);
@@ -486,7 +494,7 @@ GameObject* GamePlay::createGameObject(GameObjectType type, Dictionary *properti
             _gameObjects.push_back(newPowerup);
 			
 			objShadow = Shadow::create(newPowerup);
-			_mainLayer->addChild(objShadow);
+			_shadowlayer->addChild(objShadow);
 			newPowerup->setShadow(objShadow);
 
             this->startHover(newPowerup);
@@ -502,7 +510,7 @@ GameObject* GamePlay::createGameObject(GameObjectType type, Dictionary *properti
             _gameObjects.push_back(newPowerup);
 			
 			objShadow = Shadow::create(newPowerup);
-			_mainLayer->addChild(objShadow);
+			_shadowlayer->addChild(objShadow);
 			newPowerup->setShadow(objShadow);
 
             this->startHover(newPowerup);
@@ -521,7 +529,7 @@ GameObject* GamePlay::createGameObject(GameObjectType type, Dictionary *properti
             _gameObjects.push_back(newEnemy);
 			
 			objShadow = Shadow::create(newEnemy);
-			_mainLayer->addChild(objShadow);
+			_shadowlayer->addChild(objShadow);
 			newEnemy->setShadow(objShadow);
 
             return newEnemy;
@@ -536,7 +544,7 @@ GameObject* GamePlay::createGameObject(GameObjectType type, Dictionary *properti
             _gameObjects.push_back(newEnemy);
 
 			objShadow = Shadow::create(newEnemy);
-			_mainLayer->addChild(objShadow);
+			_shadowlayer->addChild(objShadow);
 			newEnemy->setShadow(objShadow);
 
             return newEnemy;
@@ -551,7 +559,7 @@ GameObject* GamePlay::createGameObject(GameObjectType type, Dictionary *properti
             _gameObjects.push_back(newEnemy);
 
 			objShadow = Shadow::create(newEnemy);
-			_mainLayer->addChild(objShadow);
+			_shadowlayer->addChild(objShadow);
 			newEnemy->setShadow(objShadow);
 
             return newEnemy;
@@ -578,19 +586,23 @@ void GamePlay::startHover(GameObject *gameObject) {
 }
 
 void GamePlay::removeObject(GameObject* deadObject) {
-	deadObject->getShadow()->stopAllActions();
-	deadObject->getShadow()->removeFromParentAndCleanup(true);
-
+    
+    if (deadObject->getShadow()) {
+        deadObject->getShadow()->stopAllActions();
+        deadObject->getShadow()->removeFromParentAndCleanup(true);
+    }
+    
 	std::vector<GameObject *>::iterator pos;
 	pos = std::find(_gameObjects.begin(), _gameObjects.end(), deadObject);
 	_gameObjects.erase(pos);
     
 	Node* deadNode = deadObject->getNode();
-    _world->DestroyBody(deadObject->getBody());
+    if (deadObject->getBody()->IsActive())
+        _world->DestroyBody(deadObject->getBody());
     
-	deadObject->release();
     deadNode->stopAllActions();
 	deadNode->removeFromParentAndCleanup(true);
+	deadObject->release();
     deadObject = NULL;
     
 }

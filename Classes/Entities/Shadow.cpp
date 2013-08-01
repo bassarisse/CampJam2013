@@ -1,7 +1,9 @@
 #include "Shadow.h"
 
+#include "Common.h"
 
 void Shadow::draw() {
+    
 	if(!_baseEntity) {
 		this->stopAllActions();
 		this->removeFromParentAndCleanup(true);
@@ -9,21 +11,29 @@ void Shadow::draw() {
 	 
     Node::draw();
 	
-
 	glEnable(GL_LINE_SMOOTH);
-	glLineWidth(1);
 	//glColor4ub(0, 255, 0, 255);
-	ccDrawColor4B(0,0,0,50);
+	glLineWidth(1);
+    
 	Size entitySize = _baseEntity->getNode()->getContentSize();
-	Point entityPosition = _baseEntity->getNode()->getPosition();
+	b2Vec2 bodyPosition = _baseEntity->getBody()->GetPosition();
+	Point entityPosition = ccp(bodyPosition.x * PTM_RATIO, bodyPosition.y * PTM_RATIO);
+    
+	ccDrawColor4B(0, 0, 0, 15);
 	ccDrawCircle(
-		ccp(entityPosition.x, entityPosition.y - (entitySize.height / 2.3)), 
-		entitySize.width / 2.8,
-		0, 200, false, 1, 0.15);
+                 ccp(entityPosition.x, entityPosition.y - (entitySize.height / 2.4f)),
+                 entitySize.width / 4.4f,
+                 0, 200, false, 1, 0.15f);
+    
+	ccDrawColor4B(0, 0, 0, 40);
+	ccDrawFilledCircle(
+                       ccp(entityPosition.x, entityPosition.y - (entitySize.height / 2.4f)),
+                       entitySize.width / 4.5f,
+                       0, 200, false, 1, 0.15f);
 
 	// restore original values
+	glColor4ub(255, 255, 255, 255);
 	glLineWidth(1);
-	glColor4ub(255,255,255,255);
 	glPointSize(1);
 }
 

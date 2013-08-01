@@ -6,8 +6,9 @@ void Man::addFixtures() {
     
     float width = _node->getContentSize().width * 0.32f;
     float height = _node->getContentSize().height * 0.2f;
-    //this->addCircularFixture(width / 2);
-    this->addRectangularFixture(0, -height * 2, width, height);
+    
+    this->addCircularFixture(0, -height * 2, width / 2);
+    //this->addRectangularFixture(0, -height * 2, width, height);
 
 } 
 
@@ -32,4 +33,9 @@ bool Man::init(b2World *world, Dictionary *properties, Player *ref) {
 void Man::die() {
     CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("death_man.wav");
     Enemy::die();
+}
+
+void Man::updatePosition(Point position) {
+    position.y += 10;
+    _node->setPosition(position);
 }

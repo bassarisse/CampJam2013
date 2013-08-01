@@ -6,8 +6,9 @@ void Woman::addFixtures() {
     
     float width = _node->getContentSize().width * 0.32f;
     float height = _node->getContentSize().height * 0.2f;
-    //this->addCircularFixture(width / 2);
-    this->addRectangularFixture(0, -height * 2, width, height);
+    
+    this->addCircularFixture(0, -height * 2, width / 2);
+    //this->addRectangularFixture(0, -height * 2, width, height);
 
 }
 

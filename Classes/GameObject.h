@@ -13,7 +13,6 @@
 #include <Box2D/Box2D.h>
 #include "Common.h"
 #include "BAContactListener.h"
-#include "Entities/Shadow.h"
 
 using namespace cocos2d;
 
@@ -42,6 +41,7 @@ protected:
     
     virtual void setProperties(Dictionary *properties);
     virtual void addCircularFixture(float radius);
+    virtual void addCircularFixture(float x, float y, float radius);
     virtual void addRectangularFixture(float width, float height);
     virtual void addRectangularFixture(float x, float y, float width, float height);
     virtual void createFixture(b2Shape *shape);
@@ -70,6 +70,7 @@ public:
     virtual bool init(b2World *world, Dictionary *properties, bool isSensor);
     virtual bool init(b2World *world, Dictionary *properties, bool isSensor, bool hasSprite);
     virtual void update(float dt);
+    virtual void updatePosition(Point position);
     virtual void handleMovement();
     virtual void handleMovement(float angle);
     virtual bool changeDirection(kDirection direction);
