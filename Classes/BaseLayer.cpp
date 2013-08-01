@@ -23,11 +23,6 @@ bool BaseLayer::init()
     
     Director::sharedDirector()->purgeCachedData();
     SpriteFrameCache::sharedSpriteFrameCache()->removeUnusedSpriteFrames();
-    
-    if(!CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    {
-        this->setKeyboardEnabled(true);
-    }
 
     return true;
 }
@@ -35,10 +30,9 @@ bool BaseLayer::init()
 void BaseLayer::onEnterTransitionDidFinish() {
     Layer::onEnterTransitionDidFinish();
     
-	if(!CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    {
-        this->setKeyboardEnabled(true);
-    }
+#if (CC_TARGET_PLATFORM != CC_PLATFORM_IOS && CC_TARGET_PLATFORM != CC_PLATFORM_ANDROID)
+    this->setKeyboardEnabled(true);
+#endif
 
 }
 
