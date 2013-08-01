@@ -13,6 +13,7 @@
 #include <Box2D/Box2D.h>
 #include "Common.h"
 #include "BAContactListener.h"
+#include "Entities/Shadow.h"
 
 using namespace cocos2d;
 
@@ -20,6 +21,8 @@ class SensorTypeContainer {
 public:
     SensorType sensorType;
 };
+
+class Shadow;
 
 class GameObject : public Object {
     
@@ -75,8 +78,8 @@ public:
     CC_SYNTHESIZE(MovingVerticalState, _movingVerticalState, MovingVerticalState);
     CC_SYNTHESIZE(GameObjectState, _state, State);
     CC_SYNTHESIZE(GameObjectType, _type, Type);
-    
-    
+	CC_SYNTHESIZE(Shadow*, _shadow, Shadow);
+
 };
 
 #endif /* defined(__CampJam__GameObject__) */

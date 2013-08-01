@@ -97,10 +97,4 @@ public:
 
 
 
-class Shadow : public Node {
-public:
-    static Shadow *create(void);
-    virtual void draw();
-    
-};
 #endif // __CAMPJAM_SCENE_H__

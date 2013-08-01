@@ -149,6 +149,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\Classes\Entities\Enemies\Woman.cpp" />
     <ClCompile Include="..\Classes\Entities\EnemySpawnPoint.cpp" />
     <ClCompile Include="..\Classes\Entities\Player.cpp" />
+    <ClCompile Include="..\Classes\Entities\Shadow.cpp" />
     <ClCompile Include="..\Classes\Entities\Static\BossDesk.cpp" />
     <ClCompile Include="..\Classes\Entities\Static\Document.cpp" />
     <ClCompile Include="..\Classes\Entities\Static\EmptyPaper.cpp" />
@@ -181,6 +182,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\Classes\Entities\Enemies\Woman.h" />
     <ClInclude Include="..\Classes\Entities\EnemySpawnPoint.h" />
     <ClInclude Include="..\Classes\Entities\Player.h" />
+    <ClInclude Include="..\Classes\Entities\Shadow.h" />
     <ClInclude Include="..\Classes\Entities\Static\BossDesk.h" />
     <ClInclude Include="..\Classes\Entities\Static\Document.h" />
     <ClInclude Include="..\Classes\Entities\Static\EmptyPaper.h" />

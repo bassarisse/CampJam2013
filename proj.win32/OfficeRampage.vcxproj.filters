@@ -114,6 +114,9 @@
     <ClCompile Include="..\Classes\ScoreLayer.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Shadow.cpp">
+      <Filter>Classes\Entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -208,6 +211,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\ScoreLayer.h">
       <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Shadow.h">
+      <Filter>Classes\Entities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
