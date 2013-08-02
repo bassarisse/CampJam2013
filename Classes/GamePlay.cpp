@@ -403,8 +403,8 @@ void GamePlay::update(float dt) {
 	for(std::vector<GameObject *>::size_type i = 0; i < _gameObjects.size(); i++) {
         GameObject *gameObj = _gameObjects[i];
         
-        if (gameObj->getState() == GameObjectStateDying && gameObj->getBody()->IsActive())
-            _world->DestroyBody(gameObj->getBody());
+		if (gameObj->getState() == GameObjectStateDying && !gameObj->getIsDestroyed())
+			gameObj->destroyBody(_world);
         
 		if (gameObj->getState() == GameObjectStateDead) {
 			switch(gameObj->getType()) {
@@ -597,8 +597,10 @@ void GamePlay::removeObject(GameObject* deadObject) {
 	_gameObjects.erase(pos);
     
 	Node* deadNode = deadObject->getNode();
-    if (deadObject->getBody()->IsActive())
-        _world->DestroyBody(deadObject->getBody());
+
+
+	if (!deadObject->getIsDestroyed())
+		deadObject->destroyBody(_world);
     
     deadNode->stopAllActions();
 	deadNode->removeFromParentAndCleanup(true);

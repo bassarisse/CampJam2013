@@ -75,12 +75,14 @@ public:
     virtual void handleMovement(float angle);
     virtual bool changeDirection(kDirection direction);
 
+	virtual void destroyBody(b2World* world);
+
     CC_SYNTHESIZE(MovingHorizontalState, _movingHorizontalState, MovingHorizontalState);
     CC_SYNTHESIZE(MovingVerticalState, _movingVerticalState, MovingVerticalState);
     CC_SYNTHESIZE(GameObjectState, _state, State);
     CC_SYNTHESIZE(GameObjectType, _type, Type);
 	CC_SYNTHESIZE(Shadow*, _shadow, Shadow);
-
+	CC_SYNTHESIZE(bool, _IsDestroyed, IsDestroyed);
 };
 
 #endif /* defined(__CampJam__GameObject__) */

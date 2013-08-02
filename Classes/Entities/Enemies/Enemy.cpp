@@ -1,7 +1,7 @@
 
 #include "Enemy.h"
 #include "../Shadow.h"
-#include "Box2D.h"
+#include "Box2D/Box2D.h"
 
 bool Enemy::init(b2World *world, Dictionary *properties, Player *ref) {
     

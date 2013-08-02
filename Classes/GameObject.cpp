@@ -179,6 +179,7 @@ bool GameObject::init(b2World *world, Dictionary *properties, bool isSensor, boo
     _lastDirection = kDirectionDown;
     _lastVerticalDirection = kDirectionDown;
     _lastHorizontalDirection = kDirectionRight;
+	_IsDestroyed = false;
     
     this->setMovingVerticalState(MovingStateVerticalStopped);
     this->setMovingHorizontalState(MovingStateHorizontalStopped);
@@ -423,4 +424,9 @@ void GameObject::setIdleFrame () {
     const char *frameNameVertical = getDirectionName(_lastVerticalDirection);
     ((Sprite *)_node)->setDisplayFrame(SpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(String::createWithFormat("%s_%s.png", _spriteFrameName, frameNameVertical)->getCString()));
     
+}
+
+void GameObject::destroyBody(b2World* world) {
+	world->DestroyBody(this->getBody());
+	this->_IsDestroyed = true;
 }
