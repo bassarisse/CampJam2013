@@ -15,7 +15,6 @@ bool ScoreLayer::init() {
 		String::createWithFormat("%d", _score)->getCString(), 
 		"MainFont.fnt",300,kTextAlignmentRight);
 
-	
 	_scoreLabel->setAnchorPoint(ccp(1, 1));
 	_scoreLabel->setPosition(ccp(1014, 758));
 

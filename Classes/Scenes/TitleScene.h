@@ -8,13 +8,17 @@ using namespace cocos2d;
 
 class TitleScene : public BaseLayer
 {
+    
+private:
+    
+	Menu *_menu;
+    Menu *_highscoresMenu;
 
 public:
 
 	virtual ~TitleScene();
 
 	LayerColor *credits;
-	Menu* menu;
 	bool _creditsShown;
 
 	virtual bool init();
@@ -25,6 +29,8 @@ public:
     bool ccTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent);
     void ccTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent);
 	virtual void buttonAny(bool pressed);
+    
+    void enableMenus(bool enabled);
     
 };
 

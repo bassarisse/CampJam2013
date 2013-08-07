@@ -3,13 +3,12 @@
 #include "TitleScene.h"
 #include "GamePlay.h"
 
+#include "GameJolt.h"
+#include "HighscoresLayer.h"
+
 USING_NS_CC;
 
 using namespace CocosDenshion;
-
-GameoverScene::~GameoverScene() {
-	
-}
 
 Scene* GameoverScene::scene(int score, bool isRecord)
 {
@@ -32,69 +31,81 @@ bool GameoverScene::init(int score, bool isRecord)  {
     {
         return false;
     }
-	CocosDenshion::SimpleAudioEngine::sharedEngine()->stopBackgroundMusic(false);
+    
+	SimpleAudioEngine::sharedEngine()->stopBackgroundMusic(false);
 
 	_score = score;
+    
+    GameJolt::getInstance()->addScore(score);
+    
+	auto bgSprite = Sprite::create("gameover.jpg");
+	bgSprite->setPosition(ccp(this->getContentSize().width / 2,
+                              this->getContentSize().height / 2));
 
-	Sprite* bgSprite = Sprite::create("gameover.jpg");
-	bgSprite->setContentSize(ccp(1024,768));
-	bgSprite->setPosition(ccp((this->getContentSize().width / 2) ,
-						this->getContentSize().height / 2));
-
-	LabelBMFont *scoreLabel = LabelBMFont::create(
-		String::createWithFormat("Your score: %d%s", _score, isRecord ? "\nNew record!\nNow get back to work!" : "")->getCString(), "MainFont.fnt", 600,kTextAlignmentLeft);
+	auto scoreLabel = LabelBMFont::create(
+		String::createWithFormat("Your score: %d", _score)->getCString(), "MainFont.fnt", 600, kTextAlignmentLeft);
 
 	scoreLabel->setAnchorPoint(ccp(0.0, 1.0));
 	scoreLabel->setPosition(ccp(10, this->getContentSize().height - 10));
  
-	MenuItemImage* startOpt = MenuItemImage::create("startover.png", "startover.png", [](Object* obj) {
-		CocosDenshion::SimpleAudioEngine::sharedEngine()->stopBackgroundMusic(false);
+	auto startOpt = MenuItemImage::create("startover.png", "startover.png", [](Object* obj) {
+		SimpleAudioEngine::sharedEngine()->stopBackgroundMusic(false);
 		Scene *pScene = GamePlay::scene();
 	
 		Director::sharedDirector()->replaceScene(TransitionFade::create(1.0f, pScene));
 	});
 
-
-	MenuItemImage* returnOpt = MenuItemImage::create("return.png", "return.png", [](Object* obj) {
+	auto returnOpt = MenuItemImage::create("return.png", "return.png", [](Object* obj) {
 		Scene *pScene = TitleScene::scene();
 	
 		Director::sharedDirector()->replaceScene(TransitionFade::create(1.0f, pScene));
 	});
 
-	Menu* menu = Menu::create(startOpt, returnOpt, NULL);
-	menu->setPosition(ccp(this->getContentSize().width - 200, this->getContentSize().height - 80));
-	menu->alignItemsVertically();
-
-	
+	_menu = Menu::create(startOpt, returnOpt, NULL);
+	_menu->setPosition(ccp(this->getContentSize().width - 170, this->getContentSize().height * 0.22f));
+	_menu->alignItemsVertically();
+    
+    auto highscoresLabel = LabelBMFont::create("Highscores", "MiniFont.fnt", 100, kTextAlignmentCenter);
+    highscoresLabel->setColor(yellowLabelColor);
+    
+    auto highscoresMenuItem = MenuItemLabel::create(highscoresLabel, [this](Object *object) {
+        
+        this->enableMenus(false);
+        
+        auto highscoreLayer = new HighscoresLayer();
+        highscoreLayer->init([this]() {
+            this->enableMenus(true);
+        });
+        this->addChild(highscoreLayer);
+        highscoreLayer->release();
+        
+    });
+    
+    _highscoresMenu = Menu::create(highscoresMenuItem, NULL);
+    _highscoresMenu->setPosition(ccp(this->getContentSize().width - 130, this->getContentSize().height - 40));
+    
 	this->addChild(bgSprite);
 	this->addChild(scoreLabel);
-	//CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("title_bgm.mp3", true);
-	this->addChild(menu);
+	this->addChild(_menu);
+    this->addChild(_highscoresMenu);
+    
+    if (isRecord) {
+        
+        auto recordLabel = LabelBMFont::create("New record!\nNow get back to work!", "MiniFont.fnt", 600, kTextAlignmentLeft);
+        recordLabel->setAnchorPoint(ccp(0.0, 1.0));
+        recordLabel->setPosition(ccp(12, this->getContentSize().height - 75));
+        //recordLabel->setColor(ccc3(255, 255, 150));
+        
+        this->addChild(recordLabel);
+        
+    }
+    
 	return true;
 }
 
-void GameoverScene::clickedRetry(Object* sender) {
-	Scene *pScene = GamePlay::scene();
-	
-	Director::sharedDirector()->replaceScene(TransitionFade::create(1.0f, pScene));
+void GameoverScene::enableMenus(bool enabled) {
+    
+    _menu->setEnabled(enabled);
+    _highscoresMenu->setEnabled(enabled);
+    
 }
-
-void GameoverScene::clickedTitle(Object* sender) {
-	Scene *pScene = TitleScene::scene();
-	
-	Director::sharedDirector()->replaceScene(TransitionFade::create(1.0f, pScene));
-}
-
-void GameoverScene::update(float dt) {
-	
-}
-/*
-void GameoverScene::buttonAny(bool pressed) {
-	if(pressed)
-		return;
-
-	//CocosDenshion::SimpleAudioEngine::sharedEngine()->stopBackgroundMusic(true);
-	Scene *pScene = TitleScene::scene();
-	
-	Director::sharedDirector()->replaceScene(TransitionFade::create(1.0f, pScene));
-}*/

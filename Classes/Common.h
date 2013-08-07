@@ -35,6 +35,11 @@ using namespace cocos2d;
 #define kCopyScore 6000.0f
 
 #define kWalkActionTag 500
+#define kOverlayOpacity 210
+
+#define greenLabelColor ccc3(150, 250, 150)
+#define yellowLabelColor ccc3(250, 220, 100)
+#define redLabelColor ccc3(240, 130, 120)
 
 enum kDirection {
     kDirectionUp = 0,

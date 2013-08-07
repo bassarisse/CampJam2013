@@ -8,6 +8,11 @@ using namespace cocos2d;
 
 class GameoverScene : public BaseLayer
 {
+    
+private:
+    
+    Menu *_menu;
+    Menu *_highscoresMenu;
 
 public:
 
@@ -30,15 +35,10 @@ public:
 
 	CC_SYNTHESIZE(int, _score, Score);
 
-	virtual ~GameoverScene();
-
 	virtual bool init(int score, bool isRecord);
 	static Scene* scene(int score, bool isRecord);
 
-	void update(float dt);
-
-	void clickedRetry(Object* sender);
-	void clickedTitle(Object* sender);
+    void enableMenus(bool enabled);
 
 };
 

@@ -74,6 +74,18 @@
 		41BC70E615BF81A5006A0A6C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41BC70DE15BF81A5006A0A6C /* MainMenu.xib */; };
 		41BC70E715BF81A5006A0A6C /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 41BC70E015BF81A5006A0A6C /* Icon.icns */; };
 		41BC70E815BF81A5006A0A6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BC70E115BF81A5006A0A6C /* main.m */; };
+		62013DE817B1D4FE001142F0 /* gamejolt_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 62013DE617B1D4FE001142F0 /* gamejolt_logo.png */; };
+		62013DE917B1D4FE001142F0 /* gamejolt_poweredby.png in Resources */ = {isa = PBXBuildFile; fileRef = 62013DE717B1D4FE001142F0 /* gamejolt_poweredby.png */; };
+		6212600917AD701000751772 /* GameJolt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6212600717AD701000751772 /* GameJolt.cpp */; };
+		6212600C17AD758B00751772 /* HighscoresLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6212600A17AD758B00751772 /* HighscoresLayer.cpp */; };
+		6247314217AB7FE500AE6A1D /* Base64.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6247313117AB7FE500AE6A1D /* Base64.cpp */; };
+		6247314317AB7FE500AE6A1D /* gjAPI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6247313317AB7FE500AE6A1D /* gjAPI.cpp */; };
+		6247314417AB7FE500AE6A1D /* gjDataItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6247313517AB7FE500AE6A1D /* gjDataItem.cpp */; };
+		6247314517AB7FE500AE6A1D /* gjNetwork.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6247313717AB7FE500AE6A1D /* gjNetwork.cpp */; };
+		6247314617AB7FE500AE6A1D /* gjScore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6247313A17AB7FE500AE6A1D /* gjScore.cpp */; };
+		6247314717AB7FE500AE6A1D /* gjTrophy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6247313C17AB7FE500AE6A1D /* gjTrophy.cpp */; };
+		6247314817AB7FE500AE6A1D /* gjUser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6247313E17AB7FE500AE6A1D /* gjUser.cpp */; };
+		6247314917AB7FE500AE6A1D /* MD5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6247314017AB7FE500AE6A1D /* MD5.cpp */; };
 		627A374E17A8B12000C169B3 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 627A370F17A8B12000C169B3 /* AppDelegate.cpp */; };
 		627A374F17A8B12000C169B3 /* B2DebugDrawLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 627A371217A8B12000C169B3 /* B2DebugDrawLayer.cpp */; };
 		627A375017A8B12000C169B3 /* GLES-Render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 627A371417A8B12000C169B3 /* GLES-Render.cpp */; };
@@ -126,6 +138,24 @@
 		627A379617A8B13D00C169B3 /* title_bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 627A377F17A8B13D00C169B3 /* title_bgm.mp3 */; };
 		627A379717A8B13D00C169B3 /* wilhem.wav in Resources */ = {isa = PBXBuildFile; fileRef = 627A378017A8B13D00C169B3 /* wilhem.wav */; };
 		62840FDA17A9EA5C0010E074 /* Shadow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62840FD817A9EA5C0010E074 /* Shadow.cpp */; };
+		62B6820017B08DFF00D1B410 /* CCControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62B681CF17B08DFF00D1B410 /* CCControl.cpp */; };
+		62B6820117B08DFF00D1B410 /* CCControlButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62B681D117B08DFF00D1B410 /* CCControlButton.cpp */; };
+		62B6820217B08DFF00D1B410 /* CCControlColourPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62B681D317B08DFF00D1B410 /* CCControlColourPicker.cpp */; };
+		62B6820317B08DFF00D1B410 /* CCControlHuePicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62B681D617B08DFF00D1B410 /* CCControlHuePicker.cpp */; };
+		62B6820417B08DFF00D1B410 /* CCControlPotentiometer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62B681D817B08DFF00D1B410 /* CCControlPotentiometer.cpp */; };
+		62B6820517B08DFF00D1B410 /* CCControlSaturationBrightnessPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62B681DA17B08DFF00D1B410 /* CCControlSaturationBrightnessPicker.cpp */; };
+		62B6820617B08DFF00D1B410 /* CCControlSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62B681DC17B08DFF00D1B410 /* CCControlSlider.cpp */; };
+		62B6820717B08DFF00D1B410 /* CCControlStepper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62B681DE17B08DFF00D1B410 /* CCControlStepper.cpp */; };
+		62B6820817B08DFF00D1B410 /* CCControlSwitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62B681E017B08DFF00D1B410 /* CCControlSwitch.cpp */; };
+		62B6820917B08DFF00D1B410 /* CCControlUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62B681E217B08DFF00D1B410 /* CCControlUtils.cpp */; };
+		62B6820A17B08DFF00D1B410 /* CCInvocation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62B681E417B08DFF00D1B410 /* CCInvocation.cpp */; };
+		62B6820B17B08DFF00D1B410 /* CCScale9Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62B681E617B08DFF00D1B410 /* CCScale9Sprite.cpp */; };
+		62B6820C17B08DFF00D1B410 /* CCEditBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62B681E917B08DFF00D1B410 /* CCEditBox.cpp */; };
+		62B6820F17B08DFF00D1B410 /* CCEditBoxImplMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = 62B681F117B08DFF00D1B410 /* CCEditBoxImplMac.mm */; };
+		62B6821917B08F9C00D1B410 /* GameJoltLoginLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62B6821717B08F9C00D1B410 /* GameJoltLoginLayer.cpp */; };
+		62B6821C17B0918A00D1B410 /* MiniFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 62B6821A17B0918A00D1B410 /* MiniFont.fnt */; };
+		62B6821D17B0918A00D1B410 /* MiniFont.png in Resources */ = {isa = PBXBuildFile; fileRef = 62B6821B17B0918A00D1B410 /* MiniFont.png */; };
+		62B6821F17B0A80600D1B410 /* editboxbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 62B6821E17B0A80600D1B410 /* editboxbg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -271,6 +301,29 @@
 		41BC70E115BF81A5006A0A6C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
 		41BC70E215BF81A5006A0A6C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 		41BC70E315BF81A5006A0A6C /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = SOURCE_ROOT; };
+		62013DE617B1D4FE001142F0 /* gamejolt_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gamejolt_logo.png; sourceTree = "<group>"; };
+		62013DE717B1D4FE001142F0 /* gamejolt_poweredby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gamejolt_poweredby.png; sourceTree = "<group>"; };
+		6212600717AD701000751772 /* GameJolt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameJolt.cpp; path = ../Classes/GameJolt.cpp; sourceTree = "<group>"; };
+		6212600817AD701000751772 /* GameJolt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameJolt.h; path = ../Classes/GameJolt.h; sourceTree = "<group>"; };
+		6212600A17AD758B00751772 /* HighscoresLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HighscoresLayer.cpp; path = ../Classes/HighscoresLayer.cpp; sourceTree = "<group>"; };
+		6212600B17AD758B00751772 /* HighscoresLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighscoresLayer.h; path = ../Classes/HighscoresLayer.h; sourceTree = "<group>"; };
+		6247313117AB7FE500AE6A1D /* Base64.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Base64.cpp; path = ../Classes/GameJolt/Base64.cpp; sourceTree = "<group>"; };
+		6247313217AB7FE500AE6A1D /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Base64.h; path = ../Classes/GameJolt/Base64.h; sourceTree = "<group>"; };
+		6247313317AB7FE500AE6A1D /* gjAPI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gjAPI.cpp; path = ../Classes/GameJolt/gjAPI.cpp; sourceTree = "<group>"; };
+		6247313417AB7FE500AE6A1D /* gjAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gjAPI.h; path = ../Classes/GameJolt/gjAPI.h; sourceTree = "<group>"; };
+		6247313517AB7FE500AE6A1D /* gjDataItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gjDataItem.cpp; path = ../Classes/GameJolt/gjDataItem.cpp; sourceTree = "<group>"; };
+		6247313617AB7FE500AE6A1D /* gjDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gjDataItem.h; path = ../Classes/GameJolt/gjDataItem.h; sourceTree = "<group>"; };
+		6247313717AB7FE500AE6A1D /* gjNetwork.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gjNetwork.cpp; path = ../Classes/GameJolt/gjNetwork.cpp; sourceTree = "<group>"; };
+		6247313817AB7FE500AE6A1D /* gjNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gjNetwork.h; path = ../Classes/GameJolt/gjNetwork.h; sourceTree = "<group>"; };
+		6247313917AB7FE500AE6A1D /* gjNetwork.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = gjNetwork.hpp; path = ../Classes/GameJolt/gjNetwork.hpp; sourceTree = "<group>"; };
+		6247313A17AB7FE500AE6A1D /* gjScore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gjScore.cpp; path = ../Classes/GameJolt/gjScore.cpp; sourceTree = "<group>"; };
+		6247313B17AB7FE500AE6A1D /* gjScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gjScore.h; path = ../Classes/GameJolt/gjScore.h; sourceTree = "<group>"; };
+		6247313C17AB7FE500AE6A1D /* gjTrophy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gjTrophy.cpp; path = ../Classes/GameJolt/gjTrophy.cpp; sourceTree = "<group>"; };
+		6247313D17AB7FE500AE6A1D /* gjTrophy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gjTrophy.h; path = ../Classes/GameJolt/gjTrophy.h; sourceTree = "<group>"; };
+		6247313E17AB7FE500AE6A1D /* gjUser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gjUser.cpp; path = ../Classes/GameJolt/gjUser.cpp; sourceTree = "<group>"; };
+		6247313F17AB7FE500AE6A1D /* gjUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gjUser.h; path = ../Classes/GameJolt/gjUser.h; sourceTree = "<group>"; };
+		6247314017AB7FE500AE6A1D /* MD5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MD5.cpp; path = ../Classes/GameJolt/MD5.cpp; sourceTree = "<group>"; };
+		6247314117AB7FE500AE6A1D /* MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MD5.h; path = ../Classes/GameJolt/MD5.h; sourceTree = "<group>"; };
 		627A370F17A8B12000C169B3 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = ../Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		627A371017A8B12000C169B3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../Classes/AppDelegate.h; sourceTree = "<group>"; };
 		627A371217A8B12000C169B3 /* B2DebugDrawLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = B2DebugDrawLayer.cpp; sourceTree = "<group>"; };
@@ -353,6 +406,42 @@
 		627A378017A8B13D00C169B3 /* wilhem.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wilhem.wav; sourceTree = "<group>"; };
 		62840FD817A9EA5C0010E074 /* Shadow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shadow.cpp; sourceTree = "<group>"; };
 		62840FD917A9EA5C0010E074 /* Shadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shadow.h; sourceTree = "<group>"; };
+		62B681CC17B08DD300D1B410 /* ExtensionMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExtensionMacros.h; path = ../../../extensions/ExtensionMacros.h; sourceTree = "<group>"; };
+		62B681CF17B08DFF00D1B410 /* CCControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCControl.cpp; sourceTree = "<group>"; };
+		62B681D017B08DFF00D1B410 /* CCControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControl.h; sourceTree = "<group>"; };
+		62B681D117B08DFF00D1B410 /* CCControlButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCControlButton.cpp; sourceTree = "<group>"; };
+		62B681D217B08DFF00D1B410 /* CCControlButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlButton.h; sourceTree = "<group>"; };
+		62B681D317B08DFF00D1B410 /* CCControlColourPicker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCControlColourPicker.cpp; sourceTree = "<group>"; };
+		62B681D417B08DFF00D1B410 /* CCControlColourPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlColourPicker.h; sourceTree = "<group>"; };
+		62B681D517B08DFF00D1B410 /* CCControlExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlExtensions.h; sourceTree = "<group>"; };
+		62B681D617B08DFF00D1B410 /* CCControlHuePicker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCControlHuePicker.cpp; sourceTree = "<group>"; };
+		62B681D717B08DFF00D1B410 /* CCControlHuePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlHuePicker.h; sourceTree = "<group>"; };
+		62B681D817B08DFF00D1B410 /* CCControlPotentiometer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCControlPotentiometer.cpp; sourceTree = "<group>"; };
+		62B681D917B08DFF00D1B410 /* CCControlPotentiometer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlPotentiometer.h; sourceTree = "<group>"; };
+		62B681DA17B08DFF00D1B410 /* CCControlSaturationBrightnessPicker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCControlSaturationBrightnessPicker.cpp; sourceTree = "<group>"; };
+		62B681DB17B08DFF00D1B410 /* CCControlSaturationBrightnessPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlSaturationBrightnessPicker.h; sourceTree = "<group>"; };
+		62B681DC17B08DFF00D1B410 /* CCControlSlider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCControlSlider.cpp; sourceTree = "<group>"; };
+		62B681DD17B08DFF00D1B410 /* CCControlSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlSlider.h; sourceTree = "<group>"; };
+		62B681DE17B08DFF00D1B410 /* CCControlStepper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCControlStepper.cpp; sourceTree = "<group>"; };
+		62B681DF17B08DFF00D1B410 /* CCControlStepper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlStepper.h; sourceTree = "<group>"; };
+		62B681E017B08DFF00D1B410 /* CCControlSwitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCControlSwitch.cpp; sourceTree = "<group>"; };
+		62B681E117B08DFF00D1B410 /* CCControlSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlSwitch.h; sourceTree = "<group>"; };
+		62B681E217B08DFF00D1B410 /* CCControlUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCControlUtils.cpp; sourceTree = "<group>"; };
+		62B681E317B08DFF00D1B410 /* CCControlUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlUtils.h; sourceTree = "<group>"; };
+		62B681E417B08DFF00D1B410 /* CCInvocation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCInvocation.cpp; sourceTree = "<group>"; };
+		62B681E517B08DFF00D1B410 /* CCInvocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCInvocation.h; sourceTree = "<group>"; };
+		62B681E617B08DFF00D1B410 /* CCScale9Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCScale9Sprite.cpp; sourceTree = "<group>"; };
+		62B681E717B08DFF00D1B410 /* CCScale9Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCScale9Sprite.h; sourceTree = "<group>"; };
+		62B681E917B08DFF00D1B410 /* CCEditBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCEditBox.cpp; sourceTree = "<group>"; };
+		62B681EA17B08DFF00D1B410 /* CCEditBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEditBox.h; sourceTree = "<group>"; };
+		62B681EB17B08DFF00D1B410 /* CCEditBoxImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEditBoxImpl.h; sourceTree = "<group>"; };
+		62B681F017B08DFF00D1B410 /* CCEditBoxImplMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEditBoxImplMac.h; sourceTree = "<group>"; };
+		62B681F117B08DFF00D1B410 /* CCEditBoxImplMac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCEditBoxImplMac.mm; sourceTree = "<group>"; };
+		62B6821717B08F9C00D1B410 /* GameJoltLoginLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameJoltLoginLayer.cpp; path = ../Classes/GameJoltLoginLayer.cpp; sourceTree = "<group>"; };
+		62B6821817B08F9C00D1B410 /* GameJoltLoginLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameJoltLoginLayer.h; path = ../Classes/GameJoltLoginLayer.h; sourceTree = "<group>"; };
+		62B6821A17B0918A00D1B410 /* MiniFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MiniFont.fnt; sourceTree = "<group>"; };
+		62B6821B17B0918A00D1B410 /* MiniFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MiniFont.png; sourceTree = "<group>"; };
+		62B6821E17B0A80600D1B410 /* editboxbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editboxbg.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -380,11 +469,13 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				627A370F17A8B12000C169B3 /* AppDelegate.cpp */,
-				627A371017A8B12000C169B3 /* AppDelegate.h */,
+				62B681C217B088C000D1B410 /* Extensions */,
 				627A371117A8B12000C169B3 /* B2DebugDraw */,
+				6247310817AB2A9F00AE6A1D /* GameJolt */,
 				627A371D17A8B12000C169B3 /* Entities */,
 				627A374717A8B12000C169B3 /* Scenes */,
+				627A370F17A8B12000C169B3 /* AppDelegate.cpp */,
+				627A371017A8B12000C169B3 /* AppDelegate.h */,
 				627A371617A8B12000C169B3 /* BAContactListener.cpp */,
 				627A371717A8B12000C169B3 /* BAContactListener.h */,
 				627A371817A8B12000C169B3 /* BaseLayer.cpp */,
@@ -394,12 +485,18 @@
 				627A371C17A8B12000C169B3 /* Common.h */,
 				627A374117A8B12000C169B3 /* GameObject.cpp */,
 				627A374217A8B12000C169B3 /* GameObject.h */,
-				627A374417A8B12000C169B3 /* GamePlay.h */,
 				627A374317A8B12000C169B3 /* GamePlay.cpp */,
+				627A374417A8B12000C169B3 /* GamePlay.h */,
 				627A374517A8B12000C169B3 /* HealthBar.cpp */,
 				627A374617A8B12000C169B3 /* HealthBar.h */,
 				627A374C17A8B12000C169B3 /* ScoreLayer.cpp */,
 				627A374D17A8B12000C169B3 /* ScoreLayer.h */,
+				6212600717AD701000751772 /* GameJolt.cpp */,
+				6212600817AD701000751772 /* GameJolt.h */,
+				6212600A17AD758B00751772 /* HighscoresLayer.cpp */,
+				6212600B17AD758B00751772 /* HighscoresLayer.h */,
+				62B6821717B08F9C00D1B410 /* GameJoltLoginLayer.cpp */,
+				62B6821817B08F9C00D1B410 /* GameJoltLoginLayer.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -670,6 +767,30 @@
 			path = en.lproj;
 			sourceTree = SOURCE_ROOT;
 		};
+		6247310817AB2A9F00AE6A1D /* GameJolt */ = {
+			isa = PBXGroup;
+			children = (
+				6247313117AB7FE500AE6A1D /* Base64.cpp */,
+				6247313217AB7FE500AE6A1D /* Base64.h */,
+				6247313317AB7FE500AE6A1D /* gjAPI.cpp */,
+				6247313417AB7FE500AE6A1D /* gjAPI.h */,
+				6247313517AB7FE500AE6A1D /* gjDataItem.cpp */,
+				6247313617AB7FE500AE6A1D /* gjDataItem.h */,
+				6247313717AB7FE500AE6A1D /* gjNetwork.cpp */,
+				6247313817AB7FE500AE6A1D /* gjNetwork.h */,
+				6247313917AB7FE500AE6A1D /* gjNetwork.hpp */,
+				6247313A17AB7FE500AE6A1D /* gjScore.cpp */,
+				6247313B17AB7FE500AE6A1D /* gjScore.h */,
+				6247313C17AB7FE500AE6A1D /* gjTrophy.cpp */,
+				6247313D17AB7FE500AE6A1D /* gjTrophy.h */,
+				6247313E17AB7FE500AE6A1D /* gjUser.cpp */,
+				6247313F17AB7FE500AE6A1D /* gjUser.h */,
+				6247314017AB7FE500AE6A1D /* MD5.cpp */,
+				6247314117AB7FE500AE6A1D /* MD5.h */,
+			);
+			name = GameJolt;
+			sourceTree = "<group>";
+		};
 		627A371117A8B12000C169B3 /* B2DebugDraw */ = {
 			isa = PBXGroup;
 			children = (
@@ -760,6 +881,69 @@
 			path = ../Classes/Scenes;
 			sourceTree = "<group>";
 		};
+		62B681C217B088C000D1B410 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				62B681CC17B08DD300D1B410 /* ExtensionMacros.h */,
+				62B681CD17B08DFF00D1B410 /* GUI */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		62B681CD17B08DFF00D1B410 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				62B681CE17B08DFF00D1B410 /* CCControlExtension */,
+				62B681E817B08DFF00D1B410 /* CCEditBox */,
+			);
+			name = GUI;
+			path = ../../../extensions/GUI;
+			sourceTree = "<group>";
+		};
+		62B681CE17B08DFF00D1B410 /* CCControlExtension */ = {
+			isa = PBXGroup;
+			children = (
+				62B681CF17B08DFF00D1B410 /* CCControl.cpp */,
+				62B681D017B08DFF00D1B410 /* CCControl.h */,
+				62B681D117B08DFF00D1B410 /* CCControlButton.cpp */,
+				62B681D217B08DFF00D1B410 /* CCControlButton.h */,
+				62B681D317B08DFF00D1B410 /* CCControlColourPicker.cpp */,
+				62B681D417B08DFF00D1B410 /* CCControlColourPicker.h */,
+				62B681D517B08DFF00D1B410 /* CCControlExtensions.h */,
+				62B681D617B08DFF00D1B410 /* CCControlHuePicker.cpp */,
+				62B681D717B08DFF00D1B410 /* CCControlHuePicker.h */,
+				62B681D817B08DFF00D1B410 /* CCControlPotentiometer.cpp */,
+				62B681D917B08DFF00D1B410 /* CCControlPotentiometer.h */,
+				62B681DA17B08DFF00D1B410 /* CCControlSaturationBrightnessPicker.cpp */,
+				62B681DB17B08DFF00D1B410 /* CCControlSaturationBrightnessPicker.h */,
+				62B681DC17B08DFF00D1B410 /* CCControlSlider.cpp */,
+				62B681DD17B08DFF00D1B410 /* CCControlSlider.h */,
+				62B681DE17B08DFF00D1B410 /* CCControlStepper.cpp */,
+				62B681DF17B08DFF00D1B410 /* CCControlStepper.h */,
+				62B681E017B08DFF00D1B410 /* CCControlSwitch.cpp */,
+				62B681E117B08DFF00D1B410 /* CCControlSwitch.h */,
+				62B681E217B08DFF00D1B410 /* CCControlUtils.cpp */,
+				62B681E317B08DFF00D1B410 /* CCControlUtils.h */,
+				62B681E417B08DFF00D1B410 /* CCInvocation.cpp */,
+				62B681E517B08DFF00D1B410 /* CCInvocation.h */,
+				62B681E617B08DFF00D1B410 /* CCScale9Sprite.cpp */,
+				62B681E717B08DFF00D1B410 /* CCScale9Sprite.h */,
+			);
+			path = CCControlExtension;
+			sourceTree = "<group>";
+		};
+		62B681E817B08DFF00D1B410 /* CCEditBox */ = {
+			isa = PBXGroup;
+			children = (
+				62B681E917B08DFF00D1B410 /* CCEditBox.cpp */,
+				62B681EA17B08DFF00D1B410 /* CCEditBox.h */,
+				62B681EB17B08DFF00D1B410 /* CCEditBoxImpl.h */,
+				62B681F017B08DFF00D1B410 /* CCEditBoxImplMac.h */,
+				62B681F117B08DFF00D1B410 /* CCEditBoxImplMac.mm */,
+			);
+			path = CCEditBox;
+			sourceTree = "<group>";
+		};
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -771,12 +955,17 @@
 				627A376F17A8B13D00C169B3 /* death_woman.wav */,
 				627A377017A8B13D00C169B3 /* donut_eating.wav */,
 				627A377117A8B13D00C169B3 /* drinked_coffee.wav */,
+				62B6821E17B0A80600D1B410 /* editboxbg.png */,
+				62013DE617B1D4FE001142F0 /* gamejolt_logo.png */,
+				62013DE717B1D4FE001142F0 /* gamejolt_poweredby.png */,
 				627A377217A8B13D00C169B3 /* gameover.jpg */,
 				627A377317A8B13D00C169B3 /* gettowork.png */,
 				627A377417A8B13D00C169B3 /* main_bgm.wav */,
 				627A377517A8B13D00C169B3 /* main.tmx */,
 				627A377617A8B13D00C169B3 /* MainFont.fnt */,
 				627A377717A8B13D00C169B3 /* MainFont.png */,
+				62B6821A17B0918A00D1B410 /* MiniFont.fnt */,
+				62B6821B17B0918A00D1B410 /* MiniFont.png */,
 				627A377817A8B13D00C169B3 /* officerampage.png */,
 				627A377917A8B13D00C169B3 /* paper.wav */,
 				627A377A17A8B13D00C169B3 /* player_hit.wav */,
@@ -887,6 +1076,11 @@
 				627A379517A8B13D00C169B3 /* tiles.png in Resources */,
 				627A379617A8B13D00C169B3 /* title_bgm.mp3 in Resources */,
 				627A379717A8B13D00C169B3 /* wilhem.wav in Resources */,
+				62B6821C17B0918A00D1B410 /* MiniFont.fnt in Resources */,
+				62B6821D17B0918A00D1B410 /* MiniFont.png in Resources */,
+				62B6821F17B0A80600D1B410 /* editboxbg.png in Resources */,
+				62013DE817B1D4FE001142F0 /* gamejolt_logo.png in Resources */,
+				62013DE917B1D4FE001142F0 /* gamejolt_poweredby.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -979,6 +1173,31 @@
 				627A376817A8B12000C169B3 /* TitleScene.cpp in Sources */,
 				627A376917A8B12000C169B3 /* ScoreLayer.cpp in Sources */,
 				62840FDA17A9EA5C0010E074 /* Shadow.cpp in Sources */,
+				6247314217AB7FE500AE6A1D /* Base64.cpp in Sources */,
+				6247314317AB7FE500AE6A1D /* gjAPI.cpp in Sources */,
+				6247314417AB7FE500AE6A1D /* gjDataItem.cpp in Sources */,
+				6247314517AB7FE500AE6A1D /* gjNetwork.cpp in Sources */,
+				6247314617AB7FE500AE6A1D /* gjScore.cpp in Sources */,
+				6247314717AB7FE500AE6A1D /* gjTrophy.cpp in Sources */,
+				6247314817AB7FE500AE6A1D /* gjUser.cpp in Sources */,
+				6247314917AB7FE500AE6A1D /* MD5.cpp in Sources */,
+				6212600917AD701000751772 /* GameJolt.cpp in Sources */,
+				6212600C17AD758B00751772 /* HighscoresLayer.cpp in Sources */,
+				62B6820017B08DFF00D1B410 /* CCControl.cpp in Sources */,
+				62B6820117B08DFF00D1B410 /* CCControlButton.cpp in Sources */,
+				62B6820217B08DFF00D1B410 /* CCControlColourPicker.cpp in Sources */,
+				62B6820317B08DFF00D1B410 /* CCControlHuePicker.cpp in Sources */,
+				62B6820417B08DFF00D1B410 /* CCControlPotentiometer.cpp in Sources */,
+				62B6820517B08DFF00D1B410 /* CCControlSaturationBrightnessPicker.cpp in Sources */,
+				62B6820617B08DFF00D1B410 /* CCControlSlider.cpp in Sources */,
+				62B6820717B08DFF00D1B410 /* CCControlStepper.cpp in Sources */,
+				62B6820817B08DFF00D1B410 /* CCControlSwitch.cpp in Sources */,
+				62B6820917B08DFF00D1B410 /* CCControlUtils.cpp in Sources */,
+				62B6820A17B08DFF00D1B410 /* CCInvocation.cpp in Sources */,
+				62B6820B17B08DFF00D1B410 /* CCScale9Sprite.cpp in Sources */,
+				62B6820C17B08DFF00D1B410 /* CCEditBox.cpp in Sources */,
+				62B6820F17B08DFF00D1B410 /* CCEditBoxImplMac.mm in Sources */,
+				62B6821917B08F9C00D1B410 /* GameJoltLoginLayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1047,7 +1266,10 @@
 					"\"$(SRCROOT)/../../../cocos2dx/platform/mac\"",
 				);
 				INFOPLIST_FILE = Info.plist;
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../../cocos2dx/platform/third_party/mac/libraries\"";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../../cocos2dx/platform/third_party/mac/libraries\"",
+					"\"$(SRCROOT)/../../../external/libwebsockets/ios/lib\"",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-O2";
@@ -1091,7 +1313,10 @@
 					"\"$(SRCROOT)/../../../cocos2dx/platform/mac\"",
 				);
 				INFOPLIST_FILE = Info.plist;
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../../cocos2dx/platform/third_party/mac/libraries\"";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../../cocos2dx/platform/third_party/mac/libraries\"",
+					"\"$(SRCROOT)/../../../external/libwebsockets/ios/lib\"",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = OfficeRampage;
 				SDKROOT = macosx;
