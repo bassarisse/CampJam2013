@@ -92,7 +92,7 @@ bool TitleScene::init()  {
     
     this->setTouchEnabled(true);
 	
-    //SimpleAudioEngine::sharedEngine()->playBackgroundMusic("title_bgm.mp3", true);
+    SimpleAudioEngine::sharedEngine()->playBackgroundMusic("title_bgm.mp3", true);
 
 	return true;
 }
