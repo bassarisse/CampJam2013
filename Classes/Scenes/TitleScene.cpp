@@ -73,9 +73,11 @@ bool TitleScene::init()  {
     auto highscoresMenuItem = MenuItemLabel::create(highscoresLabel, [this](Object *object) {
         
         this->enableMenus(false);
+		this->setTouchEnabled(false);
         
         auto highscoreLayer = new HighscoresLayer();
         highscoreLayer->init([this]() {
+			this->setTouchEnabled(true);
             this->enableMenus(true);
         });
         this->addChild(highscoreLayer);
