@@ -94,6 +94,7 @@ bool GamePlay::init()
     _isTouching = false;
     _touchLocation = ccp(0,0);
     
+	_tiledMap->layerNamed("main")->getTexture()->setAliasTexParameters();
     _mainBatchNode->getTexture()->setAliasTexParameters();
     
     _mainLayer->addChild(_tiledMap);
