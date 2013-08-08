@@ -67,8 +67,8 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\cocos2dx;$(ProjectDir)..\..\..\cocos2dx\include;$(ProjectDir)..\..\..\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\external;$(ProjectDir)..\..\..\CocosDenshion\include;..\Classes;..;..\Resources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;KEYBOARD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\cocos2dx;$(ProjectDir)..\..\..\cocos2dx\include;$(ProjectDir)..\..\..\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\external;$(ProjectDir)..\..\..\CocosDenshion\include;..\Classes;..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;KEYBOARD_SUPPORT;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -100,8 +100,8 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\cocos2dx;$(ProjectDir)..\..\..\cocos2dx\include;$(ProjectDir)..\..\..\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\external;$(ProjectDir)..\..\..\external\chipmunk\include\chipmunk;$(ProjectDir)..\..\..\CocosDenshion\include;$(ProjectDir)..\..\..\extensions;..\Classes;..;..\Resources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;KEYBOARD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\cocos2dx;$(ProjectDir)..\..\..\cocos2dx\include;$(ProjectDir)..\..\..\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\external;$(ProjectDir)..\..\..\CocosDenshion\include;..\Classes;..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;KEYBOARD_SUPPORT;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>
@@ -131,6 +131,21 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControl.cpp" />
+    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlButton.cpp" />
+    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlColourPicker.cpp" />
+    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlHuePicker.cpp" />
+    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlPotentiometer.cpp" />
+    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlSaturationBrightnessPicker.cpp" />
+    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlSlider.cpp" />
+    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlStepper.cpp" />
+    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlSwitch.cpp" />
+    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlUtils.cpp" />
+    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCInvocation.cpp" />
+    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCScale9Sprite.cpp" />
+    <ClCompile Include="..\..\..\extensions\GUI\CCEditBox\CCEditBox.cpp" />
+    <ClCompile Include="..\..\..\extensions\GUI\CCEditBox\CCEditBoxImplWin.cpp" />
+    <ClCompile Include="..\..\..\extensions\proj.win32\Win32InputBox.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\B2DebugDraw\B2DebugDrawLayer.cpp" />
     <ClCompile Include="..\Classes\B2DebugDraw\GLES-Render.cpp" />
@@ -154,15 +169,44 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\Classes\Entities\Static\Document.cpp" />
     <ClCompile Include="..\Classes\Entities\Static\EmptyPaper.cpp" />
     <ClCompile Include="..\Classes\Entities\Static\Printer.cpp" />
+    <ClCompile Include="..\Classes\GameJolt.cpp" />
+    <ClCompile Include="..\Classes\GameJoltLoginLayer.cpp" />
+    <ClCompile Include="..\Classes\GameJolt\Base64.cpp" />
+    <ClCompile Include="..\Classes\GameJolt\gjAPI.cpp" />
+    <ClCompile Include="..\Classes\GameJolt\gjDataItem.cpp" />
+    <ClCompile Include="..\Classes\GameJolt\gjNetwork.cpp" />
+    <ClCompile Include="..\Classes\GameJolt\gjScore.cpp" />
+    <ClCompile Include="..\Classes\GameJolt\gjTrophy.cpp" />
+    <ClCompile Include="..\Classes\GameJolt\gjUser.cpp" />
+    <ClCompile Include="..\Classes\GameJolt\MD5.cpp" />
     <ClCompile Include="..\Classes\GameObject.cpp" />
     <ClCompile Include="..\Classes\GamePlay.cpp" />
     <ClCompile Include="..\Classes\HealthBar.cpp" />
+    <ClCompile Include="..\Classes\HighscoresLayer.cpp" />
     <ClCompile Include="..\Classes\Scenes\GameoverScene.cpp" />
     <ClCompile Include="..\Classes\Scenes\TitleScene.cpp" />
     <ClCompile Include="..\Classes\ScoreLayer.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\extensions\ExtensionMacros.h" />
+    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControl.h" />
+    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlButton.h" />
+    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlColourPicker.h" />
+    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlExtensions.h" />
+    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlHuePicker.h" />
+    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlPotentiometer.h" />
+    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlSaturationBrightnessPicker.h" />
+    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlSlider.h" />
+    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlStepper.h" />
+    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlSwitch.h" />
+    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlUtils.h" />
+    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCInvocation.h" />
+    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCScale9Sprite.h" />
+    <ClInclude Include="..\..\..\extensions\GUI\CCEditBox\CCEditBox.h" />
+    <ClInclude Include="..\..\..\extensions\GUI\CCEditBox\CCEditBoxImpl.h" />
+    <ClInclude Include="..\..\..\extensions\GUI\CCEditBox\CCEditBoxImplWin.h" />
+    <ClInclude Include="..\..\..\extensions\proj.win32\Win32InputBox.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\B2DebugDraw\B2DebugDrawLayer.h" />
     <ClInclude Include="..\Classes\B2DebugDraw\GLES-Render.h" />
@@ -187,9 +231,21 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\Classes\Entities\Static\Document.h" />
     <ClInclude Include="..\Classes\Entities\Static\EmptyPaper.h" />
     <ClInclude Include="..\Classes\Entities\Static\Printer.h" />
+    <ClInclude Include="..\Classes\GameJolt.h" />
+    <ClInclude Include="..\Classes\GameJoltLoginLayer.h" />
+    <ClInclude Include="..\Classes\GameJolt\Base64.h" />
+    <ClInclude Include="..\Classes\GameJolt\gjAPI.h" />
+    <ClInclude Include="..\Classes\GameJolt\gjDataItem.h" />
+    <ClInclude Include="..\Classes\GameJolt\gjNetwork.h" />
+    <ClInclude Include="..\Classes\GameJolt\gjNetwork.hpp" />
+    <ClInclude Include="..\Classes\GameJolt\gjScore.h" />
+    <ClInclude Include="..\Classes\GameJolt\gjTrophy.h" />
+    <ClInclude Include="..\Classes\GameJolt\gjUser.h" />
+    <ClInclude Include="..\Classes\GameJolt\MD5.h" />
     <ClInclude Include="..\Classes\GameObject.h" />
     <ClInclude Include="..\Classes\GamePlay.h" />
     <ClInclude Include="..\Classes\HealthBar.h" />
+    <ClInclude Include="..\Classes\HighscoresLayer.h" />
     <ClInclude Include="..\Classes\Scenes\GameoverScene.h" />
     <ClInclude Include="..\Classes\Scenes\TitleScene.h" />
     <ClInclude Include="..\Classes\ScoreLayer.h" />

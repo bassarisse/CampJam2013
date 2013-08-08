@@ -8,39 +8,42 @@
       <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
     </Filter>
     <Filter Include="Classes\B2DebugDraw">
-      <UniqueIdentifier>{491bb68e-a1bf-4129-add5-2fabe5f51f9b}</UniqueIdentifier>
+      <UniqueIdentifier>{d9e70786-3c09-4b8b-a530-b52c0609bbc4}</UniqueIdentifier>
     </Filter>
     <Filter Include="Classes\Entities">
-      <UniqueIdentifier>{46cb38cb-78ef-4e45-a78e-f458668ff18e}</UniqueIdentifier>
+      <UniqueIdentifier>{5d794f3b-3dd1-4970-a157-666815ad3a1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\GameJolt">
+      <UniqueIdentifier>{90ce1b75-8767-4dcb-9759-337e56f87493}</UniqueIdentifier>
     </Filter>
     <Filter Include="Classes\Scenes">
-      <UniqueIdentifier>{94616487-c3fd-4f6d-baea-9b59d07ec6e9}</UniqueIdentifier>
+      <UniqueIdentifier>{db993418-9055-4b31-b8ed-51e82eebcc80}</UniqueIdentifier>
     </Filter>
     <Filter Include="Classes\Entities\Collectables">
-      <UniqueIdentifier>{a147a527-e74e-45a6-8ba8-920eaa1e8235}</UniqueIdentifier>
+      <UniqueIdentifier>{805b7579-f728-4392-9aaa-bcc0896680ba}</UniqueIdentifier>
     </Filter>
     <Filter Include="Classes\Entities\Enemies">
-      <UniqueIdentifier>{a74abc85-44b8-4529-b25f-39e036bc5d65}</UniqueIdentifier>
+      <UniqueIdentifier>{df957731-1f6f-4aa3-99f2-0f7ce741c765}</UniqueIdentifier>
     </Filter>
     <Filter Include="Classes\Entities\Static">
-      <UniqueIdentifier>{bbeecf6f-25a3-4f51-bef7-94b131bc562d}</UniqueIdentifier>
+      <UniqueIdentifier>{3632aea9-694a-4afa-b274-42b7cc77abf5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\extensions">
+      <UniqueIdentifier>{76f8f9a8-7b6f-4f53-96ce-341fab657763}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\extensions\GUI">
+      <UniqueIdentifier>{60f9e84e-7c4d-4ebd-8546-ea2a702247bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\extensions\GUI\CCControlExtension">
+      <UniqueIdentifier>{2a8d6d74-bd2b-4273-8b63-5bccaabc73f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\extensions\GUI\CCEditBox">
+      <UniqueIdentifier>{a12649e1-6d8a-46bd-b9d1-baf8b1c14004}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>win32</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\AppDelegate.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\B2DebugDraw\GLES-Render.cpp">
-      <Filter>Classes\B2DebugDraw</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\B2DebugDraw\B2DebugDrawLayer.cpp">
-      <Filter>Classes\B2DebugDraw</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Entities\CollectableSpawnPoint.cpp">
-      <Filter>Classes\Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Entities\EnemySpawnPoint.cpp">
       <Filter>Classes\Entities</Filter>
@@ -48,17 +51,26 @@
     <ClCompile Include="..\Classes\Entities\Player.cpp">
       <Filter>Classes\Entities</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Entities\Static\BossDesk.cpp">
-      <Filter>Classes\Entities\Static</Filter>
+    <ClCompile Include="..\Classes\Entities\Shadow.cpp">
+      <Filter>Classes\Entities</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Entities\Static\Document.cpp">
-      <Filter>Classes\Entities\Static</Filter>
+    <ClCompile Include="..\Classes\Entities\CollectableSpawnPoint.cpp">
+      <Filter>Classes\Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Entities\Static\EmptyPaper.cpp">
       <Filter>Classes\Entities\Static</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Entities\Static\Printer.cpp">
       <Filter>Classes\Entities\Static</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Static\BossDesk.cpp">
+      <Filter>Classes\Entities\Static</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Static\Document.cpp">
+      <Filter>Classes\Entities\Static</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entities\Enemies\Manager.cpp">
+      <Filter>Classes\Entities\Enemies</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Entities\Enemies\Woman.cpp">
       <Filter>Classes\Entities\Enemies</Filter>
@@ -69,8 +81,8 @@
     <ClCompile Include="..\Classes\Entities\Enemies\Man.cpp">
       <Filter>Classes\Entities\Enemies</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Entities\Enemies\Manager.cpp">
-      <Filter>Classes\Entities\Enemies</Filter>
+    <ClCompile Include="..\Classes\Entities\Collectables\Donut.cpp">
+      <Filter>Classes\Entities\Collectables</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Entities\Collectables\PeaBerry.cpp">
       <Filter>Classes\Entities\Collectables</Filter>
@@ -84,22 +96,43 @@
     <ClCompile Include="..\Classes\Entities\Collectables\Collectable.cpp">
       <Filter>Classes\Entities\Collectables</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Entities\Collectables\Donut.cpp">
-      <Filter>Classes\Entities\Collectables</Filter>
+    <ClCompile Include="..\Classes\GameJolt\gjNetwork.cpp">
+      <Filter>Classes\GameJolt</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Scenes\TitleScene.cpp">
-      <Filter>Classes\Scenes</Filter>
+    <ClCompile Include="..\Classes\GameJolt\gjScore.cpp">
+      <Filter>Classes\GameJolt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameJolt\gjTrophy.cpp">
+      <Filter>Classes\GameJolt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameJolt\gjUser.cpp">
+      <Filter>Classes\GameJolt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameJolt\MD5.cpp">
+      <Filter>Classes\GameJolt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameJolt\Base64.cpp">
+      <Filter>Classes\GameJolt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameJolt\gjAPI.cpp">
+      <Filter>Classes\GameJolt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameJolt\gjDataItem.cpp">
+      <Filter>Classes\GameJolt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\B2DebugDraw\GLES-Render.cpp">
+      <Filter>Classes\B2DebugDraw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\B2DebugDraw\B2DebugDrawLayer.cpp">
+      <Filter>Classes\B2DebugDraw</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Scenes\GameoverScene.cpp">
       <Filter>Classes\Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\BAContactListener.cpp">
-      <Filter>Classes</Filter>
+    <ClCompile Include="..\Classes\Scenes\TitleScene.cpp">
+      <Filter>Classes\Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\BaseLayer.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\CoffeeBar.cpp">
+    <ClCompile Include="..\Classes\GameJoltLoginLayer.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\GameObject.cpp">
@@ -111,28 +144,79 @@
     <ClCompile Include="..\Classes\HealthBar.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\HighscoresLayer.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
     <ClCompile Include="..\Classes\ScoreLayer.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Entities\Shadow.cpp">
-      <Filter>Classes\Entities</Filter>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\BAContactListener.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\BaseLayer.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CoffeeBar.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameJolt.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\extensions\GUI\CCEditBox\CCEditBox.cpp">
+      <Filter>Classes\extensions\GUI\CCEditBox</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\extensions\GUI\CCEditBox\CCEditBoxImplWin.cpp">
+      <Filter>Classes\extensions\GUI\CCEditBox</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlPotentiometer.cpp">
+      <Filter>Classes\extensions\GUI\CCControlExtension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlSaturationBrightnessPicker.cpp">
+      <Filter>Classes\extensions\GUI\CCControlExtension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlSlider.cpp">
+      <Filter>Classes\extensions\GUI\CCControlExtension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlStepper.cpp">
+      <Filter>Classes\extensions\GUI\CCControlExtension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlSwitch.cpp">
+      <Filter>Classes\extensions\GUI\CCControlExtension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlUtils.cpp">
+      <Filter>Classes\extensions\GUI\CCControlExtension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCInvocation.cpp">
+      <Filter>Classes\extensions\GUI\CCControlExtension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCScale9Sprite.cpp">
+      <Filter>Classes\extensions\GUI\CCControlExtension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControl.cpp">
+      <Filter>Classes\extensions\GUI\CCControlExtension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlButton.cpp">
+      <Filter>Classes\extensions\GUI\CCControlExtension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlColourPicker.cpp">
+      <Filter>Classes\extensions\GUI\CCControlExtension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlHuePicker.cpp">
+      <Filter>Classes\extensions\GUI\CCControlExtension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\extensions\proj.win32\Win32InputBox.cpp">
+      <Filter>Classes\extensions\GUI\CCEditBox</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
       <Filter>win32</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\AppDelegate.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>win32</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\B2DebugDraw\B2DebugDrawLayer.h">
-      <Filter>Classes\B2DebugDraw</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\B2DebugDraw\GLES-Render.h">
-      <Filter>Classes\B2DebugDraw</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Entities\CollectableSpawnPoint.h">
       <Filter>Classes\Entities</Filter>
@@ -143,8 +227,8 @@
     <ClInclude Include="..\Classes\Entities\Player.h">
       <Filter>Classes\Entities</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Entities\Static\BossDesk.h">
-      <Filter>Classes\Entities\Static</Filter>
+    <ClInclude Include="..\Classes\Entities\Shadow.h">
+      <Filter>Classes\Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Entities\Static\Document.h">
       <Filter>Classes\Entities\Static</Filter>
@@ -155,6 +239,12 @@
     <ClInclude Include="..\Classes\Entities\Static\Printer.h">
       <Filter>Classes\Entities\Static</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Static\BossDesk.h">
+      <Filter>Classes\Entities\Static</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entities\Enemies\Man.h">
+      <Filter>Classes\Entities\Enemies</Filter>
+    </ClInclude>
     <ClInclude Include="..\Classes\Entities\Enemies\Manager.h">
       <Filter>Classes\Entities\Enemies</Filter>
     </ClInclude>
@@ -164,8 +254,8 @@
     <ClInclude Include="..\Classes\Entities\Enemies\Enemy.h">
       <Filter>Classes\Entities\Enemies</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Entities\Enemies\Man.h">
-      <Filter>Classes\Entities\Enemies</Filter>
+    <ClInclude Include="..\Classes\Entities\Collectables\Donut.h">
+      <Filter>Classes\Entities\Collectables</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Entities\Collectables\PeaBerry.h">
       <Filter>Classes\Entities\Collectables</Filter>
@@ -179,14 +269,65 @@
     <ClInclude Include="..\Classes\Entities\Collectables\Collectable.h">
       <Filter>Classes\Entities\Collectables</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Entities\Collectables\Donut.h">
-      <Filter>Classes\Entities\Collectables</Filter>
+    <ClInclude Include="..\Classes\GameJolt\gjNetwork.h">
+      <Filter>Classes\GameJolt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameJolt\gjNetwork.hpp">
+      <Filter>Classes\GameJolt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameJolt\gjScore.h">
+      <Filter>Classes\GameJolt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameJolt\gjTrophy.h">
+      <Filter>Classes\GameJolt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameJolt\gjUser.h">
+      <Filter>Classes\GameJolt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameJolt\MD5.h">
+      <Filter>Classes\GameJolt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameJolt\Base64.h">
+      <Filter>Classes\GameJolt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameJolt\gjAPI.h">
+      <Filter>Classes\GameJolt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameJolt\gjDataItem.h">
+      <Filter>Classes\GameJolt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\B2DebugDraw\B2DebugDrawLayer.h">
+      <Filter>Classes\B2DebugDraw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\B2DebugDraw\GLES-Render.h">
+      <Filter>Classes\B2DebugDraw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scenes\GameoverScene.h">
+      <Filter>Classes\Scenes</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Scenes\TitleScene.h">
       <Filter>Classes\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Scenes\GameoverScene.h">
-      <Filter>Classes\Scenes</Filter>
+    <ClInclude Include="..\Classes\GameJoltLoginLayer.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameObject.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GamePlay.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HealthBar.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HighscoresLayer.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ScoreLayer.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>Classes</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\BAContactListener.h">
       <Filter>Classes</Filter>
@@ -200,20 +341,62 @@
     <ClInclude Include="..\Classes\Common.h">
       <Filter>Classes</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\GameObject.h">
+    <ClInclude Include="..\Classes\GameJolt.h">
       <Filter>Classes</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\GamePlay.h">
-      <Filter>Classes</Filter>
+    <ClInclude Include="..\..\..\extensions\GUI\CCEditBox\CCEditBoxImplWin.h">
+      <Filter>Classes\extensions\GUI\CCEditBox</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\HealthBar.h">
-      <Filter>Classes</Filter>
+    <ClInclude Include="..\..\..\extensions\GUI\CCEditBox\CCEditBox.h">
+      <Filter>Classes\extensions\GUI\CCEditBox</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\ScoreLayer.h">
-      <Filter>Classes</Filter>
+    <ClInclude Include="..\..\..\extensions\GUI\CCEditBox\CCEditBoxImpl.h">
+      <Filter>Classes\extensions\GUI\CCEditBox</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Entities\Shadow.h">
-      <Filter>Classes\Entities</Filter>
+    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlHuePicker.h">
+      <Filter>Classes\extensions\GUI\CCControlExtension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlPotentiometer.h">
+      <Filter>Classes\extensions\GUI\CCControlExtension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlSaturationBrightnessPicker.h">
+      <Filter>Classes\extensions\GUI\CCControlExtension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlSlider.h">
+      <Filter>Classes\extensions\GUI\CCControlExtension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlStepper.h">
+      <Filter>Classes\extensions\GUI\CCControlExtension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlSwitch.h">
+      <Filter>Classes\extensions\GUI\CCControlExtension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlUtils.h">
+      <Filter>Classes\extensions\GUI\CCControlExtension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCInvocation.h">
+      <Filter>Classes\extensions\GUI\CCControlExtension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCScale9Sprite.h">
+      <Filter>Classes\extensions\GUI\CCControlExtension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControl.h">
+      <Filter>Classes\extensions\GUI\CCControlExtension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlButton.h">
+      <Filter>Classes\extensions\GUI\CCControlExtension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlColourPicker.h">
+      <Filter>Classes\extensions\GUI\CCControlExtension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlExtensions.h">
+      <Filter>Classes\extensions\GUI\CCControlExtension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\extensions\ExtensionMacros.h">
+      <Filter>Classes\extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\extensions\proj.win32\Win32InputBox.h">
+      <Filter>Classes\extensions\GUI\CCEditBox</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
