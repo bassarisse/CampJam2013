@@ -10,7 +10,7 @@
 #define __OfficeRampage__GameJoltLoginLayer__
 
 #include "cocos2d.h"
-#include "../../../extensions/GUI/CCEditBox/CCEditBox.h"
+#include "cocos-ext.h"
 
 using namespace cocos2d;
 using namespace cocos2d::extension;

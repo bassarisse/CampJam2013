@@ -67,8 +67,8 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\cocos2dx;$(ProjectDir)..\..\..\cocos2dx\include;$(ProjectDir)..\..\..\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\external;$(ProjectDir)..\..\..\CocosDenshion\include;..\Classes;..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;KEYBOARD_SUPPORT;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\cocos2dx;$(ProjectDir)..\..\..\cocos2dx\include;$(ProjectDir)..\..\..\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\external;$(ProjectDir)..\..\..\CocosDenshion\include;$(ProjectDir)..\..\..\extensions;..\Classes;..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;KEYBOARD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -80,7 +80,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>libcocos2d.lib;libCocosDenshion.lib;libBox2d.lib;libcurl_imp.lib;websockets.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libExtensions.lib;libcocos2d.lib;libCocosDenshion.lib;libBox2d.lib;libcurl_imp.lib;websockets.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -100,8 +100,8 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\cocos2dx;$(ProjectDir)..\..\..\cocos2dx\include;$(ProjectDir)..\..\..\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\external;$(ProjectDir)..\..\..\CocosDenshion\include;..\Classes;..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;KEYBOARD_SUPPORT;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\cocos2dx;$(ProjectDir)..\..\..\cocos2dx\include;$(ProjectDir)..\..\..\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\external;$(ProjectDir)..\..\..\external\chipmunk\include\chipmunk;$(ProjectDir)..\..\..\CocosDenshion\include;$(ProjectDir)..\..\..\extensions;..\Classes;..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;KEYBOARD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>
@@ -112,7 +112,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>libcocos2d.lib;libCocosDenshion.lib;libBox2d.lib;libcurl_imp.lib;websockets.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libExtensions.lib;libcocos2d.lib;libCocosDenshion.lib;libBox2d.lib;libcurl_imp.lib;websockets.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -131,21 +131,6 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControl.cpp" />
-    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlButton.cpp" />
-    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlColourPicker.cpp" />
-    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlHuePicker.cpp" />
-    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlPotentiometer.cpp" />
-    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlSaturationBrightnessPicker.cpp" />
-    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlSlider.cpp" />
-    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlStepper.cpp" />
-    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlSwitch.cpp" />
-    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCControlUtils.cpp" />
-    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCInvocation.cpp" />
-    <ClCompile Include="..\..\..\extensions\GUI\CCControlExtension\CCScale9Sprite.cpp" />
-    <ClCompile Include="..\..\..\extensions\GUI\CCEditBox\CCEditBox.cpp" />
-    <ClCompile Include="..\..\..\extensions\GUI\CCEditBox\CCEditBoxImplWin.cpp" />
-    <ClCompile Include="..\..\..\extensions\proj.win32\Win32InputBox.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\B2DebugDraw\B2DebugDrawLayer.cpp" />
     <ClCompile Include="..\Classes\B2DebugDraw\GLES-Render.cpp" />
@@ -189,24 +174,6 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\extensions\ExtensionMacros.h" />
-    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControl.h" />
-    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlButton.h" />
-    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlColourPicker.h" />
-    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlExtensions.h" />
-    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlHuePicker.h" />
-    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlPotentiometer.h" />
-    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlSaturationBrightnessPicker.h" />
-    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlSlider.h" />
-    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlStepper.h" />
-    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlSwitch.h" />
-    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCControlUtils.h" />
-    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCInvocation.h" />
-    <ClInclude Include="..\..\..\extensions\GUI\CCControlExtension\CCScale9Sprite.h" />
-    <ClInclude Include="..\..\..\extensions\GUI\CCEditBox\CCEditBox.h" />
-    <ClInclude Include="..\..\..\extensions\GUI\CCEditBox\CCEditBoxImpl.h" />
-    <ClInclude Include="..\..\..\extensions\GUI\CCEditBox\CCEditBoxImplWin.h" />
-    <ClInclude Include="..\..\..\extensions\proj.win32\Win32InputBox.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\B2DebugDraw\B2DebugDrawLayer.h" />
     <ClInclude Include="..\Classes\B2DebugDraw\GLES-Render.h" />
@@ -259,6 +226,10 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     </ProjectReference>
     <ProjectReference Include="..\..\..\CocosDenshion\proj.win32\CocosDenshion.vcxproj">
       <Project>{f8edd7fa-9a51-4e80-baeb-860825d2eac6}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\extensions\proj.win32\libExtensions.vcxproj">
+      <Project>{21b2c324-891f-48ea-ad1a-5ae13de12e28}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\..\..\external\Box2D\proj.win32\Box2D.vcxproj">
