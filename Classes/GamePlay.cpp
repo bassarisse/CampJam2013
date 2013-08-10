@@ -128,12 +128,10 @@ bool GamePlay::init()
         
         if (type->compare("Player") == 0)
 		{
-			Player* plinit = (Player*)_player;
-            plinit->init(_world, objectProperties, this);
-            _mainBatchNode->addChild(plinit->getNode());
-			Shadow* playerShadow = Shadow::create(plinit);
+            _player->init(_world, objectProperties, this);
+            _mainBatchNode->addChild(_player->getNode());
+			Shadow* playerShadow = Shadow::create(_player);
             _shadowlayer->addChild(playerShadow);
-            //_gameObjects.push_back(player);
 		}
 		else if (type->compare("EnemySpawnPoint") == 0)
         {
@@ -188,11 +186,11 @@ bool GamePlay::init()
         float x = floatValue(objectProperties->objectForKey("x")) / PTM_RATIO;
         float y = floatValue(objectProperties->objectForKey("y")) / PTM_RATIO;
         
+        Object *aObject;
         String *width = (String *)objectProperties->objectForKey("width");
         Array *points = (Array *)objectProperties->objectForKey("polylinePoints");
         if (!points)
             points = (Array *)objectProperties->objectForKey("points");
-        Object *aObject;
         
         if (width->compare("") != 0) {
             
@@ -299,12 +297,10 @@ bool GamePlay::init()
 	_healthBar = new HealthBar();
 	_scoreLayer = new ScoreLayer();
 
-	Player* pl = (Player*)_player;
-
-	_coffeeBar->init(pl->getCoffee());
+	_coffeeBar->init(_player->getCoffee());
 	_coffeeBar->autorelease();
 	
-	_healthBar->init(pl->getLife());
+	_healthBar->init(_player->getLife());
 	_healthBar->autorelease();
 
 	_scoreLayer->init();
@@ -331,16 +327,15 @@ bool GamePlay::init()
     this->addChild(_documentSprite);
     this->addChild(_copySprite);
     this->addChild(_copiesQtyLabel);
-
-	_pauseLayer = LayerColor::create(ccc4(0,0,0,130));
-	_pauseLayer->retain();
-	_pauseLayer->setPosition(ccp(0,0));
-	_pauseLayer->setContentSize(CCSizeMake(1024, 768));
     
 	LabelBMFont* pauseLabel = LabelBMFont::create("Paused!", "MainFont.fnt", 300, kTextAlignmentCenter);
 	pauseLabel->setAnchorPoint(ccp(0.5f, 0.5f));
 	pauseLabel->setPosition(ccp(this->getContentSize().width / 2, this->getContentSize().height / 2));
     
+	_pauseLayer = LayerColor::create(ccc4(0,0,0,130));
+	_pauseLayer->retain();
+	_pauseLayer->setPosition(ccp(0,0));
+	_pauseLayer->setContentSize(CCSizeMake(1024, 768));
 	_pauseLayer->addChild(pauseLabel);
 
 	_isPaused = false;
@@ -366,11 +361,12 @@ void GamePlay::update(float dt) {
     if (_isTouching) {
         Point touchLocation = Director::sharedDirector()->convertToGL(_touchLocation);
         touchLocation = _tiledMap->convertToNodeSpace(touchLocation);
-        ((Player *)_player)->followPoint(touchLocation);
-    }
-    
-    _player->setMovingHorizontalState(_movingHorizontalStates[_movingHorizontalStates.size() - 1]);
-    _player->setMovingVerticalState(_movingVerticalStates[_movingVerticalStates.size() - 1]);
+        _player->followPoint(touchLocation);
+    } else {
+		_player->setMovingHorizontalState(_movingHorizontalStates[_movingHorizontalStates.size() - 1]);
+		_player->setMovingVerticalState(_movingVerticalStates[_movingVerticalStates.size() - 1]);
+	}
+
     _player->update(dt);
     
     Point playerPosition = _player->getNode()->getPosition();
@@ -428,20 +424,18 @@ void GamePlay::update(float dt) {
 		}
             
     }
-
-	Player* pl = (Player*)_player;
     
-    _copiesQtyLabel->setString(String::createWithFormat("%i", pl->getCopiesQty())->getCString());
-    _emptyPaperSprite->setOpacity(pl->getHasEmptyPaper() ? 255 : 0);
-    _documentSprite->setOpacity(pl->getHasDocument() ? 255 : 0);
+    _copiesQtyLabel->setString(String::createWithFormat("%i", _player->getCopiesQty())->getCString());
+    _emptyPaperSprite->setOpacity(_player->getHasEmptyPaper() ? 255 : 0);
+    _documentSprite->setOpacity(_player->getHasDocument() ? 255 : 0);
     
-	_coffeeBar->setCoffeeLevel(pl->getCoffee());
+	_coffeeBar->setCoffeeLevel(_player->getCoffee());
 	_coffeeBar->update(dt);
 
-	_healthBar->setHealthLevel(pl->getLife());
+	_healthBar->setHealthLevel(_player->getLife());
 	_healthBar->update(dt);
 
-	_scoreLayer->setScore(pl->getScore());
+	_scoreLayer->setScore(_player->getScore());
 	_scoreLayer->update(dt);
 
 }
@@ -525,7 +519,7 @@ GameObject* GamePlay::createGameObject(GameObjectType type, Dictionary *properti
         case GameObjectTypeMan:
         {
             Man *newEnemy = new Man();
-            newEnemy->init(_world, properties, (Player*)_player);
+            newEnemy->init(_world, properties, _player);
             _mainBatchNode->addChild(newEnemy->getNode());
             _gameObjects.push_back(newEnemy);
 			
@@ -540,7 +534,7 @@ GameObject* GamePlay::createGameObject(GameObjectType type, Dictionary *properti
         case GameObjectTypeWoman:
         {
             Woman *newEnemy = new Woman();
-            newEnemy->init(_world, properties, (Player*)_player);
+            newEnemy->init(_world, properties, _player);
             _mainBatchNode->addChild(newEnemy->getNode());
             _gameObjects.push_back(newEnemy);
 
@@ -555,7 +549,7 @@ GameObject* GamePlay::createGameObject(GameObjectType type, Dictionary *properti
         case GameObjectTypeManager:
         {
             Manager *newEnemy = new Manager();
-            newEnemy->init(_world, properties, (Player*)_player);
+            newEnemy->init(_world, properties, _player);
             _mainBatchNode->addChild(newEnemy->getNode());
             _gameObjects.push_back(newEnemy);
 
@@ -630,7 +624,7 @@ void GamePlay::ccTouchMoved(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) {
     Point touchLocation = Director::sharedDirector()->convertToGL(_touchLocation);
     touchLocation = _tiledMap->convertToNodeSpace(touchLocation);
     
-    ((Player *)_player)->followPoint(touchLocation);
+    _player->followPoint(touchLocation);
     
 }
 
@@ -638,12 +632,12 @@ void GamePlay::ccTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) {
     if (_isPaused)
         this->buttonB(false);
     _isTouching = false;
-    ((Player *)_player)->stopFollowingPoint();
+    _player->stopFollowingPoint();
 }
 
 void GamePlay::ccTouchCancelled(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) {
     _isTouching = false;
-    ((Player *)_player)->stopFollowingPoint();
+    _player->stopFollowingPoint();
 }
 
 void GamePlay::buttonLeft(bool pressed) {

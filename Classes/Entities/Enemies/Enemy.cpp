@@ -1,5 +1,7 @@
 
 #include "Enemy.h"
+#include "../Player.h"
+#include "../../GamePlay.h"
 #include "../Shadow.h"
 #include "Box2D/Box2D.h"
 
@@ -72,8 +74,7 @@ void Enemy::update(float dt) {
     this->executeWalkAnimation();
     
     int colorAdd = 255 - 60 * _drinkedCoffee;
-    Sprite *thisSprite = (Sprite *)this->getNode();
-    thisSprite->setColor(ccc3(255, colorAdd, colorAdd));
+    sprite->setColor(ccc3(255, colorAdd, colorAdd));
     
 	if(_drinkedCoffee >= kEnemyDeathCoffeeNumber) {
         this->die();

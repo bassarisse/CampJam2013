@@ -1,6 +1,7 @@
 #include "Shadow.h"
 
 #include "Common.h"
+#include "../GameObject.h"
 
 void Shadow::draw() {
     

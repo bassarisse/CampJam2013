@@ -10,7 +10,8 @@
 #define __CampJam__Player__
 
 #include "GameObject.h"
-#include "../GamePlay.h"
+
+class GamePlay;
 
 class Player : public GameObject {
     
@@ -19,10 +20,10 @@ private:
 protected:
     
     bool _isFollowingPoint;
+    Point _pointToFollow;
     bool _isUnderPeaBerryEffect;
     float _peaBerryTime;
     float _damageTime;
-    Point _pointToFollow;
     
     virtual void addFixtures();
     virtual float getSpeed();

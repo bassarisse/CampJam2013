@@ -2,7 +2,8 @@
 #define __CAMPJAM_SHADOW_H
 
 #include "cocos2d.h"
-#include "../GameObject.h"
+
+class GameObject;
 
 using namespace cocos2d;
 

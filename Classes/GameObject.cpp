@@ -181,6 +181,7 @@ bool GameObject::init(b2World *world, Dictionary *properties, bool isSensor, boo
     _lastHorizontalDirection = kDirectionRight;
 	_IsDestroyed = false;
     
+	this->setState(GameObjectStateStanding);
     this->setMovingVerticalState(MovingStateVerticalStopped);
     this->setMovingHorizontalState(MovingStateHorizontalStopped);
     this->setProperties(properties);

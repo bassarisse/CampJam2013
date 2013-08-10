@@ -7,6 +7,7 @@
 //
 
 #include "Player.h"
+#include "../GamePlay.h"
 #include "Enemies/Enemy.h"
 #include "SimpleAudioEngine.h"
 #include "../Scenes/GameoverScene.h"
@@ -30,8 +31,11 @@ void Player::addFixtures() {
 bool Player::init(b2World *world, Dictionary *properties, GamePlay* gameScreen) {
     
     _isFollowingPoint = false;
+	_pointToFollow = ccp(0, 0);
     _isUnderPeaBerryEffect = false;
-	_score = 0;
+	_peaBerryTime = 0.0f;
+	_damageTime = 0.0f;
+	_score = 0.0f;
     _node = Sprite::createWithSpriteFrameName("stag_down.png");
     _life = 100.0f;
     _coffee = 0.0f;

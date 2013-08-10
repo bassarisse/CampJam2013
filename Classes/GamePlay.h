@@ -14,6 +14,7 @@ using namespace cocos2d;
 class B2DebugDrawLayer;
 class EnemySpawnPoint;
 class CollectableSpawnPoint;
+class Player;
 
 class GamePlay : public BaseLayer
 {
@@ -50,7 +51,7 @@ public:
     std::vector<GameObject *> _staticObjects;
     std::vector<EnemySpawnPoint *> _enemySpawnPoints;
     std::vector<CollectableSpawnPoint *> _collectableSpawnPoints;
-    GameObject *_player;
+    Player *_player;
     Sprite *_emptyPaperSprite;
     Sprite *_documentSprite;
     Sprite *_copySprite;
